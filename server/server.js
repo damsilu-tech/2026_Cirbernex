@@ -24,7 +24,7 @@ app.use(cors({
 app.use(express.json());
 app.use('/api/artifacts', artifacts);
 
-mongoose.connect('mongodb://physics:physics@ac-gih4rk2-shard-00-00.yjbdsch.mongodb.net:27017,ac-gih4rk2-shard-00-01.yjbdsch.mongodb.net:27017,ac-gih4rk2-shard-00-02.yjbdsch.mongodb.net:27017/egyptmuseum?ssl=true&replicaSet=atlas-1nbyad-shard-0&authSource=admin&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URI, {
   serverSelectionTimeoutMS: 10000,
   family: 4
 })
