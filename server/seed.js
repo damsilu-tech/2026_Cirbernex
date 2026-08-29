@@ -28,7 +28,7 @@ const data = [
   { title: "Shabtis", category: "everyday", date: "c. 2055–30 BCE", description: "Small worker figurines placed in tombs to carry out labour on behalf of the deceased.", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Shabty_of_Amunemhat%2C_ca._1400-1336_B.C.E.%2C50.128.jpg", dynasty: "Middle Kingdom onward" },
 ];
 
-mongoose.connect('mongodb://physics:physics@ac-gih4rk2-shard-00-00.yjbdsch.mongodb.net:27017,ac-gih4rk2-shard-00-01.yjbdsch.mongodb.net:27017,ac-gih4rk2-shard-00-02.yjbdsch.mongodb.net:27017/egyptmuseum?ssl=true&replicaSet=atlas-1nbyad-shard-0&authSource=admin&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URI, {
   serverSelectionTimeoutMS: 10000,
   family: 4
 })
