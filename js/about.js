@@ -44,19 +44,10 @@ sections.forEach(s => observer.observe(s));
 /* ------ Live artifact count ------ */
 const API_BASE = (() => {
   const h = window.location.hostname;
-  return (h === 'localhost' || h === '127.0.0.1') ? 'https://cibernex-api.onrender.com' : '';
-})();
 
-async function loadArtifactCount() {
-  const el = document.getElementById('aboutArtifacts');
-  if (!el) return;
-  try {
-    const res  = await fetch(`${API_BASE}/api/artifacts`);
-    const data = await res.json();
-    if (data.length) el.textContent = data.length + '+';
-  } catch {
-    // Keep default value
+  if (h === 'localhost' || h === '127.0.0.1') {
+    return 'http://localhost:3000';
   }
-}
 
-loadArtifactCount();
+  return 'https://cibernex-api.onrender.com';
+})();
