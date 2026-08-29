@@ -16,18 +16,19 @@
 
   <header id="header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum">
+      <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum logo">
+        <span class="brand-name">Egypt's Digital Museum</span>
       </a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="timeline.html">Timeline</a>
+        <a href="timeline.html" class="active">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#tour">Virtual Museum</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <span class="icon-moon">🌙</span>
-          <span class="icon-sun">☀️</span>
+        <a href="virtual-museum.html">Virtual Museum</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
         </button>
       </div>
     </nav>
@@ -36,19 +37,21 @@
   <main id="main">
 
     <!-- 1. HERO -->
-    <section class="ok-hero">
+    <section class="ok-hero" aria-label="Old Kingdom hero">
       <div class="ok-hero-inner">
-        <div class="eyebrow2">c. 2686–2181 BCE</div>
-        <h1>The Old Kingdom<br>The Age of the Pyramids</h1>
-        <p>Explore the period when Egyptian kingship, monumental architecture, religion and administration reached new heights — and the great pyramids transformed the landscape of Egypt.</p>
-        <a class="btn btn-gold" href="#quick-facts">Enter the Old Kingdom ↓</a>
+        <div class="eyebrow">c. 2686–2181 BCE</div>
+        <h1>The Old Kingdom<br><span class="ok-hero-gold">The Age of the Pyramids</span></h1>
+        <p>Explore the period when Egyptian kingship, monumental architecture, religion and administration reached new heights — and the great pyramids transformed the landscape of Egypt forever.</p>
+        <a class="btn btn-gold" href="#quick-facts">Enter the Old Kingdom →</a>
       </div>
+      <div class="scroll-cue" aria-hidden="true">Scroll to explore<span></span></div>
     </section>
 
     <!-- SECTION NAV -->
     <nav class="section-nav" aria-label="Page sections">
       <div class="section-nav-inner">
-        <a class="snav-btn" href="#quick-facts">Quick Facts</a>
+        <a class="snav-btn" href="#quick-facts">Key Facts</a>
+        <a class="snav-btn" href="#from-early-dynastic">Origins</a>
         <a class="snav-btn" href="#pharaoh">Pharaoh</a>
         <a class="snav-btn" href="#architecture">Architecture</a>
         <a class="snav-btn" href="#builders">Pyramid Builders</a>
@@ -68,321 +71,505 @@
     </nav>
 
     <!-- 2. QUICK FACTS -->
-    <section class="qf-section" id="quick-facts">
+    <section class="qf-section" id="quick-facts" aria-labelledby="qf-heading">
       <div class="container">
         <div class="qf-header">
           <div class="section-kicker">Old Kingdom</div>
-          <h2>c. 2686–2181 BCE · 3rd–6th Dynasties</h2>
+          <h2 id="qf-heading">c. 2686–2181 BCE · 3rd–6th Dynasties</h2>
         </div>
         <div class="qf-grid">
-          <div class="qf-item"><span>👑</span><p>Strong centralized kingship</p></div>
-          <div class="qf-item"><span>🏗️</span><p>Monumental architecture</p></div>
-          <div class="qf-item"><span>🔺</span><p>Pyramid building</p></div>
-          <div class="qf-item"><span>⚱️</span><p>Royal funerary traditions</p></div>
-          <div class="qf-item"><span>🎨</span><p>Tomb decoration</p></div>
-          <div class="qf-item"><span>🌾</span><p>Agricultural economy</p></div>
+          <div class="qf-item">
+            <span aria-hidden="true">👑</span>
+            <p>Strong centralised kingship</p>
+          </div>
+          <div class="qf-item">
+            <span aria-hidden="true">🏗️</span>
+            <p>Monumental architecture</p>
+          </div>
+          <div class="qf-item">
+            <span aria-hidden="true">🔺</span>
+            <p>Pyramid building</p>
+          </div>
+          <div class="qf-item">
+            <span aria-hidden="true">⚱️</span>
+            <p>Royal funerary traditions</p>
+          </div>
+          <div class="qf-item">
+            <span aria-hidden="true">🎨</span>
+            <p>Tomb decoration</p>
+          </div>
+          <div class="qf-item">
+            <span aria-hidden="true">🌾</span>
+            <p>Agricultural economy</p>
+          </div>
         </div>
+        <p class="qf-note">📌 Date ranges vary among scholars. The Old Kingdom is traditionally defined as the 3rd to 6th Dynasties.</p>
       </div>
     </section>
 
     <!-- 3. FROM EARLY DYNASTIC TO OLD KINGDOM -->
-    <section class="ok-section" id="from-early-dynastic">
+    <section class="ok-section" id="from-early-dynastic" aria-labelledby="origins-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">A Continuing Story</div>
-          <h2>From Early Dynastic Egypt to the Old Kingdom</h2>
+          <h2 id="origins-heading">From Early Dynastic Egypt to the Old Kingdom.</h2>
           <p>The political and administrative foundations established during the Early Dynastic Period continued to develop during the Old Kingdom. Egyptian kings commanded increasingly ambitious royal projects, while religious and administrative institutions became more elaborate.</p>
         </div>
-        <div class="flow">
-          <div class="flow-node"><strong>Early Dynastic Egypt</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Centralized Kingship</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Growing Administration</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Royal Monuments</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node milestone"><strong>c. 2686 BCE</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node highlight"><strong>Old Kingdom</strong></div>
+        <div class="ok-flow" aria-label="Progression from Early Dynastic to Old Kingdom">
+          <div class="ok-flow-node">
+            <div class="ok-fn-icon" aria-hidden="true">𓂀</div>
+            <strong>Early Dynastic Egypt</strong>
+            <span>Unified state established</span>
+          </div>
+          <div class="ok-flow-arrow" aria-hidden="true">↓</div>
+          <div class="ok-flow-node">
+            <div class="ok-fn-icon" aria-hidden="true">👑</div>
+            <strong>Centralised Kingship</strong>
+            <span>Power increasingly concentrated</span>
+          </div>
+          <div class="ok-flow-arrow" aria-hidden="true">↓</div>
+          <div class="ok-flow-node">
+            <div class="ok-fn-icon" aria-hidden="true">📋</div>
+            <strong>Growing Administration</strong>
+            <span>Officials manage a complex state</span>
+          </div>
+          <div class="ok-flow-arrow" aria-hidden="true">↓</div>
+          <div class="ok-flow-node">
+            <div class="ok-fn-icon" aria-hidden="true">🏗️</div>
+            <strong>Royal Monuments</strong>
+            <span>Architecture becomes increasingly ambitious</span>
+          </div>
+          <div class="ok-flow-arrow" aria-hidden="true">↓</div>
+          <div class="ok-flow-node milestone-node">
+            <div class="ok-fn-icon" aria-hidden="true">📅</div>
+            <strong>c. 2686 BCE</strong>
+            <span>The Old Kingdom begins</span>
+          </div>
+        </div>
+        <div class="ok-note">
+          <a class="ok-back-link" href="early-dynastic.html">← Read about the Early Dynastic Period</a>
         </div>
       </div>
     </section>
 
     <!-- 4. THE PHARAOH -->
-    <section class="ok-section dark" id="pharaoh">
+    <section class="ok-section dark" id="pharaoh" aria-labelledby="pharaoh-heading">
       <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">The Pharaoh</div>
-          <h2>What made Old Kingdom kingship different.</h2>
-        </div>
-        <div class="pharaoh-grid">
-          <div>
-            <ul class="pharaoh-roles">
-              <li>Political ruler</li>
-              <li>Religious authority</li>
-              <li>Leader of the state</li>
+        <div class="ok-split">
+          <div class="ok-split-text">
+            <div class="section-kicker">The Pharaoh</div>
+            <h2 id="pharaoh-heading">What made Old Kingdom kingship different.</h2>
+            <p>The king stood at the centre of Egyptian political and religious life. Kingship was not simply a political role — it carried deep religious and symbolic meaning connected with maintaining <strong>ma'at</strong>: order, balance and the proper functioning of the world.</p>
+            <ul class="ok-role-list" aria-label="Roles of the pharaoh">
+              <li>Political ruler of the unified state</li>
+              <li>Religious authority and divine intermediary</li>
+              <li>Leader and organiser of state projects</li>
               <li>Patron of temples and monuments</li>
               <li>Central figure in royal funerary traditions</li>
             </ul>
           </div>
-          <div>
-            <div class="maat-block">
-              <p class="maat-statement">The king stood at the center of Egyptian political and religious life.</p>
-              <p>Egyptians associated kingship with maintaining <strong>ma'at</strong> — a concept involving order, balance and the proper functioning of the world and society.</p>
-            </div>
+          <div class="ok-maat-block">
+            <div class="ok-maat-glyph" aria-hidden="true">𓋴</div>
+            <h3>Ma'at</h3>
+            <p>Egyptians associated kingship with maintaining <strong>ma'at</strong> — a concept involving order, balance and the proper functioning of the world and society. The king was expected to uphold ma'at on behalf of the gods and the people.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. THE BIRTH OF MONUMENTAL ARCHITECTURE -->
-    <section class="ok-section sand" id="architecture">
+    <!-- 5. BIRTH OF MONUMENTAL ARCHITECTURE -->
+    <section class="ok-section sand" id="architecture" aria-labelledby="arch-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">The Birth of Monumental Architecture</div>
-          <h2>From mudbrick tomb to towering pyramid.</h2>
-          <p>Before the Great Pyramid, Egyptian monumental architecture developed gradually — each stage building on the last.</p>
+          <h2 id="arch-heading">From mudbrick tomb to towering pyramid.</h2>
+          <p>Before the Great Pyramid, Egyptian monumental architecture developed gradually — each stage building on the last. The pyramid form did not appear fully formed — it was the result of centuries of experimentation.</p>
         </div>
-        <div class="flow-h">
-          <div class="flow-node"><strong>Mastaba</strong><br><span class="flow-sub">Flat-roofed tomb</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Stepped Pyramid</strong><br><span class="flow-sub">Layered mastabas</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>True Pyramid</strong><br><span class="flow-sub">Smooth faces</span></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node highlight"><strong>Great Pyramid</strong><br><span class="flow-sub">Peak achievement</span></div>
-        </div>
-        <div class="ok-visual-section" style="margin-top:2.5rem">
-          <div class="ok-visual-text">
-            <h3 style="font-family:Cinzel, serif; margin-bottom:.8rem">Step Pyramid of Djoser</h3>
-            <p>The Step Pyramid complex at Saqqara represents a major development in Egyptian monumental architecture. It was built for King Djoser and is traditionally associated with the architect Imhotep.</p>
+
+        <div class="ok-arch-flow" aria-label="Development of pyramid architecture">
+          <div class="ok-arch-step">
+            <div class="ok-arch-num" aria-hidden="true">01</div>
+            <h4>Mastaba</h4>
+            <p>Flat-roofed rectangular tomb — the starting point of royal burial architecture.</p>
           </div>
-          <div class="ok-visual-image" style="background-image:url('https://images.unsplash.com/photo-1608742565053-a04c8f5e6f8a?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">The Step Pyramid of Djoser at Saqqara</div>
+          <div class="ok-arch-arrow" aria-hidden="true">→</div>
+          <div class="ok-arch-step">
+            <div class="ok-arch-num" aria-hidden="true">02</div>
+            <h4>Stepped Pyramid</h4>
+            <p>Stacked mastabas forming a stepped shape — first seen at Saqqara under Djoser.</p>
+          </div>
+          <div class="ok-arch-arrow" aria-hidden="true">→</div>
+          <div class="ok-arch-step">
+            <div class="ok-arch-num" aria-hidden="true">03</div>
+            <h4>True Pyramid</h4>
+            <p>Smooth-faced pyramid form — developed through experimentation under Sneferu.</p>
+          </div>
+          <div class="ok-arch-arrow" aria-hidden="true">→</div>
+          <div class="ok-arch-step highlight-arch">
+            <div class="ok-arch-num" aria-hidden="true">04</div>
+            <h4>Great Pyramid</h4>
+            <p>The peak achievement — built for Khufu at Giza, the only surviving Wonder of the Ancient World.</p>
+          </div>
+        </div>
+
+        <div class="ok-visual-section" style="margin-top:3rem">
+          <div class="ok-split-text">
+            <h3>Step Pyramid of Djoser</h3>
+            <p>The Step Pyramid complex at Saqqara represents a major development in Egyptian monumental architecture. Built for King Djoser of the 3rd Dynasty, it is traditionally associated with the architect Imhotep — one of the few non-royal figures to be later deified by the Egyptians.</p>
+          </div>
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Step Pyramid of Djoser at Saqqara">
+            <div class="ok-img-caption">The Step Pyramid of Djoser at Saqqara</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 6. THE PYRAMID BUILDERS -->
-    <section class="ok-section" id="builders">
+    <section class="ok-section" id="builders" aria-labelledby="builders-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">The Pyramid Builders</div>
-          <h2>Pyramid construction developed over time.</h2>
-          <p>Rather than appearing all at once, true pyramid construction was the result of experimentation — most visibly under King Sneferu.</p>
+          <h2 id="builders-heading">Pyramid construction developed over time.</h2>
+          <p>Rather than appearing all at once, true pyramid construction was the result of experimentation — most visibly under King Sneferu of the 4th Dynasty, who built at least three major pyramids.</p>
         </div>
-        <h3 style="font-family:Cinzel, serif; text-align:center; margin-bottom:.5rem">Sneferu's Experiments</h3>
-        <div class="flow-h">
-          <div class="flow-node"><strong>Meidum Pyramid</strong></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node"><strong>Bent Pyramid</strong></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-node highlight"><strong>Red Pyramid</strong></div>
-        </div>
-        <div class="ok-visual-section" style="margin-top:3rem">
-          <div class="ok-visual-text">
-            <h3 style="font-family:Cinzel, serif; margin-bottom:.8rem">Khufu &amp; the Great Pyramid</h3>
-            <p>The culmination of this development was the Great Pyramid of Giza, built for King Khufu — giving visitors a much better understanding than simply saying "the Egyptians built pyramids." They can see that pyramid construction developed over time.</p>
+
+        <div class="ok-sneferu" aria-label="Sneferu's pyramid experiments">
+          <div class="ok-sneferu-label">Sneferu's Experiments</div>
+          <div class="ok-sneferu-flow">
+            <div class="ok-sneferu-step">
+              <h4>Meidum Pyramid</h4>
+              <p>Began as a stepped pyramid — later modified to attempt a true pyramid form.</p>
+            </div>
+            <div class="ok-sneferu-arrow" aria-hidden="true">→</div>
+            <div class="ok-sneferu-step">
+              <h4>Bent Pyramid</h4>
+              <p>The angle changes partway through — evidence of a structural problem during construction.</p>
+            </div>
+            <div class="ok-sneferu-arrow" aria-hidden="true">→</div>
+            <div class="ok-sneferu-step highlight-snef">
+              <h4>Red Pyramid</h4>
+              <p>Egypt's first successfully completed true pyramid — at a consistent angle throughout.</p>
+            </div>
           </div>
-          <div class="ok-visual-image" style="background-image:url('https://images.unsplash.com/photo-1590133324192-1c9237132f89?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">The Great Pyramid of Giza, built for Khufu</div>
+        </div>
+
+        <div class="ok-visual-section" style="margin-top:3rem">
+          <div class="ok-split-text">
+            <h3>Khufu & the Great Pyramid</h3>
+            <p>The culmination of this development was the Great Pyramid of Giza — built for Khufu, son of Sneferu. Standing approximately 146 metres tall and constructed from an estimated 2.3 million stone blocks, it remained the tallest human-made structure in the world for over 3,800 years.</p>
+            <div class="ok-stat-row">
+              <div class="ok-stat">
+                <strong>~146 m</strong>
+                <span>Original height</span>
+              </div>
+              <div class="ok-stat">
+                <strong>2.3M</strong>
+                <span>Stone blocks</span>
+              </div>
+              <div class="ok-stat">
+                <strong>~20 yrs</strong>
+                <span>Est. construction</span>
+              </div>
+            </div>
+          </div>
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="The Great Pyramid of Giza">
+            <div class="ok-img-caption">The Great Pyramid of Giza, built for Khufu</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 7. THE GIZA PLATEAU -->
-    <section class="ok-section sand" id="giza">
+    <section class="ok-section sand" id="giza" aria-labelledby="giza-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">The Giza Plateau</div>
-          <h2>Three pyramids, one plateau.</h2>
+          <h2 id="giza-heading">Three pyramids. One plateau.</h2>
+          <p>The Giza plateau contains three major pyramid complexes — each built for a different 4th Dynasty king. Each pyramid was the centrepiece of a much larger religious and funerary complex.</p>
         </div>
-        <div class="giza-grid">
-          <div class="giza-card">
-            <div class="giza-image" style="background-image:url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="giza-body">
-              <span class="giza-tag">Largest</span>
-              <h3>The Great Pyramid</h3>
-              <p>Built for Khufu.</p>
+
+        <div class="ok-giza-grid">
+          <div class="ok-giza-card">
+            <div class="ok-giza-img" style="background-image:url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Great Pyramid of Khufu"></div>
+            <div class="ok-giza-body">
+              <span class="ok-giza-tag">Largest</span>
+              <h3>Great Pyramid of Khufu</h3>
+              <p>The largest of the three — the only surviving Wonder of the Ancient World.</p>
             </div>
           </div>
-          <div class="giza-card">
-            <div class="giza-image" style="background-image:url('https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="giza-body">
-              <span class="giza-tag">Second</span>
+          <div class="ok-giza-card">
+            <div class="ok-giza-img" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Pyramid of Khafre"></div>
+            <div class="ok-giza-body">
+              <span class="ok-giza-tag">Second</span>
               <h3>Pyramid of Khafre</h3>
-              <p>Associated with Khafre.</p>
+              <p>Associated with Khafre — and the Great Sphinx, which stands nearby on the plateau.</p>
             </div>
           </div>
-          <div class="giza-card">
-            <div class="giza-image" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="giza-body">
-              <span class="giza-tag">Third</span>
+          <div class="ok-giza-card">
+            <div class="ok-giza-img" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Pyramid of Menkaure"></div>
+            <div class="ok-giza-body">
+              <span class="ok-giza-tag">Third</span>
               <h3>Pyramid of Menkaure</h3>
-              <p>Associated with Menkaure.</p>
+              <p>The smallest of the three main pyramids — associated with Menkaure of the 4th Dynasty.</p>
             </div>
           </div>
         </div>
 
-        <div class="section-head" style="margin-top:3.5rem">
-          <p>A pyramid was never an isolated building — it was the centerpiece of a much larger complex.</p>
-        </div>
-        <div class="complex-diagram">
-          <div class="complex-root">PYRAMID</div>
-          <div class="complex-branches">
-            <div class="complex-branch"><div><strong>Mortuary temple</strong></div></div>
-            <div class="complex-branch"><div><strong>Causeway</strong></div></div>
-            <div class="complex-branch"><div><strong>Valley temple</strong></div></div>
+        <div class="ok-complex-box">
+          <h4>A pyramid was never an isolated building.</h4>
+          <p>Each pyramid was the centrepiece of a larger complex including a mortuary temple, a causeway connecting the pyramid to the valley, and a valley temple at the edge of the floodplain.</p>
+          <div class="ok-complex-flow" aria-label="Pyramid complex components">
+            <div class="ok-complex-node">
+              <span aria-hidden="true">🔺</span>
+              <strong>Pyramid</strong>
+            </div>
+            <div class="ok-complex-line" aria-hidden="true"></div>
+            <div class="ok-complex-node">
+              <span aria-hidden="true">🏛️</span>
+              <strong>Mortuary Temple</strong>
+            </div>
+            <div class="ok-complex-line" aria-hidden="true"></div>
+            <div class="ok-complex-node">
+              <span aria-hidden="true">━</span>
+              <strong>Causeway</strong>
+            </div>
+            <div class="ok-complex-line" aria-hidden="true"></div>
+            <div class="ok-complex-node">
+              <span aria-hidden="true">🏗️</span>
+              <strong>Valley Temple</strong>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 8. HOW WERE THE PYRAMIDS BUILT? -->
-    <section class="ok-section dark" id="construction">
+    <section class="ok-section dark" id="construction" aria-labelledby="construction-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">How Were the Pyramids Built?</div>
-          <h2>What archaeology tells us.</h2>
-          <p>Visitors will almost certainly ask "how did they build them?" There's no single secret method — evidence points to organized, large-scale state projects.</p>
+          <h2 id="construction-heading">What archaeology tells us.</h2>
+          <p>There is no single secret method — evidence points to organised, large-scale state projects involving skilled workers, careful planning and enormous logistical coordination.</p>
         </div>
-        <div class="process-strip">
-          <div class="process-step"><span class="ps-num">01</span><strong>Quarrying stone</strong></div>
-          <div class="process-step"><span class="ps-num">02</span><strong>Transporting materials</strong></div>
-          <div class="process-step"><span class="ps-num">03</span><strong>Organizing workers</strong></div>
-          <div class="process-step"><span class="ps-num">04</span><strong>Food and supplies</strong></div>
-          <div class="process-step"><span class="ps-num">05</span><strong>Construction planning</strong></div>
-          <div class="process-step"><span class="ps-num">06</span><strong>Engineering</strong></div>
-          <div class="process-step"><span class="ps-num">07</span><strong>Administration</strong></div>
+        <div class="ok-process-grid">
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">01</span>
+            <h4>Quarrying Stone</h4>
+            <p>Limestone was quarried locally; granite came from Aswan, hundreds of kilometres to the south.</p>
+          </div>
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">02</span>
+            <h4>Transporting Materials</h4>
+            <p>Heavy stone blocks were moved using sledges, ramps and the Nile river system.</p>
+          </div>
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">03</span>
+            <h4>Organising Workers</h4>
+            <p>Workers were organised into teams — evidence of workers' settlements has been found near Giza.</p>
+          </div>
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">04</span>
+            <h4>Food & Supplies</h4>
+            <p>Large quantities of food — including bread, beef and beer — were produced to feed the workforce.</p>
+          </div>
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">05</span>
+            <h4>Construction Planning</h4>
+            <p>Precise orientation and alignment required advanced knowledge of astronomy and surveying.</p>
+          </div>
+          <div class="ok-process-step">
+            <span class="ok-ps-num" aria-hidden="true">06</span>
+            <h4>Administration</h4>
+            <p>Complex record-keeping supported the management of workers, supplies and construction progress.</p>
+          </div>
         </div>
-        <p class="process-note">Evidence — including workers' settlements found near Giza — supports large, organized workforces of laborers and skilled crews, rather than the simplistic idea that the pyramids were built only by enslaved people.</p>
+        <div class="ok-construction-note">
+          📌 Evidence — including workers' settlements found near Giza — supports large, organised workforces of labourers and skilled crews, rather than the popular misconception that pyramids were built only by enslaved people.
+        </div>
       </div>
     </section>
 
     <!-- 9. LIFE BEYOND THE PYRAMIDS -->
-    <section class="ok-section" id="life">
+    <section class="ok-section" id="life" aria-labelledby="life-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Life Beyond the Pyramids</div>
-          <h2>The pyramids were built within a society.</h2>
-          <p>An Old Kingdom page shouldn't become "pyramids, pyramids, pyramids." The monuments stood atop an entire working society.</p>
+          <h2 id="life-heading">The pyramids were built within a society.</h2>
+          <p>The monuments stood atop an entire working society — millions of people living along the Nile whose labour, knowledge and organisation made the Old Kingdom possible.</p>
         </div>
-        <div class="icon-grid">
-          <div class="icon-card">
-            <span class="ic-icon">🌾</span>
+        <div class="ok-life-grid">
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">🌾</div>
             <h3>Farmers</h3>
-            <p>Produced food and agricultural resources.</p>
+            <p>Produced food and agricultural resources — the foundation of the Egyptian state's wealth and power.</p>
           </div>
-          <div class="icon-card">
-            <span class="ic-icon">🛠️</span>
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">🛠️</div>
             <h3>Craftspeople</h3>
-            <p>Produced pottery, tools, jewelry and other goods.</p>
+            <p>Produced pottery, tools, jewellery and other goods — both for everyday use and the royal court.</p>
           </div>
-          <div class="icon-card">
-            <span class="ic-icon">👨‍🌾</span>
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">👷</div>
             <h3>Workers</h3>
-            <p>Participated in agricultural and state projects.</p>
+            <p>Participated in agricultural labour and major state construction projects, including the pyramids.</p>
           </div>
-          <div class="icon-card">
-            <span class="ic-icon">✍️</span>
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">✍️</div>
             <h3>Scribes</h3>
-            <p>Recorded information and supported administration.</p>
+            <p>Recorded information, managed resources and supported the administration that held the state together.</p>
           </div>
-          <div class="icon-card">
-            <span class="ic-icon">👨‍👩‍👧</span>
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">👨‍👩‍👧</div>
             <h3>Families</h3>
-            <p>Lived in communities and maintained households.</p>
+            <p>Lived in communities along the Nile — raising children, growing food and maintaining households.</p>
           </div>
+          <div class="ok-life-card">
+            <div class="ok-life-icon" aria-hidden="true">🐟</div>
+            <h3>Fishermen</h3>
+            <p>The Nile provided fish as a vital food source for communities from the Delta to Upper Egypt.</p>
+          </div>
+        </div>
+        <div class="ok-life-quote">
+          A kingdom was built by more than its rulers.
         </div>
       </div>
     </section>
 
     <!-- 10. WRITING & ADMINISTRATION -->
-    <section class="ok-section sand" id="writing">
+    <section class="ok-section sand" id="writing" aria-labelledby="writing-heading">
       <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Writing &amp; Administration</div>
-          <h2>Recording a growing state.</h2>
-          <p>Writing was used for administration, records, resource management, titles, religious texts and tomb inscriptions — with scribes at the center of it all.</p>
-        </div>
-        <div class="flow">
-          <div class="flow-node"><strong>Farmers</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Resources</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Administration</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Scribe Records</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node highlight"><strong>State Organization</strong></div>
+        <div class="ok-visual-section">
+          <div class="ok-split-text">
+            <div class="section-kicker">Writing & Administration</div>
+            <h2 id="writing-heading">Recording a growing state.</h2>
+            <p>Writing was used for administration, records, resource management, titles, religious texts and tomb inscriptions. Scribes were among the most valued members of Old Kingdom society — their skills connected the king with communities across Egypt.</p>
+            <div class="ok-writing-flow" aria-label="How writing supported the state">
+              <div class="ok-wf-step">
+                <span aria-hidden="true">𓂋</span>
+                <strong>Writing</strong>
+              </div>
+              <div class="ok-wf-arrow" aria-hidden="true">↓</div>
+              <div class="ok-wf-step">
+                <span aria-hidden="true">📋</span>
+                <strong>Records</strong>
+              </div>
+              <div class="ok-wf-arrow" aria-hidden="true">↓</div>
+              <div class="ok-wf-step">
+                <span aria-hidden="true">🏛️</span>
+                <strong>Administration</strong>
+              </div>
+              <div class="ok-wf-arrow" aria-hidden="true">↓</div>
+              <div class="ok-wf-step highlight-wf">
+                <span aria-hidden="true">👑</span>
+                <strong>State Organisation</strong>
+              </div>
+            </div>
+          </div>
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Ancient Egyptian writing and administration">
+            <div class="ok-img-caption">Writing was central to Old Kingdom administration</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 11. DEATH & THE AFTERLIFE -->
-    <section class="ok-section dark" id="afterlife">
+    <section class="ok-section dark" id="afterlife" aria-labelledby="afterlife-heading">
       <div class="container">
-        <div class="ok-visual-section">
-          <div class="ok-visual-text">
-            <div class="section-kicker">Death &amp; the Afterlife</div>
-            <h2>Preparing for what comes next.</h2>
-            <div class="icon-facts" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:.9rem">
-              <div class="icon-fact" style="display:flex; gap:.8rem; align-items:flex-start">
-                <span style="font-size:1.4rem">⚱️</span>
-                <div><strong style="display:block; color:var(--gold-light); font-size:.88rem; margin-bottom:.2rem">Pyramid complexes</strong><p style="font-size:.82rem; margin:0; line-height:1.5">Royal funerary monuments.</p></div>
+        <div class="ok-visual-section reverse">
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Funerary offerings and tomb goods">
+            <div class="ok-img-caption">Funerary traditions connected the living and the dead</div>
+          </div>
+          <div class="ok-split-text">
+            <div class="section-kicker">Death & the Afterlife</div>
+            <h2 id="afterlife-heading">Preparing for what comes next.</h2>
+            <p>Old Kingdom Egyptians developed elaborate funerary traditions — connecting the physical burial with ideas about the continued existence of the deceased.</p>
+            <div class="ok-afterlife-items">
+              <div class="ok-al-item">
+                <span aria-hidden="true">🔺</span>
+                <div>
+                  <strong>Pyramid complexes</strong>
+                  <p>Royal funerary monuments — the physical and symbolic centre of royal burial.</p>
+                </div>
               </div>
-              <div class="icon-fact" style="display:flex; gap:.8rem; align-items:flex-start">
-                <span style="font-size:1.4rem">🪦</span>
-                <div><strong style="display:block; color:var(--gold-light); font-size:.88rem; margin-bottom:.2rem">Tombs</strong><p style="font-size:.82rem; margin:0; line-height:1.5">Places connected with burial and remembrance.</p></div>
+              <div class="ok-al-item">
+                <span aria-hidden="true">⚱️</span>
+                <div>
+                  <strong>Mastaba tombs</strong>
+                  <p>Elite burials for officials and nobles — often containing elaborate decorated chambers.</p>
+                </div>
               </div>
-              <div class="icon-fact" style="display:flex; gap:.8rem; align-items:flex-start">
-                <span style="font-size:1.4rem">🍞</span>
-                <div><strong style="display:block; color:var(--gold-light); font-size:.88rem; margin-bottom:.2rem">Offerings</strong><p style="font-size:.82rem; margin:0; line-height:1.5">Food and goods connected with funerary practices.</p></div>
+              <div class="ok-al-item">
+                <span aria-hidden="true">🍞</span>
+                <div>
+                  <strong>Offerings</strong>
+                  <p>Food and goods connected with funerary practices — provided for the deceased's continued needs.</p>
+                </div>
               </div>
-              <div class="icon-fact" style="display:flex; gap:.8rem; align-items:flex-start">
-                <span style="font-size:1.4rem">𓆃</span>
-                <div><strong style="display:block; color:var(--gold-light); font-size:.88rem; margin-bottom:.2rem">Afterlife</strong><p style="font-size:.82rem; margin:0; line-height:1.5">Ideas about the continued existence of the deceased developed throughout Egyptian history — not every later belief existed unchanged in the Old Kingdom.</p></div>
+              <div class="ok-al-item">
+                <span aria-hidden="true">𓆃</span>
+                <div>
+                  <strong>Developing beliefs</strong>
+                  <p>Ideas about the afterlife developed throughout Egyptian history — not every later belief existed unchanged in the Old Kingdom.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="ok-visual-image" style="background-image:url('https://images.unsplash.com/photo-1594736797933-d0f06ba0edeb?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">Funerary offerings and tomb goods</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 12. PYRAMID TEXTS -->
-    <section class="ok-section" id="texts">
+    <section class="ok-section" id="texts" aria-labelledby="texts-heading">
       <div class="container">
-        <div class="texts-callout">
+        <div class="ok-texts-grid">
           <div>
             <div class="section-kicker">Pyramid Texts</div>
-            <h2>Words carved for the afterlife.</h2>
+            <h2 id="texts-heading">Words carved for the afterlife.</h2>
             <p>Some Old Kingdom pyramids contain religious texts inscribed on their interior walls. These texts are among the earliest large bodies of ancient Egyptian religious writing known today.</p>
-            <p>They contain spells and religious material connected with the king's afterlife and protection — giving the Old Kingdom something to offer beyond architecture alone.</p>
+            <p>They contain spells and religious material connected with the king's afterlife and protection — giving the Old Kingdom something to offer beyond architecture alone. The Pyramid Texts first appear in the pyramid of Unas, the last king of the 5th Dynasty.</p>
+            <div class="ok-texts-note">
+              📌 Pyramid Texts are considered the oldest known corpus of ancient Egyptian religious texts.
+            </div>
           </div>
-          <div class="hieroglyph-block">𓉴 𓊹 𓆓 𓅓</div>
+          <div class="ok-hieroglyph-panel" aria-label="Hieroglyphic symbols representing the Pyramid Texts">
+            <span class="ok-glyph-display" aria-hidden="true">𓉴 𓊹 𓆓 𓅓</span>
+            <p class="ok-glyph-label">Ancient hieroglyphic signs</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 13. ART & TOMBS -->
-    <section class="ok-section sand" id="art">
+    <section class="ok-section sand" id="art" aria-labelledby="art-heading">
       <div class="container">
         <div class="ok-visual-section reverse">
-          <div class="ok-visual-image" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">Tomb scenes carried both artistic and symbolic meaning</div>
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Old Kingdom tomb art and decoration">
+            <div class="ok-img-caption">Tomb scenes carried both artistic and symbolic meaning</div>
           </div>
-          <div class="ok-visual-text">
-            <div class="section-kicker">Art &amp; Tombs</div>
-            <h2>More than decoration.</h2>
-            <p>Old Kingdom art represented kings, gods, offerings, farming, hunting, family and daily activities.</p>
-            <div class="maat-block" style="background:rgba(214,168,79,.12); border-left-color:var(--gold)">
-              <p style="color:var(--muted); font-size:.9rem; margin:0; line-height:1.7">Tomb scenes were not simply decoration — they could have religious and symbolic purposes connected with the deceased.</p>
+          <div class="ok-split-text">
+            <div class="section-kicker">Art & Tombs</div>
+            <h2 id="art-heading">More than decoration.</h2>
+            <p>Old Kingdom art represented kings, gods, offerings, farming, hunting, family and daily activities across a wide range of media — from carved stone reliefs to painted plaster.</p>
+            <div class="ok-art-note">
+              Tomb scenes were not simply decoration — they could have religious and symbolic purposes connected with the deceased, and may have been intended to ensure the continued supply of goods in the afterlife.
+            </div>
+            <div class="ok-art-types">
+              <div class="ok-art-type">
+                <span aria-hidden="true">🪨</span>
+                <strong>Stone reliefs</strong>
+              </div>
+              <div class="ok-art-type">
+                <span aria-hidden="true">🎨</span>
+                <strong>Painted plaster</strong>
+              </div>
+              <div class="ok-art-type">
+                <span aria-hidden="true">🗿</span>
+                <strong>Statuary</strong>
+              </div>
+              <div class="ok-art-type">
+                <span aria-hidden="true">𓂋</span>
+                <strong>Inscriptions</strong>
+              </div>
             </div>
           </div>
         </div>
@@ -390,236 +577,274 @@
     </section>
 
     <!-- 14. EGYPT & THE WIDER WORLD -->
-    <section class="ok-section dark" id="world">
+    <section class="ok-section dark" id="world" aria-labelledby="world-heading">
       <div class="container">
         <div class="ok-visual-section">
-          <div class="ok-visual-text">
-            <div class="section-kicker">Egypt &amp; the Wider World</div>
-            <h2>Connected far beyond the Nile.</h2>
-            <p>Old Kingdom Egypt maintained connections with neighboring regions, exchanging materials, resources and ideas.</p>
-            <div class="world-materials">
-              <div class="world-item"><div class="world-dot"></div><div><strong>Nubia</strong><p>Connections to the south, along the Nile.</p></div></div>
-              <div class="world-item"><div class="world-dot"></div><div><strong>Sinai</strong><p>A source region for minerals and stone.</p></div></div>
-              <div class="world-item"><div class="world-dot"></div><div><strong>Eastern Desert</strong><p>Routes for stone and mineral resources.</p></div></div>
-              <div class="world-item"><div class="world-dot"></div><div><strong>Levant</strong><p>Connections to the northeast.</p></div></div>
-              <div class="world-item"><div class="world-dot"></div><div><strong>Mediterranean regions</strong><p>Wider networks of contact and exchange.</p></div></div>
+          <div class="ok-split-text">
+            <div class="section-kicker">Egypt & the Wider World</div>
+            <h2 id="world-heading">Connected far beyond the Nile.</h2>
+            <p>Old Kingdom Egypt maintained connections with neighbouring regions, exchanging materials, resources and ideas across northeastern Africa and the ancient Near East.</p>
+            <div class="ok-world-list">
+              <div class="ok-world-item">
+                <span class="ok-world-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Nubia</strong>
+                  <p>Connections to the south — a source of gold, stone and trade goods.</p>
+                </div>
+              </div>
+              <div class="ok-world-item">
+                <span class="ok-world-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Sinai</strong>
+                  <p>A source region for turquoise and copper — important industrial materials.</p>
+                </div>
+              </div>
+              <div class="ok-world-item">
+                <span class="ok-world-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Eastern Desert</strong>
+                  <p>Routes for stone quarrying and mineral resources used in construction and craft.</p>
+                </div>
+              </div>
+              <div class="ok-world-item">
+                <span class="ok-world-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Levant</strong>
+                  <p>Connections to the northeast — including cedar wood from Lebanon.</p>
+                </div>
+              </div>
             </div>
-            <div class="world-chain">
-              <span>Stone</span><span class="wc-arrow">→</span><span>Minerals</span><span class="wc-arrow">→</span><span>Wood</span><span class="wc-arrow">→</span><span>Luxury goods</span><span class="wc-arrow">→</span><span>Ideas</span>
+            <div class="ok-world-note">
+              📌 Specific trade claims should be verified against museum and academic sources. The nature and extent of connections continue to be studied by archaeologists.
             </div>
           </div>
-          <div class="ok-visual-image" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">Exchange networks linked Egypt to its neighbors</div>
+          <div class="ok-visual-img" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Exchange networks of the ancient world">
+            <div class="ok-img-caption">Exchange networks linked Egypt to its neighbours</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 15. HOW DO WE KNOW? -->
-    <section class="ok-section" id="evidence">
+    <section class="ok-section" id="evidence" aria-labelledby="evidence-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">How Do We Know?</div>
-          <h2>How do we know about the Old Kingdom?</h2>
+          <h2 id="evidence-heading">Reconstructing the Old Kingdom.</h2>
+          <p>Historians and archaeologists reconstruct the Old Kingdom from a range of surviving evidence — each type of source telling a different part of the story.</p>
         </div>
-        <div class="evidence-grid">
-          <div class="evidence-card">
-            <span class="evidence-icon">🏗️</span>
+        <div class="ok-evidence-grid">
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">🏗️</div>
             <h3>Monuments</h3>
-            <p>Pyramids and temples.</p>
+            <p>Pyramids, temples and other structures — the most visible and enduring evidence of the Old Kingdom.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">⚱️</span>
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">⚱️</div>
             <h3>Tombs</h3>
-            <p>Burials and funerary evidence.</p>
+            <p>Royal and elite burials at Saqqara, Giza and elsewhere — containing objects, inscriptions and decorated chambers.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">𓂀</span>
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">𓂀</div>
             <h3>Inscriptions</h3>
-            <p>Names, titles and religious texts.</p>
+            <p>Names, titles, royal decrees and religious texts preserved on stone throughout Egypt.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">🎨</span>
-            <h3>Tomb scenes</h3>
-            <p>Information about society and activities.</p>
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">🎨</div>
+            <h3>Tomb Scenes</h3>
+            <p>Carved and painted scenes showing farming, crafts, offering rituals and daily life in the Old Kingdom.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">🏺</span>
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">🏺</div>
             <h3>Artifacts</h3>
-            <p>Objects used in daily and religious life.</p>
+            <p>Stone vessels, jewellery, tools and everyday objects from settlements, tombs and storage areas.</p>
+          </div>
+          <div class="ok-ev-card">
+            <div class="ok-ev-icon" aria-hidden="true">🏘️</div>
+            <h3>Settlements</h3>
+            <p>Workers' villages near Giza provide direct evidence of how pyramid builders lived and were organised.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 16. IMPORTANT OLD KINGDOM PHARAOHS -->
-    <section class="ok-section sand" id="kings">
+    <!-- 16. IMPORTANT PHARAOHS -->
+    <section class="ok-section sand" id="kings" aria-labelledby="kings-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Important Old Kingdom Pharaohs</div>
-          <h2>A few rulers who shaped the era.</h2>
+          <h2 id="kings-heading">A few rulers who shaped the era.</h2>
+          <p>The Old Kingdom spanned the 3rd to 6th Dynasties — here are some of the most significant rulers from this period.</p>
         </div>
-        <div class="kings-grid">
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+        <div class="ok-kings-grid">
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Djoser</h3>
-            <p>Associated with the Step Pyramid.</p>
+            <p>3rd Dynasty — associated with the Step Pyramid at Saqqara, the earliest large-scale stone structure in Egypt.</p>
           </div>
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Sneferu</h3>
-            <p>Important for the development of pyramid architecture.</p>
+            <p>4th Dynasty — credited with developing the true pyramid form through a series of experimental structures.</p>
           </div>
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Khufu</h3>
-            <p>Builder of the Great Pyramid.</p>
+            <p>4th Dynasty — builder of the Great Pyramid of Giza, the largest pyramid ever constructed.</p>
           </div>
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Khafre</h3>
-            <p>Associated with the second major pyramid at Giza.</p>
+            <p>4th Dynasty — associated with the second major pyramid at Giza and the Great Sphinx.</p>
           </div>
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Menkaure</h3>
-            <p>Associated with the third major pyramid at Giza.</p>
+            <p>4th Dynasty — associated with the third major pyramid at Giza and a series of notable royal statues.</p>
           </div>
-          <div class="king-card">
-            <div class="king-glyph">𓊪</div>
+          <div class="ok-king-card">
+            <div class="ok-king-glyph" aria-hidden="true">𓊪</div>
             <h3>Pepy II</h3>
-            <p>One of the later Old Kingdom rulers, traditionally associated with an exceptionally long reign.</p>
+            <p>6th Dynasty — traditionally associated with an exceptionally long reign, near the end of the Old Kingdom.</p>
           </div>
         </div>
+        <p class="ok-kings-note">📌 Our knowledge of these rulers comes from archaeological evidence including monuments, inscriptions and tomb contents. Exact dates and details continue to be refined by scholars.</p>
       </div>
     </section>
 
     <!-- 17. ARTIFACT GALLERY -->
-    <section class="ok-section" id="gallery">
+    <section class="ok-section" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Old Kingdom Artifact Gallery</div>
-          <h2>Objects from the age of the pyramids.</h2>
+          <h2 id="gallery-heading">Objects from the age of the pyramids.</h2>
+          <p>These objects connect us directly with the people, beliefs and daily life of Old Kingdom Egypt.</p>
         </div>
-        <div class="artifact-gallery">
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Royal Objects</span>
+        <div class="ok-gallery-grid">
+          <a class="ok-ag-card" href="collection.html?category=royal" aria-label="Explore royal objects in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Royal objects"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Royal Objects</span>
               <h3>Royal Objects</h3>
-              <p>Items connected with kingship and the royal court.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
+              <p>Items connected with kingship and the royal court of the Old Kingdom.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Pottery</span>
+          </a>
+          <a class="ok-ag-card" href="collection.html" aria-label="Explore pottery in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Pottery"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Pottery</span>
               <h3>Pottery</h3>
-              <p>Vessels used in daily life and burial practice.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
+              <p>Vessels used in daily life and burial practice across the Old Kingdom period.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Stone Vessels</span>
+          </a>
+          <a class="ok-ag-card" href="collection.html" aria-label="Explore stone vessels in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Stone vessels"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Stone Vessels</span>
               <h3>Stone Vessels</h3>
-              <p>Finely carved vessels showing high craft skill.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
+              <p>Finely carved vessels demonstrating the high craft skill of Old Kingdom artisans.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Jewelry</span>
-              <h3>Jewelry</h3>
-              <p>Ornaments reflecting craftsmanship and status.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
+          </a>
+          <a class="ok-ag-card" href="collection.html" aria-label="Explore jewellery in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Jewellery and ornaments"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Jewellery</span>
+              <h3>Jewellery & Ornaments</h3>
+              <p>Ornaments reflecting the craftsmanship and social status of Old Kingdom elites.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1585159812596-fac104f2f069?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Inscriptions</span>
+          </a>
+          <a class="ok-ag-card" href="collection.html?category=writing" aria-label="Explore inscriptions in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1585159812596-fac104f2f069?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Inscriptions"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Inscriptions</span>
               <h3>Inscriptions</h3>
-              <p>Names, titles and religious texts preserved in stone.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
+              <p>Names, titles and religious texts preserved in stone — windows into Old Kingdom thought.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1594736797933-d0f06ba0edeb?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Funerary Objects</span>
+          </a>
+          <a class="ok-ag-card" href="collection.html?category=funerary" aria-label="Explore funerary objects in the collection">
+            <div class="ok-ag-img" style="background-image:url('https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Funerary objects"></div>
+            <div class="ok-ag-body">
+              <span class="ok-ag-tag">Funerary Objects</span>
               <h3>Funerary Objects</h3>
-              <p>Goods and offerings connected with burial customs.</p>
-              <a class="ag-link" href="collection.html?filter=funerary">Explore in Collection →</a>
+              <p>Goods and offerings connected with Old Kingdom burial customs and afterlife beliefs.</p>
+              <span class="ok-ag-link">Explore in Collection →</span>
             </div>
-          </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1608742565053-a04c8f5e6f8a?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Tomb Reliefs</span>
-              <h3>Tomb Reliefs</h3>
-              <p>Carved scenes of daily life, offerings and ritual.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
-            </div>
-          </div>
+          </a>
         </div>
         <div style="text-align:center; margin-top:2.5rem">
-          <a class="btn btn-gold" href="collection.html">Explore the Old Kingdom Collection →</a>
+          <a class="btn btn-gold" href="collection.html" aria-label="Explore the full Old Kingdom collection">Explore the Full Collection →</a>
         </div>
       </div>
     </section>
 
     <!-- 18. THE END OF THE OLD KINGDOM -->
-    <section class="ok-section dark" id="end">
+    <section class="ok-section dark" id="end" aria-labelledby="end-heading">
       <div class="container">
-        <div class="section-head" style="text-align:center; max-width:100%; margin:0 auto 1rem">
+        <div class="section-head" style="text-align:center;max-width:100%;margin:0 auto 2rem">
           <div class="section-kicker">The End of the Old Kingdom</div>
-          <h2>A kingdom changes.</h2>
+          <h2 id="end-heading">A kingdom changes.</h2>
+          <p style="color:rgba(255,255,255,.65);max-width:700px;margin:.8rem auto 0">Rather than one single cause, historians discuss multiple factors behind the end of the Old Kingdom — including political changes, economic pressures, environmental conditions and changing relationships between the central government and regional officials.</p>
         </div>
-        <p class="end-note" style="max-width:700px; margin-left:auto; margin-right:auto">Rather than one single cause, historians discuss multiple factors behind the end of the Old Kingdom — including political changes, economic pressures, environmental conditions and changing relationships between the central government and regional officials.</p>
-        <div class="flow">
-          <div class="flow-node"><strong>Old Kingdom</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Political &amp; Social Changes</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Weaker Central Authority</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node"><strong>Regional Power</strong></div>
-          <div class="flow-arrow">↓</div>
-          <div class="flow-node highlight"><strong>First Intermediate Period</strong></div>
+
+        <div class="ok-end-flow" aria-label="Decline of the Old Kingdom">
+          <div class="ok-end-node">
+            <span class="ok-end-icon" aria-hidden="true">👑</span>
+            <strong>Old Kingdom</strong>
+            <p>Centralised state at its height</p>
+          </div>
+          <div class="ok-end-arrow" aria-hidden="true">↓</div>
+          <div class="ok-end-node">
+            <span class="ok-end-icon" aria-hidden="true">⚖️</span>
+            <strong>Political & Social Changes</strong>
+            <p>Central authority weakens over time</p>
+          </div>
+          <div class="ok-end-arrow" aria-hidden="true">↓</div>
+          <div class="ok-end-node">
+            <span class="ok-end-icon" aria-hidden="true">🌍</span>
+            <strong>Regional Power</strong>
+            <p>Local governors gain greater independence</p>
+          </div>
+          <div class="ok-end-arrow" aria-hidden="true">↓</div>
+          <div class="ok-end-node milestone-end">
+            <span class="ok-end-icon" aria-hidden="true">📅</span>
+            <strong>c. 2181 BCE</strong>
+            <p>First Intermediate Period begins</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 19. CONTINUE THE JOURNEY -->
-    <section class="ok-continue">
+    <section class="ok-continue-section" aria-labelledby="continue-heading">
       <div class="container">
-        <div class="section-head" style="text-align:center; max-width:100%; margin:0 auto 2.5rem">
+        <div class="section-head" style="text-align:center;max-width:100%;margin:0 auto 2.5rem">
           <div class="section-kicker">Continue the Journey</div>
-          <h2>The Age of the Pyramids comes to an end.</h2>
-          <p>Egypt entered a new period of political change and regional power.</p>
+          <h2 id="continue-heading">The Age of the Pyramids comes to an end.</h2>
+          <p>Egypt entered a new period of political change and regional power — but the story continues.</p>
         </div>
-        <div class="continue-grid">
-          <a class="continue-card" href="middle-kingdom.html">
-            <div class="continue-icon">𓋹</div>
-            <h3>First Intermediate Period &amp; Middle Kingdom</h3>
-            <p>An important period of political change lies between the Old Kingdom and the reunification of Egypt under the Middle Kingdom.</p>
-            <span class="continue-link">Continue the Timeline →</span>
+        <div class="ok-continue-grid">
+          <a class="ok-continue-card" href="middle-kingdom.html" aria-label="Explore the Middle Kingdom">
+            <div class="ok-continue-icon" aria-hidden="true">𓋹</div>
+            <h3>Middle Kingdom →</h3>
+            <p>After a period of fragmentation, Egypt was reunified under the Middle Kingdom — a golden age of literature, art and cultural renewal.</p>
+            <span class="ok-continue-link">Continue the Timeline →</span>
           </a>
-          <a class="continue-card" href="timeline.html">
-            <div class="continue-icon">𓉢</div>
+          <a class="ok-continue-card" href="timeline.html" aria-label="View the full timeline">
+            <div class="ok-continue-icon" aria-hidden="true">𓉢</div>
             <h3>Full Timeline</h3>
             <p>See all five thousand years of ancient Egyptian history — from the earliest communities to Cleopatra.</p>
-            <span class="continue-link">View Timeline →</span>
+            <span class="ok-continue-link">View Timeline →</span>
           </a>
-          <a class="continue-card" href="collection.html">
-            <div class="continue-icon">𓂋</div>
+          <a class="ok-continue-card" href="collection.html" aria-label="Browse the artifact collection">
+            <div class="ok-continue-icon" aria-hidden="true">𓂋</div>
             <h3>Artifact Collection</h3>
             <p>Browse objects from across all periods of ancient Egyptian history — each one a doorway into a larger human story.</p>
-            <span class="continue-link">Browse Collection →</span>
+            <span class="ok-continue-link">Browse Collection →</span>
           </a>
         </div>
       </div>
@@ -631,30 +856,33 @@
     <div class="footer-grid">
       <div>
         <h3>Egypt's Digital Museum</h3>
-        <p>A student-created digital experience designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
       </div>
       <div>
         <h3>Explore</h3>
         <a href="index.html#explore">Artifacts</a>
         <a href="timeline.html">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#tour">Virtual Museum</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
       </div>
       <div>
-        <h3>Learn</h3>
-        <a href="timeline.html">History</a>
-        <a href="collection.html">Culture</a>
-        <a href="collection.html">Writing</a>
-        <a href="collection.html">Beliefs</a>
+        <h3>Eras</h3>
+        <a href="predynastic.html">Predynastic</a>
+        <a href="early-dynastic.html">Early Dynastic</a>
+        <a href="old-kingdom.html">Old Kingdom</a>
+        <a href="timeline.html">New Kingdom</a>
       </div>
       <div>
         <h3>Project</h3>
-        <a href="index.html">About</a>
-        <a href="index.html">Mission</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
       </div>
     </div>
-    <div class="copyright">© 2026 Egypt's Digital Museum · Educational project - Omith Damsilu</div>
+    <div class="copyright">
+      © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
+    </div>
   </footer>
 
   <script src="js/old-kingdom.js"></script>

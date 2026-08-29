@@ -1,17 +1,22 @@
-// Sticky header
+'use strict';
+
+/* ------ Header ------ */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 30);
-});
+}, { passive: true });
 
-// Mobile nav
+/* ------ Mobile nav ------ */
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
+
 menuBtn.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
   menuBtn.textContent = open ? '✕' : '☰';
+  menuBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
 });
+
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -20,7 +25,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Highlight active section nav link on scroll
+/* ------ Section nav highlight on scroll ------ */
 const snavBtns = document.querySelectorAll('.snav-btn');
 const sections = document.querySelectorAll('section[id]');
 
