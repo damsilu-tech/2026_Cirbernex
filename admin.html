@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/theme.js"></script>  
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+  <header id="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum">
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false">☰</button>
+            <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="collection.html">Collections</a>
+        <a href="index.html#tour">Virtual Museum</a>
+        <!-- ADD THIS -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">☀️</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="admin-hero">
+    <div>
+      <div class="eyebrow">Museum Management</div>
+      <h1>Admin Panel</h1>
+      <p>Add, edit and delete artifacts from the collection</p>
+    </div>
+  </div>
+
+  <div class="admin-layout">
+
+    <!-- LEFT: FORM -->
+    <div class="form-card">
+      <h2 id="formTitle">➕ Add New Artifact</h2>
+
+      <input type="hidden" id="editId">
+
+      <div class="field">
+        <label for="title">Title *</label>
+        <input type="text" id="title" placeholder="e.g. Great Sphinx of Giza" required>
+      </div>
+
+      <div class="field">
+        <label for="category">Category *</label>
+        <select id="category">
+          <option value="">Select a category…</option>
+          <option value="royal">Royalty & Elite</option>
+          <option value="funerary">Funerary & Afterlife</option>
+          <option value="religious">Religion & Ritual</option>
+          <option value="everyday">Daily Life</option>
+          <option value="writing">Writing & Documents</option>
+          <option value="art">Art & Sculpture</option>
+          <option value="monuments">Architecture & Monuments</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="date">Date / Period</label>
+        <input type="text" id="date" placeholder="e.g. c. 2558 BCE">
+      </div>
+
+      <div class="field">
+        <label for="period">Time Period *</label>
+        <select id="period">
+          <option value="">Select a time period…</option>
+          <option value="predynastic">Predynastic (c. 6000–3100 BCE)</option>
+          <option value="early-dynastic">Early Dynastic (c. 3100–2686 BCE)</option>
+          <option value="old-kingdom">Old Kingdom (c. 2686–2181 BCE)</option>
+          <option value="middle-kingdom">Middle Kingdom (c. 2055–1650 BCE)</option>
+          <option value="new-kingdom">New Kingdom (c. 1550–1077 BCE)</option>
+          <option value="late-period">Late Period (c. 664–332 BCE)</option>
+          <option value="ptolemaic">Ptolemaic & Roman (332 BCE–395 CE)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="description">Description *</label>
+        <textarea id="description" placeholder="Describe the artifact…"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="imageUrl">Image URL *</label>
+        <input type="url" id="imageUrl" placeholder="https://..." oninput="previewImage(this.value)">
+        <img id="imgPreview" class="img-preview" alt="Preview">
+      </div>
+
+      <div class="field">
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="e.g. British Museum, London">
+      </div>
+
+      <div class="field">
+        <label for="dynasty">Dynasty / Period</label>
+        <input type="text" id="dynasty" placeholder="e.g. 18th Dynasty">
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-submit" onclick="submitForm()">Save Artifact →</button>
+        <button class="btn-clear" onclick="clearForm()">Clear</button>
+      </div>
+
+      <div class="toast" id="toast"></div>
+    </div>
+
+    <!-- RIGHT: LIST -->
+    <div class="list-card">
+      <div class="list-header">
+        <h2>All Artifacts</h2>
+        <span class="count-badge" id="countBadge">0</span>
+      </div>
+
+      <input class="search-box" type="text" placeholder="Search artifacts…" oninput="filterList(this.value)">
+
+      <div class="artifact-list" id="artifactList">
+        <div class="empty-list">Loading artifacts…</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/admin.js">
+  </script>
+</body>
+</html>

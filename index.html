@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Egypt's Digital Museum — explore 5,000 years of ancient Egyptian civilization through artifacts, timelines and interactive experiences.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Egypt's Digital Museum | Where History Comes Alive</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum logo">
+        <span class="brand-name">Egypt's Digital Museum</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="collection.html">Collections</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════
+         1. HERO
+    ═══════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-content">
+        <div class="eyebrow">Egypt's Digital Museum</div>
+        <h1 class="hero-headline">
+          <span class="hero-line">5,000 Years.</span>
+          <span class="hero-line hero-line--gold">One Digital Journey.</span>
+        </h1>
+        <p class="hero-sub">
+          Step inside one of history's greatest civilisations — through artifacts, timelines
+          and immersive experiences built for the modern world.
+        </p>
+        <div class="hero-meta" aria-label="Museum highlights">
+          <span>230+ Artifacts</span>
+          <span class="hero-meta-divider" aria-hidden="true">·</span>
+          <span>6 Historical Eras</span>
+          <span class="hero-meta-divider" aria-hidden="true">·</span>
+          <span>Interactive Experiences</span>
+        </div>
+        <div class="buttons">
+          <a class="btn btn-gold" href="#enter">Enter the Museum →</a>
+          <a class="btn btn-ghost" href="timeline.html">Journey Through Time</a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="hero-scroll-text">Scroll to explore</span>
+        <span class="hero-scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         2. ENTER THE MUSEUM
+    ═══════════════════════════════════ -->
+    <section class="enter-section" id="enter" aria-labelledby="enter-heading">
+      <div class="container">
+        <div class="enter-head">
+          <div class="section-kicker">Welcome</div>
+          <h2 id="enter-heading">Three ways to explore ancient Egypt.</h2>
+          <p>Choose your path through one of history's greatest civilisations.</p>
+        </div>
+        <div class="enter-cards" role="list">
+
+          <a class="enter-card" href="collection.html" role="listitem" aria-label="Explore artifacts and collections">
+            <div class="enter-card-icon" aria-hidden="true">𓂀</div>
+            <div class="enter-card-num" aria-hidden="true">01</div>
+            <h3>Explore</h3>
+            <p>Discover artifacts, objects and stories from across 5,000 years of ancient Egyptian history.</p>
+            <span class="enter-card-cta">Browse the Collection →</span>
+          </a>
+
+          <a class="enter-card" href="timeline.html" role="listitem" aria-label="Travel through Egyptian history via the timeline">
+            <div class="enter-card-icon" aria-hidden="true">𓉢</div>
+            <div class="enter-card-num" aria-hidden="true">02</div>
+            <h3>Travel Through Time</h3>
+            <p>Experience 5,000 years of Egyptian history — from the earliest Nile communities to the last pharaoh.</p>
+            <span class="enter-card-cta">Open the Timeline →</span>
+          </a>
+
+          <a class="enter-card" href="#virtual" role="listitem" aria-label="Enter the virtual museum exhibition">
+            <div class="enter-card-icon" aria-hidden="true">𓋴</div>
+            <div class="enter-card-num" aria-hidden="true">03</div>
+            <h3>Step Inside</h3>
+            <p>Enter a digital exhibition space where every room reveals a different chapter of Egypt's past.</p>
+            <span class="enter-card-cta">Enter the Exhibition →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         3. EXPLORE EGYPT (horizontal cards)
+    ═══════════════════════════════════ -->
+    <section class="discover" id="explore" aria-labelledby="explore-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Explore Egypt</div>
+          <h2 id="explore-heading">What story will you discover?</h2>
+          <p>Choose a path through ancient Egyptian civilization and uncover the ideas, objects and people behind the world's most enduring heritage.</p>
+          <div class="horizontal-hint" aria-hidden="true">
+            <span>SCROLL TO EXPLORE</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-window" role="region" aria-label="Explore categories" tabindex="0">
+        <div class="cards-track">
+
+          <a class="explore-card royal" href="collection.html?category=royal" aria-label="Explore Royalty and Elite artifacts">
+            <div class="explore-icon" aria-hidden="true">𓂀</div>
+            <div>
+              <h3>Royalty & Elite</h3>
+              <p>Meet the pharaohs and the objects that defined their power.</p>
+            </div>
+          </a>
+
+          <a class="explore-card funerary" href="collection.html?category=funerary" aria-label="Explore Funerary and Afterlife artifacts">
+            <div class="explore-icon" aria-hidden="true">♕</div>
+            <div>
+              <h3>Funerary & Afterlife</h3>
+              <p>Explore the objects and beliefs surrounding death and eternity.</p>
+            </div>
+          </a>
+
+          <a class="explore-card monuments" href="collection.html?category=monuments" aria-label="Explore Architecture and Monuments">
+            <div class="explore-icon" aria-hidden="true">𓉢</div>
+            <div>
+              <h3>Architecture & Monuments</h3>
+              <p>Discover temples, tombs and monumental architecture.</p>
+            </div>
+          </a>
+
+          <a class="explore-card beliefs" href="collection.html?category=religious" aria-label="Explore Religion and Rituals">
+            <div class="explore-icon" aria-hidden="true">◈</div>
+            <div>
+              <h3>Religion & Rituals</h3>
+              <p>Learn about the gods, rituals and beliefs of ancient Egypt.</p>
+            </div>
+          </a>
+
+          <a class="explore-card writing" href="collection.html?category=writing" aria-label="Explore Writing and Documents">
+            <div class="explore-icon" aria-hidden="true">𓂋</div>
+            <div>
+              <h3>Writing & Documents</h3>
+              <p>Step into the world of hieroglyphs and ancient texts.</p>
+            </div>
+          </a>
+
+          <a class="explore-card art" href="collection.html?category=art" aria-label="Explore Art and Sculpture">
+            <div class="explore-icon" aria-hidden="true">𓀐</div>
+            <div>
+              <h3>Art & Sculpture</h3>
+              <p>Three thousand years of symbolic painting, statues and monuments.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         4. INTERACTIVE TIMELINE
+    ═══════════════════════════════════ -->
+    <section class="timeline-section" id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Journey Through Time</div>
+          <h2 id="timeline-heading">5,000 years in one journey.</h2>
+          <p>Select a period to see how Egypt changed across the centuries.</p>
+        </div>
+
+        <div class="timeline" id="timelineButtons" role="tablist" aria-label="Historical eras">
+
+          <button class="era active" data-era="predynastic" role="tab" aria-selected="true" aria-controls="era-panel">
+            <span class="era-dot" aria-hidden="true">01</span>
+            <span><strong>Early Egypt</strong><small>Before 3100 BCE</small></span>
+          </button>
+
+          <button class="era" data-era="old" role="tab" aria-selected="false" aria-controls="era-panel">
+            <span class="era-dot" aria-hidden="true">02</span>
+            <span><strong>Old Kingdom</strong><small>c. 2686–2181 BCE</small></span>
+          </button>
+
+          <button class="era" data-era="middle" role="tab" aria-selected="false" aria-controls="era-panel">
+            <span class="era-dot" aria-hidden="true">03</span>
+            <span><strong>Middle Kingdom</strong><small>c. 2055–1650 BCE</small></span>
+          </button>
+
+          <button class="era" data-era="new" role="tab" aria-selected="false" aria-controls="era-panel">
+            <span class="era-dot" aria-hidden="true">04</span>
+            <span><strong>New Kingdom</strong><small>c. 1550–1070 BCE</small></span>
+          </button>
+
+          <button class="era" data-era="late" role="tab" aria-selected="false" aria-controls="era-panel">
+            <span class="era-dot" aria-hidden="true">05</span>
+            <span><strong>Later Egypt</strong><small>After 1070 BCE</small></span>
+          </button>
+
+        </div>
+
+        <div class="era-detail" id="era-panel" role="tabpanel" aria-live="polite">
+          <div class="era-detail-inner">
+            <div class="era-detail-meta">
+              <span class="era-date" id="eraDate">Before 3100 BCE</span>
+              <span class="era-title" id="eraTitle">Predynastic Egypt</span>
+            </div>
+            <p id="eraDescription">
+              Before the pharaohs, communities along the Nile developed agriculture,
+              craft traditions, trade networks and social structures that helped shape
+              the civilization that followed.
+            </p>
+            <a id="exploreMore" class="explore-more" href="predynastic.html" aria-label="Explore Predynastic Egypt in detail">
+              Explore this era →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         5. ARTIFACT OF THE DAY
+    ═══════════════════════════════════ -->
+    <section class="aotd-section" id="artifact-of-day" aria-labelledby="aotd-heading">
+      <div class="container">
+        <div class="aotd-inner">
+          <div class="aotd-label">
+            <div class="section-kicker">Artifact of the Day</div>
+          </div>
+          <div class="aotd-card" id="aotdCard" aria-live="polite">
+            <!-- Injected by JS -->
+            <div class="aotd-skeleton" aria-label="Loading artifact"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         6. FEATURED ARTIFACTS
+    ═══════════════════════════════════ -->
+    <section class="featured-section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Featured Collection</div>
+          <h2 id="featured-heading">Objects that tell our story.</h2>
+          <p>A curated selection from the collection — each one a doorway into a larger human story.</p>
+        </div>
+
+        <div class="featured-grid" id="featuredGrid" aria-live="polite" aria-label="Featured artifacts">
+          <div class="featured-skeleton" aria-hidden="true"></div>
+          <div class="featured-skeleton" aria-hidden="true"></div>
+          <div class="featured-skeleton" aria-hidden="true"></div>
+          <div class="featured-skeleton" aria-hidden="true"></div>
+        </div>
+
+        <div class="featured-footer">
+          <a class="btn btn-gold" href="collection.html" aria-label="View the full artifact collection">View Full Collection →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         7. HIEROGLYPH EXPERIENCE
+    ═══════════════════════════════════ -->
+    <section class="hieroglyph-section" id="hieroglyphs" aria-labelledby="hieroglyph-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Educational Exhibit</div>
+          <h2 id="hieroglyph-heading">Decode the Ancient World.</h2>
+          <p>Ancient Egyptians wrote in hieroglyphs — a system of over 700 signs used for thousands of years. Tap a letter to discover its hieroglyphic equivalent.</p>
+        </div>
+
+        <div class="hieroglyph-exhibit" aria-label="Hieroglyph decoder exhibit">
+          <div class="hiero-alphabet" id="hieroAlphabet" role="group" aria-label="Select a letter to see its hieroglyph">
+            <!-- Injected by JS -->
+          </div>
+          <div class="hiero-display" id="hieroDisplay" aria-live="polite" aria-atomic="true">
+            <div class="hiero-placeholder">
+              <span class="hiero-placeholder-glyph" aria-hidden="true">𓂀</span>
+              <p>Select a letter to see its hieroglyphic equivalent</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="hieroglyph-note">
+          📌 These are simplified equivalents used for educational purposes. Ancient Egyptian hieroglyphs represented sounds, words and ideas — not a direct alphabet.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         8. DID YOU KNOW?
+    ═══════════════════════════════════ -->
+    <section class="facts-section" id="did-you-know" aria-labelledby="facts-heading">
+      <div class="container">
+        <div class="facts-inner">
+          <div class="facts-label">
+            <div class="section-kicker">Did You Know?</div>
+            <h2 id="facts-heading">Surprising facts about ancient Egypt.</h2>
+          </div>
+          <div class="fact-reveal" id="factReveal" aria-live="polite" aria-atomic="true">
+            <div class="fact-content">
+              <span class="fact-number" id="factNum" aria-label="Fact 1 of 8">01 / 08</span>
+              <p class="fact-text" id="factText">Loading…</p>
+            </div>
+            <button class="fact-next-btn" id="factNextBtn" aria-label="Show next fact">
+              Reveal another fact →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         9. VIRTUAL MUSEUM
+    ═══════════════════════════════════ -->
+    <section class="virtual-section" id="virtual" aria-labelledby="virtual-heading">
+      <div class="container">
+        <div class="virtual-content">
+          <div class="section-kicker">Virtual Museum</div>
+          <h2 id="virtual-heading">Walk through history.</h2>
+          <p>Enter a digital exhibition where every room reveals a different chapter of Egypt's past — from the Predynastic communities of the Nile to the final days of Cleopatra's Egypt.</p>
+
+          <div class="virtual-rooms" aria-label="Virtual exhibition rooms">
+            <a class="virtual-room" href="predynastic.html" aria-label="Enter the Predynastic Egypt room">
+              <span class="vr-glyph" aria-hidden="true">𓇋</span>
+              <span>Predynastic Egypt</span>
+            </a>
+            <a class="virtual-room" href="early-dynastic.html" aria-label="Enter the Early Dynastic room">
+              <span class="vr-glyph" aria-hidden="true">𓂀</span>
+              <span>Early Dynastic</span>
+            </a>
+            <a class="virtual-room" href="timeline.html" aria-label="Enter the full timeline room">
+              <span class="vr-glyph" aria-hidden="true">𓉢</span>
+              <span>Full Timeline</span>
+            </a>
+            <a class="virtual-room" href="collection.html" aria-label="Enter the artifact collection room">
+              <span class="vr-glyph" aria-hidden="true">𓂋</span>
+              <span>Collections</span>
+            </a>
+          </div>
+
+          <a class="btn btn-gold" href="virtual-museum.html" aria-label="Start your journey through Egyptian history">Start the Journey →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         10. ABOUT / PROJECT
+    ═══════════════════════════════════ -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-text">
+            <div class="section-kicker">About This Museum</div>
+            <h2 id="about-heading">We didn't build a website.<br>We built an experience.</h2>
+            <p>Egypt's Digital Museum is an interactive educational platform designed to make 5,000 years of ancient Egyptian history accessible, engaging and memorable — for everyone, everywhere.</p>
+            <p>Every artifact, timeline and exhibition is connected through a live database, ensuring the collection grows and evolves continuously.</p>
+            <div class="about-attribution">
+              Developed for <strong>KCC ICT Day 2026</strong> · Omith Damsilu
+            </div>
+          </div>
+
+          <div class="about-stats" aria-label="Museum statistics">
+            <div class="about-stat">
+              <strong id="statArtifacts">—</strong>
+              <span>Artifacts</span>
+            </div>
+            <div class="about-stat">
+              <strong>6</strong>
+              <span>Historical Eras</span>
+            </div>
+            <div class="about-stat">
+              <strong>5,000+</strong>
+              <span>Years of History</span>
+            </div>
+            <div class="about-stat">
+              <strong>Live</strong>
+              <span>Database</span>
+            </div>
+          </div>
+          
+          <div class="tech-stack" aria-label="Technologies used">
+            <div class="section-kicker" style="margin-bottom:.8rem">Built With</div>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">GSAP</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Responsive</span>
+              <span class="tech-tag">Accessible</span>
+            </div>
+          </div>
+          <div class="buttons">
+          <a class="btn btn-ghost" href="about.html">More →</a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Egypt's Digital Museum</h3>
+        <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="collection.html">Artifacts</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="collection.html">Collections</a>
+        <a href="#virtual">Virtual Museum</a>
+      </div>
+      <div>
+        <h3>Eras</h3>
+        <a href="predynastic.html">Predynastic</a>
+        <a href="early-dynastic.html">Early Dynastic</a>
+        <a href="timeline.html">Old Kingdom</a>
+        <a href="timeline.html">New Kingdom</a>
+      </div>
+      <div>
+        <h3>Project</h3>
+        <a href="#about">About</a>
+        <a href="#about">Mission</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
+    </div>
+  </footer>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

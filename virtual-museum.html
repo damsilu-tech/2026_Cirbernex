@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Egypt's Digital Museum — Virtual Museum. Step inside 5,000 years of ancient Egyptian history through immersive themed rooms.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Virtual Museum | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/virtual-museum.css">
+  <script src="js/theme.js"></script>
+</head>
+
+<body class="vm-body">
+
+  <a class="skip-link" href="#museum">Skip to museum</a>
+
+  <!-- ═══════════════════════════════════
+       ENTRANCE SCREEN
+  ═══════════════════════════════════ -->
+  <div class="vm-entrance" id="vmEntrance" role="dialog" aria-modal="true" aria-labelledby="entrance-title">
+    <div class="vm-entrance-bg" aria-hidden="true"></div>
+    <div class="vm-entrance-content">
+      <div class="vm-entrance-eyebrow" aria-hidden="true">𓂀</div>
+      <h1 id="entrance-title">
+        <span class="vm-entrance-sub">Egypt</span>
+        <span class="vm-entrance-main">Digital Museum</span>
+      </h1>
+      <p class="vm-entrance-tagline">Enter the Collection</p>
+      <p class="vm-entrance-years">5,000 Years of History Awaits You</p>
+      <button class="vm-enter-btn" id="vmEnterBtn" aria-label="Enter the virtual museum">
+        <span>ENTER</span>
+        <span class="vm-enter-line" aria-hidden="true"></span>
+      </button>
+      <p class="vm-entrance-hint" aria-hidden="true">Use mouse or touch to explore</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       MUSEUM SHELL (hidden until entry)
+  ═══════════════════════════════════ -->
+  <div class="vm-shell" id="vmShell" hidden>
+
+    <!-- MUSEUM HEADER -->
+    <header class="vm-header" id="vmHeader">
+      <a class="vm-header-brand" href="index.html" aria-label="Return to Egypt's Digital Museum homepage">
+        <img src="assets/images/image-removebg-preview.png" alt="EDM" class="vm-header-logo">
+        <span>Egypt's Digital Museum</span>
+      </a>
+
+      <nav class="vm-header-nav" aria-label="Museum navigation">
+        <button class="vm-nav-btn" id="vmMapBtn" aria-label="Open museum map" aria-expanded="false">
+          <span aria-hidden="true">⊞</span> Map
+        </button>
+        <button class="vm-nav-btn" id="vmGuideBtn" aria-label="Start guided tour" aria-expanded="false">
+          <span aria-hidden="true">↻</span> Tour
+        </button>
+        <button class="vm-nav-btn" id="vmJourneyBtn" aria-label="View my journey" aria-expanded="false">
+          <span aria-hidden="true">◈</span> My Journey
+          <span class="vm-journey-count" id="vmJourneyCount" aria-live="polite">0</span>
+        </button>
+        <button class="theme-toggle vm-theme" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon-moon" aria-hidden="true">☾</span>
+          <span class="icon-sun" aria-hidden="true">☉</span>
+        </button>
+        <a class="vm-nav-btn vm-exit" href="index.html" aria-label="Exit virtual museum">
+          <span aria-hidden="true">←</span> Exit
+        </a>
+      </nav>
+    </header>
+
+    <!-- ROOM NAVIGATION STRIP (retained for state only — visually hidden, superseded by the progress bar below) -->
+    <nav class="vm-rooms-strip" aria-label="Museum rooms" hidden>
+      <button class="vm-room-tab active" data-room="lobby" aria-selected="true">Lobby</button>
+      <button class="vm-room-tab" data-room="origins" aria-selected="false">Origins</button>
+      <button class="vm-room-tab" data-room="pyramids" aria-selected="false">Age of Pyramids</button>
+      <button class="vm-room-tab" data-room="gods" aria-selected="false">Gods & Beliefs</button>
+      <button class="vm-room-tab" data-room="royal" aria-selected="false">Royal Egypt</button>
+      <button class="vm-room-tab" data-room="nile" aria-selected="false">Life on the Nile</button>
+      <button class="vm-room-tab" data-room="afterlife" aria-selected="false">The Afterlife</button>
+    </nav>
+
+    <!-- ROOM PROGRESS BAR — secondary, immersive in-gallery navigation -->
+    <div class="vm-room-progress" id="vmRoomProgress" hidden>
+      <button class="vm-rp-arrow vm-rp-prev" id="vmPrevRoom" aria-label="Go to previous room">
+        <span class="vm-rp-chevron" aria-hidden="true">←</span>
+        <span class="vm-rp-arrow-label">Previous Room</span>
+      </button>
+      <div class="vm-rp-current" aria-live="polite">
+        <span class="vm-rp-num" id="vmRoomNum">Room 01</span>
+        <span class="vm-rp-name" id="vmRoomName">Origins</span>
+      </div>
+      <button class="vm-rp-arrow vm-rp-next" id="vmNextRoom" aria-label="Go to next room">
+        <span class="vm-rp-arrow-label">Next Room</span>
+        <span class="vm-rp-chevron" aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <!-- FLOATING MUSEUM MAP — always-available secondary wayfinding -->
+    <button class="vm-floating-map" id="vmFloatingMapBtn" aria-label="Open museum map" hidden>
+      <span class="vm-fm-icon" aria-hidden="true">☰</span><span class="vm-fm-label">Museum Map</span>
+    </button>
+
+    <!-- MAIN MUSEUM AREA -->
+    <main class="vm-main" id="museum">
+
+      <!-- ── LOBBY ── -->
+      <div class="vm-room active" id="room-lobby" role="region" aria-label="Museum Lobby">
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Welcome</div>
+            <h2>The Museum Lobby</h2>
+            <p>Choose a room to begin your journey through 5,000 years of ancient Egyptian civilisation.</p>
+          </div>
+        </div>
+
+        <div class="vm-lobby-grid">
+          <button class="vm-lobby-card" data-room="origins" aria-label="Enter Room 01: Origins">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-num" aria-hidden="true">01</span>
+              <h3>Origins</h3>
+              <p>Predynastic communities along the Nile</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+
+          <button class="vm-lobby-card" data-room="pyramids" aria-label="Enter Room 02: Age of Pyramids">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://images.unsplash.com/photo-1524686975162-f6fb4d39759c?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-num" aria-hidden="true">02</span>
+              <h3>Age of Pyramids</h3>
+              <p>Old Kingdom monuments and kingship</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+
+          <button class="vm-lobby-card" data-room="gods" aria-label="Enter Room 03: Gods and Beliefs">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://images.unsplash.com/photo-1742496462387-a7bafd35cc0d?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-num" aria-hidden="true">03</span>
+              <h3>Gods & Beliefs</h3>
+              <p>Religion, mythology and the sacred world</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+
+          <button class="vm-lobby-card featured-room" data-room="royal" aria-label="Enter Room 04: Royal Egypt — featured room">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/3/35/Mask_of_Tutankhamun_in_2025.jpg')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-badge">Featured Room</span>
+              <span class="vm-lobby-num" aria-hidden="true">04</span>
+              <h3>Royal Egypt</h3>
+              <p>Pharaohs, queens and the objects of royal power</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+
+          <button class="vm-lobby-card" data-room="nile" aria-label="Enter Room 05: Life on the Nile">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-num" aria-hidden="true">05</span>
+              <h3>Life on the Nile</h3>
+              <p>Farming, crafts and everyday Egyptian life</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+
+          <button class="vm-lobby-card" data-room="afterlife" aria-label="Enter Room 06: The Afterlife">
+            <div class="vm-lobby-card-bg" style="background-image:url('https://images.unsplash.com/photo-1574788175517-f06058bae147?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="vm-lobby-card-content">
+              <span class="vm-lobby-num" aria-hidden="true">06</span>
+              <h3>The Afterlife</h3>
+              <p>Funerary traditions, mummies and beliefs about death</p>
+              <span class="vm-lobby-cta">Enter Room →</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── ORIGINS ── -->
+      <div class="vm-room" id="room-origins" role="region" aria-label="Room 01: Origins" hidden>
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Room 01</div>
+            <h2>Origins</h2>
+            <p>Before the pharaohs — the Predynastic communities that built the foundations of Egypt.</p>
+          </div>
+        </div>
+        <div class="vm-room-body">
+          <div class="vm-room-intro">
+            <p>Long before the pyramids, communities along the Nile Valley developed farming, craft traditions and social structures that would eventually become one of history's greatest civilisations. This room explores the foundations — the objects, communities and ideas that came before the pharaohs.</p>
+            <a class="vm-room-link btn btn-gold" href="predynastic.html">Explore Predynastic Egypt →</a>
+          </div>
+          <div class="vm-artifact-wall">
+            <div class="vm-artifact-item" data-artifact="pottery" tabindex="0" role="button" aria-label="View: Decorated Pottery">
+              <div class="vm-artifact-img" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=500&q=80')">
+                <div class="vm-artifact-hotspot" aria-hidden="true">
+                  <span class="vm-hotspot-dot"></span>
+                  <span class="vm-hotspot-label">VIEW ARTIFACT</span>
+                </div>
+              </div>
+              <div class="vm-artifact-label">
+                <span class="vm-artifact-cat">Pottery</span>
+                <h4>Decorated Predynastic Pottery</h4>
+              </div>
+            </div>
+            <div class="vm-artifact-item" data-artifact="tools" tabindex="0" role="button" aria-label="View: Stone Tools">
+              <div class="vm-artifact-img" style="background-image:url('https://images.unsplash.com/photo-1562679299-f6d5d36b4376?auto=format&fit=crop&w=500&q=80')">
+                <div class="vm-artifact-hotspot" aria-hidden="true">
+                  <span class="vm-hotspot-dot"></span>
+                  <span class="vm-hotspot-label">VIEW ARTIFACT</span>
+                </div>
+              </div>
+              <div class="vm-artifact-label">
+                <span class="vm-artifact-cat">Tools</span>
+                <h4>Flint Stone Tools</h4>
+              </div>
+            </div>
+            <div class="vm-artifact-item" data-artifact="ornaments" tabindex="0" role="button" aria-label="View: Beads and Ornaments">
+              <div class="vm-artifact-img" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=500&q=80')">
+                <div class="vm-artifact-hotspot" aria-hidden="true">
+                  <span class="vm-hotspot-dot"></span>
+                  <span class="vm-hotspot-label">VIEW ARTIFACT</span>
+                </div>
+              </div>
+              <div class="vm-artifact-label">
+                <span class="vm-artifact-cat">Ornaments</span>
+                <h4>Beads & Personal Ornaments</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PYRAMIDS ── -->
+      <div class="vm-room" id="room-pyramids" role="region" aria-label="Room 02: Age of Pyramids" hidden>
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1524686975162-f6fb4d39759c?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Room 02</div>
+            <h2>Age of Pyramids</h2>
+            <p>The Old Kingdom — monumental architecture, centralised kingship, and the world's most iconic structures.</p>
+          </div>
+        </div>
+        <div class="vm-room-body">
+          <div class="vm-room-intro">
+            <p>The Old Kingdom (c. 2686–2181 BCE) produced some of Egypt's most enduring achievements — including the Great Pyramid of Giza, still standing after 4,500 years. This room explores the monuments, objects and ideas of Egypt's most architecturally ambitious era.</p>
+            <a class="vm-room-link btn btn-gold" href="timeline.html">Explore the Old Kingdom →</a>
+          </div>
+          <div class="vm-pyramid-feature">
+            <div class="vm-pyramid-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Great_Pyramid_of_Giza_-_Pyramid_of_Khufu.jpg')" role="img" aria-label="Great Pyramid of Giza"></div>
+            <div class="vm-pyramid-info">
+              <h3>The Great Pyramid of Khufu</h3>
+              <p class="vm-pyramid-date">c. 2560 BCE · Old Kingdom</p>
+              <p>The only surviving Wonder of the Ancient World. Built for Pharaoh Khufu of the 4th Dynasty, the Great Pyramid stands 146 metres tall and is constructed from approximately 2.3 million stone blocks.</p>
+              <div class="vm-pyramid-facts">
+                <div class="vm-pf">
+                  <strong>146 m</strong>
+                  <span>Original height</span>
+                </div>
+                <div class="vm-pf">
+                  <strong>2.3M</strong>
+                  <span>Stone blocks</span>
+                </div>
+                <div class="vm-pf">
+                  <strong>20 yrs</strong>
+                  <span>Est. construction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── GODS & BELIEFS ── -->
+      <div class="vm-room" id="room-gods" role="region" aria-label="Room 03: Gods and Beliefs" hidden>
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1742496462387-a7bafd35cc0d?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Room 03</div>
+            <h2>Gods & Beliefs</h2>
+            <p>Ancient Egyptians worshipped over 2,000 deities — each connected with different aspects of life, nature and the cosmos.</p>
+          </div>
+        </div>
+        <div class="vm-room-body">
+          <div class="vm-room-intro">
+            <p>Religion was woven through every aspect of ancient Egyptian life. Gods were present in the floods of the Nile, the movement of the sun, the harvest, birth and death. This room introduces some of the most important deities and the objects connected with Egyptian religious practice.</p>
+          </div>
+          <div class="vm-gods-grid">
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Ra, god of the sun">
+              <div class="vm-god-icon" aria-hidden="true">𓇳</div>
+              <h4>Ra</h4>
+              <p>God of the sun — the most powerful deity, believed to travel across the sky each day in his solar boat.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Osiris, god of the afterlife">
+              <div class="vm-god-icon" aria-hidden="true">𓊹</div>
+              <h4>Osiris</h4>
+              <p>God of the afterlife and resurrection. Killed by his brother Seth, he became the ruler and judge of the dead.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Isis, goddess of magic">
+              <div class="vm-god-icon" aria-hidden="true">𓂀</div>
+              <h4>Isis</h4>
+              <p>Goddess of magic, motherhood and healing. Wife of Osiris and mother of Horus — one of Egypt's most important deities.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Horus, god of the sky">
+              <div class="vm-god-icon" aria-hidden="true">𓅃</div>
+              <h4>Horus</h4>
+              <p>God of the sky and kingship. Living pharaohs were considered the earthly manifestation of Horus.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Anubis, god of mummification">
+              <div class="vm-god-icon" aria-hidden="true">𓁢</div>
+              <h4>Anubis</h4>
+              <p>God of mummification and the dead. Depicted as a jackal or jackal-headed figure, he guided souls to the afterlife.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+            <div class="vm-god-card" tabindex="0" role="button" aria-label="Learn about Hathor, goddess of love">
+              <div class="vm-god-icon" aria-hidden="true">𓄞</div>
+              <h4>Hathor</h4>
+              <p>Goddess of love, music and fertility. Depicted with cow horns and a sun disk, she was one of Egypt's most beloved deities.</p>
+              <a class="vm-god-link" href="collection.html?category=religious">Explore →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ROYAL EGYPT (FEATURED) ── -->
+      <div class="vm-room" id="room-royal" role="region" aria-label="Room 04: Royal Egypt — Featured Room" hidden>
+        <div class="vm-room-hero royal-hero" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/3/35/Mask_of_Tutankhamun_in_2025.jpg')">
+          <div class="vm-room-hero-overlay royal-overlay"></div>
+          <div class="vm-room-hero-content">
+            <span class="vm-featured-badge" aria-label="Featured room">Featured Room</span>
+            <div class="vm-room-eyebrow">Room 04</div>
+            <h2>Royal Egypt</h2>
+            <p>The pharaohs — rulers who were kings, gods and protectors of the Egyptian state.</p>
+          </div>
+        </div>
+
+        <div class="vm-room-body">
+
+          <!-- Pharaoh showcase -->
+          <div class="vm-pharaoh-showcase">
+            <div class="vm-ps-selector" role="tablist" aria-label="Select a pharaoh">
+              <button class="vm-ps-btn active" data-pharaoh="tutankhamun" role="tab" aria-selected="true">Tutankhamun</button>
+              <button class="vm-ps-btn" data-pharaoh="hatshepsut" role="tab" aria-selected="false">Hatshepsut</button>
+              <button class="vm-ps-btn" data-pharaoh="ramesses" role="tab" aria-selected="false">Ramesses II</button>
+              <button class="vm-ps-btn" data-pharaoh="nefertiti" role="tab" aria-selected="false">Nefertiti</button>
+              <button class="vm-ps-btn" data-pharaoh="cleopatra" role="tab" aria-selected="false">Cleopatra VII</button>
+            </div>
+
+            <div class="vm-ps-display" id="vmPharaohDisplay" aria-live="polite">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <!-- Featured artifact with hotspots -->
+          <div class="vm-hotspot-exhibit">
+            <div class="vm-hotspot-header">
+              <div class="vm-room-eyebrow">Interactive Artifact</div>
+              <h3>Golden Mask of Tutankhamun</h3>
+              <p>c. 1323 BCE · New Kingdom · Egyptian Museum, Cairo</p>
+            </div>
+            <div class="vm-hotspot-stage">
+              <div class="vm-hotspot-artifact" role="img" aria-label="Golden mask of Tutankhamun with interactive hotspots">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/35/Mask_of_Tutankhamun_in_2025.jpg"
+                  alt="Golden mask of Tutankhamun"
+                  loading="lazy"
+                >
+                <!-- Hotspots -->
+                <button class="vm-hs-point" style="top:12%;left:48%" data-hs="crown" aria-label="Learn about the royal crown">
+                  <span class="vm-hs-pulse" aria-hidden="true"></span>
+                </button>
+                <button class="vm-hs-point" style="top:28%;left:30%" data-hs="striping" aria-label="Learn about the nemes headdress striping">
+                  <span class="vm-hs-pulse" aria-hidden="true"></span>
+                </button>
+                <button class="vm-hs-point" style="top:42%;left:50%" data-hs="eyes" aria-label="Learn about the eyes">
+                  <span class="vm-hs-pulse" aria-hidden="true"></span>
+                </button>
+                <button class="vm-hs-point" style="top:58%;left:44%" data-hs="beard" aria-label="Learn about the ceremonial beard">
+                  <span class="vm-hs-pulse" aria-hidden="true"></span>
+                </button>
+                <button class="vm-hs-point" style="top:70%;left:35%" data-hs="collar" aria-label="Learn about the broad collar">
+                  <span class="vm-hs-pulse" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="vm-hs-panel" id="vmHsPanel" aria-live="polite">
+                <div class="vm-hs-default">
+                  <span class="vm-hs-default-icon" aria-hidden="true">●</span>
+                  <p>Click the glowing points on the mask to discover details about this extraordinary object.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="vm-four-dimensions">
+              <div class="vm-4d-item">
+                <span class="vm-4d-icon" aria-hidden="true">𓂀</span>
+                <strong>Object</strong>
+                <p>Golden death mask — one of the finest examples of ancient Egyptian goldwork</p>
+              </div>
+              <button class="vm-4d-item vm-4d-link" id="vm4dPerson" aria-label="See related pharaohs">
+                <span class="vm-4d-icon" aria-hidden="true">𓋡</span>
+                <strong>Person</strong>
+                <p>Tutankhamun — pharaoh of the 18th Dynasty, who died aged approximately 19</p>
+                <span class="vm-4d-related">Related pharaohs ↑</span>
+              </button>
+              <button class="vm-4d-item vm-4d-link" id="vm4dPlace" aria-label="Locate the Valley of the Kings on the museum map">
+                <span class="vm-4d-icon" aria-hidden="true">𓉢</span>
+                <strong>Place</strong>
+                <p>Valley of the Kings, Thebes — discovered in tomb KV62 in 1922</p>
+                <span class="vm-4d-related">View on map ⊞</span>
+              </button>
+              <div class="vm-4d-item">
+                <span class="vm-4d-icon" aria-hidden="true">𓏏</span>
+                <strong>Time</strong>
+                <p>New Kingdom, c. 1323 BCE — over 3,300 years ago</p>
+              </div>
+            </div>
+
+            <!-- Related figures — same connected-museum logic as the four dimensions above -->
+            <div class="vm-related-figures">
+              <span class="vm-related-label">Related figures in this room</span>
+              <div class="vm-related-chips">
+                <button class="vm-related-chip" data-pharaoh="hatshepsut">Hatshepsut</button>
+                <button class="vm-related-chip" data-pharaoh="ramesses">Ramesses II</button>
+                <button class="vm-related-chip" data-pharaoh="nefertiti">Nefertiti</button>
+                <button class="vm-related-chip" data-pharaoh="cleopatra">Cleopatra VII</button>
+              </div>
+            </div>
+
+            <div class="vm-hs-cta">
+              <a class="btn btn-gold" href="collection.html?category=royal">Explore Royal Collection →</a>
+              <button class="vm-save-btn" id="vmSaveMask" aria-label="Save this artifact to My Journey">
+                <span aria-hidden="true">◈</span> Save to My Journey
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── LIFE ON THE NILE ── -->
+      <div class="vm-room" id="room-nile" role="region" aria-label="Room 05: Life on the Nile" hidden>
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Room 05</div>
+            <h2>Life on the Nile</h2>
+            <p>A kingdom was built by more than its rulers — discover the lives of ordinary Egyptians.</p>
+          </div>
+        </div>
+        <div class="vm-room-body">
+          <div class="vm-room-intro">
+            <p>Behind the temples and tombs, millions of people lived along the Nile — farming its floodplains, crafting its objects, raising families and building the civilisation that still fascinates us today. This room honours those whose names were rarely recorded.</p>
+          </div>
+          <div class="vm-nile-journey" id="vmNileJourney">
+            <div class="vm-al-dots" role="tablist" aria-label="A day on the Nile">
+              <button class="vm-al-dot active" data-step="0" role="tab" aria-selected="true" aria-label="Farming">01</button>
+              <button class="vm-al-dot" data-step="1" role="tab" aria-selected="false" aria-label="Crafts">02</button>
+              <button class="vm-al-dot" data-step="2" role="tab" aria-selected="false" aria-label="Writing">03</button>
+              <button class="vm-al-dot" data-step="3" role="tab" aria-selected="false" aria-label="Fishing">04</button>
+              <button class="vm-al-dot" data-step="4" role="tab" aria-selected="false" aria-label="Communities">05</button>
+              <button class="vm-al-dot" data-step="5" role="tab" aria-selected="false" aria-label="Trade">06</button>
+            </div>
+            <div class="vm-al-stage">
+              <div class="vm-al-step active" data-step="0">
+                <span class="vm-al-tag">A Day on the Nile · 01 of 06</span>
+                <h4>Farming</h4>
+                <p>The annual Nile flood deposited fertile silt, enabling Egyptian farmers to grow wheat, barley and flax year after year.</p>
+                <button class="vm-al-next">Next: Crafts →</button>
+              </div>
+              <div class="vm-al-step" data-step="1" hidden>
+                <span class="vm-al-tag">A Day on the Nile · 02 of 06</span>
+                <h4>Crafts</h4>
+                <p>Potters, weavers, stonemasons and metalworkers produced both everyday objects and treasures for the royal court.</p>
+                <button class="vm-al-next">Next: Writing →</button>
+              </div>
+              <div class="vm-al-step" data-step="2" hidden>
+                <span class="vm-al-tag">A Day on the Nile · 03 of 06</span>
+                <h4>Writing</h4>
+                <p>Scribes were among the most respected members of Egyptian society — their ability to read and write gave them access to power.</p>
+                <button class="vm-al-next">Next: Fishing →</button>
+              </div>
+              <div class="vm-al-step" data-step="3" hidden>
+                <span class="vm-al-tag">A Day on the Nile · 04 of 06</span>
+                <h4>Fishing</h4>
+                <p>The Nile provided fish as a vital food source for communities from the Delta to Upper Egypt throughout the year.</p>
+                <button class="vm-al-next">Next: Communities →</button>
+              </div>
+              <div class="vm-al-step" data-step="4" hidden>
+                <span class="vm-al-tag">A Day on the Nile · 05 of 06</span>
+                <h4>Communities</h4>
+                <p>People lived in villages and towns connected by the river — the Nile was Egypt's highway, marketplace and lifeline.</p>
+                <button class="vm-al-next">Next: Trade →</button>
+              </div>
+              <div class="vm-al-step" data-step="5" hidden>
+                <span class="vm-al-tag">A Day on the Nile · 06 of 06</span>
+                <h4>Trade</h4>
+                <p>Goods moved across Egypt and beyond — connecting communities and supplying the royal court with materials from across the ancient world.</p>
+                <button class="vm-al-next vm-al-restart">↺ Start the day again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── THE AFTERLIFE ── -->
+      <div class="vm-room" id="room-afterlife" role="region" aria-label="Room 06: The Afterlife" hidden>
+        <div class="vm-room-hero" style="background-image:url('https://images.unsplash.com/photo-1574788175517-f06058bae147?auto=format&fit=crop&w=2200&q=85')">
+          <div class="vm-room-hero-overlay"></div>
+          <div class="vm-room-hero-content">
+            <div class="vm-room-eyebrow">Room 06</div>
+            <h2>The Afterlife</h2>
+            <p>Ancient Egyptians believed death was not an ending — but a passage to another existence.</p>
+          </div>
+        </div>
+        <div class="vm-room-body">
+          <div class="vm-room-intro">
+            <p>Egyptian beliefs about death and the afterlife were among the most elaborate in the ancient world. This room explores the traditions, objects and beliefs surrounding death — from mummification to the Book of the Dead — approached with educational respect.</p>
+            <a class="vm-room-link btn btn-gold" href="collection.html?category=funerary">Explore Funerary Collection →</a>
+          </div>
+          <div class="vm-al-journey" id="vmAlJourney">
+            <div class="vm-al-dots" role="tablist" aria-label="Afterlife journey chapters">
+              <button class="vm-al-dot active" data-step="0" role="tab" aria-selected="true" aria-label="Chapter 1: Mummification">01</button>
+              <button class="vm-al-dot" data-step="1" role="tab" aria-selected="false" aria-label="Chapter 2: The Book of the Dead">02</button>
+              <button class="vm-al-dot" data-step="2" role="tab" aria-selected="false" aria-label="Chapter 3: The Weighing of the Heart">03</button>
+              <button class="vm-al-dot" data-step="3" role="tab" aria-selected="false" aria-label="Chapter 4: The Field of Reeds">04</button>
+            </div>
+
+            <div class="vm-al-stage">
+              <div class="vm-al-step active" data-step="0">
+                <span class="vm-al-tag">Chapter 01 of 04</span>
+                <h4>Mummification</h4>
+                <p>The body was preserved through a 70-day process involving the removal of organs, drying with natron salt, and careful wrapping in linen bandages.</p>
+                <button class="vm-al-next">Continue the journey →</button>
+              </div>
+              <div class="vm-al-step" data-step="1" hidden>
+                <span class="vm-al-tag">Chapter 02 of 04</span>
+                <h4>The Book of the Dead</h4>
+                <p>A collection of spells to help the deceased navigate the dangers of the underworld — placed in the tomb to guide the dead on their journey.</p>
+                <button class="vm-al-next">Continue the journey →</button>
+              </div>
+              <div class="vm-al-step" data-step="2" hidden>
+                <span class="vm-al-tag">Chapter 03 of 04</span>
+                <h4>The Weighing of the Heart</h4>
+                <p>In the Hall of Two Truths, the deceased's heart was weighed against the feather of Ma'at. A light heart meant entrance to the Field of Reeds — the Egyptian paradise.</p>
+                <button class="vm-al-next">Continue the journey →</button>
+              </div>
+              <div class="vm-al-step" data-step="3" hidden>
+                <span class="vm-al-tag">Chapter 04 of 04</span>
+                <h4>The Field of Reeds</h4>
+                <p>The ideal afterlife — a perfect reflection of Egyptian life along the Nile, where the deceased could live in peace, tend fields and be reunited with loved ones.</p>
+                <button class="vm-al-next vm-al-restart">↺ Begin the journey again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LIFE ON THE NILE (relocated below; keep flow before closing main) -->
+    </main>
+
+    <!-- MUSEUM MAP OVERLAY -->
+    <div class="vm-overlay" id="vmMapOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="map-title">
+      <div class="vm-overlay-panel">
+        <div class="vm-overlay-header">
+          <h3 id="map-title">Museum Map</h3>
+          <button class="vm-overlay-close" id="vmMapClose" aria-label="Close museum map">✕</button>
+        </div>
+        <div class="vm-map">
+          <div class="vm-map-node" data-room="lobby">
+            <span class="vm-map-num" aria-hidden="true">•</span>
+            <strong>Lobby</strong>
+          </div>
+          <div class="vm-map-line" aria-hidden="true"></div>
+          <div class="vm-map-row">
+            <div class="vm-map-node" data-room="origins"><span class="vm-map-num" aria-hidden="true">01</span><strong>Origins</strong><small>Room 01</small></div>
+            <div class="vm-map-node" data-room="pyramids"><span class="vm-map-num" aria-hidden="true">02</span><strong>Pyramids</strong><small>Room 02</small></div>
+            <div class="vm-map-node" data-room="gods"><span class="vm-map-num" aria-hidden="true">03</span><strong>Gods</strong><small>Room 03</small></div>
+          </div>
+          <div class="vm-map-line" aria-hidden="true"></div>
+          <div class="vm-map-row">
+            <div class="vm-map-node featured" data-room="royal"><span class="vm-map-num" aria-hidden="true">04</span><strong>Royal Egypt</strong><small>Room 04 ★</small></div>
+            <div class="vm-map-node" data-room="nile"><span class="vm-map-num" aria-hidden="true">05</span><strong>The Nile</strong><small>Room 05</small></div>
+            <div class="vm-map-node" data-room="afterlife"><span class="vm-map-num" aria-hidden="true">06</span><strong>Afterlife</strong><small>Room 06</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- GUIDED TOUR OVERLAY -->
+    <div class="vm-overlay" id="vmGuideOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="guide-title">
+      <div class="vm-overlay-panel">
+        <div class="vm-overlay-header">
+          <h3 id="guide-title">Take a Guided Tour</h3>
+          <button class="vm-overlay-close" id="vmGuideClose" aria-label="Close guided tour">✕</button>
+        </div>
+        <div class="vm-guide-tours">
+          <button class="vm-tour-option" data-tour="highlights" aria-label="Start highlights tour, 10 minutes">
+            <span class="vm-tour-time">10 min</span>
+            <h4>Highlights of Egypt</h4>
+            <p>The essential objects, rulers and ideas from 5,000 years of Egyptian history.</p>
+          </button>
+          <button class="vm-tour-option" data-tour="pharaohs" aria-label="Start pharaohs and kings tour, 20 minutes">
+            <span class="vm-tour-time">20 min</span>
+            <h4>Pharaohs & Kings</h4>
+            <p>Meet the rulers who shaped Egypt — from Narmer to Cleopatra.</p>
+          </button>
+          <button class="vm-tour-option" data-tour="gods" aria-label="Start gods and beliefs tour, 15 minutes">
+            <span class="vm-tour-time">15 min</span>
+            <h4>Gods & Beliefs</h4>
+            <p>Explore the religious world of ancient Egypt — over 2,000 gods and the rituals that connected them to daily life.</p>
+          </button>
+          <button class="vm-tour-option" data-tour="everyday" aria-label="Start everyday life tour, 10 minutes">
+            <span class="vm-tour-time">10 min</span>
+            <h4>Everyday Life</h4>
+            <p>Discover the lives of ordinary Egyptians — beyond the pharaohs and pyramids.</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY JOURNEY OVERLAY -->
+    <div class="vm-overlay" id="vmJourneyOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="journey-title">
+      <div class="vm-overlay-panel">
+        <div class="vm-overlay-header">
+          <h3 id="journey-title">My Journey</h3>
+          <button class="vm-overlay-close" id="vmJourneyClose" aria-label="Close my journey">✕</button>
+        </div>
+        <div class="vm-journey-content" id="vmJourneyContent">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT DETAIL PANEL -->
+    <div class="vm-artifact-panel" id="vmArtifactPanel" hidden role="dialog" aria-modal="true" aria-labelledby="artifact-panel-title">
+      <div class="vm-ap-inner">
+        <button class="vm-ap-close" id="vmApClose" aria-label="Close artifact detail">✕</button>
+        <div class="vm-ap-content" id="vmApContent">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vm-shell -->
+
+  <script src="js/virtual-museum.js"></script>
+</body>
+</html>
