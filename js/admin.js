@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api/artifacts';
+const API = 'https://cibernex-api.onrender.com/api/artifacts';
     let artifacts = [];
 
     // ---- Header ----

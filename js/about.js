@@ -44,7 +44,7 @@ sections.forEach(s => observer.observe(s));
 /* ------ Live artifact count ------ */
 const API_BASE = (() => {
   const h = window.location.hostname;
-  return (h === 'localhost' || h === '127.0.0.1') ? 'http://localhost:3000' : '';
+  return (h === 'localhost' || h === '127.0.0.1') ? 'https://cibernex-api.onrender.com' : '';
 })();
 
 async function loadArtifactCount() {
