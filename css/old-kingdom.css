@@ -1,0 +1,430 @@
+/* ============ OLD KINGDOM PAGE ============ */
+
+/* ---- Hero ---- */
+.ok-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(180deg, rgba(23,19,15,.35) 0%, rgba(23,19,15,.55) 55%, var(--cream) 100%),
+    url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+  padding: 6rem 1rem 4rem;
+}
+.ok-hero-inner { max-width: 760px; }
+.ok-hero-inner h1 {
+  font-family: Cinzel, serif;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.1;
+  margin: .8rem 0 1rem;
+  text-shadow: 0 4px 30px rgba(0,0,0,.4);
+}
+.ok-hero-inner .eyebrow2 {
+  font-family: Cinzel, serif;
+  font-size: 1.1rem;
+  letter-spacing: .12em;
+  color: var(--gold-light);
+  margin-bottom: .6rem;
+}
+.ok-hero-inner p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.85);
+  max-width: 620px;
+  margin: 0 auto 1.6rem;
+}
+
+/* ---- Quick facts ---- */
+.qf-section { background: var(--ink); padding: 3.5rem 1rem; }
+.qf-header { text-align: center; margin-bottom: 2.2rem; }
+.qf-header .section-kicker { color: var(--gold-light); }
+.qf-header h2 { color: white; font-family: Cinzel, serif; }
+.qf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.qf-item {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: transform .25s ease, background .25s ease;
+}
+.qf-item:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); }
+.qf-item span { font-size: 1.7rem; display: block; margin-bottom: .5rem; }
+.qf-item p { font-size: .82rem; color: rgba(255,255,255,.75); margin: 0; line-height: 1.4; }
+
+/* ---- Generic page sections ---- */
+.ok-section { padding: 5rem 1rem; background: var(--cream); }
+.ok-section.dark { background: var(--ink); color: white; }
+.ok-section.dark .section-kicker { color: var(--gold-light); }
+.ok-section.dark h2 { color: white; }
+.ok-section.dark p  { color: rgba(255,255,255,.72); }
+.ok-section.sand { background: #e8ddc6; }
+
+.ok-visual-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.ok-visual-section.reverse { direction: rtl; }
+.ok-visual-section.reverse > * { direction: ltr; }
+.ok-visual-text h2 { margin: .5rem 0 1rem; }
+.ok-visual-text p  { line-height: 1.75; margin-bottom: 1rem; }
+.ok-visual-image {
+  height: 360px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.image-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.65), transparent);
+  color: white; font-size: .78rem; padding: 1.4rem 1rem .8rem;
+  border-radius: 0 0 18px 18px;
+}
+
+/* ---- Flow diagram (reused for many "process" visuals) ---- */
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 2.5rem auto;
+  max-width: 480px;
+}
+.flow-node {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.4rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.ok-section.dark .flow-node { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+.flow-node strong { font-family: Cinzel, serif; font-size: .95rem; display: block; }
+.flow-node span.flow-sub { font-size: .78rem; color: var(--muted); }
+.ok-section.dark .flow-node span.flow-sub { color: rgba(255,255,255,.6); }
+.flow-node.milestone { border: 1px solid var(--gold); background: rgba(214,168,79,.1); }
+.flow-node.highlight { border: 1px solid var(--gold); background: rgba(214,168,79,.14); }
+.flow-arrow {
+  font-size: 1.3rem;
+  color: var(--gold);
+  line-height: 2.2rem;
+}
+
+/* Horizontal flow variant (for Sneferu's pyramids etc.) */
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  margin: 2.5rem 0;
+}
+.flow-h .flow-node { width: auto; min-width: 150px; flex: 1 1 150px; max-width: 220px; }
+.flow-h .flow-arrow { flex: 0 0 auto; }
+
+/* ---- Pharaoh section ---- */
+.pharaoh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.pharaoh-roles { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+.pharaoh-roles li {
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .92rem; color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px; padding: .8rem 1rem;
+}
+.pharaoh-roles li::before { content: "𓋹"; color: var(--gold-light); font-size: 1.1rem; }
+.maat-block {
+  background: rgba(214,168,79,.1);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 1.4rem 1.6rem;
+  margin-top: 1.5rem;
+}
+.maat-statement {
+  font-family: Cinzel, serif;
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: .8rem;
+  line-height: 1.5;
+}
+.maat-block p { color: rgba(255,255,255,.75); font-size: .9rem; line-height: 1.7; margin: 0; }
+
+/* ---- Pyramid complex breakdown ---- */
+.complex-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  margin: 2rem auto 0;
+}
+.complex-root {
+  background: var(--gold);
+  color: var(--ink);
+  font-family: Cinzel, serif;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: .9rem 1.6rem;
+  margin-bottom: .3rem;
+}
+.complex-branches { width: 100%; display: flex; flex-direction: column; gap: .6rem; margin-top: .6rem; }
+.complex-branch {
+  display: flex; align-items: baseline; gap: .6rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .75rem 1.1rem;
+  font-size: .88rem;
+}
+.complex-branch::before { content: "└─"; color: var(--gold); font-family: monospace; }
+.complex-branch strong { font-family: Cinzel, serif; font-size: .85rem; }
+.complex-branch p { margin: 0; color: var(--muted); font-size: .8rem; }
+
+/* ---- Icon grid ---- */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+}
+.icon-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.6rem;
+  transition: transform .25s ease;
+}
+.icon-card:hover { transform: translateY(-4px); }
+.ok-section.dark .icon-card { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+.icon-card .ic-icon { font-size: 2rem; display: block; margin-bottom: .7rem; }
+.icon-card h3 { font-family: Cinzel, serif; font-size: 1rem; margin-bottom: .5rem; }
+.icon-card p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin: 0; }
+.ok-section.dark .icon-card p { color: rgba(255,255,255,.65); }
+
+/* ---- Giza pyramid cards ---- */
+.giza-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+.giza-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.giza-image { height: 170px; background-size: cover; background-position: center; }
+.giza-body { padding: 1.2rem 1.3rem; }
+.giza-body .giza-tag {
+  display: inline-block;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+.giza-body h3 { font-family: Cinzel, serif; font-size: 1rem; margin-bottom: .5rem; }
+.giza-body p { font-size: .83rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+/* ---- Kings / Pharaoh cards ---- */
+.kings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem;
+}
+.king-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.5rem 1.3rem;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: default;
+}
+.king-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.king-glyph { font-size: 1.8rem; color: var(--gold); margin-bottom: .6rem; }
+.king-card h3 { font-family: Cinzel, serif; font-size: 1rem; margin-bottom: .5rem; }
+.king-card p { font-size: .8rem; color: var(--muted); line-height: 1.55; margin: 0; }
+
+/* ---- World connections ---- */
+.world-materials { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.5rem; }
+.world-item { display: flex; align-items: flex-start; gap: .8rem; }
+.world-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+  margin-top: .45rem; flex-shrink: 0;
+}
+.world-item strong { display: block; color: var(--gold-light); font-size: .88rem; margin-bottom: .2rem; }
+.world-item p { font-size: .82rem; margin: 0; line-height: 1.5; color: rgba(255,255,255,.7); }
+.world-chain {
+  margin-top: 1.6rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem;
+  font-size: .8rem; color: var(--gold-light);
+}
+.world-chain span.wc-arrow { color: rgba(255,255,255,.4); }
+
+/* ---- Evidence grid ---- */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.3rem;
+}
+.evidence-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform .25s ease;
+}
+.evidence-card:hover { transform: translateY(-4px); }
+.evidence-icon { font-size: 2rem; margin-bottom: .7rem; display: block; }
+.evidence-card h3 { font-family: Cinzel, serif; font-size: .95rem; margin-bottom: .4rem; }
+.evidence-card p { font-size: .82rem; color: var(--muted); line-height: 1.55; margin: 0; }
+
+/* ---- Artifact gallery ---- */
+.artifact-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.4rem;
+}
+.ag-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease;
+}
+.ag-card:hover { transform: translateY(-5px); }
+.ag-image { height: 150px; background-size: cover; background-position: center; transition: transform .4s ease; overflow: hidden; }
+.ag-card:hover .ag-image { transform: scale(1.04); }
+.ag-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+.ag-tag {
+  display: inline-block;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.ag-body h3 { font-family: Cinzel, serif; font-size: .92rem; margin-bottom: .5rem; }
+.ag-body p { font-size: .8rem; color: var(--muted); line-height: 1.55; flex: 1; }
+.ag-link { margin-top: .8rem; font-size: .78rem; font-weight: 700; color: var(--gold); }
+.ag-link:hover { color: var(--ink); }
+
+/* ---- Construction process strip ---- */
+.process-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.process-step {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  min-width: 130px;
+  flex: 1 1 130px;
+  max-width: 170px;
+}
+.process-step .ps-num { color: var(--gold); font-family: Cinzel, serif; font-weight: 700; font-size: .78rem; display: block; margin-bottom: .3rem; }
+.process-step strong { font-size: .83rem; display: block; }
+.process-note {
+  background: rgba(214,168,79,.1);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.3rem;
+  border-radius: 0 10px 10px 0;
+  font-size: .87rem;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---- Pyramid texts callout ---- */
+.texts-callout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hieroglyph-block {
+  font-family: Cinzel, serif;
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--gold-light);
+  letter-spacing: .3em;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 3rem 1rem;
+}
+
+/* ---- End of kingdom note ---- */
+.end-note {
+  background: rgba(255,255,255,.06);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.4rem;
+  border-radius: 0 12px 12px 0;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.78);
+  margin: 1.5rem 0 2.5rem;
+}
+
+/* ---- Continue grid ---- */
+.ok-continue { background: #e8ddc6; padding: 5rem 1rem; }
+.ok-continue .section-kicker { color: #8f6929; }
+.continue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+.continue-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.continue-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.continue-icon { font-size: 2rem; margin-bottom: 1rem; }
+.continue-card h3 { font-family: Cinzel, serif; font-size: 1.05rem; margin-bottom: .6rem; }
+.continue-card p { font-size: .85rem; color: var(--muted); line-height: 1.65; flex: 1; }
+.continue-link { display: inline-block; margin-top: 1rem; color: #8f6929; font-size: .85rem; font-weight: 700; }
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .ok-visual-section, .pharaoh-grid, .texts-callout {
+    grid-template-columns: 1fr;
+  }
+  .ok-visual-section.reverse { direction: ltr; }
+  .ok-visual-image { height: 260px; }
+  .flow-h { flex-direction: column; }
+  .flow-h .flow-arrow { transform: rotate(90deg); }
+}
