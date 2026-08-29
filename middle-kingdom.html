@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Middle Kingdom — how Egypt was reunified, governed, and flourished through literature, art and trade with Nubia.">
+  <meta name="description" content="The Middle Kingdom — Egypt reunified. Explore the pharaohs, culture, art, literature and everyday life of Egypt's golden age of cultural renewal, c. 2055–1650 BCE.">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
-  <title>The Middle Kingdom | Egypt's Digital Museum</title>
+  <title>Middle Kingdom | Egypt's Digital Museum</title>
   <link rel="stylesheet" href="css/common.css">
   <script src="js/theme.js"></script>
   <link rel="stylesheet" href="css/middle-kingdom.css">
@@ -16,18 +16,19 @@
 
   <header id="header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum">
+      <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum logo">
+        <span class="brand-name">Egypt's Digital Museum</span>
       </a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="timeline.html">Timeline</a>
+        <a href="timeline.html" class="active">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#tour">Virtual Museum</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <span class="icon-moon">🌙</span>
-          <span class="icon-sun">☀️</span>
+        <a href="virtual-museum.html">Virtual Museum</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
         </button>
       </div>
     </nav>
@@ -36,504 +37,346 @@
   <main id="main">
 
     <!-- 1. HERO -->
-    <section class="mk-hero">
+    <section class="mk-hero" aria-label="Middle Kingdom hero">
       <div class="mk-hero-inner">
         <div class="eyebrow">c. 2055–1650 BCE</div>
-        <h1>Egypt<br>Reunited</h1>
-        <p>After a period of political division, Egypt was reunified. Powerful kings strengthened the central government, while art, literature, architecture and trade flourished.</p>
-        <a class="btn btn-gold" href="#facts">Begin the Journey ↓</a>
+        <h1>The Middle Kingdom<br><span class="mk-hero-gold">A Golden Age of Renewal</span></h1>
+        <p>After a period of political fragmentation, Egypt was reunified under a new dynasty. Explore the pharaohs, culture, literature, art and everyday life of one of Egypt's most celebrated eras.</p>
+        <a class="btn btn-gold" href="#quick-facts">Enter the Middle Kingdom →</a>
       </div>
-      <div class="scroll-cue">Scroll to explore<span></span></div>
+      <div class="scroll-cue" aria-hidden="true">Scroll to explore<span></span></div>
     </section>
 
     <!-- SECTION NAV -->
     <nav class="section-nav" aria-label="Page sections">
       <div class="section-nav-inner">
-        <a class="snav-btn" href="#facts">Quick Facts</a>
+        <a class="snav-btn" href="#quick-facts">Key Facts</a>
         <a class="snav-btn" href="#reunification">Reunification</a>
-        <a class="snav-btn" href="#kings">Great Kings</a>
-        <a class="snav-btn" href="#government">Government</a>
-        <a class="snav-btn" href="#nile">Nile</a>
-        <a class="snav-btn" href="#nubia">Nubia</a>
-        <a class="snav-btn" href="#fortresses">Fortresses</a>
+        <a class="snav-btn" href="#pharaohs">Pharaohs</a>
+        <a class="snav-btn" href="#kingship">Kingship</a>
+        <a class="snav-btn" href="#administration">Administration</a>
         <a class="snav-btn" href="#literature">Literature</a>
-        <a class="snav-btn" href="#art">Art</a>
-        <a class="snav-btn" href="#artifacts">Artifacts</a>
+        <a class="snav-btn" href="#art">Art & Sculpture</a>
+        <a class="snav-btn" href="#religion">Religion</a>
+        <a class="snav-btn" href="#nubia">Nubia</a>
         <a class="snav-btn" href="#life">Daily Life</a>
-        <a class="snav-btn" href="#legacy">Legacy</a>
+        <a class="snav-btn" href="#trade">Trade</a>
+        <a class="snav-btn" href="#women">Women</a>
+        <a class="snav-btn" href="#evidence">Evidence</a>
+        <a class="snav-btn" href="#gallery">Gallery</a>
+        <a class="snav-btn" href="#end">The End</a>
       </div>
     </nav>
 
     <!-- 2. QUICK FACTS -->
-    <section class="key-facts-section" id="facts">
+    <section class="mk-facts-section" id="quick-facts" aria-labelledby="qf-heading">
       <div class="container">
-        <div class="key-facts-header">
-          <div class="section-kicker">The Middle Kingdom</div>
-          <h2>c. 2055–1650 BCE</h2>
+        <div class="mk-facts-header">
+          <div class="section-kicker">Middle Kingdom</div>
+          <h2 id="qf-heading">c. 2055–1650 BCE · 11th–13th Dynasties</h2>
         </div>
-        <div class="key-facts-grid">
-          <div class="key-fact">
-            <span class="kf-icon">👑</span>
-            <strong>Reunification of Egypt</strong>
-            <p>A divided land brought back under one crown</p>
+        <div class="mk-facts-grid">
+          <div class="mk-fact">
+            <span aria-hidden="true">🔁</span>
+            <p>Reunification of Egypt</p>
           </div>
-          <div class="key-fact">
-            <span class="kf-icon">🏛️</span>
-            <strong>Strong Central Government</strong>
-            <p>Officials and provinces answering to the king</p>
+          <div class="mk-fact">
+            <span aria-hidden="true">📖</span>
+            <p>Golden age of literature</p>
           </div>
-          <div class="key-fact">
-            <span class="kf-icon">📜</span>
-            <strong>Literature & Writing</strong>
-            <p>A golden age of Egyptian storytelling</p>
+          <div class="mk-fact">
+            <span aria-hidden="true">🎨</span>
+            <p>Artistic refinement</p>
           </div>
-          <div class="key-fact">
-            <span class="kf-icon">🎨</span>
-            <strong>Artistic Development</strong>
-            <p>More individual, expressive royal imagery</p>
+          <div class="mk-fact">
+            <span aria-hidden="true">🌍</span>
+            <p>Expansion into Nubia</p>
           </div>
-          <div class="key-fact">
-            <span class="kf-icon">🌍</span>
-            <strong>Trade & Expansion</strong>
-            <p>New connections with Nubia and the Levant</p>
+          <div class="mk-fact">
+            <span aria-hidden="true">🌾</span>
+            <p>Agricultural projects</p>
           </div>
-          <div class="key-fact">
-            <span class="kf-icon">⚱️</span>
-            <strong>New Funerary Traditions</strong>
-            <p>The Coffin Texts and changing burial customs</p>
+          <div class="mk-fact">
+            <span aria-hidden="true">🔄</span>
+            <p>Trade networks expand</p>
           </div>
         </div>
-        <p class="key-facts-note">📌 Date ranges vary among scholars. The Middle Kingdom is generally understood as the period from the reunification of Egypt under Mentuhotep II to the political fragmentation that preceded the Second Intermediate Period.</p>
+        <p class="mk-facts-note">📌 Date ranges vary among scholars. The Middle Kingdom is traditionally defined as the 11th to 13th Dynasties.</p>
       </div>
     </section>
 
-    <!-- 3. FROM FIRST INTERMEDIATE PERIOD TO REUNIFICATION -->
-    <section class="mk-flow-section" id="reunification">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">From Division to Reunification</div>
-          <h2>How Egypt came back together.</h2>
-          <p>After the end of the Old Kingdom, political authority became more divided and regional rulers gained greater power. Eventually, rulers from Thebes helped reunify Egypt, beginning a new period of centralized government.</p>
-        </div>
-
-        <div class="uni-flow">
-          <div class="uni-node start">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">𓊪</span>
-              <strong>Old Kingdom</strong>
-              <p>Age of the pyramids and strong kingship</p>
-            </div>
-          </div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">⚖️</span>
-              <strong>Political & Social Change</strong>
-              <p>Central authority weakens over time</p>
-            </div>
-          </div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">🌾</span>
-              <strong>First Intermediate Period</strong>
-              <p>Regional rulers gain greater independence</p>
-            </div>
-          </div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">🏹</span>
-              <strong>Regional Powers</strong>
-              <p>Rival dynasties rule from Herakleopolis and Thebes</p>
-            </div>
-          </div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node milestone">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">⚔️</span>
-              <strong>Reunification</strong>
-              <p>Thebes prevails and reunites Egypt</p>
-            </div>
-          </div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end">
-            <div class="uni-node-inner">
-              <span class="uni-glyph">♕</span>
-              <strong>Middle Kingdom</strong>
-              <p>A new chapter of centralized government begins</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. MENTUHOTEP II — THE REUNIFIER -->
-    <section class="mk-section" id="mentuhotep">
+    <!-- 3. REUNIFICATION -->
+    <section class="mk-section" id="reunification" aria-labelledby="reuni-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">The Reunifier</div>
-          <h2>Mentuhotep II</h2>
-          <p>Mentuhotep II of Thebes is traditionally credited with reunifying Egypt and establishing the foundation of the Middle Kingdom.</p>
+          <div class="section-kicker">From Fragmentation to Unity</div>
+          <h2 id="reuni-heading">How Egypt came back together.</h2>
+          <p>The Old Kingdom ended with a period of political fragmentation — the First Intermediate Period. The Middle Kingdom begins with the reunification of Egypt under Mentuhotep II of the 11th Dynasty, who brought the country under centralised control once again.</p>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-image" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80')"></div>
-          <div class="feature-body">
-            <div class="feature-eyebrow">Eleventh Dynasty · Thebes</div>
-            <h3>👑 Mentuhotep II</h3>
-            <p>Ruling from Thebes in Upper Egypt, Mentuhotep II gradually extended his authority over rival territories until Egypt was once again a single, unified state. His reign is generally taken to mark the beginning of the Middle Kingdom, and his mortuary temple at Deir el-Bahari became a model for later royal monuments.</p>
-            <div class="feature-terms">
-              <div class="feature-term">
-                <span class="term-word">Thebes</span>
-                <span class="term-def">Southern political center, home of the ruling family that reunified Egypt.</span>
-              </div>
-              <div class="feature-term">
-                <span class="term-word">Reunification</span>
-                <span class="term-def">Egypt brought under centralized rule again after decades of division.</span>
-              </div>
-              <div class="feature-term">
-                <span class="term-word">Middle Kingdom</span>
-                <span class="term-def">A new period of political stability, administration and cultural development.</span>
-              </div>
-            </div>
+        <div class="mk-reuni-flow" aria-label="Path to reunification">
+          <div class="mk-flow-node">
+            <div class="mk-fn-icon" aria-hidden="true">🔺</div>
+            <strong>Old Kingdom</strong>
+            <span>Centralised pyramid-building state</span>
+          </div>
+          <div class="mk-flow-arrow" aria-hidden="true">↓</div>
+          <div class="mk-flow-node fragmented">
+            <div class="mk-fn-icon" aria-hidden="true">⚖️</div>
+            <strong>First Intermediate Period</strong>
+            <span>Political fragmentation and regional power</span>
+          </div>
+          <div class="mk-flow-arrow" aria-hidden="true">↓</div>
+          <div class="mk-flow-node">
+            <div class="mk-fn-icon" aria-hidden="true">👑</div>
+            <strong>Mentuhotep II</strong>
+            <span>11th Dynasty — reunification achieved</span>
+          </div>
+          <div class="mk-flow-arrow" aria-hidden="true">↓</div>
+          <div class="mk-flow-node milestone-node">
+            <div class="mk-fn-icon" aria-hidden="true">🌟</div>
+            <strong>Middle Kingdom</strong>
+            <span>Egypt enters a new golden age</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 5. A STRONGER CENTRAL GOVERNMENT -->
-    <section class="mk-flow-section" id="government">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">A Stronger Central Government</div>
-          <h2>Ruling a reunified Egypt.</h2>
-          <p>Reunification required more than a king on the throne. Middle Kingdom rulers worked to rebuild and strengthen central administration after the political divisions of the First Intermediate Period — reorganizing officials, provinces and record-keeping so royal authority reached every part of the land.</p>
-        </div>
-
-        <div class="uni-flow compact">
-          <div class="uni-node start"><div class="uni-node-inner"><span class="uni-glyph">♕</span><strong>King</strong><p>Source of royal authority</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">🏛️</span><strong>Central Administration</strong><p>Viziers and high officials at court</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">📋</span><strong>Officials & Governors</strong><p>Managing taxation, resources and projects</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">🗺️</span><strong>Provinces</strong><p>Nomes governed on the king's behalf</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end"><div class="uni-node-inner"><span class="uni-glyph">🏘️</span><strong>Local Communities</strong><p>Everyday life across Egypt</p></div></div>
-        </div>
-
-        <div class="mk-callout" style="margin-left:auto;margin-right:auto;text-align:center">
-          <strong>Key Idea</strong>
-          <p>Reunification required more than a king — it required a functioning administration.</p>
+        <div class="mk-reuni-note">
+          <p>Mentuhotep II is often considered one of the most important kings in Egyptian history — the pharaoh who ended the First Intermediate Period and brought Egypt together. His mortuary temple at Deir el-Bahari in Thebes became a major monument of the period.</p>
         </div>
       </div>
     </section>
 
-    <!-- 6. GREAT KINGS OF THE MIDDLE KINGDOM -->
-    <section class="mk-section sand" id="kings">
+    <!-- 4. KEY PHARAOHS -->
+    <section class="mk-section dark" id="pharaohs" aria-labelledby="pharaohs-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">The Great Kings</div>
-          <h2>A few rulers who shaped the age.</h2>
-          <p>Many kings ruled during the Middle Kingdom. These are a few of the most significant. Tap a card to learn more.</p>
+          <div class="section-kicker">Key Pharaohs</div>
+          <h2 id="pharaohs-heading">The rulers who shaped the Middle Kingdom.</h2>
+          <p>Several important pharaohs defined the Middle Kingdom — each contributing to the political, cultural and religious development of Egypt.</p>
         </div>
-        <div class="kings-grid">
+        <div class="mk-pharaohs-grid">
 
-          <details class="king-card">
-            <summary>
-              <span class="king-glyph">👑</span>
-              <h3>Mentuhotep II</h3>
-              <span class="king-title">11th Dynasty</span>
-              <span class="king-toggle"></span>
-            </summary>
-            <div class="king-detail">Reunified Egypt after the First Intermediate Period, establishing Thebes as a center of royal power and beginning the Middle Kingdom.</div>
-          </details>
+          <div class="mk-pharaoh-card featured-pharaoh">
+            <div class="mk-pharaoh-dynasty">11th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">𓂀</div>
+            <h3>Mentuhotep II</h3>
+            <p>The reunifier of Egypt — ended the First Intermediate Period and established the Middle Kingdom. Built a significant mortuary complex at Deir el-Bahari, later echoed by Hatshepsut's temple nearby.</p>
+            <div class="mk-pharaoh-fact">Known from: Deir el-Bahari temple · Royal inscriptions</div>
+          </div>
 
-          <details class="king-card">
-            <summary>
-              <span class="king-glyph">🏹</span>
-              <h3>Amenemhat I</h3>
-              <span class="king-title">12th Dynasty</span>
-              <span class="king-toggle"></span>
-            </summary>
-            <div class="king-detail">Founder of the Twelfth Dynasty, associated with strengthening royal authority and relocating the capital to a new city, Itjtawy.</div>
-          </details>
+          <div class="mk-pharaoh-card">
+            <div class="mk-pharaoh-dynasty">12th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">♕</div>
+            <h3>Amenemhat I</h3>
+            <p>Founded the 12th Dynasty — often seen as the peak of the Middle Kingdom. Moved the capital to Itj-Tawy near the Fayum and introduced new administrative approaches.</p>
+            <div class="mk-pharaoh-fact">Known from: Literary texts · Royal monuments</div>
+          </div>
 
-          <details class="king-card">
-            <summary>
-              <span class="king-glyph">🏗️</span>
-              <h3>Senusret I</h3>
-              <span class="king-title">12th Dynasty</span>
-              <span class="king-toggle"></span>
-            </summary>
-            <div class="king-detail">Known for major building projects across Egypt and the expansion of royal power and influence into Nubia.</div>
-          </details>
+          <div class="mk-pharaoh-card">
+            <div class="mk-pharaoh-dynasty">12th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">𓉢</div>
+            <h3>Senusret I</h3>
+            <p>Son of Amenemhat I — known for building projects across Egypt and into Nubia, and for a reign that produced significant literary and artistic achievements.</p>
+            <div class="mk-pharaoh-fact">Known from: White Chapel, Karnak · Nubian fortresses</div>
+          </div>
 
-          <details class="king-card">
-            <summary>
-              <span class="king-glyph">⚔️</span>
-              <h3>Senusret III</h3>
-              <span class="king-title">12th Dynasty</span>
-              <span class="king-toggle"></span>
-            </summary>
-            <div class="king-detail">One of the most powerful Middle Kingdom rulers, particularly associated with administrative reform and military campaigns securing Egypt's frontier with Nubia.</div>
-          </details>
+          <div class="mk-pharaoh-card">
+            <div class="mk-pharaoh-dynasty">12th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">◈</div>
+            <h3>Senusret III</h3>
+            <p>One of the most powerful 12th Dynasty kings — known for military campaigns into Nubia, administrative reforms and distinctive portrait statues showing a more realistic royal image.</p>
+            <div class="mk-pharaoh-fact">Known from: Nubian fortresses · Portrait statues</div>
+          </div>
 
-          <details class="king-card">
-            <summary>
-              <span class="king-glyph">🌾</span>
-              <h3>Amenemhat III</h3>
-              <span class="king-title">12th Dynasty</span>
-              <span class="king-toggle"></span>
-            </summary>
-            <div class="king-detail">Known for major building and economic projects, including extensive irrigation and land-reclamation work in the Faiyum region.</div>
-          </details>
+          <div class="mk-pharaoh-card">
+            <div class="mk-pharaoh-dynasty">12th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">𓂋</div>
+            <h3>Amenemhat III</h3>
+            <p>One of the longest-reigning kings of the Middle Kingdom — associated with major agricultural and irrigation projects in the Fayum region and significant building activity.</p>
+            <div class="mk-pharaoh-fact">Known from: Fayum projects · Pyramid at Hawara</div>
+          </div>
+
+          <div class="mk-pharaoh-card">
+            <div class="mk-pharaoh-dynasty">12th Dynasty</div>
+            <div class="mk-pharaoh-glyph" aria-hidden="true">𓏏</div>
+            <h3>Sobekneferu</h3>
+            <p>One of the few women to have ruled Egypt as pharaoh — the last ruler of the 12th Dynasty. Known from statues and inscriptions, her reign marks the end of the 12th Dynasty's golden age.</p>
+            <div class="mk-pharaoh-fact">Known from: Royal statues · Inscriptions</div>
+          </div>
 
         </div>
+        <p class="mk-pharaohs-note">📌 Our knowledge of these rulers comes from archaeological evidence including monuments, inscriptions, literary texts and tomb contents. Exact dates continue to be refined by scholars.</p>
       </div>
     </section>
 
-    <!-- 7. THE NILE & AGRICULTURE -->
-    <section class="mk-flow-section" id="nile">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">The Nile & Agriculture</div>
-          <h2>The river remained the foundation.</h2>
-          <p>Agriculture remained the foundation of Egyptian society, just as it had for communities along the Nile since Predynastic times. But now the state played a growing role in managing that abundance — organizing labor, storing surplus and directing resources toward royal projects.</p>
-        </div>
-
-        <div class="uni-flow compact">
-          <div class="uni-node start"><div class="uni-node-inner"><span class="uni-glyph">🌊</span><strong>Nile</strong><p>Annual flood renews the soil</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">🌾</span><strong>Farmland</strong><p>Irrigation and water management expand fields</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">🌿</span><strong>Harvest</strong><p>Grain and produce collected across the provinces</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">📦</span><strong>Food & Resources</strong><p>Surplus stored and redistributed</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end"><div class="uni-node-inner"><span class="uni-glyph">🏛️</span><strong>State Administration</strong><p>Resources directed toward royal projects</p></div></div>
-        </div>
-
-        <div class="mk-callout" style="margin-left:auto;margin-right:auto;text-align:center">
-          <strong>Key Message</strong>
-          <p>The Nile supported Egypt's economy, while government organization helped manage agricultural resources.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. NUBIA & EGYPT'S SOUTHERN FRONTIER -->
-    <section class="mk-section" id="nubia">
+    <!-- 5. KINGSHIP -->
+    <section class="mk-section sand" id="kingship" aria-labelledby="kingship-heading">
       <div class="container">
         <div class="mk-visual-section">
-          <div class="mk-visual-text">
-            <div class="section-kicker">Egypt's Southern Frontier</div>
-            <h2>A vital and contested border.</h2>
-            <p>The Middle Kingdom had important — and often tense — interactions with Nubia, the land south of Egypt's first cataract. Trade brought valuable materials north, while military campaigns and a chain of fortresses gave Egypt tighter control over the frontier.</p>
-            <div class="icon-facts on-light">
-              <div class="icon-fact">
-                <span>💰</span>
-                <div><strong>Trade</strong><p>Gold and other resources moved north through Nubia into Egypt.</p></div>
+          <div class="mk-split-text">
+            <div class="section-kicker">Kingship in the Middle Kingdom</div>
+            <h2 id="kingship-heading">A more complex royal image.</h2>
+            <p>Middle Kingdom royal imagery sometimes showed pharaohs differently from earlier periods — including portrait statues with more individualised, sometimes careworn faces. This has been interpreted by some scholars as reflecting a changed conception of kingship — the king as a shepherd responsible for his people.</p>
+            <p>The king remained a divine figure — but the relationship between king, gods and people became a more prominent theme in Middle Kingdom texts and artistic traditions.</p>
+            <div class="mk-kingship-points">
+              <div class="mk-kp-item">
+                <span aria-hidden="true">👑</span>
+                <div>
+                  <strong>Divine Authority</strong>
+                  <p>The king remained the central political and religious figure of the Egyptian state.</p>
+                </div>
               </div>
-              <div class="icon-fact">
-                <span>⚔️</span>
-                <div><strong>Military Campaigns</strong><p>Kings such as Senusret III led campaigns to secure the frontier.</p></div>
+              <div class="mk-kp-item">
+                <span aria-hidden="true">🐑</span>
+                <div>
+                  <strong>Shepherd King</strong>
+                  <p>Some Middle Kingdom texts present the king as a protector and guardian of his people.</p>
+                </div>
               </div>
-              <div class="icon-fact">
-                <span>🏰</span>
-                <div><strong>Fortifications</strong><p>A chain of fortresses helped Egypt monitor and control the region.</p></div>
-              </div>
-              <div class="icon-fact">
-                <span>👑</span>
-                <div><strong>Political Control</strong><p>Egypt asserted increasing authority over Lower Nubia.</p></div>
+              <div class="mk-kp-item">
+                <span aria-hidden="true">⚖️</span>
+                <div>
+                  <strong>Ma'at</strong>
+                  <p>Maintaining order, balance and justice remained a central obligation of kingship.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div>
-            <div class="nubia-map">
-              <div class="nubia-stop sea">Mediterranean Sea</div>
-              <div class="nubia-stop lower">Lower Egypt</div>
-              <div class="nubia-stop upper">Upper Egypt</div>
-              <div class="nubia-stop cataract">First Cataract</div>
-              <div class="nubia-stop nubia">Nubia</div>
-            </div>
+          <div class="mk-visual-img" style="background-image:url('https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Middle Kingdom royal statue">
+            <div class="mk-img-caption">Middle Kingdom royal imagery sometimes showed more individualised features</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. THE FORTRESSES OF NUBIA -->
-    <section class="mk-section sand" id="fortresses">
+    <!-- 6. ADMINISTRATION -->
+    <section class="mk-section" id="administration" aria-labelledby="admin-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">The Fortresses of Nubia</div>
-          <h2>Guarding the frontier.</h2>
-          <p>Along the Nile south of the first cataract, Egypt built a chain of massive mudbrick fortresses. They helped Egypt control movement, protect the frontier, support military activity, manage trade and demonstrate royal power.</p>
+          <div class="section-kicker">Administration & Government</div>
+          <h2 id="admin-heading">Running a reunified kingdom.</h2>
+          <p>The Middle Kingdom saw significant developments in how Egypt was governed — including reforms to the role of regional officials and the development of a more complex administrative system.</p>
         </div>
-        <div class="artifact-gallery">
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Fortress</span>
-              <h3>Buhen</h3>
-              <p>One of the largest fortresses of the Nubian frontier, with massive mudbrick walls, ditches and towers protecting a garrisoned settlement.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
-            </div>
+        <div class="mk-admin-grid">
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">👑</div>
+            <h3>Pharaoh</h3>
+            <p>Central authority — political ruler, religious figure and guarantor of ma'at across the reunified state.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Fortress</span>
-              <h3>Semna</h3>
-              <p>Positioned near the second cataract, Semna helped mark and enforce Egypt's southern boundary during the reign of Senusret III.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
-            </div>
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">📋</div>
+            <h3>Vizier</h3>
+            <p>The highest administrative official below the pharaoh — responsible for managing the state's day-to-day affairs.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body">
-              <span class="ag-tag">Fortress</span>
-              <h3>Uronarti</h3>
-              <p>A triangular fortress built to monitor river traffic, part of a coordinated network of strongholds along the Nubian Nile.</p>
-              <a class="ag-link" href="collection.html">Explore in Collection →</a>
-            </div>
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">🏛️</div>
+            <h3>Officials</h3>
+            <p>A growing network of state officials — managing resources, records, construction projects and local administration.</p>
           </div>
-        </div>
-        <p class="key-facts-note" style="margin-top:2rem;border-top:none;color:var(--muted)">🌊 Many Nubian fortress sites were flooded by the creation of Lake Nasser in the twentieth century; some structures were documented or relocated before the waters rose.</p>
-      </div>
-    </section>
-
-    <!-- 10. TRADE & INTERNATIONAL CONNECTIONS -->
-    <section class="mk-section dark" id="trade">
-      <div class="container">
-        <div class="mk-visual-section">
-          <div class="mk-visual-text">
-            <div class="section-kicker">Trade & International Connections</div>
-            <h2>Not an isolated kingdom.</h2>
-            <p>The Middle Kingdom maintained connections across the wider region — with Nubia to the south, the Levant to the northeast, and expeditions into the Eastern Desert and along the Red Sea.</p>
-            <div class="icon-facts">
-              <div class="icon-fact"><span>🏺</span><div><strong>Goods</strong><p>Pottery, foodstuffs and manufactured items moved along trade routes.</p></div></div>
-              <div class="icon-fact"><span>💎</span><div><strong>Precious Materials</strong><p>Gold, semi-precious stones and other valuables came from Nubia and beyond.</p></div></div>
-              <div class="icon-fact"><span>🌲</span><div><strong>Timber</strong><p>Cedar and other wood arrived from the Levant for building and shipbuilding.</p></div></div>
-              <div class="icon-fact"><span>🪨</span><div><strong>Stone</strong><p>Quarrying expeditions into the Eastern Desert supplied stone for monuments.</p></div></div>
-            </div>
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">✍️</div>
+            <h3>Scribes</h3>
+            <p>Scribes recorded information, managed resources and maintained the written record that held the administration together.</p>
           </div>
-          <div class="mk-visual-image" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">Exchange networks connected the Middle Kingdom to a wider world</div>
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">🏘️</div>
+            <h3>Local Governors</h3>
+            <p>Regional officials (nomarchs) managed local territories — their relationship with central government changed during the Middle Kingdom.</p>
+          </div>
+          <div class="mk-admin-card">
+            <div class="mk-admin-icon" aria-hidden="true">⚖️</div>
+            <h3>Justice</h3>
+            <p>Legal processes and dispute resolution were part of the state administration — connected with the concept of ma'at.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 11. THE GOLDEN AGE OF LITERATURE -->
-    <section class="mk-section" id="literature">
+    <!-- 7. LITERATURE -->
+    <section class="mk-section dark" id="literature" aria-labelledby="lit-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">A Golden Age of Literature</div>
-          <h2>Not only kings and monuments.</h2>
-          <p>The Middle Kingdom is famous for a flowering of Egyptian literature — narrative tales and works of wisdom that were copied and studied for centuries afterward.</p>
+          <div class="section-kicker">Literature</div>
+          <h2 id="lit-heading">A golden age of Egyptian writing.</h2>
+          <p>The Middle Kingdom is sometimes called the classical age of Egyptian literature. A number of significant literary works were composed during this period — and later Egyptians looked back on this era as a high point of Egyptian culture and language.</p>
         </div>
-        <div class="lit-grid">
-          <div class="lit-card">
-            <span class="lit-glyph">𓂋</span>
-            <h3>The Story of Sinuhe</h3>
-            <span class="lit-sub">Narrative Tale</span>
-            <p>A famous literary work about an Egyptian official who flees Egypt and lives for years among foreign communities, wrestling with identity, exile and eventual return.</p>
+        <div class="mk-lit-grid">
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">📖</div>
+            <h3>Story of Sinuhe</h3>
+            <p>One of Egypt's most celebrated literary works — the story of an Egyptian official who flees to Canaan after the death of a king, lives abroad for years, and eventually returns to Egypt. It explores themes of identity, loyalty and belonging.</p>
           </div>
-          <div class="lit-card">
-            <span class="lit-glyph">𓆣</span>
-            <h3>The Shipwrecked Sailor</h3>
-            <span class="lit-sub">Narrative Tale</span>
-            <p>A story of an Egyptian sailor shipwrecked on a mysterious island, told as a tale within a tale — a striking piece of early narrative storytelling.</p>
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">📜</div>
+            <h3>Eloquent Peasant</h3>
+            <p>A narrative in which a peasant delivers eloquent speeches appealing for justice against an official who has wronged him — exploring the theme of ma'at and the ideal of good governance.</p>
           </div>
-          <div class="lit-card">
-            <span class="lit-glyph">𓏛</span>
-            <h3>The Instructions of Amenemhat</h3>
-            <span class="lit-sub">Wisdom Text</span>
-            <p>A literary work presented as advice from King Amenemhat I to his successor — reflecting on kingship, loyalty and the dangers facing a ruler.</p>
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">🗣️</div>
+            <h3>Teachings of Amenemhat</h3>
+            <p>A literary text in which Amenemhat I appears to advise his son from beyond death — exploring themes of kingship, loyalty and the nature of royal authority.</p>
+          </div>
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">𓂋</div>
+            <h3>Hymn to the Nile</h3>
+            <p>A hymn celebrating the Nile flood as the source of Egypt's life and prosperity — an important example of Middle Kingdom religious and literary tradition.</p>
+          </div>
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">🏺</div>
+            <h3>Coffin Texts</h3>
+            <p>Religious spells written on coffins — an evolution from the Pyramid Texts of the Old Kingdom, now more widely available to the elite rather than only royalty.</p>
+          </div>
+          <div class="mk-lit-card">
+            <div class="mk-lit-icon" aria-hidden="true">📝</div>
+            <h3>Didactic Literature</h3>
+            <p>Instructions and wisdom texts offering advice on proper conduct — an important genre that flourished during the Middle Kingdom.</p>
           </div>
         </div>
-        <div class="mk-callout on-light" style="margin-top:2.5rem;max-width:100%">
-          <strong>Key Message</strong>
-          <p>The Middle Kingdom was not only an age of kings and monuments. It was also a remarkable period of literary creativity.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. WRITING & EDUCATION -->
-    <section class="mk-flow-section" id="writing">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">Writing & Education</div>
-          <h2>The tools behind the texts.</h2>
-          <p>Writing underpinned nearly every part of Middle Kingdom life — from government and religion to literature and personal correspondence. Scribes, trained through years of education, were essential members of the administration.</p>
-        </div>
-        <div class="uni-flow compact">
-          <div class="uni-node start"><div class="uni-node-inner"><span class="uni-glyph">✍️</span><strong>Writing</strong><p>Hieroglyphic and hieratic script</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">🏛️</span><strong>Administration</strong><p>Records, taxation and letters</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">📜</span><strong>Literature</strong><p>Tales and wisdom texts</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">⚱️</span><strong>Religious Texts</strong><p>Funerary spells and rituals</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end"><div class="uni-node-inner"><span class="uni-glyph">🎓</span><strong>Knowledge</strong><p>Passed on through scribal education</p></div></div>
+        <div class="mk-lit-note">
+          📌 The texts listed here are among those attributed to the Middle Kingdom, though the transmission and dating of ancient Egyptian literature involves scholarly complexity and debate.
         </div>
       </div>
     </section>
 
-    <!-- 13. ART OF THE MIDDLE KINGDOM -->
-    <section class="mk-section sand" id="art">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Art of the Middle Kingdom</div>
-          <h2>A more individual royal image.</h2>
-          <p>Middle Kingdom art is especially interesting because royal representations can appear more individualized and expressive than earlier, idealized royal imagery — combining traditional Egyptian ideals with new approaches to representing rulers.</p>
-        </div>
-        <div class="evidence-grid">
-          <div class="evidence-card">
-            <span class="evidence-icon">🗿</span>
-            <h3>Royal Sculpture</h3>
-            <p>Kings represented with powerful but sometimes more thoughtful or serious expressions than in earlier periods.</p>
-          </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">🖼️</span>
-            <h3>Reliefs</h3>
-            <p>Carved and painted scenes depicting religion, kingship and daily life in temples and tombs.</p>
-          </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">💎</span>
-            <h3>Jewelry</h3>
-            <p>Elaborate pieces in gold and semi-precious stones, evidence of craftsmanship and elite culture.</p>
-          </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">🗽</span>
-            <h3>Statues</h3>
-            <p>Important objects for temples and funerary contexts, from colossal royal statues to small votive figures.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14. DEATH & THE AFTERLIFE -->
-    <section class="mk-section dark" id="afterlife">
+    <!-- 8. ART & SCULPTURE -->
+    <section class="mk-section sand" id="art" aria-labelledby="art-heading">
       <div class="container">
         <div class="mk-visual-section reverse">
-          <div class="mk-visual-image" style="background-image:url('https://images.unsplash.com/photo-1585159812596-fac104f2f069?auto=format&fit=crop&w=900&q=80')">
-            <div class="image-caption">Funerary traditions continued to develop through the Middle Kingdom</div>
+          <div class="mk-visual-img" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Middle Kingdom sculpture and art">
+            <div class="mk-img-caption">Middle Kingdom art is noted for its distinctive style and craftsmanship</div>
           </div>
-          <div class="mk-visual-text">
-            <div class="section-kicker">Death & the Afterlife</div>
-            <h2>Funerary traditions continue to evolve.</h2>
-            <p>Building on Old Kingdom foundations, Middle Kingdom funerary practice continued to develop — in tomb design, coffins, funerary equipment and religious texts meant to guide the deceased safely into the afterlife.</p>
-            <div class="icon-facts">
-              <div class="icon-fact">
-                <span>⚱️</span>
-                <div><strong>Coffin Texts</strong><p>Religious spells written primarily on coffins and other funerary objects, helping the deceased navigate the afterlife — connecting Old Kingdom Pyramid Texts to later religious literature.</p></div>
+          <div class="mk-split-text">
+            <div class="section-kicker">Art & Sculpture</div>
+            <h2 id="art-heading">A distinctive artistic tradition.</h2>
+            <p>Middle Kingdom art is often distinguished by a new approach to royal portraiture — including statues showing more individualised, sometimes austere royal faces. Tomb decoration and relief carving continued to develop alongside new artistic forms.</p>
+            <div class="mk-art-types">
+              <div class="mk-art-type">
+                <span class="mk-at-icon" aria-hidden="true">🗿</span>
+                <div>
+                  <strong>Royal Statuary</strong>
+                  <p>Portrait statues of pharaohs — sometimes showing more realistic features than earlier royal sculpture.</p>
+                </div>
               </div>
-              <div class="icon-fact">
-                <span>🪦</span>
-                <div><strong>Tombs & Equipment</strong><p>Burial practices, tomb goods and beliefs about the afterlife continued to change across regions and centuries.</p></div>
+              <div class="mk-art-type">
+                <span class="mk-at-icon" aria-hidden="true">🪨</span>
+                <div>
+                  <strong>Relief Carving</strong>
+                  <p>Carved relief scenes in temples and tombs — continuing earlier Egyptian artistic conventions with new refinements.</p>
+                </div>
+              </div>
+              <div class="mk-art-type">
+                <span class="mk-at-icon" aria-hidden="true">🏺</span>
+                <div>
+                  <strong>Pottery & Crafts</strong>
+                  <p>Fine pottery, jewellery and crafted objects from elite tombs and settlements across Egypt.</p>
+                </div>
+              </div>
+              <div class="mk-art-type">
+                <span class="mk-at-icon" aria-hidden="true">📿</span>
+                <div>
+                  <strong>Jewellery</strong>
+                  <p>Elaborately crafted jewellery — some of the finest examples of ancient Egyptian goldwork survive from the Middle Kingdom.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -541,211 +384,413 @@
       </div>
     </section>
 
-    <!-- 15. TOMBS & FUNERARY ARCHITECTURE -->
-    <section class="mk-flow-section" id="tombs">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">Tombs & Funerary Architecture</div>
-          <h2>The pyramids did not simply disappear.</h2>
-          <p>Royal and elite burial practices changed and diversified over time — though different tomb traditions could exist side by side, rather than replacing one another in a simple, single sequence.</p>
-        </div>
-        <div class="uni-flow compact">
-          <div class="uni-node start"><div class="uni-node-inner"><span class="uni-glyph">🔺</span><strong>Old Kingdom</strong><p>Large pyramid complexes</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node milestone"><div class="uni-node-inner"><span class="uni-glyph">⚱️</span><strong>Middle Kingdom</strong><p>Pyramids alongside varied tomb traditions</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end"><div class="uni-node-inner"><span class="uni-glyph">🏔️</span><strong>New Kingdom</strong><p>Rock-cut royal tombs</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 16. ARCHITECTURE & ENGINEERING -->
-    <section class="mk-section" id="architecture">
+    <!-- 9. RELIGION -->
+    <section class="mk-section" id="religion" aria-labelledby="religion-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Architecture & Engineering</div>
-          <h2>A major building period.</h2>
-          <p>The Middle Kingdom saw substantial investment in religious, funerary, military and economic infrastructure across Egypt.</p>
+          <div class="section-kicker">Religion & Beliefs</div>
+          <h2 id="religion-heading">The gods in the Middle Kingdom.</h2>
+          <p>Religious practice continued to develop during the Middle Kingdom — with Osiris becoming increasingly prominent as a god connected with the afterlife and resurrection.</p>
         </div>
-        <div class="evidence-grid">
-          <div class="evidence-card"><span class="evidence-icon">🛕</span><h3>Temples</h3><p>Religious architecture built and expanded across Egypt.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">🔺</span><h3>Pyramids</h3><p>Royal funerary monuments continued to be built, using new construction methods.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">🏰</span><h3>Fortresses</h3><p>Especially along the southern frontier with Nubia.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">💧</span><h3>Irrigation & Water Projects</h3><p>Connected to agriculture and the economic management of the Faiyum region.</p></div>
+        <div class="mk-religion-grid">
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">⚱️</div>
+            <h3>Osiris</h3>
+            <p>God of the afterlife and resurrection — became increasingly important during the Middle Kingdom. The Osiris cult connected beliefs about death, resurrection and the continuation of life.</p>
+          </div>
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">𓆣</div>
+            <h3>Amun</h3>
+            <p>Amun — later known as Amun-Ra — grew in prominence as a major deity associated with Thebes, which became an important royal and religious centre during the Middle Kingdom.</p>
+          </div>
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">🐊</div>
+            <h3>Sobek</h3>
+            <p>The crocodile god became particularly important during the Middle Kingdom — especially in the Fayum region, which was connected with major royal projects of this era.</p>
+          </div>
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">📜</div>
+            <h3>Coffin Texts</h3>
+            <p>Religious spells for the afterlife — previously the domain of royalty — became more widely available to the elite through the Coffin Texts, written on coffins rather than pyramid walls.</p>
+          </div>
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">𓂀</div>
+            <h3>Abydos</h3>
+            <p>Abydos remained an important religious centre — connected with Osiris and the cult of the dead. Many Egyptians sought to be buried near or to make a pilgrimage to Abydos.</p>
+          </div>
+          <div class="mk-religion-card">
+            <div class="mk-rel-icon" aria-hidden="true">⚖️</div>
+            <h3>Ma'at</h3>
+            <p>The principle of order, balance and justice remained central to Egyptian religious and political thought — expressed through royal texts, tomb scenes and funerary practice.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 17. MIDDLE KINGDOM ARTIFACTS -->
-    <section class="mk-section sand" id="artifacts">
+    <!-- 10. NUBIA & EXPANSION -->
+    <section class="mk-section dark" id="nubia" aria-labelledby="nubia-heading">
+      <div class="container">
+        <div class="mk-visual-section">
+          <div class="mk-split-text">
+            <div class="section-kicker">Nubia & Expansion</div>
+            <h2 id="nubia-heading">Egypt looks south.</h2>
+            <p>The Middle Kingdom saw significant Egyptian activity in Nubia — to the south of Egypt — including military campaigns and the construction of a series of fortresses along the Nile to control movement and trade.</p>
+            <div class="mk-nubia-items">
+              <div class="mk-nubia-item">
+                <span class="mk-nubia-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Military Campaigns</strong>
+                  <p>Several Middle Kingdom pharaohs led campaigns into Nubia — most notably Senusret III, who pushed Egyptian control further south.</p>
+                </div>
+              </div>
+              <div class="mk-nubia-item">
+                <span class="mk-nubia-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Nubian Fortresses</strong>
+                  <p>A series of fortresses was constructed along the Nile — controlling movement, protecting trade routes and projecting Egyptian power.</p>
+                </div>
+              </div>
+              <div class="mk-nubia-item">
+                <span class="mk-nubia-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Trade & Resources</strong>
+                  <p>Nubia was a source of gold, stone and other resources important to the Egyptian state. Control of Nubia gave Egypt access to these materials.</p>
+                </div>
+              </div>
+              <div class="mk-nubia-item">
+                <span class="mk-nubia-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Cultural Exchange</strong>
+                  <p>Egyptian and Nubian cultures had long been in contact — objects, artistic traditions and ideas moved in both directions across the border region.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mk-nubia-note">
+              📌 Egypt's relationship with Nubia was complex — involving trade, diplomacy and military control at different times and places. The nature of these connections continues to be studied by archaeologists and historians.
+            </div>
+          </div>
+          <div class="mk-visual-img" style="background-image:url('https://images.unsplash.com/photo-1553913861-c0fddf2619ee?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Nubia and the Nile Valley">
+            <div class="mk-img-caption">The Nile connected Egypt and Nubia across thousands of kilometres</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. DAILY LIFE -->
+    <section class="mk-section sand" id="life" aria-labelledby="life-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Middle Kingdom Artifacts</div>
-          <h2>Objects that carry the story forward.</h2>
-          <p>These objects are our direct connection to the people of the Middle Kingdom — kings, officials, scribes and ordinary Egyptians alike.</p>
+          <div class="section-kicker">Daily Life</div>
+          <h2 id="life-heading">A kingdom built by people.</h2>
+          <p>Behind the royal monuments and literary achievements, millions of ordinary Egyptians lived and worked along the Nile — their lives the foundation on which the Middle Kingdom was built.</p>
         </div>
-        <div class="artifact-gallery">
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Pottery</span><h3>Pottery</h3><p>Everyday and ceremonial vessels reflecting continuity and change in craft traditions.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+        <div class="mk-life-grid">
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">🌾</div>
+            <h3>Farming</h3>
+            <p>Agricultural production remained the foundation of the Egyptian economy — the Nile flood renewed the soil and enabled crops to be grown year after year.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Sculpture</span><h3>Royal Statues</h3><p>Portraits of kings ranging from idealized to strikingly individual in expression.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">🏺</div>
+            <h3>Crafts</h3>
+            <p>Skilled craftspeople produced pottery, textiles, jewellery and other goods — both for everyday use and as luxury items for the elite and royal court.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Jewelry</span><h3>Jewelry</h3><p>Gold and semi-precious stone pieces showing elite craftsmanship.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">✍️</div>
+            <h3>Scribes</h3>
+            <p>Scribes were among the most respected members of Egyptian society — their literacy gave them access to administrative, religious and political roles.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1585159812596-fac104f2f069?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Funerary</span><h3>Coffins</h3><p>Painted coffins bearing Coffin Texts to guide the deceased in the afterlife.</p><a class="ag-link" href="collection.html?filter=funerary">Explore in Collection →</a></div>
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">🏘️</div>
+            <h3>Towns & Villages</h3>
+            <p>People lived in communities along the Nile — evidence from sites like Kahun gives us a picture of what Egyptian town life looked like during the Middle Kingdom.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Texts</span><h3>Written Texts</h3><p>Papyri and inscriptions preserving literature, administration and religious writing.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">⚕️</div>
+            <h3>Medicine</h3>
+            <p>Middle Kingdom medical papyri survive — among the earliest evidence of Egyptian medical knowledge, including treatments for injuries and conditions.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Stone</span><h3>Stone Vessels</h3><p>Finely worked vessels showing continuing skill in stoneworking.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+          <div class="mk-life-card">
+            <div class="mk-life-icon" aria-hidden="true">🎶</div>
+            <h3>Music & Leisure</h3>
+            <p>Tomb scenes depict music, dance, games and feasting — suggesting that leisure and entertainment were part of life for at least the Egyptian elite.</p>
           </div>
-          <div class="ag-card">
-            <div class="ag-image" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="ag-body"><span class="ag-tag">Funerary</span><h3>Funerary Objects</h3><p>Amulets, models and equipment placed in tombs for use in the afterlife.</p><a class="ag-link" href="collection.html">Explore in Collection →</a></div>
+        </div>
+
+        <div class="mk-kahun-box">
+          <h4>Kahun — A Window into Middle Kingdom Life</h4>
+          <p>Kahun (Lahun) was a town built to house workers associated with the pyramid complex of Amenemhat II. Archaeological excavations at Kahun have produced papyri, tools and everyday objects — giving archaeologists a rare picture of organised town life during the Middle Kingdom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TRADE -->
+    <section class="mk-section" id="trade" aria-labelledby="trade-heading">
+      <div class="container">
+        <div class="mk-visual-section">
+          <div class="mk-split-text">
+            <div class="section-kicker">Trade & Connections</div>
+            <h2 id="trade-heading">Egypt reaches outward.</h2>
+            <p>Middle Kingdom Egypt maintained connections with neighbouring regions — through trade, diplomatic exchange and the movement of materials, objects and ideas.</p>
+            <div class="mk-trade-items">
+              <div class="mk-trade-item">
+                <div class="mk-trade-dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Punt</strong>
+                  <p>Expeditions to Punt brought back myrrh, incense, ebony, ivory and other exotic goods.</p>
+                </div>
+              </div>
+              <div class="mk-trade-item">
+                <div class="mk-trade-dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Sinai</strong>
+                  <p>Egyptian expeditions to Sinai sought turquoise and copper — important materials for craft production.</p>
+                </div>
+              </div>
+              <div class="mk-trade-item">
+                <div class="mk-trade-dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Levant</strong>
+                  <p>Connections with the Levant — including trade in silver, cedar wood and other materials not available in Egypt.</p>
+                </div>
+              </div>
+              <div class="mk-trade-item">
+                <div class="mk-trade-dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Nubia</strong>
+                  <p>Gold, stone and other resources from Nubia were important to the Egyptian state economy.</p>
+                </div>
+              </div>
+            </div>
+            <p class="mk-trade-note">📌 Trade claims should be verified against museum and academic sources. The nature and extent of Middle Kingdom connections continue to be studied.</p>
+          </div>
+          <div class="mk-visual-img" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=900&q=80')" role="img" aria-label="Middle Kingdom trade objects">
+            <div class="mk-img-caption">Trade goods connected Egypt with regions across the ancient world</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 18. HOW DO WE KNOW? -->
-    <section class="mk-section" id="evidence">
+    <!-- 13. WOMEN -->
+    <section class="mk-section sand" id="women" aria-labelledby="women-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Women in the Middle Kingdom</div>
+          <h2 id="women-heading">Queens, officials and everyday women.</h2>
+          <p>Women held a range of roles in Middle Kingdom Egyptian society — from queens and royal women to scribes, craftspeople and farmers. The evidence for women's lives comes from tombs, legal documents, literary texts and everyday objects.</p>
+        </div>
+        <div class="mk-women-grid">
+          <div class="mk-women-card">
+            <div class="mk-women-icon" aria-hidden="true">👑</div>
+            <h3>Queens</h3>
+            <p>Royal women played important religious and political roles — some are known from significant monuments and inscriptions of their own.</p>
+          </div>
+          <div class="mk-women-card">
+            <div class="mk-women-icon" aria-hidden="true">𓏏</div>
+            <h3>Sobekneferu</h3>
+            <p>The last ruler of the 12th Dynasty — one of the few women in Egyptian history to have ruled as pharaoh in her own right.</p>
+          </div>
+          <div class="mk-women-card">
+            <div class="mk-women-icon" aria-hidden="true">📜</div>
+            <h3>Legal Rights</h3>
+            <p>Evidence from papyri suggests Egyptian women could own property, make contracts and participate in legal proceedings.</p>
+          </div>
+          <div class="mk-women-card">
+            <div class="mk-women-icon" aria-hidden="true">🌾</div>
+            <h3>Everyday Life</h3>
+            <p>Most women lived as farmers, weavers, brewers and household managers — their labour was fundamental to the Egyptian economy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. HOW DO WE KNOW? -->
+    <section class="mk-section" id="evidence" aria-labelledby="evidence-heading">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">How Do We Know?</div>
-          <h2>How do we know about the Middle Kingdom?</h2>
-          <p>Our understanding comes from a combination of surviving buildings, written sources and objects, each contributing a different piece of the picture.</p>
+          <h2 id="evidence-heading">Reconstructing the Middle Kingdom.</h2>
+          <p>Historians and archaeologists reconstruct the Middle Kingdom from a rich range of surviving evidence — including some of the most important literary texts from ancient Egypt.</p>
         </div>
-        <div class="evidence-grid">
-          <div class="evidence-card">
-            <span class="evidence-icon">🏛️</span>
-            <h3>Buildings</h3>
-            <div class="evidence-tells">What they tell us:</div>
-            <ul><li>Temples, pyramids and fortresses</li><li>Building techniques and scale</li><li>Royal and religious priorities</li></ul>
+        <div class="mk-evidence-grid">
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">📖</div>
+            <h3>Literary Texts</h3>
+            <p>Stories, teachings and hymns — providing evidence of language, culture, values and ideas during the Middle Kingdom.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">📜</span>
-            <h3>Written Sources</h3>
-            <div class="evidence-tells">What they tell us:</div>
-            <ul><li>Literary works and wisdom texts</li><li>Administrative records</li><li>Royal and private inscriptions</li></ul>
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">🏛️</div>
+            <h3>Monuments</h3>
+            <p>Temples, tombs and royal monuments — including Mentuhotep II's temple at Deir el-Bahari and the White Chapel at Karnak.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">🗿</span>
-            <h3>Statues</h3>
-            <div class="evidence-tells">What they tell us:</div>
-            <ul><li>Evidence of kingship and religion</li><li>Changing artistic traditions</li><li>Elite self-presentation</li></ul>
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">⚱️</div>
+            <h3>Tombs</h3>
+            <p>Royal and elite burials with inscriptions, objects and decorated chambers — providing evidence of belief, status and material culture.</p>
           </div>
-          <div class="evidence-card">
-            <span class="evidence-icon">⚱️</span>
-            <h3>Coffins & Tombs</h3>
-            <div class="evidence-tells">What they tell us:</div>
-            <ul><li>Evidence of funerary beliefs</li><li>Coffin Texts and religious ideas</li><li>Social status and wealth</li></ul>
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">📜</div>
+            <h3>Papyri</h3>
+            <p>Administrative and medical papyri — including those from Kahun — providing direct evidence of everyday life and administrative practice.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 19. LIFE OF ORDINARY EGYPTIANS -->
-    <section class="mk-section dark" id="life">
-      <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
-          <div class="section-kicker">Beyond the Palace</div>
-          <h2>Built by more than kings.</h2>
-          <p>The Middle Kingdom was built not only by its kings, but by farmers, craftspeople, administrators, soldiers and families.</p>
-        </div>
-        <div class="evidence-grid cols-5">
-          <div class="evidence-card"><span class="evidence-icon">👨‍🌾</span><h3>Farmers</h3><p>Agriculture and seasonal work along the Nile floodplain.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">🏺</span><h3>Craftspeople</h3><p>Pottery, metalworking, stoneworking and other specialized crafts.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">✍️</span><h3>Scribes</h3><p>Writing, record-keeping and administration.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">🛡️</span><h3>Soldiers</h3><p>Frontier defense and military campaigns, especially in Nubia.</p></div>
-          <div class="evidence-card"><span class="evidence-icon">👪</span><h3>Families</h3><p>Household life and community across Egyptian society.</p></div>
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">🏺</div>
+            <h3>Artifacts</h3>
+            <p>Pottery, jewellery, tools and everyday objects from tombs, settlements and storage areas across Egypt and beyond.</p>
+          </div>
+          <div class="mk-ev-card">
+            <div class="mk-ev-icon" aria-hidden="true">🏘️</div>
+            <h3>Settlements</h3>
+            <p>Sites like Kahun provide rare evidence of everyday town life — what people ate, wore, used and believed in the Middle Kingdom.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 20. WHAT MADE THE MIDDLE KINGDOM DIFFERENT? + END OF THE MIDDLE KINGDOM -->
-    <section class="mk-section sand" id="legacy">
+    <!-- 15. ARTIFACT GALLERY -->
+    <section class="mk-section dark" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">What Made the Middle Kingdom Different?</div>
-          <h2>Old Kingdom vs. Middle Kingdom</h2>
-          <p>Comparing the two periods helps visitors understand what changed — and what carried through.</p>
+          <div class="section-kicker">Middle Kingdom Artifact Gallery</div>
+          <h2 id="gallery-heading">Objects from the golden age.</h2>
+          <p>These objects connect us directly with the people, beliefs and daily life of Middle Kingdom Egypt.</p>
         </div>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead><tr><th>Old Kingdom</th><th>Middle Kingdom</th></tr></thead>
-            <tbody>
-              <tr><td>Age of pyramids</td><td>Age of reunification</td></tr>
-              <tr><td>Monumental royal architecture</td><td>Strong central administration</td></tr>
-              <tr><td>Pyramid complexes</td><td>Fortresses & temples</td></tr>
-              <tr><td>Royal funerary traditions</td><td>Developing funerary traditions</td></tr>
-              <tr><td>Early state institutions</td><td>Renewed centralized government</td></tr>
-              <tr><td class="empty">—</td><td>Major literary development</td></tr>
-            </tbody>
-          </table>
+        <div class="mk-gallery-grid">
+
+          <a class="mk-ag-card" href="collection.html?category=royal" aria-label="Explore royal objects in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Seated_Statue_of_Hatshepsut_MET_Hatshepsut2012.jpg')" role="img" aria-label="Royal statuary"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Royal Objects</span>
+              <h3>Royal Statuary</h3>
+              <p>Portrait statues and royal objects — including some of the most distinctive examples of Egyptian royal sculpture.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+          <a class="mk-ag-card" href="collection.html?category=writing" aria-label="Explore writing and documents in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Literary texts and papyri"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Writing</span>
+              <h3>Literary Texts</h3>
+              <p>Stories, teachings and administrative documents — the golden age of Egyptian literature preserved in papyrus and stone.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+          <a class="mk-ag-card" href="collection.html?category=funerary" aria-label="Explore funerary objects in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://images.unsplash.com/photo-1554922562-a7c23ffc5cb1?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Funerary objects and coffin texts"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Funerary</span>
+              <h3>Coffin Texts & Funerary Objects</h3>
+              <p>Objects and religious texts connected with Middle Kingdom burial practice and beliefs about the afterlife.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+          <a class="mk-ag-card" href="collection.html" aria-label="Explore jewellery in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://images.unsplash.com/photo-1618767689160-da3fb810aad5?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Middle Kingdom jewellery"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Jewellery</span>
+              <h3>Middle Kingdom Jewellery</h3>
+              <p>Some of the finest examples of ancient Egyptian goldwork survive from this period — crafted with extraordinary skill.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+          <a class="mk-ag-card" href="collection.html" aria-label="Explore pottery in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://images.unsplash.com/photo-1601608093846-ab9e15d4a0aa?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Middle Kingdom pottery"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Pottery</span>
+              <h3>Pottery & Everyday Objects</h3>
+              <p>Objects from settlements and tombs — evidence of daily life and craft traditions across the Middle Kingdom.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+          <a class="mk-ag-card" href="collection.html?category=religious" aria-label="Explore religious objects in the collection">
+            <div class="mk-ag-img" style="background-image:url('https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?auto=format&fit=crop&w=600&q=80')" role="img" aria-label="Religious objects and amulets"></div>
+            <div class="mk-ag-body">
+              <span class="mk-ag-tag">Religious</span>
+              <h3>Religious Objects & Amulets</h3>
+              <p>Amulets, votive objects and religious items connected with Middle Kingdom belief and ritual practice.</p>
+              <span class="mk-ag-link">Explore →</span>
+            </div>
+          </a>
+
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+          <a class="btn btn-gold" href="collection.html" aria-label="Browse the full artifact collection">Explore the Full Collection →</a>
         </div>
       </div>
     </section>
 
-    <section class="mk-flow-section" id="decline">
+    <!-- 16. THE END OF THE MIDDLE KINGDOM -->
+    <section class="mk-section" id="end" aria-labelledby="end-heading">
       <div class="container">
-        <div class="section-head" style="text-align:center;max-width:640px;margin:0 auto">
+        <div class="section-head" style="text-align:center;max-width:100%;margin:0 auto 2rem">
           <div class="section-kicker">The End of the Middle Kingdom</div>
-          <h2>A gradual unraveling.</h2>
-          <p>Over time, central authority weakened and Egypt entered another period of political change. The transition into the Second Intermediate Period involved shifting political, social and economic circumstances — not a single cause or a single event.</p>
+          <h2 id="end-heading">Another period of change.</h2>
+          <p style="color:var(--muted);max-width:700px;margin:.8rem auto 0">The Middle Kingdom came to an end with another period of political fragmentation — the Second Intermediate Period. This was also the period when the Hyksos, a people from the Near East, established control over parts of Lower Egypt. Rather than one single cause, historians discuss multiple factors behind the end of the Middle Kingdom.</p>
         </div>
-        <div class="uni-flow">
-          <div class="uni-node start"><div class="uni-node-inner"><span class="uni-glyph">♕</span><strong>Middle Kingdom</strong><p>Centralized rule at its height</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">⚖️</span><strong>Political Changes</strong><p>Shifting power and succession</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node"><div class="uni-node-inner"><span class="uni-glyph">📉</span><strong>Weakening Central Authority</strong><p>Regional power grows once again</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node milestone"><div class="uni-node-inner"><span class="uni-glyph">🌍</span><strong>Second Intermediate Period</strong><p>Egypt fragments once more</p></div></div>
-          <div class="uni-connector"><div class="uni-line"></div><div class="uni-arrow-down">↓</div></div>
-          <div class="uni-node end"><div class="uni-node-inner"><span class="uni-glyph">♛</span><strong>New Kingdom</strong><p>A new chapter begins</p></div></div>
+
+        <div class="mk-end-flow" aria-label="End of the Middle Kingdom">
+          <div class="mk-end-node">
+            <span class="mk-end-icon" aria-hidden="true">🌟</span>
+            <strong>Middle Kingdom at its height</strong>
+            <p>12th Dynasty — literature, art and administration flourish</p>
+          </div>
+          <div class="mk-end-arrow" aria-hidden="true">↓</div>
+          <div class="mk-end-node">
+            <span class="mk-end-icon" aria-hidden="true">⚖️</span>
+            <strong>13th Dynasty</strong>
+            <p>Instability and political change within Egypt</p>
+          </div>
+          <div class="mk-end-arrow" aria-hidden="true">↓</div>
+          <div class="mk-end-node">
+            <span class="mk-end-icon" aria-hidden="true">🌍</span>
+            <strong>Hyksos in Lower Egypt</strong>
+            <p>A people from the Near East establish the 15th Dynasty</p>
+          </div>
+          <div class="mk-end-arrow" aria-hidden="true">↓</div>
+          <div class="mk-end-node milestone-end">
+            <span class="mk-end-icon" aria-hidden="true">📅</span>
+            <strong>c. 1650 BCE</strong>
+            <p>Second Intermediate Period begins</p>
+          </div>
         </div>
-        <div class="uni-cta">
-          <p class="uni-tagline">A new chapter begins.</p>
-          <a class="btn btn-gold" href="new-kingdom.html">Explore the New Kingdom →</a>
+
+        <div class="mk-end-note">
+          📌 The end of the Middle Kingdom is complex and debated. The Hyksos are important to understand not simply as invaders but as a people who had long been present in the Delta — their arrival represents a shift in political power rather than a sudden conquest.
         </div>
       </div>
     </section>
 
-    <!-- 21. CONTINUE THE JOURNEY -->
-    <section class="mk-continue">
+    <!-- 17. CONTINUE THE JOURNEY -->
+    <section class="mk-continue-section" aria-labelledby="continue-heading">
       <div class="container">
         <div class="section-head" style="text-align:center;max-width:100%;margin:0 auto 2.5rem">
           <div class="section-kicker">Continue the Journey</div>
-          <h2>There's more to discover.</h2>
+          <h2 id="continue-heading">Egypt will rise again.</h2>
+          <p>After the Second Intermediate Period, Egypt entered its most celebrated era — the New Kingdom, the age of Tutankhamun, Hatshepsut and Ramesses the Great.</p>
         </div>
-        <div class="continue-grid">
-          <a class="continue-card" href="new-kingdom.html">
-            <div class="continue-icon">♛</div>
-            <h3>New Kingdom</h3>
-            <p>Egypt would once again experience political division before emerging into one of its most powerful periods — the New Kingdom.</p>
-            <span class="continue-link">Explore →</span>
+        <div class="mk-continue-grid">
+          <a class="mk-continue-card" href="old-kingdom.html" aria-label="Go back to the Old Kingdom">
+            <div class="mk-continue-icon" aria-hidden="true">🔺</div>
+            <h3>← Old Kingdom</h3>
+            <p>Return to the age of pyramid building — the monuments, pharaohs and culture of the 3rd to 6th Dynasties.</p>
+            <span class="mk-continue-link">Back to Old Kingdom →</span>
           </a>
-          <a class="continue-card" href="timeline.html">
-            <div class="continue-icon">𓉢</div>
+          <a class="mk-continue-card" href="timeline.html" aria-label="View the full timeline">
+            <div class="mk-continue-icon" aria-hidden="true">𓉢</div>
             <h3>Full Timeline</h3>
-            <p>See all five thousand years of ancient Egyptian history — from the earliest communities to Cleopatra.</p>
-            <span class="continue-link">View Timeline →</span>
+            <p>See all five thousand years of ancient Egyptian history in one place — from the earliest communities to Cleopatra.</p>
+            <span class="mk-continue-link">View Timeline →</span>
           </a>
-          <a class="continue-card" href="collection.html">
-            <div class="continue-icon">𓂋</div>
-            <h3>Artifact Collection</h3>
-            <p>Browse objects from across all periods of ancient Egyptian history — each one a doorway into a larger human story.</p>
-            <span class="continue-link">Browse Collection →</span>
+          <a class="mk-continue-card" href="new-kingdom.html" aria-label="Continue to the New Kingdom">
+            <div class="mk-continue-icon" aria-hidden="true">♕</div>
+            <h3>New Kingdom →</h3>
+            <p>Egypt's imperial age — Hatshepsut, Akhenaten, Tutankhamun, Ramesses the Great and the Valley of the Kings.</p>
+            <span class="mk-continue-link">Continue the Timeline →</span>
           </a>
         </div>
       </div>
@@ -757,30 +802,33 @@
     <div class="footer-grid">
       <div>
         <h3>Egypt's Digital Museum</h3>
-        <p>A student-created digital experience designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
       </div>
       <div>
         <h3>Explore</h3>
         <a href="index.html#explore">Artifacts</a>
         <a href="timeline.html">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#tour">Virtual Museum</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
       </div>
       <div>
-        <h3>Learn</h3>
-        <a href="timeline.html">History</a>
-        <a href="collection.html">Culture</a>
-        <a href="collection.html">Writing</a>
-        <a href="collection.html">Beliefs</a>
+        <h3>Eras</h3>
+        <a href="predynastic.html">Predynastic</a>
+        <a href="early-dynastic.html">Early Dynastic</a>
+        <a href="old-kingdom.html">Old Kingdom</a>
+        <a href="middle-kingdom.html">Middle Kingdom</a>
       </div>
       <div>
         <h3>Project</h3>
-        <a href="index.html">About</a>
-        <a href="index.html">Mission</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
       </div>
     </div>
-    <div class="copyright">© 2026 Egypt's Digital Museum · Educational project - Omith Damsilu</div>
+    <div class="copyright">
+      © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
+    </div>
   </footer>
 
   <script src="js/middle-kingdom.js"></script>
