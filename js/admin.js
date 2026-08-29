@@ -1,4 +1,14 @@
-const API = 'https://cibernex-api.onrender.com/api/artifacts';
+const API_BASE = (() => {
+  const host = window.location.hostname;
+
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:3000';
+  }
+
+  return 'https://cibernex-api.onrender.com';
+})();
+
+const API = `${API_BASE}/api/artifacts`;
     let artifacts = [];
 
     // ---- Header ----
