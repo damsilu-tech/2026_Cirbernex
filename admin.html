@@ -158,18 +158,18 @@
   <script src="js/admin.js"></script>
 
   <script>
-    /* ── Render backend URL — matches admin.js ── */
-    const API_BASE = (() => {
-      const host = window.location.hostname;
-      if (host === 'localhost' || host === '127.0.0.1') {
-        return 'http://localhost:3000';
-      }
-      return 'https://cibernex-api.onrender.com';
-    })();
+    /* ── Credentials stored as SHA-256 hashes (not plain text) ── */
+    const VALID_USER_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
+    const VALID_PASS_HASH = "d768fb3aa6c83b9637f23c13c2bc542f84590760470a98312e071d2790096d0d";
 
     /* Check if already logged in this session */
     if (sessionStorage.getItem("adminAuth") === "true") {
       document.getElementById("loginOverlay").style.display = "none";
+    }
+
+    async function sha256(str) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
     }
 
     async function doLogin() {
@@ -187,28 +187,19 @@
       btn.disabled = true;
       err.textContent = "";
 
-      try {
-        const res  = await fetch(`${API_BASE}/api/admin/login`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username: user, password: pass })
-        });
-        const data = await res.json();
+      const userHash = await sha256(user);
+      const passHash = await sha256(pass);
 
-        if (data.success) {
-          sessionStorage.setItem("adminAuth", "true");
-          document.getElementById("loginOverlay").classList.add("fade-out");
-          setTimeout(() => {
-            document.getElementById("loginOverlay").style.display = "none";
-          }, 400);
-        } else {
-          err.textContent = "Incorrect username or password.";
-          document.getElementById("loginPass").value = "";
-          document.getElementById("loginPass").focus();
-        }
-      } catch (e) {
-        err.textContent = "Could not reach server. Please try again.";
-      } finally {
+      if (userHash === VALID_USER_HASH && passHash === VALID_PASS_HASH) {
+        sessionStorage.setItem("adminAuth", "true");
+        document.getElementById("loginOverlay").classList.add("fade-out");
+        setTimeout(() => {
+          document.getElementById("loginOverlay").style.display = "none";
+        }, 400);
+      } else {
+        err.textContent = "Incorrect username or password.";
+        document.getElementById("loginPass").value = "";
+        document.getElementById("loginPass").focus();
         btn.textContent = "Sign In →";
         btn.disabled = false;
       }
