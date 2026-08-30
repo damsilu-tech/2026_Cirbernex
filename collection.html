@@ -232,10 +232,10 @@ const API_BASE = (() => {
     /* ------ Load ------ */
     async function loadArtifacts() {
 
-    // Show loading state immediately
+    // Show a proper museum loading experience
     grid.innerHTML = `
-        <div class="collection-loading">
-            <div class="collection-loading-symbol">𓂀</div>
+        <div class="collection-loading" role="status" aria-live="polite">
+            <div class="collection-loading-symbol" aria-hidden="true">𓂀</div>
 
             <h2>Opening the Museum Archive</h2>
 
@@ -243,7 +243,7 @@ const API_BASE = (() => {
                 Connecting to our digital collection...
             </p>
 
-            <div class="collection-loading-bar">
+            <div class="collection-loading-bar" aria-hidden="true">
                 <span></span>
             </div>
         </div>
@@ -252,14 +252,19 @@ const API_BASE = (() => {
     noResults.hidden = true;
 
     try {
-
         const res = await fetch(`${API_BASE}/api/artifacts`);
 
         if (!res.ok) {
             throw new Error(`API returned ${res.status}`);
         }
 
-        allArtifacts = await res.json();
+        const data = await res.json();
+
+        if (!Array.isArray(data)) {
+            throw new Error('Invalid artifact data received');
+        }
+
+        allArtifacts = data;
 
         applyURLFilter();
 
@@ -268,14 +273,15 @@ const API_BASE = (() => {
         console.error('Failed to load artifacts:', err);
 
         grid.innerHTML = `
-            <div class="collection-error">
+            <div class="collection-error" role="alert">
 
-                <div class="collection-error-symbol">𓂀</div>
+                <div class="collection-error-symbol" aria-hidden="true">𓂀</div>
 
                 <h2>The archive couldn't be reached</h2>
 
                 <p>
                     The digital collection is temporarily unavailable.
+                    Please try again.
                 </p>
 
                 <button
