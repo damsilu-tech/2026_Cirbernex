@@ -25,6 +25,18 @@ app.use(cors({
 app.use(express.json());
 app.use('/api/artifacts', artifacts);
 
+// Admin login — credentials live in .env on Render, never in frontend code
+app.post('/api/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  if (
+    username === process.env.ADMIN_USERNAME &&
+    password === process.env.ADMIN_PASSWORD
+  ) {
+    return res.json({ success: true });
+  }
+  return res.status(401).json({ success: false, error: 'Invalid credentials' });
+});
+
 mongoose.connect(process.env.MONGO_URI, {
   serverSelectionTimeoutMS: 10000,
   family: 4
