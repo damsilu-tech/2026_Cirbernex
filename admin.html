@@ -31,7 +31,7 @@
   </header>
 
   <!-- ── LOGIN OVERLAY ── -->
-  <div class="login-overlay" id="loginOverlay">
+  <div class="login-overlay" id="loginOverlay" style="display:flex;">
     <div class="login-box">
       <div class="login-logo">𓂀</div>
       <h2>Admin Access</h2>
@@ -158,61 +158,53 @@
   <script src="js/admin.js"></script>
 
   <script>
-    /* ── Credentials stored as SHA-256 hashes (not plain text) ── */
-    const VALID_USER_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
-    const VALID_PASS_HASH = "d768fb3aa6c83b9637f23c13c2bc542f84590760470a98312e071d2790096d0d";
+    /* ── Admin credentials ── */
+    const _u = atob("YWRtaW4=");       // admin
+    const _p = atob("ZWd5cHQyMDI0");   // egypt2024
 
-    /* Check if already logged in this session */
+    const overlay = document.getElementById("loginOverlay");
+
+    /* Already logged in this session? */
     if (sessionStorage.getItem("adminAuth") === "true") {
-      document.getElementById("loginOverlay").style.display = "none";
+      overlay.style.display = "none";
     }
 
-    async function sha256(str) {
-      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
-    }
-
-    async function doLogin() {
+    function doLogin() {
       const user = document.getElementById("loginUser").value.trim();
       const pass = document.getElementById("loginPass").value;
       const err  = document.getElementById("loginError");
-      const btn  = document.querySelector(".login-btn");
 
       if (!user || !pass) {
-        err.textContent = "Please enter both username and password.";
+        err.textContent = "Please enter both fields.";
         return;
       }
 
-      btn.textContent = "Signing in…";
-      btn.disabled = true;
-      err.textContent = "";
-
-      const userHash = await sha256(user);
-      const passHash = await sha256(pass);
-
-      if (userHash === VALID_USER_HASH && passHash === VALID_PASS_HASH) {
+      if (user === _u && pass === _p) {
         sessionStorage.setItem("adminAuth", "true");
-        document.getElementById("loginOverlay").classList.add("fade-out");
-        setTimeout(() => {
-          document.getElementById("loginOverlay").style.display = "none";
-        }, 400);
+        overlay.classList.add("fade-out");
+        setTimeout(() => { overlay.style.display = "none"; }, 400);
       } else {
         err.textContent = "Incorrect username or password.";
         document.getElementById("loginPass").value = "";
         document.getElementById("loginPass").focus();
-        btn.textContent = "Sign In →";
-        btn.disabled = false;
       }
     }
 
     function togglePass() {
       const inp = document.getElementById("loginPass");
-      inp.type = inp.type === "password" ? "text" : "password";
+      const btn = document.querySelector(".pass-toggle");
+      if (inp.type === "password") {
+        inp.type = "text";
+        btn.textContent = "🙈";
+      } else {
+        inp.type = "password";
+        btn.textContent = "👁";
+      }
     }
 
-    /* Allow Enter key to submit */
-    document.addEventListener("keydown", e => {
-      if (e.key === "Enter" && document.getElementById("loginOverlay").style.display !== "none") {
+    /* Enter key support */
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" && overlay.style.display !== "none") {
         doLogin();
       }
     });
