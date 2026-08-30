@@ -158,30 +158,53 @@
   <script src="js/admin.js"></script>
 
   <script>
-    /* ── HARDCODED CREDENTIALS ── */
-    const ADMIN_USER = "admin";
-    const ADMIN_PASS = "egypt2024";
+    /* ── Render backend URL ── */
+    const API_BASE = "https://cibernex.onrender.com";
 
     /* Check if already logged in this session */
     if (sessionStorage.getItem("adminAuth") === "true") {
       document.getElementById("loginOverlay").style.display = "none";
     }
 
-    function doLogin() {
+    async function doLogin() {
       const user = document.getElementById("loginUser").value.trim();
       const pass = document.getElementById("loginPass").value;
       const err  = document.getElementById("loginError");
+      const btn  = document.querySelector(".login-btn");
 
-      if (user === ADMIN_USER && pass === ADMIN_PASS) {
-        sessionStorage.setItem("adminAuth", "true");
-        document.getElementById("loginOverlay").classList.add("fade-out");
-        setTimeout(() => {
-          document.getElementById("loginOverlay").style.display = "none";
-        }, 400);
-      } else {
-        err.textContent = "Incorrect username or password.";
-        document.getElementById("loginPass").value = "";
-        document.getElementById("loginPass").focus();
+      if (!user || !pass) {
+        err.textContent = "Please enter both username and password.";
+        return;
+      }
+
+      btn.textContent = "Signing in…";
+      btn.disabled = true;
+      err.textContent = "";
+
+      try {
+        const res  = await fetch(`${API_BASE}/api/admin/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username: user, password: pass })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          sessionStorage.setItem("adminAuth", "true");
+          document.getElementById("loginOverlay").classList.add("fade-out");
+          setTimeout(() => {
+            document.getElementById("loginOverlay").style.display = "none";
+          }, 400);
+        } else {
+          err.textContent = "Incorrect username or password.";
+          document.getElementById("loginPass").value = "";
+          document.getElementById("loginPass").focus();
+        }
+      } catch (e) {
+        err.textContent = "Could not reach server. Please try again.";
+      } finally {
+        btn.textContent = "Sign In →";
+        btn.disabled = false;
       }
     }
 
