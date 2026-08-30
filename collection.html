@@ -230,16 +230,21 @@ const API_BASE = (() => {
     let activePeriod      = '';
 
     /* ------ Load ------ */
-    async function loadArtifacts() {
+async function loadArtifacts() {
 
-    // Show a proper museum loading experience
+    const MAX_RETRIES = 2;
+    const REQUEST_TIMEOUT = 70000; // 70 seconds
+
+    // Initial loading state
     grid.innerHTML = `
         <div class="collection-loading" role="status" aria-live="polite">
             <div class="collection-loading-symbol" aria-hidden="true">𓂀</div>
 
-            <h2>Opening the Museum Archive</h2>
+            <h2 id="archiveLoadingTitle">
+                Opening the Museum Archive
+            </h2>
 
-            <p>
+            <p id="archiveLoadingMessage">
                 Connecting to our digital collection...
             </p>
 
@@ -251,49 +256,124 @@ const API_BASE = (() => {
 
     noResults.hidden = true;
 
-    try {
-        const res = await fetch(`${API_BASE}/api/artifacts`);
+    const loadingMessage = document.getElementById('archiveLoadingMessage');
 
-        if (!res.ok) {
-            throw new Error(`API returned ${res.status}`);
+    let lastError = null;
+
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+
+        try {
+
+            // Give the visitor better feedback during a cold start
+            if (attempt > 0) {
+                loadingMessage.textContent =
+                    `Reconnecting to the museum archive... (attempt ${attempt + 1})`;
+            }
+
+            // After the first 8 seconds, explain that the archive may be waking up
+            const slowConnectionMessage = setTimeout(() => {
+                if (loadingMessage) {
+                    loadingMessage.textContent =
+                        'The archive is waking up. Please stay with us...';
+                }
+            }, 8000);
+
+            // Prevent the browser from waiting forever
+            const controller = new AbortController();
+
+            const timeout = setTimeout(() => {
+                controller.abort();
+            }, REQUEST_TIMEOUT);
+
+            try {
+
+                const res = await fetch(
+                    `${API_BASE}/api/artifacts`,
+                    {
+                        signal: controller.signal
+                    }
+                );
+
+                clearTimeout(timeout);
+                clearTimeout(slowConnectionMessage);
+
+                if (!res.ok) {
+                    throw new Error(`API returned ${res.status}`);
+                }
+
+                const data = await res.json();
+
+                if (!Array.isArray(data)) {
+                    throw new Error('Invalid artifact data received');
+                }
+
+                // Success!
+                allArtifacts = data;
+
+                applyURLFilter();
+
+                return;
+
+            } catch (error) {
+
+                clearTimeout(timeout);
+                clearTimeout(slowConnectionMessage);
+
+                throw error;
+            }
+
+        } catch (err) {
+
+            lastError = err;
+
+            console.warn(
+                `Artifact request attempt ${attempt + 1} failed:`,
+                err
+            );
+
+            // If we still have automatic retries available
+            if (attempt < MAX_RETRIES) {
+
+                loadingMessage.textContent =
+                    'The archive is taking a little longer to respond...';
+
+                // Wait before retrying
+                await new Promise(resolve =>
+                    setTimeout(resolve, 2000)
+                );
+            }
         }
-
-        const data = await res.json();
-
-        if (!Array.isArray(data)) {
-            throw new Error('Invalid artifact data received');
-        }
-
-        allArtifacts = data;
-
-        applyURLFilter();
-
-    } catch (err) {
-
-        console.error('Failed to load artifacts:', err);
-
-        grid.innerHTML = `
-            <div class="collection-error" role="alert">
-
-                <div class="collection-error-symbol" aria-hidden="true">𓂀</div>
-
-                <h2>The archive couldn't be reached</h2>
-
-                <p>
-                    The digital collection is temporarily unavailable.
-                    Please try again.
-                </p>
-
-                <button
-                    type="button"
-                    class="archive-retry-btn"
-                    onclick="loadArtifacts()">
-                    Try Again
-                </button>
-
-            </div>
-        `;
     }
+
+    // All attempts failed
+    console.error(
+        'Failed to load artifacts after all attempts:',
+        lastError
+    );
+
+    grid.innerHTML = `
+        <div class="collection-error" role="alert">
+
+            <div class="collection-error-symbol" aria-hidden="true">
+                𓂀
+            </div>
+
+            <h2>The archive couldn't be reached</h2>
+
+            <p>
+                We couldn't connect to the digital collection.
+                Please try again.
+            </p>
+
+            <button
+                type="button"
+                class="archive-retry-btn"
+                onclick="loadArtifacts()">
+                Try Again
+            </button>
+
+        </div>
+    `;
 }
 
     /* ------ Render ------ */
