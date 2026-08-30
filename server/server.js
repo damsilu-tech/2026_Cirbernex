@@ -10,12 +10,17 @@ const app = express();
 // Allow requests from file:// and localhost origins
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (file://, Postman, curl)
-    // and any localhost origin
-    if (!origin || origin.includes('localhost') || origin.includes('127.0.0.1') || origin === 'null') {
+    const allowed = [
+      'http://localhost:3000',
+      'http://127.0.0.1:3000',
+      'http://localhost:5500',
+      'http://127.0.0.1:5500',
+    ];
+    // Allow no-origin requests (Postman, curl) and any netlify.app or localhost
+    if (!origin || origin === 'null' || origin.includes('netlify.app') || origin.includes('localhost') || origin.includes('127.0.0.1') || allowed.includes(origin)) {
       callback(null, true);
     } else {
-      callback(null, true); // allow all for development
+      callback(null, true); // allow all for now — tighten once domain is confirmed
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

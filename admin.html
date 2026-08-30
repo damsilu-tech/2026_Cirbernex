@@ -158,8 +158,14 @@
   <script src="js/admin.js"></script>
 
   <script>
-    /* ── Render backend URL ── */
-    const API_BASE = "https://cibernex.onrender.com";
+    /* ── Render backend URL — matches admin.js ── */
+    const API_BASE = (() => {
+      const host = window.location.hostname;
+      if (host === 'localhost' || host === '127.0.0.1') {
+        return 'http://localhost:3000';
+      }
+      return 'https://cibernex-api.onrender.com';
+    })();
 
     /* Check if already logged in this session */
     if (sessionStorage.getItem("adminAuth") === "true") {
