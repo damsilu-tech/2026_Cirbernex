@@ -505,3 +505,31 @@
     }
 
 }
+.fallback-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.1rem;
+
+    border: 1px solid rgba(212, 169, 70, 0.35);
+    border-left: 3px solid var(--gold);
+
+    background: rgba(212, 169, 70, 0.06);
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.fallback-notice > span:first-child {
+    color: var(--gold);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.fallback-notice strong {
+    color: var(--gold);
+}

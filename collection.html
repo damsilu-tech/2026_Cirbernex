@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/common.css">
   <script src="js/theme.js"></script>
   <link rel="stylesheet" href="css/collection.css">
-  <script src="data/fallback-artifacts.js"></script>
+  <script src="js/fallback-artifacts.js"></script>
 </head>
 
 <body>
@@ -232,6 +232,12 @@ const API_BASE = (() => {
 
     /* ------ Load ------ */
 async function loadArtifacts() {
+  const oldFallbackNotice =
+    document.querySelector('.fallback-notice');
+
+if (oldFallbackNotice) {
+    oldFallbackNotice.remove();
+}
 
     const MAX_RETRIES = 2;
     const REQUEST_TIMEOUT = 70000; // 70 seconds
@@ -346,35 +352,33 @@ async function loadArtifacts() {
         }
     }
 
-    // All attempts failed
-    console.error(
-        'Failed to load artifacts after all attempts:',
-        lastError
-    );
+    // All live API attempts failed.
+// Fall back to the local featured collection.
 
-    grid.innerHTML = `
-        <div class="collection-error" role="alert">
+console.error(
+    'Live archive unavailable. Using local fallback collection:',
+    lastError
+);
 
-            <div class="collection-error-symbol" aria-hidden="true">
-                𓂀
-            </div>
+allArtifacts = FALLBACK_ARTIFACTS;
 
-            <h2>The archive couldn't be reached</h2>
+applyURLFilter();
 
-            <p>
-                We couldn't connect to the digital collection.
-                Please try again.
-            </p>
+const fallbackNotice = document.createElement('div');
 
-            <button
-                type="button"
-                class="archive-retry-btn"
-                onclick="loadArtifacts()">
-                Try Again
-            </button>
+fallbackNotice.className = 'fallback-notice';
 
-        </div>
-    `;
+fallbackNotice.innerHTML = `
+    <span aria-hidden="true">𓂀</span>
+    <span>
+        <strong>Featured collection</strong>
+        — The live archive is temporarily unavailable,
+        so you're viewing a curated selection.
+    </span>
+`;
+
+grid.parentElement.insertBefore(fallbackNotice, grid);
+
 }
 
     /* ------ Render ------ */
