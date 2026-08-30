@@ -231,20 +231,64 @@ const API_BASE = (() => {
 
     /* ------ Load ------ */
     async function loadArtifacts() {
-      try {
+
+    // Show loading state immediately
+    grid.innerHTML = `
+        <div class="collection-loading">
+            <div class="collection-loading-symbol">𓂀</div>
+
+            <h2>Opening the Museum Archive</h2>
+
+            <p>
+                Connecting to our digital collection...
+            </p>
+
+            <div class="collection-loading-bar">
+                <span></span>
+            </div>
+        </div>
+    `;
+
+    noResults.hidden = true;
+
+    try {
+
         const res = await fetch(`${API_BASE}/api/artifacts`);
-        if (!res.ok) throw new Error('API error');
+
+        if (!res.ok) {
+            throw new Error(`API returned ${res.status}`);
+        }
+
         allArtifacts = await res.json();
+
         applyURLFilter();
-      } catch (err) {
+
+    } catch (err) {
+
         console.error('Failed to load artifacts:', err);
+
         grid.innerHTML = `
-          <div style="grid-column:1/-1;padding:3rem;text-align:center;color:var(--muted)">
-            <p style="font-size:2rem;margin-bottom:1rem">𓂀</p>
-            <p>Could not connect to the server. Make sure it is running on port 3000.</p>
-          </div>`;
-      }
+            <div class="collection-error">
+
+                <div class="collection-error-symbol">𓂀</div>
+
+                <h2>The archive couldn't be reached</h2>
+
+                <p>
+                    The digital collection is temporarily unavailable.
+                </p>
+
+                <button
+                    type="button"
+                    class="archive-retry-btn"
+                    onclick="loadArtifacts()">
+                    Try Again
+                </button>
+
+            </div>
+        `;
     }
+}
 
     /* ------ Render ------ */
     function renderCards(data) {

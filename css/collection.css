@@ -382,3 +382,126 @@
     font-size: 16px; /* prevents iOS auto-zoom on focus */
   }
 }
+/* ================================
+   COLLECTION LOADING STATE
+================================ */
+
+.collection-loading,
+.collection-error {
+    grid-column: 1 / -1;
+
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 3rem 1.5rem;
+}
+
+.collection-loading-symbol,
+.collection-error-symbol {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.collection-loading h2,
+.collection-error h2 {
+    margin: 0 0 0.75rem;
+
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+}
+
+.collection-loading p,
+.collection-error p {
+    margin: 0;
+
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* Loading progress animation */
+
+.collection-loading-bar {
+    width: min(280px, 80%);
+    height: 3px;
+
+    margin-top: 1.5rem;
+
+    overflow: hidden;
+
+    background: rgba(212, 169, 70, 0.15);
+}
+
+.collection-loading-bar span {
+    display: block;
+
+    width: 40%;
+    height: 100%;
+
+    background: var(--gold);
+
+    animation: museumArchiveLoading 1.4s ease-in-out infinite;
+}
+
+@keyframes museumArchiveLoading {
+
+    0% {
+        transform: translateX(-120%);
+    }
+
+    100% {
+        transform: translateX(350%);
+    }
+
+}
+
+
+/* Retry button */
+
+.archive-retry-btn {
+    margin-top: 1.5rem;
+
+    padding: 0.85rem 1.5rem;
+
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+
+    background: var(--gold);
+    color: #111;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.archive-retry-btn:hover {
+    transform: translateY(-2px);
+}
+
+.archive-retry-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .collection-loading-bar span {
+        animation: none;
+        width: 100%;
+    }
+
+}
