@@ -252,7 +252,10 @@ async function loadFeatured() {
     const statEl = document.getElementById('statArtifacts');
     if (statEl) statEl.textContent = all.length + '+';
 
-  } catch {
+  } catch {    
+    const statEl = document.getElementById('statArtifacts');
+    if (statEl) statEl.textContent = '23+';
+
     // Fallback: show static cards with same structure
     const fallback = [
       {
