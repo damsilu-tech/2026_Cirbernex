@@ -1070,10 +1070,10 @@ footer a:hover { color: var(--gold-light); }
     width: 1px; height: auto;
     right: auto;
   }
-  .era             { flex-direction: row; text-align: left; align-items: center; gap: 1rem; }
+  .era             { flex-direction: row; text-align: left; align-items: center; gap: 1rem; padding: .5rem 0; }
   .era > span      { align-items: flex-start; }
   .era-dot         { flex-shrink: 0; }
-  .era-detail      { margin-left: 74px; }
+  .era-detail      { margin-left: 0; margin-top: 1.5rem; }
   .artifact-card   { grid-template-columns: 1fr; }
   .artifact-image  { min-height: 380px; }
   .footer-grid     { grid-template-columns: 1fr 1fr; }
@@ -1987,4 +1987,16 @@ footer a:hover { color: var(--gold-light); }
   .about-stats        { grid-template-columns: 1fr 1fr; }
   .virtual-rooms      { flex-direction: column; }
   .virtual-room       { justify-content: center; }
+
+  /* Timeline section mobile fixes */
+  .timeline-section   { padding: 3rem 0; }
+  .timeline           { gap: .6rem; padding: 0 1rem; }
+  .timeline::before   { left: calc(1rem + 29px); }
+  .era                { padding: .4rem 0; }
+  .era-dot            { width: 48px; height: 48px; font-size: .85rem; }
+  .era strong         { font-size: .88rem; }
+  .era small          { font-size: .75rem; }
+  .era-detail         { margin-top: 1.2rem; border-radius: 4px; }
+  .era-detail-meta    { gap: .6rem; }
+  .era-title          { font-size: .92rem; }
 }
