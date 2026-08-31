@@ -230,14 +230,32 @@ const FEATURED_TITLES = [
   'The Rosetta Stone'
 ];
 
+let homepageArtifactsPromise = null;
+
+function getHomepageArtifacts() {
+  if (!homepageArtifactsPromise) {
+    homepageArtifactsPromise = fetch(`${API_BASE}/api/artifacts`)
+      .then(res => {
+        if (!res.ok) throw new Error('API error');
+        return res.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid artifact data');
+        }
+        return data;
+      });
+  }
+
+  return homepageArtifactsPromise;
+}
+
 async function loadFeatured() {
   const grid = document.getElementById('featuredGrid');
   if (!grid) return;
 
   try {
-    const res  = await fetch(`${API_BASE}/api/artifacts`);
-    if (!res.ok) throw new Error('API error');
-    const all  = await res.json();
+    const all = await getHomepageArtifacts();
 
     let picks = FEATURED_TITLES
       .map(t => all.find(a => a.title === t))
