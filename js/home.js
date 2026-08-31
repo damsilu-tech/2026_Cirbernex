@@ -319,9 +319,7 @@ async function loadArtifactOfDay() {
   if (!card) return;
 
   try {
-    const res = await fetch(`${API_BASE}/api/artifacts`);
-    if (!res.ok) throw new Error('API error');
-    const all = await res.json();
+    const all = await getHomepageArtifacts();
     if (!all.length) throw new Error('Empty');
 
     // Pick deterministically based on day of year
