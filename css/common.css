@@ -797,8 +797,8 @@ h2 {
 }
 
 .era-dot {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 50%;
