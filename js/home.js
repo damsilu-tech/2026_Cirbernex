@@ -411,19 +411,28 @@ const FACTS = [
 let currentFact = 0;
 
 function initFacts() {
-  const textEl   = document.getElementById('factText');
-  const numEl    = document.getElementById('factNum');
-  const nextBtn  = document.getElementById('factNextBtn');
+  const textEl = document.getElementById('factText');
+  const numEl = document.getElementById('factNum');
+  const nextBtn = document.getElementById('factNextBtn');
+
   if (!textEl || !numEl || !nextBtn) return;
 
   function showFact(idx) {
     textEl.textContent = FACTS[idx];
-    numEl.textContent  = `${String(idx + 1).padStart(2, '0')} / ${String(FACTS.length).padStart(2, '0')}`;
-    numEl.setAttribute('aria-label', `Fact ${idx + 1} of ${FACTS.length}`);
+
+    numEl.textContent =
+      `${String(idx + 1).padStart(2, '0')} / ${String(FACTS.length).padStart(2, '0')}`;
+
+    numEl.setAttribute(
+      'aria-label',
+      `Fact ${idx + 1} of ${FACTS.length}`
+    );
   }
 
+  // Show the first fact immediately
   showFact(currentFact);
 
+  // Show the next fact when the button is clicked
   nextBtn.addEventListener('click', () => {
     currentFact = (currentFact + 1) % FACTS.length;
     showFact(currentFact);
