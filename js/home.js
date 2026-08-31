@@ -77,28 +77,28 @@ const eraData = {
     date:        'c. 2686–2181 BCE',
     title:       'The Old Kingdom',
     description: 'The Old Kingdom is famous for monumental architecture, including the great pyramids of Giza. Kingship, administration and religious traditions became increasingly organized.',
-    link:        'timeline.html'
+    link:        'old-kingdom.html'
   },
 
   middle: {
     date:        'c. 2055–1650 BCE',
     title:       'The Middle Kingdom',
     description: 'The Middle Kingdom brought political reunification, artistic development and major literary works. It is often remembered as a period of cultural renewal.',
-    link:        'timeline.html'
+    link:        'middle-kingdom.html'
   },
 
   new: {
     date:        'c. 1550–1070 BCE',
     title:       'The New Kingdom',
     description: 'The New Kingdom saw Egypt become a powerful international state. Famous rulers included Hatshepsut, Akhenaten, Tutankhamun and Ramesses II.',
-    link:        'timeline.html'
+    link:        'new-kingdom.html'
   },
 
   late: {
     date:        'c. 664–332 BCE',
     title:       'The Late Period',
     description: 'During the Late Period, Egypt experienced periods of foreign rule and renewed independence while its distinctive culture, writing and religious traditions continued to evolve.',
-    link:        'timeline.html'
+    link:        'late-period.html'
   }
 };
 const eraButtons     = document.querySelectorAll('.era');
