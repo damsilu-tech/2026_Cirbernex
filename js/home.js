@@ -65,32 +65,42 @@ const eraData = {
     description: 'Before the pharaohs, communities along the Nile developed agriculture, craft traditions, trade networks and social structures that helped shape the civilization that followed.',
     link:        'predynastic.html'
   },
+
+  'early-dynastic': {
+    date:        'c. 3100–2686 BCE',
+    title:       'The Early Dynastic Period',
+    description: 'Following the unification of Upper and Lower Egypt, early dynastic kings established institutions, royal traditions and administrative systems that shaped the foundations of the Egyptian state.',
+    link:        'early-dynastic.html'
+  },
+
   old: {
     date:        'c. 2686–2181 BCE',
     title:       'The Old Kingdom',
     description: 'The Old Kingdom is famous for monumental architecture, including the great pyramids of Giza. Kingship, administration and religious traditions became increasingly organized.',
     link:        'timeline.html'
   },
+
   middle: {
     date:        'c. 2055–1650 BCE',
     title:       'The Middle Kingdom',
     description: 'The Middle Kingdom brought political reunification, artistic development and major literary works. It is often remembered as a period of cultural renewal.',
     link:        'timeline.html'
   },
+
   new: {
     date:        'c. 1550–1070 BCE',
     title:       'The New Kingdom',
     description: 'The New Kingdom saw Egypt become a powerful international state. Famous rulers included Hatshepsut, Akhenaten, Tutankhamun and Ramesses II.',
     link:        'timeline.html'
   },
+
   late: {
-    date:        'After 1070 BCE',
-    title:       'Later Egypt',
-    description: 'Egypt later came under the influence and rule of several foreign powers, while its distinctive culture, writing and religious traditions continued to evolve.',
+    date:        'c. 664–332 BCE',
+    title:       'The Late Period',
+    description: 'During the Late Period, Egypt experienced periods of foreign rule and renewed independence while its distinctive culture, writing and religious traditions continued to evolve.',
     link:        'timeline.html'
   }
 };
-
 const eraButtons     = document.querySelectorAll('.era');
 const eraDescription = document.getElementById('eraDescription');
 const eraDate        = document.getElementById('eraDate');
