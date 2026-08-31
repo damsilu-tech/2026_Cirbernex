@@ -52,6 +52,26 @@
         <button class="vm-nav-btn" id="vmMapBtn" aria-label="Open museum map" aria-expanded="false">
           <span aria-hidden="true">⊞</span> Map
         </button>
+        <!-- GUIDED TOUR STATUS -->
+<div class="vm-tour-status" id="vmTourStatus" hidden>
+  <div>
+    <span class="vm-tour-status-label" id="vmTourStatusLabel">
+      Guided Tour
+    </span>
+
+    <strong id="vmTourStatusRoom">
+      Room
+    </strong>
+
+    <p id="vmTourStatusText">
+      Explore this room.
+    </p>
+  </div>
+
+  <button id="vmTourStop" type="button">
+    Exit Tour
+  </button>
+</div>
         <button class="vm-nav-btn" id="vmGuideBtn" aria-label="Start guided tour" aria-expanded="false">
           <span aria-hidden="true">↻</span> Tour
         </button>
@@ -640,7 +660,14 @@
     </div>
 
     <!-- ARTIFACT DETAIL PANEL -->
-    <div class="vm-artifact-panel" id="vmArtifactPanel" hidden role="dialog" aria-modal="true" aria-labelledby="artifact-panel-title">
+    <div
+  class="vm-artifact-panel"
+  id="vmArtifactPanel"
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="artifact-panel-title"
+>
       <div class="vm-ap-inner">
         <button class="vm-ap-close" id="vmApClose" aria-label="Close artifact detail">✕</button>
         <div class="vm-ap-content" id="vmApContent">
