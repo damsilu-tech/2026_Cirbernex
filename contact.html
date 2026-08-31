@@ -25,7 +25,7 @@
         <a href="index.html">Home</a>
         <a href="timeline.html">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#virtual">Virtual Museum</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
           <span class="icon-moon" aria-hidden="true">🌙</span>
           <span class="icon-sun" aria-hidden="true">☀️</span>
@@ -88,24 +88,24 @@
 
         <div class="form-card">
           <h3>Send a message</h3>
-          <form id="contactForm" novalidate>
+          <form action="https://formspree.io/f/mgaeozeo" method="POST" id="contact-form">
             <div class="field-row">
               <div class="field">
                 <label for="fname">First name</label>
-                <input type="text" id="fname" placeholder="Nefertari" required autocomplete="given-name">
+                <input type="text" id="fname" placeholder="Nefertari" required autocomplete="given-name" name="first_name">
               </div>
               <div class="field">
                 <label for="lname">Last name</label>
-                <input type="text" id="lname" placeholder="Ramesses" required autocomplete="family-name">
+                <input type="text" id="lname" placeholder="Ramesses" required autocomplete="family-name" name="last_name">
               </div>
             </div>
             <div class="field">
               <label for="email">Email address</label>
-              <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+              <input type="email" id="email" placeholder="you@example.com" required autocomplete="email" name="email">
             </div>
             <div class="field">
               <label for="subject">Subject</label>
-              <select id="subject">
+              <select id="subject" name="subject">
                 <option value="">Select a topic…</option>
                 <option>Artifact inquiry</option>
                 <option>Feedback</option>
@@ -116,12 +116,14 @@
             </div>
             <div class="field">
               <label for="msg">Message</label>
-              <textarea id="msg" placeholder="Tell us what's on your mind…" required></textarea>
+              <textarea id="msg" placeholder="Tell us what's on your mind…" required name="message"></textarea>
             </div>
             <button class="btn btn-gold" type="submit">Send Message →</button>
             <div class="form-success" id="formSuccess" aria-live="polite" role="status">
               ✓ Message sent — thank you! We'll be in touch soon.
             </div>
+            <input type="hidden" name="_next" 
+  value="https://damsilu-tech.github.io/2026_Cirbernex/contact.html?sent=true">
           </form>
         </div>
 
@@ -169,10 +171,10 @@
       </div>
       <div>
         <h3>Explore</h3>
-        <a href="index.html#explore">Artifacts</a>
+        <a href="collection.html">Artifacts</a>
         <a href="timeline.html">Timeline</a>
         <a href="collection.html">Collections</a>
-        <a href="index.html#virtual">Virtual Museum</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
       </div>
       <div>
         <h3>Eras</h3>
@@ -183,8 +185,8 @@
       </div>
       <div>
         <h3>Project</h3>
-        <a href="index.html#about">About</a>
-        <a href="index.html#about">Mission</a>
+        <a href="about.html">About</a>
+        <a href="about.html#mission">Mission</a>
         <a href="contact.html">Contact</a>
         <a href="admin.html">Admin</a>
       </div>
@@ -195,5 +197,12 @@
   </footer>
 
   <script src="js/contact.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+if (params.get('sent') === 'true') {
+  document.querySelector('.success-message').style.display = 'block';
+  document.getElementById('contact-form').style.display = 'none';
+}
+  </script>
 </body>
 </html>
