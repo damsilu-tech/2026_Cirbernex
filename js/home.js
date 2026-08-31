@@ -8,14 +8,7 @@
    API CONFIGURATION
    Change API_BASE to your deployed URL when live.
    -------------------------------------------------- */
-const API_BASE = (() => {
-  const host = window.location.hostname;
-  if (host === 'localhost' || host === '127.0.0.1') {
-    return 'https://cibernex-api.onrender.com';
-  }
-  return ''; // relative path for production
-})();
-
+const API_BASE = 'https://cibernex-api.onrender.com';
 /* --------------------------------------------------
    REDUCED MOTION
    -------------------------------------------------- */
