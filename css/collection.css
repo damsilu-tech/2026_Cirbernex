@@ -187,7 +187,7 @@
 
 /* ---- FILTER BAR ---- */
 .filter-section {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   position: sticky;
@@ -207,7 +207,7 @@
   border: 1px solid var(--line);
   background: var(--white);
   color: var(--muted);
-  font-size: .85rem;
+  font-size: .80rem;
   font-weight: 600;
   cursor: pointer;
   transition: .2s ease;
