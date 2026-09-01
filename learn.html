@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn ancient Egypt through guided learning paths, interactive lessons, people, artifacts and quick knowledge checks.">
+  <title>Learn Ancient Egypt | Egypt's Digital Museum</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/learn.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="learn-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="learn.html" class="active" aria-current="page">Learn</a>
+      <a href="people.html">People</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <span class="icon-moon">🌙</span><span class="icon-sun">☀️</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="learn-hero" aria-labelledby="learn-title">
+    <div class="hero-stars" aria-hidden="true"></div>
+    <div class="hero-hieroglyphs" aria-hidden="true">𓂀 𓋹 𓉐 𓆣 𓏏 𓂋</div>
+    <div class="hero-sun" aria-hidden="true"></div>
+    <div class="hero-pyramid" aria-hidden="true"></div>
+    <div class="hero-content container">
+      <div class="section-kicker">Your learning journey</div>
+      <h1 id="learn-title"><span>LEARN</span><em>Ancient Egypt.</em></h1>
+      <p>Understand the civilization behind the monuments. From pharaohs and gods to hieroglyphs and everyday life.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#paths">Start Learning ↓</a>
+        <a class="btn btn-ghost" href="#five-minutes">Egypt in 5 Minutes</a>
+      </div>
+    </div>
+    <div class="hero-caption">c. 3100 BCE — 30 BCE <span></span> Learn by story, not by memorisation.</div>
+  </section>
+
+  <section class="paths-section" id="paths" aria-labelledby="paths-title">
+    <div class="container">
+      <div class="section-head split-head">
+        <div><div class="section-kicker">01 / Learning paths</div><h2 id="paths-title">Choose where<br><span>your journey begins.</span></h2></div>
+        <p>Start with the essentials, then follow the questions that interest you. Each path connects ideas, people, places and objects across the museum.</p>
+      </div>
+      <div class="path-grid">
+        <a class="path-card path-featured" href="timeline.html"><span class="path-number">01</span><span class="path-symbol">𓉢</span><span class="path-level">BEGINNER</span><h3>Ancient Egypt 101</h3><p>Learn the essential facts about Egyptian civilization and build a foundation for everything that follows.</p><span class="path-link">Start →</span></a>
+        <a class="path-card" href="people.html"><span class="path-number">02</span><span class="path-symbol">♕</span><span class="path-level">HISTORY</span><h3>Pharaohs &amp; Kings</h3><p>Understand Egyptian rulers, royal power and the people behind the crowns.</p><span class="path-link">Start →</span></a>
+        <a class="path-card" href="explore.html"><span class="path-number">03</span><span class="path-symbol">𓂀</span><span class="path-level">RELIGION</span><h3>Gods &amp; Beliefs</h3><p>Discover gods, mythology, ritual and beliefs about life, death and the afterlife.</p><span class="path-link">Start →</span></a>
+        <a class="path-card" href="timeline.html"><span class="path-number">04</span><span class="path-symbol">𓉐</span><span class="path-level">ARCHITECTURE</span><h3>Pyramids &amp; Monuments</h3><p>Explore how and why Egyptians built temples, tombs and monumental landscapes.</p><span class="path-link">Start →</span></a>
+        <a class="path-card" href="explore.html"><span class="path-number">05</span><span class="path-symbol">𓂋</span><span class="path-level">WRITING</span><h3>Hieroglyphs</h3><p>Discover how Egyptian writing worked and why a picture could carry a sound, word or idea.</p><span class="path-link">Start →</span></a>
+        <a class="path-card" href="#day"><span class="path-number">06</span><span class="path-symbol">𓇼</span><span class="path-level">CULTURE</span><h3>Daily Life</h3><p>Meet the farmers, artisans, scribes and families who made Egyptian society work.</p><span class="path-link">Start →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="five-section" id="five-minutes" aria-labelledby="five-title">
+    <div class="container">
+      <div class="five-intro"><div><div class="section-kicker">02 / The essential story</div><h2 id="five-title">Egypt in<br><span>5 Minutes.</span></h2></div><p>No long article. No prior knowledge required. Follow six ideas that unlock the civilization.</p></div>
+      <div class="five-layout">
+        <div class="five-nav" role="tablist" aria-label="Egypt in 5 Minutes">
+          <button class="five-step active" data-step="0" role="tab" aria-selected="true"><b>01</b><span>The Nile</span><small>Life begins with water.</small></button>
+          <button class="five-step" data-step="1" role="tab" aria-selected="false"><b>02</b><span>The Pharaoh</span><small>Power and order.</small></button>
+          <button class="five-step" data-step="2" role="tab" aria-selected="false"><b>03</b><span>Religion</span><small>A world of gods.</small></button>
+          <button class="five-step" data-step="3" role="tab" aria-selected="false"><b>04</b><span>Writing</span><small>Ideas made visible.</small></button>
+          <button class="five-step" data-step="4" role="tab" aria-selected="false"><b>05</b><span>Monuments</span><small>Building for eternity.</small></button>
+          <button class="five-step" data-step="5" role="tab" aria-selected="false"><b>06</b><span>Afterlife</span><small>Preparing for forever.</small></button>
+        </div>
+        <article class="five-panel" id="fivePanel" role="tabpanel" aria-live="polite">
+          <div class="five-panel-number" id="fiveNumber">01</div><div class="five-panel-symbol" id="fiveSymbol">𓈗</div>
+          <div><div class="mini-kicker" id="fiveKicker">THE NILE</div><h3 id="fiveHeading">A river that made civilization possible.</h3><p id="fiveText">The Nile provided water, fertile soil and a reliable route through the landscape. Its rhythms shaped farming, settlement and trade—and helped connect communities into one civilization.</p></div>
+          <div class="five-progress"><span id="fiveProgress"></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="interactive-section" aria-labelledby="interactive-title">
+    <div class="container">
+      <div class="section-kicker">03 / Think like a historian</div><div class="section-head"><h2 id="interactive-title">Curiosity is the<br><span>first lesson.</span></h2><p>Tap a question. Build an answer from the evidence.</p></div>
+      <div class="lesson-grid">
+        <button class="lesson-card" aria-expanded="false"><span class="lesson-icon">♕</span><span class="lesson-question">Who was the Pharaoh?</span><span class="lesson-answer">The pharaoh was Egypt's king and a central symbol of order. Royal power connected government, ritual and the protection of the land.</span><span class="lesson-cta">Tap to reveal +</span></button>
+        <button class="lesson-card" aria-expanded="false"><span class="lesson-icon">𓉢</span><span class="lesson-question">Why build pyramids?</span><span class="lesson-answer">Pyramids were monumental royal tombs. Their scale expressed royal power and helped create a lasting place for the king's burial and cult.</span><span class="lesson-cta">Tap to reveal +</span></button>
+        <button class="lesson-card" aria-expanded="false"><span class="lesson-icon">𓂋</span><span class="lesson-question">What were hieroglyphs?</span><span class="lesson-answer">Hieroglyphs were a writing system using signs that could represent sounds, words and ideas. They appeared on monuments, objects and documents.</span><span class="lesson-cta">Tap to reveal +</span></button>
+        <button class="lesson-card" aria-expanded="false"><span class="lesson-icon">𓈗</span><span class="lesson-question">Why was the Nile important?</span><span class="lesson-answer">It supported agriculture, transport and settlement. The river was woven into economic life, geography and religious thought.</span><span class="lesson-cta">Tap to reveal +</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="day-section" id="day" aria-labelledby="day-title">
+    <div class="container">
+      <div class="day-header"><div><div class="section-kicker">04 / Everyday Egypt</div><h2 id="day-title">A Day in<br><span>Ancient Egypt.</span></h2></div><p>History is more than dates. Imagine the rhythm of an ordinary day along the Nile.</p></div>
+      <div class="day-line" aria-hidden="true"></div>
+      <div class="day-grid">
+        <article class="day-card"><time>06:00</time><span>🌅</span><h3>Sunrise</h3><p>The Nile begins another day. Work and travel follow the light.</p></article>
+        <article class="day-card"><time>08:00</time><span>🌾</span><h3>Morning</h3><p>Farmers work the fields while boats move people and goods along the river.</p></article>
+        <article class="day-card"><time>13:00</time><span>🏺</span><h3>Afternoon</h3><p>Artisans, builders and scribes turn skill and knowledge into objects and records.</p></article>
+        <article class="day-card"><time>18:00</time><span>🍲</span><h3>Evening</h3><p>Families gather, meals are shared and the working day gives way to rest.</p></article>
+        <article class="day-card"><time>22:00</time><span>🌙</span><h3>Night</h3><p>The darkness carries another meaning: beliefs about gods, dreams and the world beyond life.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="connections-section" aria-labelledby="connections-title">
+    <div class="container">
+      <div class="section-kicker">05 / Follow the evidence</div><div class="section-head"><h2 id="connections-title">Learn through<br><span>people &amp; objects.</span></h2><p>Every subject becomes richer when you connect it to a real person, place or artifact.</p></div>
+      <div class="connect-grid">
+        <a class="connect-card" href="explore.html"><div class="connect-art artifact-mask"></div><div class="connect-copy"><span class="mini-kicker">WRITING &amp; CULTURE</span><h3>Learn the writing of Ancient Egypt</h3><p>Symbols could represent sounds, ideas and objects.</p><span>Explore Hieroglyphs →</span></div></a>
+        <a class="connect-card" href="people.html"><div class="connect-art person-art"><span>𓁐</span></div><div class="connect-copy"><span class="mini-kicker">MEET THE PEOPLE</span><h3>History had human faces.</h3><p>Meet Hatshepsut, Imhotep, Tutankhamun, Ramesses II and more.</p><span>Explore People →</span></div></a>
+        <a class="connect-card" href="artifact.html"><div class="connect-art artifact-photo"></div><div class="connect-copy"><span class="mini-kicker">LEARN THROUGH OBJECTS</span><h3>What can an artifact tell us?</h3><p>Object → Pharaoh → Religion → Burial → Afterlife.</p><span>Explore Artifact →</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="check-section" aria-labelledby="check-title">
+    <div class="container check-grid">
+      <div><div class="section-kicker">06 / Knowledge check</div><h2 id="check-title">One question.<br><span>One new connection.</span></h2><p>Test what you just learned. You don't need to get everything right—the point is to notice the connection.</p></div>
+      <div class="quiz-card" id="miniQuiz"><div class="quiz-top"><span>QUESTION 01 / 03</span><span id="quizScore">0 correct</span></div><h3 id="quizQuestion">Why was the Nile important to ancient Egypt?</h3><div class="quiz-options"><button data-correct="false">Only for transportation</button><button data-correct="false">Only for religion</button><button data-correct="true">For farming, transport and life</button><button data-correct="false">Mainly for building pyramids</button></div><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p><button class="quiz-next" id="quizNext" hidden>Next question →</button></div>
+    </div>
+  </section>
+
+  <section class="progress-section" aria-labelledby="progress-title">
+    <div class="container progress-wrap"><div><div class="section-kicker">Your journey</div><h2 id="progress-title">Keep learning,<br><span>one story at a time.</span></h2></div><div class="progress-card"><div class="progress-head"><span>YOUR PROGRESS</span><b id="progressPercent">0%</b></div><div class="progress-bar"><span id="progressBar"></span></div><div class="progress-items"><span>Ancient Egypt 101 <i data-progress="80"></i></span><span>Hieroglyphs <i data-progress="40"></i></span><span>Gods &amp; Beliefs <i data-progress="20"></i></span></div><button class="btn btn-gold" id="continueBtn">Continue Learning</button></div></div>
+  </section>
+
+  <section class="explore-next" aria-labelledby="next-title">
+    <div class="container"><div class="section-kicker">Continue exploring</div><h2 id="next-title">Where should history<br><span>take you next?</span></h2><div class="next-grid"><a href="timeline.html"><b>01</b><strong>Timeline</strong><span>Travel through 5,000 years →</span></a><a href="people.html"><b>02</b><strong>People</strong><span>Meet the people behind history →</span></a><a href="collection.html"><b>03</b><strong>Collections</strong><span>Learn through objects →</span></a><a href="places.html"><b>04</b><strong>Places</strong><span>Explore Egypt's landscapes →</span></a><a href="virtual-museum.html"><b>05</b><strong>Virtual Museum</strong><span>Step inside the exhibition →</span></a></div></div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><img class="brand-mark" src="assets/images/image-removebg-preview.png" alt=""><span class="brand-name">Egypt's Digital Museum</span></a><p>5,000 years. One digital journey.</p></div></footer>
+<script src="js/learn.js"></script>
+</body>
+</html>

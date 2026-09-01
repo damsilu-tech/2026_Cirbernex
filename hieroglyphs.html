@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore ancient Egyptian hieroglyphs through an interactive symbol explorer, phonetic name builder, decoding challenges and mini quiz.">
+  <title>Hieroglyph Explorer | Egypt's Digital Museum</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/hieroglyphs.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="hieroglyph-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="learn.html">Learn</a>
+      <a href="people.html">People</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="glyph-hero" aria-labelledby="hero-title">
+    <div class="hero-runes" aria-hidden="true"><span>𓂀</span><span>𓋹</span><span>𓆣</span><span>𓅃</span><span>𓉐</span><span>𓇳</span><span>𓂋</span><span>𓏏</span></div>
+    <div class="hero-sun" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container glyph-hero-inner">
+      <div class="section-kicker">The writing of ancient Egypt</div>
+      <p class="hero-pretitle">THE LANGUAGE OF THE GODS</p>
+      <h1 id="hero-title"><span>𓂀</span> Discover<br><em>Hieroglyphs.</em></h1>
+      <p class="hero-lead">Explore the symbols, sounds and ideas behind one of the world's most fascinating ancient writing systems.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#explorer">Start Exploring ↓</a>
+        <a class="btn btn-ghost" href="#how-writing-works">How it works</a>
+      </div>
+      <div class="hero-note"><span>c. 3200 BCE</span><i></i><span>Hieroglyphic writing emerges in Egypt</span></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro-section" aria-labelledby="what-title">
+    <div class="container intro-grid">
+      <div>
+        <div class="section-kicker">01 / Start here</div>
+        <h2 id="what-title">Pictures that could<br><span>sound, mean &amp; explain.</span></h2>
+      </div>
+      <div class="intro-copy">
+        <p class="lead-copy">Ancient Egyptian writing used hundreds of signs representing sounds, objects and ideas. Hieroglyphs appeared on temples, tombs, statues, papyri and objects connected with daily and religious life.</p>
+        <p>Hieroglyphic writing was especially associated with monumental and sacred contexts. Egyptians also developed faster scripts, including hieratic and later demotic, for many practical uses.</p>
+      </div>
+    </div>
+    <div class="container glyph-strip" aria-label="Examples of hieroglyphs">
+      <button class="glyph-tile" data-symbol="𓂀" aria-label="Eye of Horus"><strong>𓂀</strong><span>Eye</span><small>well-being</small></button>
+      <button class="glyph-tile" data-symbol="𓋹" aria-label="Ankh"><strong>𓋹</strong><span>Ankh</span><small>life</small></button>
+      <button class="glyph-tile" data-symbol="𓉐" aria-label="House sign"><strong>𓉐</strong><span>House</span><small>place</small></button>
+      <button class="glyph-tile" data-symbol="𓆣" aria-label="Scarab"><strong>𓆣</strong><span>Scarab</span><small>renewal</small></button>
+    </div>
+  </section>
+
+  <!-- HOW WRITING WORKS -->
+  <section class="systems-section" id="how-writing-works" aria-labelledby="systems-title">
+    <div class="container">
+      <div class="section-head centered-head">
+        <div class="section-kicker">02 / How Egyptian writing works</div>
+        <h2 id="systems-title">A sign is more than<br><span>a picture.</span></h2>
+        <p>Egyptian signs could work in different ways depending on context. Tap each card to see the idea.</p>
+      </div>
+      <div class="system-grid">
+        <button class="system-card active" data-system="phonogram" aria-expanded="true">
+          <span class="system-icon">🔊</span><span class="system-number">01</span><h3>Phonograms</h3><p>Sound-based signs</p><span class="system-reveal">Explore →</span>
+        </button>
+        <button class="system-card" data-system="ideogram" aria-expanded="false">
+          <span class="system-icon">💡</span><span class="system-number">02</span><h3>Ideograms</h3><p>Signs for ideas or things</p><span class="system-reveal">Explore →</span>
+        </button>
+        <button class="system-card" data-system="determinative" aria-expanded="false">
+          <span class="system-icon">🧭</span><span class="system-number">03</span><h3>Determinatives</h3><p>Clues that clarify meaning</p><span class="system-reveal">Explore →</span>
+        </button>
+      </div>
+      <div class="system-detail" id="systemDetail" aria-live="polite">
+        <div class="detail-symbol">𓅓</div>
+        <div><span class="mini-kicker" id="systemLabel">PHONOGRAM</span><h3 id="systemTitle">A sign can carry a sound.</h3><p id="systemText">Some hieroglyphs were used for their consonantal sounds. This is why a modern name can sometimes be rendered approximately by choosing signs whose sounds are close to its letters.</p></div>
+        <div class="detail-example"><small>THINK</small><strong id="systemExample">sound → sign</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORER -->
+  <section class="explorer-section" id="explorer" aria-labelledby="explorer-title">
+    <div class="container">
+      <div class="explorer-head">
+        <div><div class="section-kicker">03 / Main feature</div><h2 id="explorer-title">Hieroglyph<br><span>Explorer.</span></h2></div>
+        <p>Search the collection, filter by category, then select a sign to see its meaning, use and related concept.</p>
+      </div>
+
+      <div class="explorer-shell">
+        <aside class="symbol-library" aria-label="Hieroglyph symbol library">
+          <div class="search-wrap"><span>⌕</span><input id="glyphSearch" type="search" placeholder="Search symbols..." autocomplete="off" aria-label="Search hieroglyphs"></div>
+          <div class="popular-row"><span>Popular</span><button data-pick="𓂀">𓂀</button><button data-pick="𓋹">𓋹</button><button data-pick="𓆣">𓆣</button><button data-pick="𓉐">𓉐</button><button data-pick="𓅃">𓅃</button></div>
+          <div class="category-row" role="tablist" aria-label="Symbol categories">
+            <button class="cat-btn active" data-category="all" role="tab">All</button><button class="cat-btn" data-category="people" role="tab">People</button><button class="cat-btn" data-category="animals" role="tab">Animals</button><button class="cat-btn" data-category="birds" role="tab">Birds</button><button class="cat-btn" data-category="objects" role="tab">Objects</button><button class="cat-btn" data-category="sacred" role="tab">Sacred</button>
+          </div>
+          <div class="symbol-grid" id="symbolGrid"></div>
+        </aside>
+
+        <article class="symbol-detail" id="symbolDetail" aria-live="polite">
+          <div class="detail-topline"><span>SELECTED SIGN</span><button id="randomGlyph" type="button">Random symbol ↗</button></div>
+          <div class="selected-glyph" id="selectedGlyph">𓂀</div>
+          <div class="selected-copy"><span class="mini-kicker" id="selectedCategory">SACRED SYMBOL</span><h3 id="selectedName">Eye of Horus</h3><p id="selectedDescription">A protective sign associated with the eye of Horus. The symbol became a powerful visual shorthand for protection and well-being.</p></div>
+          <div class="fact-grid">
+            <div><small>MEANING</small><strong id="selectedMeaning">Protection / well-being</strong></div>
+            <div><small>FUNCTION</small><strong id="selectedFunction">Symbol / concept</strong></div>
+            <div><small>RELATED</small><strong id="selectedRelated">Horus</strong></div>
+            <div><small>GROUP</small><strong id="selectedGroup">Sacred signs</strong></div>
+          </div>
+          <div class="anatomy-link"><span>𓂀</span><div><strong>Look closer</strong><small>See how scholars think about a sign's sound, meaning and context.</small></div><button id="jumpAnatomy" type="button">Explore anatomy →</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section" aria-labelledby="categories-title">
+    <div class="container">
+      <div class="section-head split-head"><div><div class="section-kicker">04 / Symbol categories</div><h2 id="categories-title">Read the world<br><span>through signs.</span></h2></div><p>Grouping signs makes a large writing system easier to approach. Start with a visual family, then return to the explorer to investigate individual signs.</p></div>
+      <div class="category-cards">
+        <button data-category-jump="people"><span>𓀀</span><strong>People</strong><small>Human figures &amp; roles</small></button>
+        <button data-category-jump="animals"><span>𓃠</span><strong>Animals</strong><small>Mammals &amp; creatures</small></button>
+        <button data-category-jump="birds"><span>𓅃</span><strong>Birds</strong><small>Bird signs &amp; forms</small></button>
+        <button data-category-jump="plants"><span>𓆼</span><strong>Plants</strong><small>Flora &amp; landscape</small></button>
+        <button data-category-jump="objects"><span>𓉐</span><strong>Objects</strong><small>Things &amp; places</small></button>
+        <button data-category-jump="sacred"><span>𓋹</span><strong>Gods &amp; sacred</strong><small>Religion &amp; symbols</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAME BUILDER -->
+  <section class="name-section" aria-labelledby="name-title">
+    <div class="container name-layout">
+      <div class="name-intro"><div class="section-kicker">05 / Make something</div><h2 id="name-title">Build your<br><span>name.</span></h2><p>Try a phonetic rendering using a small set of common consonant values. It is an educational approximation—not a direct translation of a modern name into ancient Egyptian.</p><label for="nameInput">ENTER YOUR NAME</label><div class="name-input-wrap"><input id="nameInput" maxlength="18" value="MUSEUM" placeholder="Your name"><button id="renderName" type="button">Convert →</button></div><div class="name-status" id="nameStatus">Try a short name in English.</div></div>
+      <div class="name-result" aria-live="polite"><div class="result-frame"><span class="frame-corner tl"></span><span class="frame-corner tr"></span><span class="frame-corner bl"></span><span class="frame-corner br"></span><small>PHONETIC HIEROGLYPHIC RENDERING</small><div class="name-glyphs" id="nameGlyphs">𓅓 𓅱 𓊃 𓇋 𓅓</div><div class="name-latin" id="nameLatin">MUSEUM</div><p>Read as an approximate sound sequence, not as a historical Egyptian spelling.</p></div></div>
+    </div>
+  </section>
+
+  <!-- DECODE + DIRECTION -->
+  <section class="challenge-section" aria-labelledby="decode-title">
+    <div class="container challenge-grid">
+      <div class="decode-card">
+        <div class="section-kicker">06 / Decode a message</div><h2 id="decode-title">Can you<br><span>decode this?</span></h2>
+        <div class="difficulty" role="tablist" aria-label="Challenge difficulty"><button class="difficulty-btn active" data-level="easy">Easy</button><button class="difficulty-btn" data-level="medium">Medium</button><button class="difficulty-btn" data-level="expert">Expert</button></div>
+        <div class="decode-symbols" id="decodeSymbols">𓇋 𓅓 𓏏</div><p class="decode-hint" id="decodeHint">Three signs. Use their common sound values.</p><button class="btn btn-gold" id="revealDecode">Reveal answer</button><div class="decode-answer" id="decodeAnswer" hidden><small>ANSWER</small><strong id="decodeWord">IMT</strong><p id="decodeExplanation">𓇋 ≈ I · 𓅓 ≈ M · 𓏏 ≈ T</p><button id="nextChallenge" type="button">Next challenge →</button></div>
+      </div>
+      <div class="direction-card">
+        <div class="section-kicker">07 / Direction explorer</div><h2>Which way<br><span>should you read?</span></h2>
+        <div class="direction-demo" id="directionDemo"><span>𓅃</span><span>𓂀</span><span>𓋹</span></div>
+        <div class="direction-controls"><button class="dir-btn active" data-dir="ltr">→ Left to right</button><button class="dir-btn" data-dir="rtl">← Right to left</button></div>
+        <p id="directionText">In many inscriptions, the orientation of human and animal figures helps indicate the direction of reading. The signs face toward the beginning of the line.</p>
+        <div class="direction-note">Try the controls above. Notice how the visual order changes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANATOMY -->
+  <section class="anatomy-section" id="anatomy" aria-labelledby="anatomy-title">
+    <div class="container anatomy-layout">
+      <div class="anatomy-visual"><div class="big-glyph">𓂀</div><span class="callout callout-one">SIGN FORM</span><span class="callout callout-two">MEANING</span><span class="callout callout-three">CONTEXT</span><span class="line line-one"></span><span class="line line-two"></span><span class="line line-three"></span></div>
+      <div class="anatomy-copy"><div class="section-kicker">08 / Hieroglyph anatomy</div><h2 id="anatomy-title">One sign.<br><span>Many questions.</span></h2><p>When studying an inscription, scholars ask more than “what does this picture mean?” They consider the sign's sound, grammatical role, meaning and surrounding context.</p><div class="anatomy-facts"><div><b>01</b><span><strong>Meaning</strong>What concept or object can the sign evoke?</span></div><div><b>02</b><span><strong>Sound</strong>Can the sign contribute one or more consonantal sounds?</span></div><div><b>03</b><span><strong>Usage</strong>How does its role change in a particular word or inscription?</span></div></div></div>
+    </div>
+  </section>
+
+  <!-- FAMOUS INSCRIPTIONS -->
+  <section class="inscriptions-section" aria-labelledby="inscriptions-title">
+    <div class="container">
+      <div class="section-head split-head"><div><div class="section-kicker">09 / Famous inscriptions</div><h2 id="inscriptions-title">Writing that<br><span>changed history.</span></h2></div><p>Hieroglyphs survive in monuments, tombs, statues and stelae. Each inscription has a physical and historical context.</p></div>
+      <div class="inscription-grid">
+        <article><div class="inscription-art rosetta"><span>𓂀</span><span>𓋹</span><span>𓏏</span></div><div class="inscription-body"><small>ROSETTA STONE · PTOLEMAIC PERIOD</small><h3>One text, three scripts.</h3><p>The Rosetta Stone carries the same decree in hieroglyphic, demotic and Greek. Its parallel texts helped scholars unlock ancient Egyptian writing.</p><span class="source-note">Historical context · 196 BCE</span></div></article>
+        <article><div class="inscription-art temple"><span>𓇳</span><span>𓅃</span><span>𓉢</span></div><div class="inscription-body"><small>TEMPLES · ROYAL &amp; RELIGIOUS</small><h3>Words carved for eternity.</h3><p>Temple walls record royal names, rituals, offerings and stories. Monumental writing connected the king, gods and sacred space.</p><span class="source-note">Context · architecture &amp; ritual</span></div></article>
+        <article><div class="inscription-art tomb"><span>𓂀</span><span>𓆣</span><span>𓋹</span></div><div class="inscription-body"><small>TOMBS · FUNERARY</small><h3>Writing for the journey beyond.</h3><p>Funerary texts and images formed part of a larger ritual environment, helping express beliefs about protection, identity and the afterlife.</p><span class="source-note">Context · burial &amp; belief</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTION -->
+  <section class="connection-section" aria-labelledby="connection-title">
+    <div class="container connection-layout"><div><div class="section-kicker">10 / Connect the museum</div><h2 id="connection-title">A sign can lead<br><span>to a whole story.</span></h2></div><div class="connection-chain"><div><strong>𓋹</strong><span>HIEROGLYPH</span><small>Ankh · life</small></div><i>↓</i><div><strong>𓂀</strong><span>ARTIFACT</span><small>Ankh amulet</small></div><i>↓</i><div><strong>𓉢</strong><span>PLACE</span><small>Temple complex</small></div><i>↓</i><div><strong>𓇳</strong><span>ERA</span><small>New Kingdom</small></div></div></div>
+  </section>
+
+  <!-- DID YOU KNOW -->
+  <section class="fact-section" aria-labelledby="fact-title">
+    <div class="container fact-layout"><div><div class="section-kicker">11 / Did you know?</div><h2 id="fact-title">A little<br><span>surprise.</span></h2></div><div class="fact-box"><span class="fact-mark">“</span><p id="factText">Hieroglyphic writing was used mainly in formal, monumental and religious contexts; faster scripts served many everyday needs.</p><button id="nextFact" type="button">Next fact →</button></div></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="quiz-section" aria-labelledby="quiz-title">
+    <div class="container quiz-layout"><div><div class="section-kicker">12 / Knowledge check</div><h2 id="quiz-title">Test your<br><span>new knowledge.</span></h2><p>Five quick questions. No pressure—just see what stuck.</p><div class="score-ring"><strong id="quizScore">0</strong><span>/ 5</span></div></div><div class="quiz-card" id="quizCard"><div class="quiz-top"><span id="quizCount">QUESTION 01 / 05</span><span id="quizProgressLabel">0 correct</span></div><h3 id="quizQuestion">What is a determinative mainly used to do?</h3><div class="quiz-options" id="quizOptions"></div><div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div><button class="btn btn-gold" id="nextQuiz" type="button" disabled>Next question →</button></div></div>
+  </section>
+
+  <!-- EXPLORE MORE -->
+  <section class="explore-more" aria-labelledby="more-title"><div class="container"><div class="section-kicker">13 / Continue your journey</div><h2 id="more-title">You've learned the language.<br><span>Where will history take you next?</span></h2><div class="more-grid"><a href="artifact.html"><b>01</b><strong>Explore Artifacts</strong><span>See objects in context →</span></a><a href="people.html"><b>02</b><strong>Meet the People</strong><span>Follow lives and legacies →</span></a><a href="places.html"><b>03</b><strong>Explore Places</strong><span>Visit Egypt's landscapes →</span></a><a href="timeline.html"><b>04</b><strong>Travel Through Time</strong><span>Follow 5,000 years →</span></a><a href="virtual-museum.html"><b>05</b><strong>Enter Virtual Museum</strong><span>Step inside the exhibition →</span></a></div></div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><img class="brand-mark" src="assets/images/image-removebg-preview.png" alt=""><span class="brand-name">Egypt's Digital Museum</span></a><p>5,000 years. One digital journey.</p></div></footer>
+<script src="js/hieroglyphs.js"></script>
+</body>
+</html>
