@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Explore the life, legacy, places and artifacts connected to an ancient Egyptian historical figure.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore the biography, timeline, achievements, places and artifacts connected to a person in ancient Egyptian history.">
 <title>Person Explorer | Egypt's Digital Museum</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/person.css">
+<script src="js/theme.js"></script>
 </head>
 <body class="detail-page person-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -15,79 +17,64 @@
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 <div class="nav-links" id="navLinks">
 <a href="index.html">Home</a><a href="explore.html">Explore</a><a href="people.html">People</a><a href="timeline.html">Timeline</a><a href="collection.html">Collections</a><a href="virtual-museum.html">Virtual Museum</a>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span>◐</span></button>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button>
 </div>
 </nav>
 </header>
-
 <main id="main">
 <section class="person-hero">
 <div class="hero-glow"></div>
 <div class="container person-hero-grid">
-<div class="hero-portrait" aria-label="Stylized portrait placeholder"><div class="portrait-disc"></div><div class="portrait-symbol">𓁐</div><div class="portrait-caption">ROYAL PORTRAIT<br><span>18TH DYNASTY</span></div></div>
+<div class="hero-portrait" id="heroPortrait"><div class="portrait-disc"></div><div class="portrait-symbol" id="portraitSymbol">𓁐</div><div class="portrait-caption" id="portraitCaption"></div></div>
 <div class="hero-copy">
-<div class="eyebrow">Person · New Kingdom · 18th Dynasty</div>
-<p class="breadcrumbs"><a href="people.html">People</a><span>/</span>Hatshepsut</p>
-<h1>Hatshepsut</h1>
-<p class="hero-title">The woman who ruled as pharaoh.</p>
-<p class="hero-description">Hatshepsut was one of ancient Egypt's most successful rulers, remembered for ambitious building projects, long-distance trade and a carefully crafted image of royal authority.</p>
-<div class="hero-meta"><div><small>REIGN</small><strong>c. 1479–1458 BCE</strong></div><div><small>PERIOD</small><strong>New Kingdom</strong></div><div><small>DYNASTY</small><strong>18th Dynasty</strong></div></div>
-<a class="gold-link" href="#story">Explore her story ↓</a>
+<div class="eyebrow" id="eyebrow">Person</div>
+<p class="breadcrumbs"><a href="people.html">People</a><span>/</span><span id="breadcrumbName">Person</span></p>
+<h1 id="personName">Loading…</h1>
+<p class="hero-title" id="personTitle"></p>
+<p class="hero-description" id="personDescription"></p>
+<div class="hero-meta">
+<div><small>PERIOD</small><strong id="period"></strong></div>
+<div><small>DYNASTY / ERA</small><strong id="dynasty"></strong></div>
+<div><small>DATES</small><strong id="reign"></strong></div>
+</div>
+<a class="gold-link" href="#story">Explore biography ↓</a>
 </div>
 </div>
 </section>
 
-<section class="quick-facts">
-<div class="container fact-grid">
-<div><span>𓉐</span><small>KNOWN FOR</small><b>Monumental building</b></div>
-<div><span>𓂋</span><small>POWER CENTRE</small><b>Thebes</b></div>
-<div><span>𓏏</span><small>FAMOUS SITE</small><b>Deir el-Bahari</b></div>
-<div><span>𓋹</span><small>LEGACY</small><b>One of Egypt's great rulers</b></div>
-</div>
-</section>
+<section class="quick-facts"><div class="container fact-grid">
+<div><span>𓉐</span><small>KNOWN FOR</small><b id="known"></b></div>
+<div><span>𓂋</span><small>PLACE</small><b id="home"></b></div>
+<div><span>𓏏</span><small>CONNECTED SITE</small><b id="site"></b></div>
+<div><span>𓋹</span><small>ROLE</small><b id="role"></b></div>
+</div></section>
 
-<section class="story-section" id="story">
-<div class="container story-grid">
-<div class="sticky-label"><span>01</span><b>HER STORY</b></div>
-<div>
-<div class="eyebrow">A life in context</div>
-<h2>A reign built<br><em>to last.</em></h2>
-<p>Hatshepsut came to power during Egypt's New Kingdom and adopted the full visual language of kingship. Her monuments present her as a legitimate ruler, while inscriptions record a period of trade, construction and religious activity.</p>
-<p>Her best-known monument, the temple at Deir el-Bahari, was designed as a dramatic architectural landscape beside the cliffs of western Thebes.</p>
-<div class="quote-card"><span>𓂀</span><p>Look beyond the crown. Her monuments reveal how power, religion and architecture worked together.</p></div>
-</div>
-</div>
-</section>
+<section class="story-section" id="story"><div class="container story-grid">
+<div class="sticky-label"><span>01</span><b>BIOGRAPHY</b></div>
+<div><div class="eyebrow">A life in context</div><h2 id="storyTitle">A life worth exploring.</h2><div id="storyBody"></div>
+<div class="quote-card"><span>𓂀</span><p id="storyNote">Every historical person connects to a wider story of place, culture and time.</p></div>
+</div></div></section>
 
-<section class="timeline-strip">
-<div class="container">
-<div class="eyebrow">Life & reign</div><h2>Her place in time</h2>
-<div class="life-timeline">
-<div><span>c. 1507 BCE</span><b>Birth</b><small>Born into Egypt's royal family.</small></div>
-<div><span>c. 1492 BCE</span><b>Royal marriage</b><small>Becomes great royal wife of Thutmose II.</small></div>
-<div class="current"><span>c. 1479 BCE</span><b>Becomes ruler</b><small>Assumes kingship during the New Kingdom.</small></div>
-<div><span>c. 1470s BCE</span><b>Trade & building</b><small>Major projects reshape the royal landscape.</small></div>
-<div><span>c. 1458 BCE</span><b>Death</b><small>Her reign leaves an enduring architectural legacy.</small></div>
-</div>
-</div>
-</section>
+<section class="timeline-strip"><div class="container">
+<div class="eyebrow">Life & historical context</div><h2>Their place in time</h2>
+<div class="life-timeline" id="lifeTimeline"></div>
+</div></section>
 
-<section class="connections">
-<div class="container">
+<section class="pd-section achievements-section"><div class="container detail-two-col">
+<div><div class="eyebrow">What they did</div><h2>Achievements</h2></div>
+<div class="achievement-list" id="achievements"></div>
+</div></section>
+
+<section class="connections" id="connections"><div class="container">
 <div class="eyebrow">Connected history</div><h2>One person.<br><span>Many stories.</span></h2>
-<div class="connection-grid">
-<a href="places.html"><small>PLACE</small><b>Deir el-Bahari</b><span>Her great temple complex →</span></a>
-<a href="timeline.html"><small>ERA</small><b>New Kingdom</b><span>Explore the wider period →</span></a>
-<a href="collection.html"><small>COLLECTION</small><b>Royal imagery</b><span>Objects linked to kingship →</span></a>
-<a href="stories.html"><small>STORY</small><b>Women & power</b><span>Follow the larger story →</span></a>
-</div>
-</div>
-</section>
+<div class="connection-block"><div><div class="mini-kicker">PLACES</div><div class="connection-grid" id="placesGrid"></div></div>
+<div><div class="mini-kicker">ARTIFACTS</div><div class="connection-grid" id="artifactsGrid"></div></div>
+<div><div class="mini-kicker">RELATED STORIES</div><div class="connection-grid" id="storiesGrid"></div></div></div>
+</div></section>
 
-<section class="person-footer-cta">
-<div class="container"><div class="eyebrow">Keep discovering</div><h2>Where should history<br>take you next?</h2><div class="cta-row"><a class="btn btn-gold" href="people.html">Meet another person</a><a class="btn btn-outline-light" href="collection.html">Explore artifacts</a></div></div>
-</section>
+<section class="person-footer-cta"><div class="container"><div class="eyebrow">Keep discovering</div><h2>Where should history<br>take you next?</h2><div class="cta-row"><a class="btn btn-gold" href="people.html">Meet another person</a><a class="btn btn-outline-light" href="collection.html">Explore artifacts</a></div></div></section>
 </main>
 <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><img class="brand-mark" src="assets/images/image-removebg-preview.png" alt=""><span class="brand-name">Egypt's Digital Museum</span></a><p>5,000 years. One digital journey.</p></div></footer>
+<script src="js/people-data.js"></script>
 <script src="js/person.js"></script>
 </body></html>
