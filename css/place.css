@@ -1,0 +1,98 @@
+/* PLACE DETAIL PAGE */
+.place-page{overflow-x:hidden}
+.eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#d6a84f}
+.breadcrumbs{font-size:.75rem;color:#817769;margin:1rem 0}.breadcrumbs a{color:#d6a84f;text-decoration:none}.breadcrumbs span{margin:0 .6rem}
+.gold-link{color:#f0d38a;text-decoration:none;font-weight:800;border-bottom:1px solid #d6a84f;padding-bottom:.35rem;align-self:flex-start}
+
+.place-hero{min-height:88vh;background:#0b0907;color:#fff;display:grid;grid-template-columns:1.08fr .92fr;position:relative}
+.place-hero-visual{position:relative;overflow:hidden;background:linear-gradient(155deg,#3a2818 0%,#17100b 55%,#090806 100%);display:grid;place-items:center}
+.sun-ring{position:absolute;width:min(50vw,650px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(240,211,138,.2);background:radial-gradient(circle,rgba(214,168,79,.25),transparent 67%);top:10%;left:13%}
+.cliff-shape{position:absolute;left:-5%;right:-5%;bottom:0;height:72%;background:linear-gradient(140deg,rgba(202,159,93,.28),rgba(80,50,26,.2));clip-path:polygon(0 40%,18% 23%,32% 29%,45% 12%,58% 21%,72% 9%,86% 24%,100% 14%,100% 100%,0 100%)}
+.tomb-door{position:relative;width:180px;height:250px;border:2px solid rgba(240,211,138,.5);border-bottom:0;box-shadow:0 0 80px rgba(214,168,79,.16),inset 0 0 50px rgba(214,168,79,.07);background:linear-gradient(#16100b,#080706);z-index:2}
+.tomb-door::before{content:"𓂀";position:absolute;top:38px;left:50%;transform:translateX(-50%);font-size:4rem;color:#d6a84f}
+.tomb-door::after{content:"";position:absolute;left:20%;right:20%;bottom:0;height:45%;border:1px solid rgba(240,211,138,.2)}
+.hero-location-label{position:absolute;left:2rem;right:2rem;bottom:2rem;display:flex;justify-content:space-between;gap:1rem;font-size:.6rem;letter-spacing:.14em;color:#9a8d7a}
+.hero-location-label b{color:#d6a84f}
+.place-hero-copy{padding:clamp(5rem,8vw,9rem) clamp(2rem,6vw,7rem);display:flex;flex-direction:column;justify-content:center;background:#0d0b08}
+.place-hero-copy h1{font-family:Cinzel,serif;font-size:clamp(3.8rem,7.5vw,7.2rem);line-height:.86;letter-spacing:-.05em;margin:.4rem 0 1.3rem}
+.place-hero-copy h1 em{font-style:normal;color:#d6a84f}
+.place-lead{font-family:Cinzel,serif;color:#d6a84f;font-size:1.15rem}
+.place-description{color:#b2a593;line-height:1.85;max-width:610px}
+.place-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);margin:2rem 0;max-width:650px}
+.place-meta div{background:#0d0b08;padding:1rem}.place-meta small,.fact-row small{display:block;color:#756c60;font-size:.58rem;letter-spacing:.13em;margin-bottom:.4rem}.place-meta b{font-size:.78rem}
+
+.place-facts{background:var(--bg-section);border-bottom:1px solid var(--border)}
+.fact-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.fact-row>div{padding:1.7rem 1.2rem;background:var(--bg-section)}
+.fact-row b{font-family:Cinzel,serif;font-size:.95rem}.fact-row a{color:var(--gold);text-decoration:none;font-weight:700;font-size:.85rem}
+
+.place-story{padding:9rem 1rem;background:var(--bg)}
+.place-story-grid{display:grid;grid-template-columns:.35fr 1fr;gap:4rem;max-width:1080px}
+.place-sticky{display:flex;gap:.8rem;color:var(--muted);font-size:.67rem;letter-spacing:.15em}.place-sticky span{color:var(--gold)}
+.place-story h2,.place-timeline h2,.monuments-section h2,.place-connections h2,.map-context h2,.place-cta h2{font-family:Cinzel,serif;font-size:clamp(3rem,6vw,6rem);line-height:.94;margin:.5rem 0 1.8rem}
+.place-story h2 em,.map-context h2 em{font-style:normal;color:var(--gold)}
+.place-story p{color:var(--text-soft);line-height:1.9;max-width:760px}
+.story-highlight{margin-top:2rem;padding:1.5rem;border-left:2px solid var(--gold);background:var(--bg-card);display:flex;gap:1rem}
+.story-highlight span{font-size:2rem;color:var(--gold)}.story-highlight p{margin:0;font-family:Cinzel,serif;color:var(--text)}
+
+.place-timeline{padding:8rem 1rem;background:var(--bg-section)}
+.timeline-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.timeline-grid>div{padding:1.5rem;background:var(--bg-card);min-height:190px;border-top:2px solid transparent}
+.timeline-grid .current{border-top-color:var(--gold);background:rgba(214,168,79,.08)}
+.timeline-grid span{font-size:.62rem;color:var(--gold);letter-spacing:.08em}.timeline-grid b{display:block;font-family:Cinzel,serif;margin:1rem 0 .6rem}.timeline-grid small{color:var(--muted);line-height:1.6}
+
+.monuments-section{padding:8rem 1rem;background:var(--bg)}
+.monument-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.monument-card{position:relative;min-height:280px;padding:1.5rem;border:1px solid var(--border);background:var(--bg-card);overflow:hidden}
+.card-number{font-size:.62rem;color:var(--muted);letter-spacing:.12em}.card-symbol{font-size:4rem;color:var(--gold);margin:2rem 0}
+.monument-card h3{font-family:Cinzel,serif;font-size:1.25rem;margin:.5rem 0}.monument-card p{color:var(--text-soft);line-height:1.65;font-size:.88rem}
+
+.place-connections{padding:8rem 1rem;background:var(--bg-section)}
+.place-connections h2 span{color:var(--gold)}
+.connection-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.connection-grid a{padding:1.8rem;background:var(--bg-card);color:var(--text);text-decoration:none;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.connection-grid a:hover{background:rgba(214,168,79,.1);transform:translateY(-3px)}
+.connection-grid small{color:var(--gold);font-size:.58rem;letter-spacing:.15em}.connection-grid b{font-family:Cinzel,serif;font-size:1.15rem}.connection-grid span{color:var(--muted);font-size:.75rem}
+
+.map-context{padding:8rem 1rem;background:#15120e;color:#f0e8d8}
+.map-context-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:5rem;align-items:center}
+.map-context p{color:#a89880;line-height:1.85;max-width:500px;margin-bottom:2rem}
+.mini-map-card{height:500px;position:relative;background:radial-gradient(circle at 60% 40%,rgba(214,168,79,.12),transparent 40%),#0d0b08;border:1px solid rgba(240,232,216,.12);overflow:hidden}
+.river-line{position:absolute;left:58%;top:7%;bottom:7%;width:5px;background:linear-gradient(#d6a84f,rgba(214,168,79,.1));opacity:.55;transform:rotate(2deg)}
+.map-point{position:absolute;color:#f0e8d8;font-size:.72rem;display:flex;align-items:center;gap:.5rem}
+.map-point i{width:10px;height:10px;border:2px solid #d6a84f;border-radius:50%;background:#0d0b08;box-shadow:0 0 0 5px rgba(214,168,79,.08)}
+.point-valley{left:28%;top:48%}.point-thebes{left:60%;top:51%}.point-karnak{left:64%;top:38%}.point-deir{left:23%;top:35%}
+.map-note{position:absolute;left:1.2rem;right:1.2rem;bottom:1.2rem;color:#706756;font-size:.58rem;letter-spacing:.14em;text-align:center}
+
+.place-cta{padding:8rem 1rem;background:#120f0b;color:#fff;text-align:center}
+.place-cta h2{margin-bottom:2rem}.cta-row{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.btn-outline-light{display:inline-flex;padding:.8rem 1.2rem;border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font-weight:700}.btn-outline-light:hover{border-color:#d6a84f;color:#d6a84f}
+
+.site-footer{background:#090806;color:#eee;padding:2rem 1rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:2rem}.site-footer .brand{color:#eee;text-decoration:none}.site-footer p{color:#766d60;font-size:.72rem}
+
+@media(max-width:1000px){
+  .place-hero{grid-template-columns:1fr}
+  .place-hero-visual{min-height:58vh}
+  .place-hero-copy{padding:5rem 1.5rem}
+  .fact-row{grid-template-columns:repeat(2,1fr)}
+  .timeline-grid{grid-template-columns:repeat(2,1fr)}
+  .monument-grid{grid-template-columns:repeat(2,1fr)}
+  .connection-grid{grid-template-columns:repeat(2,1fr)}
+  .map-context-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .place-hero-visual{min-height:48vh}
+  .tomb-door{width:130px;height:185px}
+  .hero-location-label{display:block}.hero-location-label b{display:block;margin-top:.4rem}
+  .place-hero-copy h1{font-size:clamp(3.6rem,18vw,6rem)}
+  .place-meta{grid-template-columns:1fr}
+  .fact-row{grid-template-columns:1fr}
+  .place-story,.place-timeline,.monuments-section,.place-connections,.map-context,.place-cta{padding:5rem 1rem}
+  .place-story-grid{grid-template-columns:1fr;gap:1.5rem}
+  .timeline-grid,.monument-grid,.connection-grid{grid-template-columns:1fr}
+  .mini-map-card{height:420px}
+  .footer-inner{display:block}.site-footer p{margin-top:1rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
