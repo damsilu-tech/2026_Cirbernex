@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore ancient Egypt by time, people, places, objects and stories in Egypt's Digital Museum.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Explore Egypt | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+
+<body class="explore-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explore.html" class="active">Explore</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="explore-hero">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <div class="explore-hero-inner">
+      <div class="eyebrow">The Digital Museum · Discovery Hub</div>
+      <h1>Explore<br><span>Egypt.</span></h1>
+      <p>Choose a path through 5,000 years of people, places, objects and stories.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#paths">Choose Your Path ↓</a>
+        <button class="btn btn-ghost" id="surpriseTop">Surprise Me</button>
+      </div>
+    </div>
+    <div class="hero-side-note" aria-hidden="true">𓂀 &nbsp; 5000 YEARS OF HISTORY</div>
+  </section>
+
+  <section class="paths-section" id="paths" aria-labelledby="paths-title">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <div class="section-kicker">Choose your journey</div>
+          <h2 id="paths-title">Five ways into the past.</h2>
+        </div>
+        <p>You don't need to know where to begin. Follow a question, a person, an object—or simply let curiosity lead.</p>
+      </div>
+
+      <div class="path-grid">
+        <a class="path-card path-time" href="timeline.html">
+          <span class="path-number">01</span><span class="path-symbol">𓉢</span>
+          <div><small>BY TIME</small><h3>Travel Through Time</h3><p>From the first Nile communities to the last pharaohs.</p></div>
+          <span class="path-arrow">↗</span>
+        </a>
+        <a class="path-card path-people" href="people.html">
+          <span class="path-number">02</span><span class="path-symbol">♕</span>
+          <div><small>BY PEOPLE</small><h3>Meet the People</h3><p>Pharaohs, queens, scribes, builders and everyday Egyptians.</p></div>
+          <span class="path-arrow">↗</span>
+        </a>
+        <a class="path-card path-place" href="places.html">
+          <span class="path-number">03</span><span class="path-symbol">𓉐</span>
+          <div><small>BY PLACE</small><h3>Explore the Land</h3><p>Follow the Nile to temples, cities, tombs and monuments.</p></div>
+          <span class="path-arrow">↗</span>
+        </a>
+        <a class="path-card path-object" href="collection.html">
+          <span class="path-number">04</span><span class="path-symbol">𓎆</span>
+          <div><small>BY OBJECT</small><h3>Discover Artifacts</h3><p>Meet the objects that carried ancient stories into the present.</p></div>
+          <span class="path-arrow">↗</span>
+        </a>
+        <a class="path-card path-story" href="stories.html">
+          <span class="path-number">05</span><span class="path-symbol">𓏏</span>
+          <div><small>BY STORY</small><h3>Follow a Story</h3><p>Experience history through the people who lived it.</p></div>
+          <span class="path-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-section" aria-labelledby="featured-title">
+    <div class="container featured-wrap">
+      <div class="featured-copy">
+        <div class="section-kicker">Featured discovery</div>
+        <h2 id="featured-title">The face that<br><em>became history.</em></h2>
+        <p>Explore the famous funerary mask of Tutankhamun, then follow the connections to its ruler, dynasty, discovery site and world.</p>
+        <div class="feature-meta"><span>NEW KINGDOM</span><span>18TH DYNASTY</span><span>c. 1323 BCE</span></div>
+        <a class="text-link" href="collection.html">Enter the collection <span>→</span></a>
+      </div>
+      <div class="featured-object">
+        <div class="object-glow"></div>
+        <img src="assets/images/fallbackartifacts/images.png" alt="Ancient Egyptian artifact from the museum collection">
+        <span class="object-caption">A doorway into a larger human story.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="themes-section" aria-labelledby="themes-title">
+    <div class="container">
+      <div class="section-kicker">Discover by theme</div>
+      <div class="theme-heading-row">
+        <h2 id="themes-title">What shaped Egyptian life?</h2>
+        <a class="text-link" href="collection.html">Browse objects →</a>
+      </div>
+      <div class="theme-grid">
+        <a href="collection.html?filter=royal" class="theme-card"><span>𓋹</span><b>Royalty</b><small>Power · Kingship</small></a>
+        <a href="collection.html?filter=religious" class="theme-card"><span>𓂀</span><b>Gods & Beliefs</b><small>Myth · Ritual</small></a>
+        <a href="collection.html?filter=everyday" class="theme-card"><span>𓇼</span><b>Daily Life</b><small>Work · Family</small></a>
+        <a href="collection.html?filter=monuments" class="theme-card"><span>𓉗</span><b>Architecture</b><small>Temples · Tombs</small></a>
+        <a href="collection.html?filter=writing" class="theme-card"><span>𓏛</span><b>Writing</b><small>Signs · Records</small></a>
+        <a href="collection.html?filter=art" class="theme-card"><span>𓃭</span><b>Art</b><small>Form · Symbol</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" aria-labelledby="map-title">
+    <div class="container map-layout">
+      <div class="map-copy">
+        <div class="section-kicker">Explore the land</div>
+        <h2 id="map-title">Follow the Nile.<br><span>Find the stories.</span></h2>
+        <p>Egypt's geography shaped its cities, monuments, trade and everyday life. Choose a place and begin exploring.</p>
+        <a class="btn btn-gold" href="places.html">Open the Egypt Map →</a>
+      </div>
+      <div class="egypt-map" role="img" aria-label="Stylized map of Egypt with key ancient locations">
+        <div class="map-nile"></div>
+        <a class="map-pin pin-alex" href="places.html?id=alexandria"><i></i><span>Alexandria</span></a>
+        <a class="map-pin pin-giza" href="places.html?id=giza"><i></i><span>Giza</span></a>
+        <a class="map-pin pin-memphis" href="places.html?id=memphis"><i></i><span>Memphis</span></a>
+        <a class="map-pin pin-luxor" href="places.html?id=luxor"><i></i><span>Luxor</span></a>
+        <a class="map-pin pin-kings" href="places.html?id=valley-of-kings"><i></i><span>Valley of the Kings</span></a>
+        <a class="map-pin pin-abu" href="places.html?id=abu-simbel"><i></i><span>Abu Simbel</span></a>
+        <div class="map-label">NILE<br><small>THE RIVER OF LIFE</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="time-preview" aria-labelledby="time-title">
+    <div class="container">
+      <div class="section-kicker">Journey through time</div>
+      <div class="time-heading">
+        <h2 id="time-title">Five thousand years.<br><span>One continuous story.</span></h2>
+        <a class="text-link" href="timeline.html">Open full timeline →</a>
+      </div>
+      <div class="mini-timeline">
+        <a href="timeline.html#predynastic" class="era-node"><span>6000</span><i></i><b>Predynastic</b></a>
+        <a href="timeline.html#old-kingdom" class="era-node"><span>2686</span><i></i><b>Old Kingdom</b></a>
+        <a href="timeline.html#middle-kingdom" class="era-node"><span>2055</span><i></i><b>Middle Kingdom</b></a>
+        <a href="timeline.html#new-kingdom" class="era-node"><span>1550</span><i></i><b>New Kingdom</b></a>
+        <a href="timeline.html#late-period" class="era-node"><span>664</span><i></i><b>Late Period</b></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="surprise-section" id="surprise" aria-labelledby="surprise-title">
+    <div class="surprise-inner">
+      <div class="section-kicker">Not sure where to start?</div>
+      <h2 id="surprise-title">Let history<br><em>choose for you.</em></h2>
+      <p id="surpriseText">One click. One discovery. A new doorway into ancient Egypt.</p>
+      <button class="btn btn-gold" id="surpriseBtn">Surprise Me →</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <div class="footer-links">
+      <a href="timeline.html">Timeline</a><a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a><a href="about.html">About</a>
+    </div>
+    <p>5,000 years. One digital journey.</p>
+  </div>
+</footer>
+
+<script src="js/explore.js"></script>
+</body>
+</html>
