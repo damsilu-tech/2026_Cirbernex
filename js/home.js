@@ -10,12 +10,13 @@
    -------------------------------------------------- */
 const API_BASE = (() => {
   const host = window.location.hostname;
-  if (host === 'localhost' || host === '127.0.0.1') {
-    return 'https://cibernex-api.onrender.com';
-  }
-  return ''; // relative path for production
-})();
 
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:3000';
+  }
+
+  return 'https://cibernex-api.onrender.com';
+})();
 /* --------------------------------------------------
    REDUCED MOTION
    -------------------------------------------------- */
