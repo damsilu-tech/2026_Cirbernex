@@ -387,13 +387,13 @@ header.scrolled {
 }
 
 .nav {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 2rem));
   margin: auto;
-  min-height: 78px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .brand {
@@ -408,21 +408,25 @@ header.scrolled {
 }
 
 .brand-mark {
-  height: 60px;
+  height: 54px;
   width: auto;
   display: block;
   color: var(--gold-light);
 }
 
+.brand-name {
+  font-size: 1.05rem;
+  letter-spacing: .06em;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.05rem;
   color: rgba(255,255,255,.84);
-  font-size: .9rem;
+  font-size: .82rem;
   font-weight: 600;
 }
-
 .nav-links a {
   position: relative;
   padding: .4rem 0;
