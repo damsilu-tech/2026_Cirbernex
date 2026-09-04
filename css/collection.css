@@ -69,6 +69,7 @@
 }
 
 /* ---- PERIOD FILTER (native select) ---- */
+
 .period-filter {
   position: relative;
   display: flex;
@@ -125,6 +126,12 @@
   color: var(--ink);
 }
 
+/* ---- PERIOD FILTER OPTIONS ---- */
+
+.period-select option {
+  background: var(--white);
+  color: var(--ink);
+}
 /* ---- SEARCH BAR ---- */
 .search-bar {
   position: relative;

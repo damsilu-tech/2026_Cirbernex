@@ -76,63 +76,127 @@
 
       <input type="hidden" id="editId">
 
+      <!-- ── BASIC INFORMATION ── -->
+      <div class="section-kicker">Basic Information</div>
+
       <div class="field">
-        <label for="title">Title *</label>
+        <label for="title">Artifact Title *</label>
         <input type="text" id="title" placeholder="e.g. Great Sphinx of Giza" required>
       </div>
 
-      <div class="field">
-        <label for="category">Category *</label>
-        <select id="category">
-          <option value="">Select a category…</option>
-          <option value="royal">Royalty & Elite</option>
-          <option value="funerary">Funerary & Afterlife</option>
-          <option value="religious">Religion & Ritual</option>
-          <option value="everyday">Daily Life</option>
-          <option value="writing">Writing & Documents</option>
-          <option value="art">Art & Sculpture</option>
-          <option value="monuments">Architecture & Monuments</option>
-        </select>
+      <div class="field-row">
+        <div class="field">
+          <label for="category">Category *</label>
+          <select id="category">
+            <option value="">Select a category…</option>
+            <option value="statues">Statues</option>
+            <option value="jewellery">Jewellery</option>
+            <option value="tools">Tools</option>
+            <option value="papyri">Papyri</option>
+            <option value="funerary">Funerary</option>
+            <option value="royal">Royal</option>
+            <option value="religious">Religious</option>
+            <option value="architecture">Architecture</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="period">Period *</label>
+          <select id="period">
+            <option value="">Select a period…</option>
+            <option value="predynastic">Predynastic</option>
+            <option value="early-dynastic">Early Dynastic</option>
+            <option value="old-kingdom">Old Kingdom</option>
+            <option value="middle-kingdom">Middle Kingdom</option>
+            <option value="new-kingdom">New Kingdom</option>
+            <option value="late-period">Late Period</option>
+            <option value="ptolemaic">Ptolemaic</option>
+            <option value="roman">Roman</option>
+          </select>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="date">Date / Period</label>
-        <input type="text" id="date" placeholder="e.g. c. 2558 BCE">
+      <div class="field-row">
+        <div class="field">
+          <label for="date">Date / Date Range *</label>
+          <input type="text" id="date" placeholder="e.g. c. 2558 BCE">
+        </div>
+
+        <div class="field">
+          <label for="dynasty">Dynasty</label>
+          <input type="text" id="dynasty" placeholder="e.g. 18th Dynasty">
+        </div>
       </div>
 
-      <div class="field">
-        <label for="period">Time Period *</label>
-        <select id="period">
-          <option value="">Select a time period…</option>
-          <option value="predynastic">Predynastic (c. 6000–3100 BCE)</option>
-          <option value="early-dynastic">Early Dynastic (c. 3100–2686 BCE)</option>
-          <option value="old-kingdom">Old Kingdom (c. 2686–2181 BCE)</option>
-          <option value="middle-kingdom">Middle Kingdom (c. 2055–1650 BCE)</option>
-          <option value="new-kingdom">New Kingdom (c. 1550–1077 BCE)</option>
-          <option value="late-period">Late Period (c. 664–332 BCE)</option>
-          <option value="ptolemaic">Ptolemaic & Roman (332 BCE–395 CE)</option>
-        </select>
-      </div>
+      <!-- ── COLLECTION CARD ── -->
+      <div class="section-kicker section-kicker-spaced">Collection Card</div>
 
       <div class="field">
-        <label for="description">Description *</label>
-        <textarea id="description" placeholder="Describe the artifact…"></textarea>
-      </div>
-
-      <div class="field">
-        <label for="imageUrl">Image URL *</label>
+        <label for="imageUrl">Artifact Image URL *</label>
         <input type="url" id="imageUrl" placeholder="https://..." oninput="previewImage(this.value)">
         <img id="imgPreview" class="img-preview" alt="Preview">
       </div>
 
       <div class="field">
-        <label for="location">Location</label>
-        <input type="text" id="location" placeholder="e.g. British Museum, London">
+        <label for="shortDescription">Short Description *</label>
+        <textarea id="shortDescription" placeholder="Roughly 1–2 sentences, shown on the collection card…" rows="3"></textarea>
+      </div>
+
+      <!-- ── ARTIFACT STORY ── -->
+      <div class="section-kicker section-kicker-spaced">Artifact Story</div>
+
+      <div class="field">
+        <label for="description">What is it? *</label>
+        <textarea id="description" placeholder="The full description shown on the artifact page…"></textarea>
       </div>
 
       <div class="field">
-        <label for="dynasty">Dynasty / Period</label>
-        <input type="text" id="dynasty" placeholder="e.g. 18th Dynasty">
+        <label>Materials</label>
+        <div class="materials-list" id="materialsList"></div>
+        <button type="button" class="btn-add" onclick="addMaterialRow()">+ Add Material</button>
+      </div>
+
+      <div class="field">
+        <label for="significance">Meaning / Significance</label>
+        <textarea id="significance" placeholder="Why this artifact matters…"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="discovery">Discovery</label>
+        <textarea id="discovery" placeholder="How and where it was discovered…"></textarea>
+      </div>
+
+      <!-- ── CONNECTED HISTORY ── -->
+      <div class="section-kicker section-kicker-spaced">Connected History</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="personName">Person Name</label>
+          <input type="text" id="personName" placeholder="e.g. Tutankhamun">
+        </div>
+        <div class="field">
+          <label for="personRole">Role</label>
+          <input type="text" id="personRole" placeholder="e.g. Pharaoh">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="placeName">Place Name</label>
+          <input type="text" id="placeName" placeholder="e.g. Valley of the Kings">
+        </div>
+        <div class="field">
+          <label for="placeLocation">Location</label>
+          <input type="text" id="placeLocation" placeholder="e.g. Luxor, Egypt">
+        </div>
+      </div>
+
+      <!-- ── RELATED ARTIFACTS ── -->
+      <div class="section-kicker section-kicker-spaced">Related Artifacts</div>
+
+      <div class="field">
+        <input class="related-search" type="text" id="relatedSearch" placeholder="Search artifacts…" oninput="renderRelatedList(this.value)">
+        <div class="related-list" id="relatedList"></div>
       </div>
 
       <div class="form-actions">
