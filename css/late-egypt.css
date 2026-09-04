@@ -80,9 +80,9 @@
   border-bottom: 3px solid transparent;
   color: rgba(255,255,255,.55);
   font-family: Inter, sans-serif;
-  font-size: .70rem;
-  font-weight: 700;
-  padding: 1rem .9rem;
+  font-size: .68rem;
+  font-weight: 600;
+  padding: 1rem .4rem;
   cursor: pointer;
   white-space: nowrap;
   transition: .2s ease;
