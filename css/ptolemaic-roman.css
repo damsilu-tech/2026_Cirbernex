@@ -1,0 +1,790 @@
+/* ==========================================================================
+   PTOLEMAIC & ROMAN PERIOD — page-specific styles (self-contained, pr- prefix)
+   Relies on shared tokens/components from common.css:
+   --ink --gold --gold-light --sand --cream --muted --white --line --shadow
+   .container .section-head .section-kicker .btn .btn-gold h1 h2
+   ========================================================================== */
+
+/* ---------- HERO ---------- */
+.pr-hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(214,168,79,.3), transparent 42%),
+    linear-gradient(180deg, rgba(10,8,6,.2), rgba(10,8,6,.9)),
+    url('https://images.unsplash.com/photo-1569949611667-95c74e213e28?auto=format&fit=crop&w=2200&q=85')
+    center / cover;
+}
+
+.pr-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .14;
+  background-image:
+    linear-gradient(30deg, transparent 48%, rgba(240,211,138,.4) 49%, transparent 50%),
+    linear-gradient(150deg, transparent 48%, rgba(240,211,138,.4) 49%, transparent 50%);
+  background-size: 58px 58px;
+  mix-blend-mode: screen;
+}
+
+.pr-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 1rem 3rem;
+  width: min(880px, 100%);
+}
+
+.pr-hero-inner h1 {
+  font-size: clamp(2.6rem, 7.5vw, 5.6rem);
+  margin: .5rem 0 1rem;
+  line-height: 1;
+}
+
+.pr-hero-gold { color: var(--gold-light); }
+
+.pr-hero-inner p {
+  color: rgba(255,255,255,.82);
+  font-size: clamp(.95rem, 2vw, 1.15rem);
+  max-width: 660px;
+  margin: 0 auto 2rem;
+}
+
+/* ---------- SECTION NAV (shared pattern, self-contained per page) ---------- */
+.section-nav {
+  position: sticky;
+  top: 78px;
+  z-index: 200;
+  background: rgba(23,19,15,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(214,168,79,.2);
+  padding: 0 1rem;
+}
+
+.section-nav-inner {
+  width: min(1100px, 100%);
+  margin: auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.section-nav-inner::-webkit-scrollbar { display: none; }
+
+.snav-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(255,255,255,.55);
+  font-family: Inter, sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  padding: 1rem .9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: .2s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.snav-btn:hover,
+.snav-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- QUICK FACTS ---------- */
+.pr-facts-section { background: var(--ink); color: white; padding: 4rem 1rem; }
+.pr-facts-header { text-align: center; margin-bottom: 2.5rem; }
+.pr-facts-header .section-kicker { color: var(--gold-light); }
+.pr-facts-header h2 { font-family: Cinzel, serif; font-size: clamp(1.7rem, 4vw, 2.6rem); color: white; }
+
+.pr-facts-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+
+.pr-fact {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(214,168,79,.25);
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  width: 190px;
+  transition: .25s ease;
+}
+
+.pr-fact:hover { background: rgba(214,168,79,.12); border-color: var(--gold); transform: translateY(-3px); }
+.pr-fact span { font-size: 2rem; display: block; margin-bottom: .6rem; }
+.pr-fact p { font-size: .82rem; color: rgba(255,255,255,.68); line-height: 1.5; margin: 0; }
+
+.pr-facts-note {
+  text-align: center;
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* ---------- SECTION BASE ---------- */
+.pr-section { padding: 5rem 1rem; background: var(--cream); }
+.pr-section.dark { background: var(--ink); color: white; }
+.pr-section.dark .section-kicker { color: var(--gold-light); }
+.pr-section.dark h2 { color: white; }
+.pr-section.dark p  { color: rgba(255,255,255,.72); }
+.pr-section.sand { background: #e8ddc6; }
+.section-head p { color: var(--muted); margin-top: .8rem; }
+
+/* ---------- TRANSITION FLOW (After the Pharaohs / Becomes Roman) ---------- */
+.pr-transition-flow {
+  max-width: 460px;
+  margin: 2.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.pr-tf-step {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(214,168,79,.25);
+  padding: 1rem 1.4rem;
+  text-align: center;
+  width: 100%;
+  transition: .2s ease;
+}
+
+.pr-tf-step:hover { border-color: var(--gold); background: rgba(214,168,79,.1); }
+
+.pr-tf-step.milestone-tf { background: var(--gold); border-color: var(--gold); }
+.pr-tf-step.milestone-tf strong { color: var(--ink) !important; }
+
+.pr-tf-step strong { display: block; font-family: Cinzel, serif; font-size: .92rem; color: var(--gold-light); }
+.pr-tf-step.milestone-tf strong { color: var(--ink) !important; }
+
+.pr-tf-arrow { color: var(--gold); font-size: 1.2rem; line-height: 1; padding: .25rem 0; }
+
+.pr-section:not(.dark) .pr-tf-step { background: var(--white); border-color: var(--line); }
+.pr-section:not(.dark) .pr-tf-step strong { color: var(--ink); }
+.pr-section:not(.dark) .pr-tf-step.milestone-tf strong { color: var(--ink) !important; }
+.pr-section:not(.dark) .pr-tf-step.milestone-tf { background: var(--gold); border-color: var(--gold); }
+
+/* ---------- VISUAL SPLIT (reusable: Ptolemaic Kingdom / etc.) ---------- */
+.pr-visual-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.pr-visual-section.reverse { direction: rtl; }
+.pr-visual-section.reverse > * { direction: ltr; }
+
+.pr-visual-img {
+  height: 440px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,.15);
+  position: relative;
+}
+
+.pr-img-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(23,19,15,.75);
+  color: rgba(255,255,255,.8);
+  font-size: .72rem;
+  padding: .5rem .8rem;
+  text-align: center;
+}
+
+.pr-split-text h2 { margin: .5rem 0 1rem; }
+.pr-split-text p { line-height: 1.75; margin-bottom: 1rem; }
+
+.pr-points { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .8rem; }
+
+.pr-point-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: .9rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+}
+
+.pr-point-item span { font-size: 1.4rem; flex-shrink: 0; }
+.pr-point-item strong { display: block; font-size: .88rem; margin-bottom: .2rem; color: var(--ink); }
+.pr-point-item p { font-size: .82rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+.pr-key-idea {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(214,168,79,.08);
+  border-left: 3px solid var(--gold);
+  font-size: .9rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ---------- ALEXANDRIA ---------- */
+.pr-alex-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.pr-alex-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+
+.pr-alex-tag {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(214,168,79,.3);
+  color: var(--gold-light);
+  font-size: .78rem;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+}
+
+.pr-alex-cards { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.pr-alex-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 1.4rem;
+}
+
+.pr-alex-card h3 { font-family: Cinzel, serif; font-size: 1rem; color: var(--gold-light); margin-bottom: .5rem; }
+.pr-alex-card p { font-size: .85rem; color: rgba(255,255,255,.68); line-height: 1.65; }
+
+.pr-alex-connect {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  background: rgba(214,168,79,.08);
+  border: 1px solid rgba(214,168,79,.25);
+  font-size: .88rem;
+  font-style: italic;
+  color: var(--gold-light);
+  text-align: center;
+}
+
+/* ---------- FEATURED PERSON (Cleopatra) ---------- */
+.pr-featured-person {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--gold);
+  padding: 3rem;
+  margin-top: 1rem;
+}
+
+.pr-fp-img {
+  height: 420px;
+  background-size: cover;
+  background-position: center 20%;
+  box-shadow: 0 24px 60px rgba(0,0,0,.18);
+}
+
+.pr-fp-eyebrow {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #8f6929;
+  margin-bottom: .5rem;
+}
+
+.pr-featured-person h3 { font-family: Cinzel, serif; font-size: 2.2rem; color: var(--ink); margin-bottom: .6rem; }
+.pr-featured-person p { font-size: .92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+
+.pr-fp-roles { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+
+.pr-fp-role {
+  background: var(--gold);
+  color: var(--ink);
+  font-size: .78rem;
+  font-weight: 800;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+}
+
+.pr-fp-note {
+  margin-top: 1.5rem;
+  padding: .9rem 1.1rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(214,168,79,.07);
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* ---------- GODS CARDS ---------- */
+.pr-gods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.5rem; }
+
+.pr-god-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.8rem;
+  text-align: center;
+  transition: transform .3s ease;
+}
+
+.pr-god-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+.pr-god-icon { font-size: 2rem; display: block; margin-bottom: .7rem; }
+.pr-god-card h3 { font-family: Cinzel, serif; font-size: 1.05rem; margin-bottom: .6rem; }
+.pr-god-card p { font-size: .85rem; color: var(--muted); line-height: 1.65; }
+
+.pr-gods-concept {
+  margin-top: 1.8rem;
+  text-align: center;
+  font-family: Cinzel, serif;
+  font-size: 1rem;
+  color: var(--ink);
+  font-style: italic;
+}
+
+/* ---------- TEMPLE GALLERY ---------- */
+.pr-temple-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+
+.pr-temple-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: hidden;
+  transition: .3s ease;
+}
+
+.pr-temple-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+.pr-temple-img { height: 160px; background-size: cover; background-position: center; transition: transform .5s ease; }
+.pr-temple-card:hover .pr-temple-img { transform: scale(1.05); }
+
+.pr-temple-body { padding: 1.2rem; }
+.pr-temple-body h3 { font-family: Cinzel, serif; font-size: .95rem; color: white; margin-bottom: .5rem; }
+.pr-temple-body p { font-size: .8rem; color: rgba(255,255,255,.62); line-height: 1.6; }
+
+/* ---------- ART COMPARISON ---------- */
+.pr-art-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.pr-art-col {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+}
+
+.pr-art-col h3 {
+  font-family: Cinzel, serif;
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #8f6929;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pr-art-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+
+.pr-art-col li {
+  font-size: .85rem;
+  color: var(--muted);
+  padding: .6rem .8rem;
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+}
+
+.pr-art-merge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-weight: 700;
+  padding-top: 3rem;
+}
+
+.pr-art-result {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem 1.4rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: Cinzel, serif;
+  font-weight: 800;
+  letter-spacing: .05em;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- DAILY LIFE ---------- */
+.pr-life-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+
+.pr-life-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  transition: transform .3s ease;
+}
+
+.pr-life-card:hover { transform: translateY(-4px); }
+.pr-life-icon { font-size: 2rem; display: block; margin-bottom: .7rem; }
+.pr-life-card h3 { font-family: Cinzel, serif; font-size: .92rem; margin-bottom: .5rem; }
+.pr-life-card p { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+/* ---------- ROMAN EGYPT CONTINUITY LIST ---------- */
+.pr-continuity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .9rem;
+  margin-top: 2rem;
+}
+
+.pr-continuity-item {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .9rem 1.1rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  font-size: .86rem;
+  color: rgba(255,255,255,.75);
+}
+
+.pr-continuity-item span { color: var(--gold); font-size: 1.1rem; }
+
+.pr-roman-callout {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(214,168,79,.25);
+  padding: 2rem;
+}
+
+.pr-roman-callout-img {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pr-roman-callout h3 { font-family: Cinzel, serif; font-size: 1.15rem; color: var(--gold-light); margin-bottom: .6rem; }
+.pr-roman-callout p { font-size: .86rem; color: rgba(255,255,255,.68); line-height: 1.65; }
+.pr-roman-caption { margin-top: .8rem; font-style: italic; color: var(--gold-light); font-size: .85rem; }
+
+/* ---------- FAYUM CHAIN (Object → Person → Tradition → Influence) ---------- */
+.pr-fayum-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.pr-fayum-chain { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+.pr-fc-step {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.1rem 1.4rem;
+  text-align: center;
+  width: 100%;
+  transition: .2s ease;
+}
+
+.pr-fc-step:hover { border-color: var(--gold); }
+.pr-fc-step.highlight-fc { background: var(--gold); border-color: var(--gold); }
+.pr-fc-step.highlight-fc strong, .pr-fc-step.highlight-fc p { color: var(--ink) !important; }
+
+.pr-fc-label { font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #8f6929; margin-bottom: .3rem; }
+.pr-fc-step strong { display: block; font-family: Cinzel, serif; font-size: .9rem; margin-bottom: .2rem; }
+.pr-fc-step p { font-size: .78rem; color: var(--muted); margin: 0; }
+.pr-fc-arrow { color: var(--gold); font-size: 1.2rem; padding: .2rem 0; line-height: 1; }
+
+/* ---------- LANGUAGES ---------- */
+.pr-lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+
+.pr-lang-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+  text-align: center;
+  transition: transform .3s ease;
+}
+
+.pr-lang-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+.pr-lang-glyph { font-size: 1.9rem; display: block; margin-bottom: .6rem; }
+.pr-lang-card h3 { font-family: Cinzel, serif; font-size: 1rem; margin-bottom: .5rem; }
+.pr-lang-card p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
+.pr-lang-tagline {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-family: Cinzel, serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-style: italic;
+}
+
+/* ---------- RELIGIOUS TRANSFORMATION ---------- */
+.pr-transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.pr-transform-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 1.8rem;
+}
+
+.pr-transform-card h3 { font-family: Cinzel, serif; font-size: 1.05rem; color: var(--gold-light); margin-bottom: .8rem; }
+.pr-transform-card p { font-size: .87rem; color: rgba(255,255,255,.68); line-height: 1.7; margin-bottom: .8rem; }
+.pr-transform-card p:last-child { margin-bottom: 0; }
+
+.pr-transform-date {
+  display: inline-block;
+  font-family: Cinzel, serif;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--gold);
+  padding: .2rem .6rem;
+  font-size: .8rem;
+  margin-right: .5rem;
+}
+
+.pr-closing-line {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: Cinzel, serif;
+  font-size: 1.15rem;
+  color: var(--gold-light);
+  font-style: italic;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- FEATURED PEOPLE ---------- */
+.pr-people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+
+.pr-person-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.8rem;
+  transition: .3s ease;
+}
+
+.pr-person-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+
+.pr-person-glyph { font-size: 1.8rem; margin-bottom: .6rem; display: block; }
+.pr-person-card h3 { font-family: Cinzel, serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .5rem; }
+.pr-person-card p { font-size: .84rem; color: var(--muted); line-height: 1.6; }
+
+/* ---------- FEATURED PLACES ---------- */
+.pr-places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+
+.pr-place-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.pr-place-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+
+.pr-place-img { height: 170px; background-size: cover; background-position: center; transition: transform .5s ease; }
+.pr-place-card:hover .pr-place-img { transform: scale(1.04); }
+
+.pr-place-body { padding: 1.2rem; flex: 1; }
+.pr-place-body h3 { font-family: Cinzel, serif; font-size: .95rem; color: white; margin-bottom: .5rem; }
+.pr-place-body p { font-size: .8rem; color: rgba(255,255,255,.62); line-height: 1.6; }
+.pr-place-link { display: inline-block; margin-top: .8rem; font-size: .78rem; font-weight: 700; color: var(--gold-light); }
+
+/* ---------- ARTIFACT GALLERY ---------- */
+.pr-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+
+.pr-ag-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.pr-ag-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,.12); }
+
+.pr-ag-img { height: 200px; background-size: cover; background-position: center; transition: transform .5s ease; }
+.pr-ag-card:hover .pr-ag-img { transform: scale(1.04); }
+
+.pr-ag-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+
+.pr-ag-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: .65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: .2rem .65rem;
+  border-radius: 999px;
+  margin-bottom: .6rem;
+  width: fit-content;
+}
+
+.pr-ag-body h3 { font-family: Cinzel, serif; font-size: .95rem; margin-bottom: .4rem; }
+.pr-ag-body .pr-ag-story { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: #8f6929; font-weight: 700; margin-bottom: .3rem; }
+.pr-ag-body p { font-size: .82rem; color: var(--muted); line-height: 1.6; flex: 1; }
+
+.pr-ag-link {
+  display: inline-block;
+  margin-top: .9rem;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #8f6929;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  width: fit-content;
+}
+
+.pr-ag-link:hover { color: var(--ink); }
+
+/* ---------- TIMELINE ---------- */
+.pr-timeline {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.pr-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: var(--gold);
+  opacity: .4;
+}
+
+.pr-tl-item { position: relative; padding-bottom: 2rem; }
+.pr-tl-item:last-child { padding-bottom: 0; }
+
+.pr-tl-dot {
+  position: absolute;
+  left: -2rem; top: 4px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.pr-tl-item.milestone-tl .pr-tl-dot {
+  background: var(--ink);
+  box-shadow: 0 0 0 2px var(--gold);
+  width: 18px; height: 18px;
+  left: calc(-2rem - 1px);
+}
+
+.pr-tl-date { font-family: Cinzel, serif; font-size: .78rem; font-weight: 800; color: #8f6929; letter-spacing: .05em; margin-bottom: .2rem; }
+.pr-tl-item h3 { font-family: Cinzel, serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .3rem; }
+.pr-tl-item p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+/* ---------- END OF AN ANCIENT WORLD ---------- */
+.pr-end-section {
+  background: var(--ink);
+  color: white;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.pr-end-section .section-kicker { color: var(--gold-light); }
+.pr-end-section h2 { color: white; }
+
+.pr-end-body { max-width: 720px; margin: 0 auto; }
+.pr-end-body p { font-size: 1rem; color: rgba(255,255,255,.75); line-height: 1.85; margin-bottom: 1.2rem; }
+
+.pr-end-tagline {
+  margin-top: 2rem;
+  font-family: Cinzel, serif;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+/* ---------- CONTINUE ---------- */
+.pr-continue-section { background: var(--cream); padding: 5rem 1rem; }
+.pr-continue-section .section-kicker { color: #8f6929; }
+
+.pr-continue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+.pr-continue-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: .3s ease;
+}
+
+.pr-continue-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+
+.pr-continue-icon { font-size: 2rem; margin-bottom: 1rem; }
+.pr-continue-card h3 { font-family: Cinzel, serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .5rem; }
+.pr-continue-card p { font-size: .85rem; color: var(--muted); line-height: 1.65; flex: 1; }
+.pr-continue-link { display: inline-block; margin-top: 1rem; color: #8f6929; font-size: .85rem; font-weight: 700; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1000px) {
+  .pr-temple-grid      { grid-template-columns: repeat(2, 1fr); }
+  .pr-gallery-grid     { grid-template-columns: repeat(2, 1fr); }
+  .pr-places-grid      { grid-template-columns: repeat(2, 1fr); }
+  .pr-people-grid      { grid-template-columns: repeat(2, 1fr); }
+  .pr-life-grid        { grid-template-columns: repeat(3, 1fr); }
+  .pr-lang-grid        { grid-template-columns: repeat(2, 1fr); }
+  .pr-gods-grid        { grid-template-columns: 1fr; }
+  .pr-alex-grid        { grid-template-columns: 1fr; }
+  .pr-visual-section   { grid-template-columns: 1fr; }
+  .pr-visual-img       { height: 320px; }
+  .pr-fayum-section    { grid-template-columns: 1fr; }
+  .pr-featured-person  { grid-template-columns: 1fr; padding: 2rem; }
+  .pr-fp-img           { height: 320px; }
+  .pr-art-compare      { grid-template-columns: 1fr; }
+  .pr-art-merge        { padding-top: 0; transform: rotate(90deg); }
+  .pr-roman-callout    { grid-template-columns: 1fr; }
+  .pr-transform-grid   { grid-template-columns: 1fr; }
+  .pr-continuity-grid  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 800px) {
+  .pr-temple-grid   { grid-template-columns: 1fr; }
+  .pr-gallery-grid  { grid-template-columns: 1fr; }
+  .pr-places-grid   { grid-template-columns: 1fr; }
+  .pr-people-grid   { grid-template-columns: 1fr; }
+  .pr-life-grid     { grid-template-columns: repeat(2, 1fr); }
+  .pr-lang-grid     { grid-template-columns: 1fr; }
+  .pr-continue-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .pr-life-grid { grid-template-columns: 1fr; }
+}
