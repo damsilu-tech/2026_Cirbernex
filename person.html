@@ -1,134 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta name="description" content="Explore the biography, timeline, achievements, places and artifacts connected to a person in ancient Egyptian history.">
-      <title>Person Explorer | Egypt's Digital Museum</title>
-      <link rel="stylesheet" href="css/common.css">
-      <link rel="stylesheet" href="css/person.css">
-      <script src="js/theme.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deep dive into the life, timeline, achievements, places and artifacts connected to a historical person from ancient Egypt.">
+  <title>Person | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/person.css">
+  <script src="js/theme.js"></script>
 </head>
-
-<body class="detail-page person-page">
-      <a class="skip-link" href="#main">Skip to content</a>
-     <header id="header">
-     <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="index.html">
-          <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
-          <span class="brand-name">Egypt's Digital Museum</span>
-        </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-        <div class="nav-links" id="navLinks">
-           <a href="index.html">Home</a>
-           <a href="explore.html">Explore</a>
-           <a href="people.html">People</a>
-           <a href="collection.html">Collections</a>
-           <a href="place.html">Places</a>
-           <a href="timeline.html">Timeline</a>
-           <a href="virtual-museum.html">Virtual Museum</a>
-           <a href="learn.html">Learn</a>
-           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span class="icon-moon">🌙</span>
-                <span class="icon-sun">☀️</span>
-           </button>
-        </div>
-     </nav>
+<body class="person-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="explore.html">Explore</a><a href="people.html" class="active">People</a>
+      <a href="collection.html">Collections</a><a href="place.html">Places</a><a href="timeline.html">Timeline</a>
+      <a href="virtual-museum.html">Virtual Museum</a><a href="learn.html">Learn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button>
+    </div>
+  </nav>
 </header>
 <main id="main">
+  <section class="person-hero">
+    <div class="hero-ring" aria-hidden="true"></div>
+    <div class="container person-hero-grid">
+      <div class="person-portrait"><div class="portrait-symbol" id="portraitSymbol">𓁐</div><div class="portrait-caption" id="portraitCaption">Historical Figure</div></div>
+      <div class="person-hero-copy">
+        <a class="back-link" href="people.html">← Back to People</a>
+        <div class="section-kicker" id="personRole">HISTORICAL FIGURE</div>
+        <h1 id="personName">Loading person…</h1>
+        <p class="hero-lead" id="personTagline">Discover the person behind the story.</p>
+        <div class="person-facts" id="personFacts"></div>
+        <div class="hero-actions"><a class="btn btn-gold" href="#biography">Read Biography ↓</a><a class="btn btn-outline-light" href="#artifacts">View Artifacts</a></div>
+      </div>
+    </div>
+  </section>
 
-   <section class="person-hero">
-        <div class="hero-glow"></div>
-        <div class="container person-hero-grid">
-        <div class="hero-portrait" id="heroPortrait">
-                <div class="portrait-disc"></div>
-                <div class="portrait-symbol" id="portraitSymbol">𓁐</div>
-                <div class="portrait-caption" id="portraitCaption"></div>
-        </div>
-        <div class="hero-copy">
-                <div class="eyebrow" id="eyebrow">Person</div>
-                <p class="breadcrumbs"><a href="people.html">People</a>
-                        <span>/</span>
-                        <span id="breadcrumbName">Person</span>
-                </p>
-<h1 id="personName">Loading…</h1>
-<p class="hero-title" id="personTitle"></p>
-<p class="hero-description" id="personDescription"></p>
-<div class="hero-meta">
-<div><small>PERIOD</small><strong id="period"></strong></div>
-<div><small>DYNASTY / ERA</small><strong id="dynasty"></strong></div>
-<div><small>DATES</small><strong id="reign"></strong></div>
-</div>
-<a class="gold-link" href="#story">Explore biography ↓</a>
-</div>
-</div>
-</section>
+  <nav class="person-subnav" aria-label="Person sections"><div class="container subnav-inner">
+    <a href="#biography">Biography</a><a href="#timeline">Timeline</a><a href="#achievements">Achievements</a><a href="#places">Places</a><a href="#artifacts">Artifacts</a><a href="#stories">Stories</a>
+  </div></nav>
 
-<section class="quick-facts"><div class="container fact-grid">
-<div><span>𓉐</span><small>KNOWN FOR</small><b id="known"></b></div>
-<div><span>𓂋</span><small>PLACE</small><b id="home"></b></div>
-<div><span>𓏏</span><small>CONNECTED SITE</small><b id="site"></b></div>
-<div><span>𓋹</span><small>ROLE</small><b id="role"></b></div>
-</div></section>
+  <section class="person-section" id="biography"><div class="container detail-grid">
+    <div><div class="section-kicker">Biography</div><h2>A life in context.</h2></div><div class="biography-copy" id="biographyCopy"></div>
+  </div></section>
 
-<section class="story-section" id="story"><div class="container story-grid">
-<div class="sticky-label"><span>01</span><b>BIOGRAPHY</b></div>
-<div><div class="eyebrow">A life in context</div><h2 id="storyTitle">A life worth exploring.</h2><div id="storyBody"></div>
-<div class="quote-card"><span>𓂀</span><p id="storyNote">Every historical person connects to a wider story of place, culture and time.</p></div>
-</div></div></section>
+  <section class="person-section alt" id="timeline"><div class="container">
+    <div class="section-intro"><div><div class="section-kicker">Timeline</div><h2>A life through time.</h2></div><p>Follow the major moments connected to this person's historical story.</p></div>
+    <div class="person-timeline" id="personTimeline"></div>
+  </div></section>
 
-<section class="timeline-strip"><div class="container">
-<div class="eyebrow">Life & historical context</div><h2>Their place in time</h2>
-<div class="life-timeline" id="lifeTimeline"></div>
-</div></section>
+  <section class="person-section" id="achievements"><div class="container">
+    <div class="section-kicker">Achievements</div><h2>What are they remembered for?</h2><div class="achievement-grid" id="achievementGrid"></div>
+  </div></section>
 
-<section class="pd-section achievements-section"><div class="container detail-two-col">
-<div><div class="eyebrow">What they did</div><h2>Achievements</h2></div>
-<div class="achievement-list" id="achievements"></div>
-</div></section>
+  <section class="person-section alt" id="places"><div class="container">
+    <div class="section-intro"><div><div class="section-kicker">Places</div><h2>Where does their story live?</h2></div><p>Explore locations associated with this person.</p></div>
+    <div class="place-grid" id="placeGrid"></div>
+  </div></section>
 
-<section class="connections" id="connections"><div class="container">
-<div class="eyebrow">Connected history</div><h2>One person.<br><span>Many stories.</span></h2>
-<div class="connection-block"><div><div class="mini-kicker">PLACES</div><div class="connection-grid" id="placesGrid"></div></div>
-<div><div class="mini-kicker">ARTIFACTS</div><div class="connection-grid" id="artifactsGrid"></div></div>
-<div><div class="mini-kicker">RELATED STORIES</div><div class="connection-grid" id="storiesGrid"></div></div></div>
-</div></section>
+  <section class="person-section" id="artifacts"><div class="container">
+    <div class="section-intro"><div><div class="section-kicker">Artifacts</div><h2>Objects connected to this person.</h2></div><p>Follow the connection from a historical person to objects in the museum collection.</p></div>
+    <div class="artifact-state" id="artifactLoading"><span>◌</span><p>Searching the collection…</p></div>
+    <div class="artifact-grid" id="artifactGrid"></div>
+    <div class="artifact-state" id="artifactEmpty" hidden><span>𓂀</span><h3>No linked artifacts yet.</h3><p>This person's collection connections will appear as the museum database grows.</p></div>
+  </div></section>
 
-<section class="person-footer-cta"><div class="container"><div class="eyebrow">Keep discovering</div><h2>Where should history<br>take you next?</h2><div class="cta-row"><a class="btn btn-gold" href="people.html">Meet another person</a><a class="btn btn-outline-light" href="collection.html">Explore artifacts</a></div></div></section>
+  <section class="person-section alt" id="stories"><div class="container">
+    <div class="section-kicker">Related stories</div><h2>Keep following the story.</h2><div class="story-grid" id="storyGrid"></div>
+  </div></section>
+
+  <section class="person-next"><div class="container next-inner"><div><div class="section-kicker">Continue exploring</div><h2>One person.<br><em>A larger civilization.</em></h2><p>Move from this life into Egypt's people, artifacts and historical eras.</p></div><div class="next-actions"><a class="btn btn-gold" href="people.html">Meet More People →</a><a class="btn btn-outline-light" href="collection.html">Explore Collection →</a></div></div></section>
 </main>
- <footer>
-    <div class="footer-grid">
-      <div>
-        <h3>Egypt's Digital Museum</h3>
-        <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
-        <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <a href="collection.html">Artifacts</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="collection.html">Collections</a>
-        <a href="virtual-museum.html">Virtual Museum</a>
-      </div>
-      <div>
-        <h3>Eras</h3>
-        <a href="predynastic.html">Predynastic</a>
-        <a href="early-dynastic.html">Early Dynastic</a>
-        <a href="old-kingdom.html">Old Kingdom</a>
-        <a href="middle-kingdom.html">Middle Kingdom</a>
-        <a href="new-kingdom.html">New Kingdom</a>
-        <a href="late-period.html">Late Period</a>
-      </div>
-      <div>
-        <h3>Project</h3>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="copyright">
-      © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
-    </div>
-  </footer>
-<script src="js/people-data.js"></script>
+<footer><div class="footer-grid"><div><h3>Egypt's Digital Museum</h3><p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p><p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p></div><div><h3>Explore</h3><a href="collection.html">Artifacts</a><a href="people.html">People</a><a href="timeline.html">Timeline</a><a href="virtual-museum.html">Virtual Museum</a></div><div><h3>Eras</h3><a href="predynastic.html">Predynastic</a><a href="early-dynastic.html">Early Dynastic</a><a href="old-kingdom.html">Old Kingdom</a><a href="middle-kingdom.html">Middle Kingdom</a><a href="new-kingdom.html">New Kingdom</a><a href="late-period.html">Late Period</a></div><div><h3>Project</h3><a href="about.html">About</a><a href="contact.html">Contact</a></div></div><div class="copyright">© 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project</div></footer>
 <script src="js/person.js"></script>
 </body></html>

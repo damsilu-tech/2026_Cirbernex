@@ -1,94 +1,39 @@
 (() => {
-  const btn = document.getElementById("menuBtn");
-  const links = document.getElementById("navLinks");
-  if (btn && links) {
-    btn.addEventListener("click", () => {
-      const open = links.classList.toggle("open");
-      btn.setAttribute("aria-expanded", String(open));
-    });
+  "use strict";
+  const API_BASE = (() => { const h=location.hostname; return (h==='localhost'||h==='127.0.0.1') ? 'http://localhost:3000' : 'https://cibernex-api.onrender.com'; })();
+  const PEOPLE = {
+    hatshepsut:{name:'Hatshepsut',role:'Pharaoh & Queen',period:'New Kingdom',dynasty:'18th Dynasty',dates:'c. 1479–1458 BCE',symbol:'♕',tagline:'The woman who ruled as pharaoh.',caption:'18th Dynasty · New Kingdom',bio:['Hatshepsut was a powerful ruler of Egypt’s 18th Dynasty. Her reign is remembered for major building projects, trade expeditions and a carefully crafted royal image.','Her story is closely connected to Deir el-Bahari, where her monumental temple became one of the most recognizable architectural landscapes of ancient Egypt.'],timeline:[['1479 BCE','Beginning of her reign','Hatshepsut became the dominant ruler of Egypt during the early 18th Dynasty.'],['Reign','Monumental building','Her reign saw major construction projects that strengthened royal identity and religious presence.'],['Reign','Trade expeditions','Long-distance trade became an important part of the story associated with her reign.'],['Later','A lasting legacy','Her monuments continue to provide evidence for studying women, kingship and power in ancient Egypt.']],achievements:[['01','Royal leadership','Hatshepsut successfully presented herself as pharaoh and established a powerful royal image.'],['02','Monumental building','Her reign is strongly associated with ambitious architectural projects.'],['03','Trade','Trade expeditions are among the best-known achievements connected with her reign.']],places:[['Deir el-Bahari','Monument','The site of Hatshepsut’s famous temple and a central place in her historical story.'],['Thebes','Royal centre','A major political and religious centre associated with the 18th Dynasty and Hatshepsut’s reign.']],stories:[['ROYAL POWER','How Hatshepsut presented royal authority and shaped her public image.'],['BUILDING & MEMORY','How monuments can preserve the memory of a ruler long after their lifetime.'],['TRADE & CONNECTIONS','How long-distance exchange connected Egypt with wider regions.']]},
+    tutankhamun:{name:'Tutankhamun',role:'Pharaoh',period:'New Kingdom',dynasty:'18th Dynasty',dates:'c. 1332–1323 BCE',symbol:'𓂀',tagline:'The young pharaoh whose tomb became a global icon.',caption:'18th Dynasty · New Kingdom',bio:['Tutankhamun was a young ruler of Egypt’s 18th Dynasty. His modern fame comes largely from the extraordinary discovery of his royal tomb and its surviving objects.'],timeline:[['c. 1332 BCE','Becomes pharaoh','Tutankhamun took the throne while still very young.'],['Reign','Restoration','His reign belongs to a period of major religious and political change.'],['c. 1323 BCE','End of his reign','Tutankhamun died young, leaving a remarkably preserved archaeological legacy.']],achievements:[['01','Royal restoration','His reign is associated with the restoration of traditional religious practices after the Amarna period.'],['02','Royal legacy','The surviving tomb objects provide an unusually rich window into royal material culture.']],places:[['Valley of the Kings','Tomb landscape','Tutankhamun’s royal tomb became one of the most famous archaeological discoveries in history.']],stories:[['ROYAL TOMBS','Why the preservation of a royal tomb can transform our understanding of ancient Egypt.'],['DISCOVERY','How archaeology can bring an ancient person’s story back into public view.']]},
+    'ramesses-ii':{name:'Ramesses II',role:'Pharaoh',period:'New Kingdom',dynasty:'19th Dynasty',dates:'c. 1279–1213 BCE',symbol:'𓂀',tagline:'The long-reigning pharaoh known for monuments and diplomacy.',caption:'19th Dynasty · New Kingdom',bio:['Ramesses II was one of the best-known rulers of the New Kingdom. His long reign is especially associated with monumental building and diplomacy.'],timeline:[['c. 1279 BCE','Accession','Ramesses II became king of Egypt at the beginning of the 19th Dynasty.'],['Reign','Monumental programme','Large building projects helped create a lasting royal image across Egypt.'],['Reign','Diplomacy','His reign is remembered for international diplomacy and royal correspondence.']],achievements:[['01','Monuments','His name is associated with a major programme of monumental construction.'],['02','Diplomacy','His reign is remembered for important diplomatic relationships in the ancient Near East.']],places:[['Thebes','Royal landscape','Ramesses II is represented by monuments and inscriptions across major Egyptian sites.'],['Abu Simbel','Monument','A monumental complex associated with Ramesses II’s reign.']],stories:[['MONUMENTAL POWER','How rulers used architecture to shape memory.'],['DIPLOMACY','How international relationships shaped New Kingdom history.']]},
+    'cleopatra-vii':{name:'Cleopatra VII',role:'Queen',period:'Ptolemaic Period',dynasty:'Ptolemaic Dynasty',dates:'51–30 BCE',symbol:'𓁐',tagline:'The final active ruler of Ptolemaic Egypt.',caption:'Ptolemaic Period',bio:['Cleopatra VII was the final active ruler of the Ptolemaic kingdom. Her reign belongs to the closing chapter of ancient Egypt’s independent royal history.'],timeline:[['51 BCE','Becomes ruler','Cleopatra VII came to the throne during the Ptolemaic period.'],['Reign','Political leadership','Her reign unfolded during a period of intense Mediterranean political change.'],['30 BCE','End of the Ptolemaic kingdom','Her death marked the end of the Ptolemaic royal line and the beginning of Roman rule in Egypt.']],achievements:[['01','Political leadership','Cleopatra ruled during a turbulent period and remained an active political leader.'],['02','Cultural legacy','Her life became one of the most enduring stories associated with ancient Egypt.']],places:[['Alexandria','Capital','The Ptolemaic capital was a major centre of politics, scholarship and culture.']],stories:[['PTOLEMAIC EGYPT','Explore the final period of ancient Egypt’s royal history.'],['A CHANGING WORLD','See Egypt within the wider Mediterranean world of the first century BCE.']]},
+    'ahmose-son-of-ibana':{name:'Ahmose, Son of Ibana',role:'Soldier & Official',period:'New Kingdom',dynasty:'18th Dynasty',dates:'18th Dynasty',symbol:'𓏛',tagline:'A soldier and official whose autobiographical inscription records his service.',caption:'18th Dynasty · New Kingdom',bio:['Ahmose, son of Ibana, is known from an autobiographical inscription recording his service. His story demonstrates how written evidence can preserve the life and career of a non-royal individual.'],timeline:[['18th Dynasty','Military service','His inscription records his service as a soldier and official.'],['Later life','A remembered career','His autobiographical record preserved details of his career for later generations.']],achievements:[['01','Service','His recorded career provides evidence for military and administrative life.'],['02','Written memory','His inscription gives an individual voice to the historical record.']],places:[['Elkab','Archaeological site','His autobiographical record is associated with the ancient site of Elkab.']],stories:[['VOICES FROM INSCRIPTIONS','How written records can preserve individual lives.'],['LIFE BEYOND THE PALACE','Why Egyptian history is more than the stories of kings.']]},
+    sennedjem:{name:'Sennedjem',role:'Artisan',period:'New Kingdom',dynasty:'19th Dynasty',dates:'New Kingdom',symbol:'𓎆',tagline:'An artisan associated with the royal tomb-building community at Deir el-Medina.',caption:'Deir el-Medina · New Kingdom',bio:['Sennedjem was an artisan associated with the community at Deir el-Medina, where skilled workers created and decorated royal tombs.'],timeline:[['New Kingdom','Artisan community','Sennedjem belonged to the skilled workforce connected with royal tomb construction.'],['Working life','Craft and decoration','The community’s work helped create some of the most detailed surviving tomb decoration.']],achievements:[['01','Craftsmanship','His story represents the highly skilled artisans behind royal monuments.'],['02','Tomb decoration','The work of Deir el-Medina artisans preserved important visual evidence about Egyptian beliefs and life.']],places:[['Deir el-Medina','Workers’ settlement','A settlement associated with the artisans who built and decorated royal tombs.'],['Valley of the Kings','Royal tombs','The artisans’ work is closely connected to the royal tombs of the New Kingdom.']],stories:[['THE PEOPLE WHO BUILT THE TOMBS','Meet the skilled workers behind royal monuments.'],['CRAFT','Discover how expertise and labour shaped Egyptian heritage.']]},
+    bakenkhonsu:{name:'Bakenkhonsu',role:'High Priest of Amun',period:'New Kingdom',dynasty:'19th Dynasty',dates:'19th Dynasty',symbol:'𓋹',tagline:'A high priest of Amun whose career is known from inscriptions.',caption:'19th Dynasty · New Kingdom',bio:['Bakenkhonsu was a high priest of Amun. His career is known through inscriptions, giving evidence for religious leadership and temple institutions during the New Kingdom.'],timeline:[['19th Dynasty','Religious career','Bakenkhonsu rose through a long career connected with the cult of Amun.']],achievements:[['01','Religious leadership','His career represents the importance of high-ranking priests in New Kingdom society.'],['02','Inscriptions','Written records preserve information about his career.']],places:[['Thebes','Religious centre','Thebes was a major centre for the cult of Amun.'],['Karnak','Temple complex','Karnak was the great temple centre of Amun at Thebes.']],stories:[['TEMPLE LIFE','Explore the people who maintained Egypt’s major religious institutions.'],['AMUN','Understand the role of Amun and his priesthood in New Kingdom society.']]},
+    imhotep:{name:'Imhotep',role:'Architect & High Official',period:'Old Kingdom',dynasty:'3rd Dynasty',dates:'3rd Dynasty',symbol:'𓉐',tagline:'An architect and high official traditionally connected with the Step Pyramid of Djoser.',caption:'3rd Dynasty · Old Kingdom',bio:['Imhotep was an architect and high official traditionally associated with the Step Pyramid of Djoser. His later reputation grew far beyond his lifetime, connecting him with architecture, knowledge and medicine.'],timeline:[['3rd Dynasty','Royal service','Imhotep served under King Djoser and became associated with major royal construction.'],['Old Kingdom','Step Pyramid','He is traditionally connected with the design of the Step Pyramid complex at Saqqara.'],['Later tradition','A lasting reputation','Imhotep’s reputation expanded in later periods, when he was associated with wisdom and healing.']],achievements:[['01','Architecture','He is traditionally associated with the Step Pyramid of Djoser.'],['02','Royal service','His career demonstrates the importance of high officials in Old Kingdom projects.']],places:[['Saqqara','Necropolis','The Step Pyramid complex associated with Djoser and traditionally linked to Imhotep.'],['Memphis','Administrative centre','Imhotep’s career belongs to the royal world centred around Memphis in the Old Kingdom.']],stories:[['THE STEP PYRAMID','Explore one of Egypt’s most important early monumental developments.'],['KNOWLEDGE & MEMORY','See how an historical figure’s reputation can change across centuries.']]},
+    senenmut:{name:'Senenmut',role:'Official',period:'New Kingdom',dynasty:'18th Dynasty',dates:'18th Dynasty',symbol:'𓏛',tagline:'A powerful official and close associate of Hatshepsut, involved in major royal projects.',caption:'18th Dynasty · New Kingdom',bio:['Senenmut was a powerful official closely associated with Hatshepsut. His career is connected with major royal projects and demonstrates the influence that high officials could hold at court.'],timeline:[['18th Dynasty','Rise at court','Senenmut became an important official during Hatshepsut’s reign.'],['Reign of Hatshepsut','Royal projects','He was involved in major projects connected with the royal court.']],achievements:[['01','Administration','His career illustrates the role of senior officials in royal government.'],['02','Royal projects','He is associated with major projects undertaken during Hatshepsut’s reign.']],places:[['Deir el-Bahari','Monumental landscape','Senenmut is closely connected with the monumental landscape of Hatshepsut’s reign.'],['Thebes','Royal centre','His career unfolded within the Theban royal and administrative world.']],stories:[['HATSHEPSUT’S COURT','Meet the officials who helped a ruler shape her reign.'],['ADMINISTRATION','Explore the people behind the operation of the Egyptian state.']]},
+    hesyre:{name:'Hesy-Ra',role:'Official & Chief of Dentists',period:'Old Kingdom',dynasty:'3rd Dynasty',dates:'3rd Dynasty',symbol:'𓂀',tagline:'An early official known from his richly decorated tomb and his title as a chief of dentists.',caption:'3rd Dynasty · Old Kingdom',bio:['Hesy-Ra was an early official known from his decorated tomb. His titles provide evidence for specialized professional roles in the Old Kingdom.'],timeline:[['3rd Dynasty','Official career','Hesy-Ra held an important administrative position.'],['3rd Dynasty','Specialized title','He is known for a title connected with dentistry, offering evidence for specialized knowledge and professions.']],achievements:[['01','Professional specialization','His titles show that specialized occupations existed within Old Kingdom society.'],['02','Tomb evidence','His decorated tomb preserves information about his identity and status.']],places:[['Saqqara','Necropolis','Hesy-Ra’s tomb at Saqqara is an important source for his story.']],stories:[['WORK IN ANCIENT EGYPT','Discover the specialized professions that supported Egyptian society.'],['TOMBS AS RECORDS','Learn how tombs can preserve names, titles and careers.']]},
+    nebamun:{name:'Nebamun',role:'Temple Official',period:'New Kingdom',dynasty:'18th Dynasty',dates:'18th Dynasty',symbol:'𓏛',tagline:'A temple official whose tomb paintings offer vivid scenes of work, leisure and nature.',caption:'18th Dynasty · New Kingdom',bio:['Nebamun was a temple official whose tomb paintings preserve vivid scenes of work, leisure and nature. They provide an important visual record of life and values during the New Kingdom.'],timeline:[['18th Dynasty','Temple service','Nebamun held a position connected with temple administration.'],['18th Dynasty','Tomb decoration','His tomb was decorated with scenes that have become important evidence for New Kingdom life.']],achievements:[['01','Tomb paintings','The surviving scenes provide rich visual evidence about people, animals, work and leisure.'],['02','Historical evidence','His tomb helps researchers study aspects of New Kingdom society.']],places:[['Thebes','Tomb landscape','Nebamun’s tomb belongs to the Theban tomb tradition of the New Kingdom.']],stories:[['LIFE IN PAINT','What tomb paintings can reveal about everyday experiences.'],['ART AS EVIDENCE','How images can become historical sources.']]},
+    nakht:{name:'Nakht',role:'Scribe & Priest',period:'New Kingdom',dynasty:'18th Dynasty',dates:'18th Dynasty',symbol:'𓇼',tagline:'A scribe and priest whose tomb preserves glimpses of agriculture, hunting and family life.',caption:'18th Dynasty · New Kingdom',bio:['Nakht was a scribe and priest whose tomb preserves scenes connected with agriculture, hunting and family life. His story shows how a non-royal tomb can provide evidence about everyday experiences.'],timeline:[['18th Dynasty','Professional life','Nakht worked as a scribe and priest.'],['18th Dynasty','Tomb scenes','His decorated tomb preserved scenes of agriculture, hunting and family life.']],achievements:[['01','Written knowledge','His role as a scribe represents the importance of literacy and administration.'],['02','Everyday evidence','His tomb scenes preserve glimpses of work, family and leisure.']],places:[['Thebes','Tomb landscape','Nakht’s tomb belongs to the Theban necropolis of the New Kingdom.']],stories:[['EVERYDAY EGYPT','Look beyond royal monuments to ordinary experiences.'],['SCRIBE & PRIEST','Explore how professional and religious roles could overlap.']]}
+  };
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  const slug=new URLSearchParams(location.search).get('id')||'hatshepsut';
+  const person=PEOPLE[slug];
+  function render(){
+    if(!person){ $('personName').textContent='Person not found'; $('personRole').textContent='PEOPLE DIRECTORY'; $('personTagline').textContent='Return to the People directory to choose another historical figure.'; $('biographyCopy').innerHTML='<p>This profile is not available yet.</p>'; $('artifactLoading').hidden=true; $('artifactEmpty').hidden=false; return; }
+    document.title=person.name+' | Egypt’s Digital Museum'; $('personName').textContent=person.name; $('personRole').textContent=person.role; $('personTagline').textContent=person.tagline; $('portraitSymbol').textContent=person.symbol; $('portraitCaption').textContent=person.caption;
+    $('personFacts').innerHTML=[person.dates,person.dynasty,person.period].map(x=>`<span class="person-fact">${esc(x)}</span>`).join('');
+    $('biographyCopy').innerHTML=person.bio.map(x=>`<p>${esc(x)}</p>`).join('');
+    $('personTimeline').innerHTML=person.timeline.map(x=>`<article class="timeline-item"><div class="timeline-year">${esc(x[0])}</div><div class="timeline-content"><h3>${esc(x[1])}</h3><p>${esc(x[2])}</p></div></article>`).join('');
+    $('achievementGrid').innerHTML=person.achievements.map(x=>`<article class="achievement-card"><span class="achievement-number">${esc(x[0])}</span><h3>${esc(x[1])}</h3><p>${esc(x[2])}</p></article>`).join('');
+    $('placeGrid').innerHTML=person.places.map(x=>`<article class="place-card"><span class="place-label">${esc(x[1])}</span><h3>${esc(x[0])}</h3><p>${esc(x[2])}</p></article>`).join('');
+    $('storyGrid').innerHTML=person.stories.map(x=>`<a class="story-card" href="explore.html"><span>${esc(x[0])}</span><h3>${esc(x[1])}</h3><p>Continue exploring →</p></a>`).join('');
   }
-
-  const people = window.EGYPT_PEOPLE || {};
-  const params = new URLSearchParams(window.location.search);
-  const requestedId = (params.get("id") || "").toLowerCase().trim();
-  const person = people[requestedId];
-
-  // Never silently fall back to Hatshepsut. An unknown ID gets a clear,
-  // recoverable message instead of showing the wrong person's biography.
-  if (!person) {
-    document.title = "Person not found | Egypt's Digital Museum";
-    document.getElementById("personName").textContent = "Person not found";
-    document.getElementById("personTitle").textContent = "This historical profile does not exist yet.";
-    document.getElementById("personDescription").textContent =
-      "The requested person could not be found. Return to the People directory and choose a profile.";
-    document.getElementById("breadcrumbName").textContent = "Not found";
-    const hero = document.querySelector(".person-hero-grid");
-    const fallback = document.createElement("div");
-    fallback.className = "person-not-found";
-    fallback.innerHTML = '<a class="btn btn-gold" href="people.html">← Back to People</a>';
-    hero?.appendChild(fallback);
-    return;
+  async function artifacts(){
+    $('artifactLoading').hidden=false; $('artifactEmpty').hidden=true; $('artifactGrid').innerHTML='';
+    try{ const r=await fetch(`${API_BASE}/api/artifacts`,{headers:{Accept:'application/json'}}); if(!r.ok) throw Error(r.status); const all=await r.json(); const wanted=person.name.toLowerCase(); const linked=all.filter(a=>typeof a?.person?.name==='string'&&a.person.name.trim().toLowerCase()===wanted); $('artifactLoading').hidden=true; if(!linked.length){$('artifactEmpty').hidden=false;return;} $('artifactGrid').innerHTML=linked.map(a=>`<a class="artifact-card" href="artifact.html?id=${encodeURIComponent(a._id||'')}"><div class="artifact-image">${a.imageUrl?`<img src="${esc(a.imageUrl)}" alt="${esc(a.title||'Artifact')}" loading="lazy">`:''}</div><div class="artifact-copy"><small>${esc((a.category||'artifact').replaceAll('-',' '))}</small><h3>${esc(a.title||'Untitled artifact')}</h3><p>${esc(a.shortDescription||a.description||'Explore this object in the museum collection.')}</p></div></a>`).join(''); }
+    catch(e){console.warn(e); $('artifactLoading').hidden=true; $('artifactEmpty').hidden=false; $('artifactEmpty').querySelector('h3').textContent='Collection connection unavailable.'; $('artifactEmpty').querySelector('p').textContent='The person profile is available, but related artifacts could not be loaded right now.';}
   }
-
-  const $ = id => document.getElementById(id);
-  const set = (id, value) => { const el = $(id); if (el) el.textContent = value; };
-
-  document.title = `${person.name} | Egypt's Digital Museum`;
-  set("personName", person.name);
-  set("breadcrumbName", person.name);
-  set("personTitle", person.title);
-  set("personDescription", person.description);
-  set("period", person.period);
-  set("dynasty", person.dynasty);
-  set("reign", person.reign);
-  set("known", person.known);
-  set("home", person.home);
-  set("site", person.site);
-  set("role", person.role.charAt(0).toUpperCase() + person.role.slice(1));
-  set("portraitSymbol", person.symbol);
-  set("portraitCaption", `${person.known.toUpperCase()}<br><span>${person.dynasty.toUpperCase()}</span>`);
-  $("eyebrow").textContent = person.eyebrow;
-  $("storyTitle").textContent = person.storyTitle || `The story of ${person.name}.`;
-
-  const body = $("storyBody");
-  (person.story || []).forEach(text => {
-    const p = document.createElement("p");
-    p.textContent = text;
-    body.appendChild(p);
-  });
-
-  const timeline = $("lifeTimeline");
-  (person.timeline || []).forEach((item, index) => {
-    const card = document.createElement("div");
-    if (index === 1) card.className = "current";
-    card.innerHTML = `<span>${item.date}</span><b>${item.event}</b><small>${item.text}</small>`;
-    timeline.appendChild(card);
-  });
-
-  const achievements = $("achievements");
-  (person.achievements || []).forEach((item, index) => {
-    const row = document.createElement("div");
-    row.className = "achievement-row";
-    row.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><p></p>`;
-    row.querySelector("p").textContent = item;
-    achievements.appendChild(row);
-  });
-
-  function renderCards(targetId, items, type) {
-    const target = $(targetId);
-    (items || []).forEach(item => {
-      const a = document.createElement("a");
-      a.href = type === "story" ? item.url : "collection.html";
-      a.innerHTML = `<small>${type.toUpperCase()}</small><b></b><span></span>`;
-      a.querySelector("b").textContent = item.name;
-      a.querySelector("span").textContent = `${item.text} →`;
-      target.appendChild(a);
-    });
-  }
-  renderCards("placesGrid", person.places, "place");
-  renderCards("artifactsGrid", person.artifacts, "artifact");
-  renderCards("storiesGrid", person.stories, "story");
-
-  const note = $("storyNote");
-  note.textContent = `Explore ${person.name}'s biography alongside the places, objects and stories connected to this life.`;
+  function menu(){const b=$('menuBtn'),n=$('navLinks');if(!b||!n)return;b.onclick=()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));};}
+  render(); if(person) artifacts(); menu();
 })();
