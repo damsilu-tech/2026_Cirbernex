@@ -1,0 +1,386 @@
+/* ==========================================================
+   artifact.css — artifact detail page
+   Extends common.css (load common.css first)
+   ========================================================== */
+
+.artifact-page {
+  min-height: 70vh;
+  padding: 7rem 1rem 6rem;
+  background: var(--cream);
+}
+
+.artifact-container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.back-link:hover {
+  color: var(--gold);
+}
+
+.artifact-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.artifact-image-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e8ddc6;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0,0,0,.12);
+}
+
+.artifact-image-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.artifact-intro {
+  padding: .5rem 0;
+}
+
+.artifact-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  background: rgba(214,168,79,.14);
+  border: 1px solid rgba(214,168,79,.35);
+  color: #8f6929;
+  font-size: .7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.artifact-date {
+  margin: 0 0 .6rem;
+  color: #8f6929;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.artifact-intro h1 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display, Cinzel), serif;
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  line-height: 1.05;
+}
+
+.artifact-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.quick-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+  margin-top: 1.5rem;
+}
+
+.quick-fact {
+  padding: .9rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.quick-fact-label {
+  display: block;
+  margin-bottom: .25rem;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.quick-fact-value {
+  color: var(--ink);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.artifact-body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.artifact-section {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-eyebrow {
+  margin: 0 0 .4rem;
+  color: #8f6929;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.artifact-section h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display, Cinzel), serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.artifact-section > p:not(.section-eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: .98rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.detail-item {
+  padding: 1rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.detail-label {
+  display: block;
+  margin-bottom: .3rem;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  color: var(--ink);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.material-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.material-list li {
+  padding: .55rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.connection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.connection-card {
+  display: flex;
+  gap: .9rem;
+  padding: 1.2rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.connection-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.connection-label {
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.connection-card h3 {
+  margin: .25rem 0 .25rem;
+  font-family: var(--font-display, Cinzel), serif;
+  font-size: 1.05rem;
+}
+
+.connection-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,.1);
+}
+
+.related-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
+  background: #e8ddc6;
+}
+
+.related-card-body {
+  padding: 1rem;
+}
+
+.related-card-body span {
+  color: #8f6929;
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.related-card-body h3 {
+  margin: .35rem 0 0;
+  font-family: var(--font-display, Cinzel), serif;
+  font-size: .98rem;
+  line-height: 1.35;
+}
+
+.artifact-actions {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.primary-artifact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 1.35rem;
+  border-radius: 999px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.primary-artifact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+.artifact-state {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.artifact-state-symbol {
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-size: 3rem;
+}
+
+.artifact-state h1 {
+  margin: 0 0 .7rem;
+  font-family: var(--font-display, Cinzel), serif;
+}
+
+.artifact-state p {
+  max-width: 600px;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .artifact-page {
+    padding-top: 5rem;
+  }
+
+  .artifact-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .artifact-intro h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .quick-facts,
+  .detail-grid,
+  .connection-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artifact-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary-artifact-btn,
+  .related-card {
+    transition: none;
+  }
+}

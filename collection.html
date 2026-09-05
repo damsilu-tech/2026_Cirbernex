@@ -219,6 +219,11 @@ const API_BASE = (() => {
               ${a.location ? `<span>📍 ${a.location}</span>` : '<span></span>'}
               ${a.dynasty  ? `<span>🏛️ ${a.dynasty}</span>`  : '<span></span>'}
             </div>
+            <a class="explore-artifact-btn"
+               href="artifact.html?id=${encodeURIComponent(a._id || '')}"
+               aria-label="Explore ${a.title}">
+              Explore Artifact <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>`;
     }
