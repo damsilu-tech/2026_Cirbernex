@@ -207,12 +207,21 @@ async function submitForm() {
       body: JSON.stringify(body)
     });
 
-    if (!res.ok) throw new Error();
+    if (!res.ok) {
+      let message = 'Unable to save artifact.';
+      try {
+        const errorData = await res.json();
+        if (errorData.error) message = errorData.error;
+      } catch {}
+      throw new Error(message);
+    }
+
     showToast(id ? '✓ Artifact updated!' : '✓ Artifact added!');
     clearForm();
     loadArtifacts();
-  } catch {
-    showToast('Something went wrong. Is the server running?', 'error');
+  } catch (err) {
+    console.error('Save artifact failed:', err);
+    showToast(err.message || 'Something went wrong. Is the server running?', 'error');
   }
 }
 

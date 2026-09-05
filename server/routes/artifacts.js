@@ -37,7 +37,16 @@ router.post('/', async (req, res) => {
 // PUT update artifact
 router.put('/:id', async (req, res) => {
   try {
-    const artifact = await Artifact.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const artifact = await Artifact.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    if (!artifact) {
+      return res.status(404).json({ error: 'Artifact not found' });
+    }
+
     res.json(artifact);
   } catch (err) {
     res.status(400).json({ error: err.message });
