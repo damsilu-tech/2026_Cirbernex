@@ -1,35 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Explore Egypt | Egypt's Digital Museum</title>
-        <link rel="stylesheet" href="css/common.css">
-    </head>
-    <body>
-        <header id="header">
-            <nav class="nav">
-                <a class="brand" href="index.html">
-                    <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
-                    <span class="brand-name">Egypt's Digital Museum</span>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-        <a  href="explore.html">Explore</a>
-        <a href="people.html">People</a>
-        <a href="collection.html">Collections</a>
-        <a href="place.html">Places</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="virtual-museum.html">Virtual Museum</a>
-        <a href="learn.html">Learn</a>
-                </div>
-            </nav>
-        </header>
-        <main id="main" style="min-height:80vh;padding:10rem 1rem;text-align:center">
-            <div class="section-kicker">Coming next</div>
-            <h1 style="font-family:Cinzel,serif;font-size:clamp(3rem,8vw,7rem)">Explore Egypt</h1>
-            <p style="max-width:650px;margin:1rem auto;color:var(--muted)">This page is reserved for the interactive Egypt map: cities, temples, tombs and monuments.</p>
-            <a class="btn btn-gold" href="explore.html">Back to Explore →</a>
-        </main>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore a single historical place in Egypt's Digital Museum — its location, history, monuments, people, artifacts and place in the timeline.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Place | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/places.css">
+</head>
+
+<body class="places-detail-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+      <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
+      <span class="brand-name">Egypt's Digital Museum</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="people.html">People</a>
+      <a href="collection.html">Collections</a>
+      <a href="place.html" class="active">Places</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+      <a href="learn.html">Learn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <div id="placeApp" aria-live="polite">
+    <div class="place-loading">
+      <div class="container">
+        <p>Loading place…</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Egypt's Digital Museum</h3>
+      <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+      <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <a href="collection.html">Artifacts</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+    </div>
+    <div>
+      <h3>Eras</h3>
+      <a href="predynastic.html">Predynastic</a>
+      <a href="early-dynastic.html">Early Dynastic</a>
+      <a href="old-kingdom.html">Old Kingdom</a>
+      <a href="middle-kingdom.html">Middle Kingdom</a>
+      <a href="new-kingdom.html">New Kingdom</a>
+      <a href="late-period.html">Late Period</a>
+    </div>
+    <div>
+      <h3>Project</h3>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
+  </div>
+</footer>
+
+<script src="js/places.js"></script>
+</body>
 </html>

@@ -1,171 +1,410 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Explore an ancient Egyptian place through its history, monuments, people, artifacts and stories.">
-<title>Place Explorer | Egypt's Digital Museum</title>
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/place.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the places where ancient Egyptian history happened — cities, temples, pyramids, tombs and the landscapes of the Nile.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Places of Egypt | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/place.css">
 </head>
-<body class="detail-page place-page">
+
+<body class="place-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header id="header">
-<nav class="nav" aria-label="Main navigation">
-<a class="brand" href="index.html">
-  <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
-  <span class="brand-name">Egypt's Digital Museum</span>
-</a>
-<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-<div class="nav-links" id="navLinks">
-  <a href="index.html">Home</a>
-        <a  href="explore.html">Explore</a>
-        <a href="people.html">People</a>
-        <a href="collection.html">Collections</a>
-        <a href="place.html" class="active">Places</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="virtual-museum.html">Virtual Museum</a>
-        <a href="learn.html">Learn</a>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◐</button>
-</div>
-</nav>
-</header>
-
-<main id="main">
-<section class="place-hero">
-  <div class="place-hero-visual">
-    <div class="sun-ring"></div>
-    <div class="cliff-shape"></div>
-    <div class="tomb-door"></div>
-    <div class="hero-location-label">
-      <span>WESTERN THEBES</span>
-      <b>25.7402° N · 32.6014° E</b>
-    </div>
-  </div>
-
-  <div class="place-hero-copy">
-    <div class="eyebrow">Place · New Kingdom · Royal Necropolis</div>
-    <p class="breadcrumbs"><a href="places.html">Places</a><span>/</span>Valley of the Kings</p>
-    <h1>Valley of<br><em>the Kings</em></h1>
-    <p class="place-lead">A hidden landscape built for eternity.</p>
-    <p class="place-description">
-      On the west bank of the Nile near ancient Thebes, the Valley of the Kings became the burial place of many New Kingdom rulers. Its tombs preserve extraordinary evidence for royal funerary belief, art and architecture.
-    </p>
-
-    <div class="place-meta">
-      <div><small>REGION</small><b>Western Thebes</b></div>
-      <div><small>PERIOD</small><b>New Kingdom</b></div>
-      <div><small>TYPE</small><b>Royal Necropolis</b></div>
-    </div>
-
-    <a class="gold-link" href="#overview">Explore the place ↓</a>
-  </div>
-</section>
-
-<section class="place-facts" id="overview">
-  <div class="container fact-row">
-    <div><small>LOCATION</small><b>West Bank, Luxor</b></div>
-    <div><small>KNOWN FOR</small><b>Royal tombs</b></div>
-    <div><small>FAMOUS PERSON</small><a href="person.html?id=tutankhamun">Tutankhamun →</a></div>
-    <div><small>RELATED ERA</small><a href="new-kingdom.html">New Kingdom →</a></div>
-  </div>
-</section>
-
-<section class="place-story">
-  <div class="container place-story-grid">
-    <div class="place-sticky"><span>01</span><b>THE LANDSCAPE</b></div>
-    <div>
-      <div class="eyebrow">Why here?</div>
-      <h2>A landscape<br><em>chosen for kings.</em></h2>
-      <p>The valley's remote desert setting offered privacy and symbolic power. Unlike the pyramids of earlier periods, New Kingdom rulers were buried in rock-cut tombs hidden within a rugged landscape.</p>
-      <p>The surrounding cliffs and mountain peak created a dramatic setting for a royal necropolis. Tombs were cut into the rock and decorated with religious texts and scenes intended to guide the king through the afterlife.</p>
-      <div class="story-highlight">
-        <span>𓉐</span>
-        <p>Here, architecture, landscape and belief were designed to work together.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="place-timeline">
-  <div class="container">
-    <div class="eyebrow">Place through time</div>
-    <h2>How the valley changed.</h2>
-    <div class="timeline-grid">
-      <div><span>c. 16th century BCE</span><b>Royal burials begin</b><small>New Kingdom rulers increasingly use the western valley for royal tombs.</small></div>
-      <div><span>18th Dynasty</span><b>Expansion</b><small>Royal tomb construction develops in scale, decoration and complexity.</small></div>
-      <div class="current"><span>c. 1323 BCE</span><b>Tutankhamun buried</b><small>The young king is interred in a comparatively small tomb later known as KV62.</small></div>
-      <div><span>19th–20th Dynasties</span><b>Monumental tombs</b><small>Later rulers continue using the valley, creating increasingly elaborate tombs.</small></div>
-      <div><span>Modern era</span><b>Archaeology & conservation</b><small>Excavation, research and preservation transform how the valley is understood.</small></div>
-    </div>
-  </div>
-</section>
-
-<section class="monuments-section">
-  <div class="container">
-    <div class="eyebrow">What to discover</div>
-    <h2>Inside the valley.</h2>
-    <div class="monument-grid">
-      <article class="monument-card"><span class="card-number">01</span><div class="card-symbol">𓉐</div><h3>Royal Tombs</h3><p>Rock-cut burial chambers designed for kings of the New Kingdom.</p></article>
-      <article class="monument-card"><span class="card-number">02</span><div class="card-symbol">𓂀</div><h3>Painted Chambers</h3><p>Walls filled with scenes and texts related to the king's journey after death.</p></article>
-      <article class="monument-card"><span class="card-number">03</span><div class="card-symbol">𓋹</div><h3>Funerary Belief</h3><p>Architecture and imagery reveal ideas about regeneration and eternity.</p></article>
-      <article class="monument-card"><span class="card-number">04</span><div class="card-symbol">𓏏</div><h3>Archaeology</h3><p>Discoveries continue to reshape how the valley is understood today.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="connections place-connections">
-  <div class="container">
-    <div class="eyebrow">Connected history</div>
-    <h2>One place.<br><span>Many lives.</span></h2>
-    <div class="connection-grid">
-      <a href="person.html?id=tutankhamun"><small>PERSON</small><b>Tutankhamun</b><span>The king whose tomb became world famous →</span></a>
-      <a href="artifact.html?id=tutankhamun-mask"><small>ARTIFACT</small><b>Golden Mask</b><span>An object discovered in his burial assemblage →</span></a>
-      <a href="new-kingdom.html"><small>ERA</small><b>New Kingdom</b><span>The period that shaped the valley →</span></a>
-      <a href="stories.html"><small>STORY</small><b>The Boy King</b><span>Follow the story behind the discovery →</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="map-context">
-  <div class="container map-context-grid">
-    <div>
-      <div class="eyebrow">Where is it?</div>
-      <h2>Part of a larger<br><em>Theban landscape.</em></h2>
-      <p>The Valley of the Kings sits on the west bank of the Nile opposite ancient Thebes. Nearby temples, tombs and settlements formed a connected sacred and working landscape.</p>
-      <a class="btn btn-gold" href="places.html">Explore the full Egypt map →</a>
-    </div>
-    <div class="mini-map-card" aria-label="Stylized map of the Theban region">
-      <div class="river-line"></div>
-      <div class="map-point point-valley"><i></i><span>Valley of the Kings</span></div>
-      <div class="map-point point-thebes"><i></i><span>Thebes / Luxor</span></div>
-      <div class="map-point point-karnak"><i></i><span>Karnak</span></div>
-      <div class="map-point point-deir"><i></i><span>Deir el-Bahari</span></div>
-      <div class="map-note">WEST BANK ← NILE → EAST BANK</div>
-    </div>
-  </div>
-</section>
-
-<section class="place-cta">
-  <div class="container">
-    <div class="eyebrow">Keep exploring</div>
-    <h2>Where should history<br>take you next?</h2>
-    <div class="cta-row">
-      <a class="btn btn-gold" href="places.html">Explore another place</a>
-      <a class="btn btn-outline-light" href="collection.html">Discover artifacts</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <a class="brand" href="index.html">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
       <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
       <span class="brand-name">Egypt's Digital Museum</span>
     </a>
-    <p>5,000 years. One digital journey.</p>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="people.html">People</a>
+      <a href="collection.html">Collections</a>
+      <a href="place.html" class="active">Places</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+      <a href="learn.html">Learn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="place-hero" aria-labelledby="hero-title">
+    <div class="place-hero-inner">
+      <div class="eyebrow">The Places of Egypt</div>
+      <h1 id="hero-title">Where History<br><span>Happened.</span></h1>
+      <p>From royal capitals and sacred temples to pyramids, tombs and ancient settlements, explore the places that shaped Egyptian civilization.</p>
+      <a class="btn btn-gold" href="#browse">Explore Places ↓</a>
+    </div>
+  </section>
+
+  <!-- 2. INTRODUCTION -->
+  <section class="intro-section" aria-labelledby="intro-title">
+    <div class="container intro-grid">
+      <div>
+        <div class="section-kicker">A Civilization in Place</div>
+        <h2 id="intro-title">Every story has<br><span>a location.</span></h2>
+      </div>
+      <div class="intro-copy">
+        <p class="lead-copy">Ancient Egypt was not one place. Its history unfolded across cities, temples, cemeteries, river valleys and monumental landscapes.</p>
+        <p>Discover where rulers lived, where gods were worshipped, where tombs were built, and where everyday people lived and worked.</p>
+        <div class="wwh-row">
+          <div class="wwh-item"><strong>People</strong><span>answer WHO?</span></div>
+          <div class="wwh-item"><strong>Artifacts</strong><span>answer WHAT?</span></div>
+          <div class="wwh-item wwh-active"><strong>Places</strong><span>answer WHERE?</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SEARCH -->
+  <section class="place-search-section" aria-labelledby="search-title">
+    <div class="container">
+      <h2 id="search-title">Where do you want to go?</h2>
+      <div class="place-search-wrap">
+        <input type="text" id="heroSearch" placeholder="Search places, cities, temples…" autocomplete="off">
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+      <div class="search-examples">
+        <span>Try:</span>
+        <button type="button" class="example-chip" data-q="Giza">Giza</button>
+        <button type="button" class="example-chip" data-q="Karnak">Karnak</button>
+        <button type="button" class="example-chip" data-q="Thebes">Thebes</button>
+        <button type="button" class="example-chip" data-q="Saqqara">Saqqara</button>
+        <button type="button" class="example-chip" data-q="Valley of the Kings">Valley of the Kings</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. EXPLORE BY TYPE -->
+  <section class="type-section" aria-labelledby="type-title">
+    <div class="container">
+      <div class="section-kicker">Explore by Type</div>
+      <h2 id="type-title">Choose a kind of place.</h2>
+      <div class="type-grid">
+        <button class="type-card" data-type="cities">
+          <span class="type-icon">🏙️</span>
+          <h3>Cities</h3>
+          <p>The major urban and administrative centres of ancient Egypt.</p>
+          <small>Memphis · Thebes · Alexandria</small>
+        </button>
+        <button class="type-card" data-type="temples">
+          <span class="type-icon">🛕</span>
+          <h3>Temples</h3>
+          <p>Sacred places where religious rituals, ceremonies and offerings took place.</p>
+          <small>Karnak · Luxor Temple</small>
+        </button>
+        <button class="type-card" data-type="monuments">
+          <span class="type-icon">🔺</span>
+          <h3>Pyramids & Monuments</h3>
+          <p>Monumental structures built to express royal power, belief and memory.</p>
+          <small>Giza · Saqqara</small>
+        </button>
+        <button class="type-card" data-type="necropolises">
+          <span class="type-icon">⚱️</span>
+          <h3>Tombs & Necropolises</h3>
+          <p>Sacred landscapes where Egyptians prepared for and commemorated the dead.</p>
+          <small>Valley of the Kings · Saqqara</small>
+        </button>
+        <button class="type-card" data-type="settlements">
+          <span class="type-icon">🏺</span>
+          <h3>Settlements</h3>
+          <p>Places where communities lived, worked and built their everyday lives.</p>
+          <small>Deir el-Medina</small>
+        </button>
+        <button class="type-card" data-type="landscapes">
+          <span class="type-icon">🌊</span>
+          <h3>River & Landscape</h3>
+          <p>The Nile and surrounding landscapes that supported agriculture, travel and settlement.</p>
+          <small>The Nile Valley</small>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FEATURED PLACES -->
+  <section class="featured-places-section" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-kicker">⭐ Places to Discover</div>
+      <h2 id="featured-title">Start with the essentials.</h2>
+
+      <div class="featured-grid">
+
+        <a class="featured-card" href="places.html?id=giza">
+          <div class="fp-image fp-giza"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Monumental Landscape</span><span>PERIOD: Old Kingdom</span></div>
+            <h3>Giza</h3>
+            <p>Home to the Great Pyramid and one of the most recognizable monumental landscapes of ancient Egypt.</p>
+            <span class="fp-link">Explore Giza →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=memphis">
+          <div class="fp-image fp-memphis"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Ancient City</span><span>PERIOD: Early Dynastic – later periods</span></div>
+            <h3>Memphis</h3>
+            <p>One of ancient Egypt's major political and cultural centres.</p>
+            <span class="fp-link">Explore Memphis →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=thebes">
+          <div class="fp-image fp-thebes"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Ancient City</span><span>PERIOD: Middle Kingdom – New Kingdom</span></div>
+            <h3>Thebes</h3>
+            <p>A major centre of royal power and religious life, especially during the New Kingdom.</p>
+            <span class="fp-link">Explore Thebes →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=karnak">
+          <div class="fp-image fp-karnak"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Temple Complex</span><span>LOCATION: Thebes</span></div>
+            <h3>Karnak</h3>
+            <p>A vast temple complex associated particularly with the worship of Amun.</p>
+            <span class="fp-link">Explore Karnak →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=saqqara">
+          <div class="fp-image fp-saqqara"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Necropolis</span><span>LOCATION: Near Memphis</span></div>
+            <h3>Saqqara</h3>
+            <p>A vast cemetery containing monuments and tombs spanning many periods of Egyptian history.</p>
+            <span class="fp-link">Explore Saqqara →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=valley-of-the-kings">
+          <div class="fp-image fp-kings"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Royal Necropolis</span><span>PERIOD: New Kingdom</span></div>
+            <h3>Valley of the Kings</h3>
+            <p>The royal burial ground where many New Kingdom rulers were buried.</p>
+            <span class="fp-link">Explore Valley of the Kings →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=abu-simbel">
+          <div class="fp-image fp-abu"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Temple Complex</span><span>PERIOD: New Kingdom</span></div>
+            <h3>Abu Simbel</h3>
+            <p>A monumental temple complex associated with the reign of Ramesses II.</p>
+            <span class="fp-link">Explore Abu Simbel →</span>
+          </div>
+        </a>
+
+        <a class="featured-card" href="places.html?id=deir-el-bahari">
+          <div class="fp-image fp-deir"></div>
+          <div class="fp-body">
+            <div class="fp-meta"><span>TYPE: Monumental Landscape</span><span>LOCATION: Thebes</span></div>
+            <h3>Deir el-Bahari</h3>
+            <p>A dramatic landscape of temples and cliffs, including the famous temple of Hatshepsut.</p>
+            <span class="fp-link">Explore Deir el-Bahari →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. MAP-STYLE EXPLORATION -->
+  <section class="place-map-section" aria-labelledby="map-title">
+    <div class="container map-layout">
+      <div class="map-copy">
+        <div class="section-kicker">🗺️ Explore Egypt</div>
+        <h2 id="map-title">Follow the Nile.<br><span>Discover the places.</span></h2>
+        <p>Trace Egypt's history through the landscapes where it unfolded.</p>
+      </div>
+      <div class="egypt-map" role="img" aria-label="Stylized map of Egypt with key ancient locations">
+        <div class="map-river"></div>
+        <span class="map-region map-region-top">MEDITERRANEAN</span>
+        <a class="map-pin pin-alex" href="places.html?id=alexandria"><i></i><span>Alexandria</span></a>
+        <a class="map-pin pin-memphis" href="places.html?id=memphis"><i></i><span>Memphis</span></a>
+        <a class="map-pin pin-saqqara" href="places.html?id=saqqara"><i></i><span>Saqqara</span></a>
+        <a class="map-pin pin-giza" href="places.html?id=giza"><i></i><span>Giza</span></a>
+        <a class="map-pin pin-thebes" href="places.html?id=thebes"><i></i><span>Thebes</span></a>
+        <a class="map-pin pin-karnak" href="places.html?id=karnak"><i></i><span>Karnak / Luxor</span></a>
+        <a class="map-pin pin-deir" href="places.html?id=deir-el-bahari"><i></i><span>Deir el-Bahari</span></a>
+        <a class="map-pin pin-kings" href="places.html?id=valley-of-the-kings"><i></i><span>Valley of the Kings</span></a>
+        <a class="map-pin pin-abu" href="places.html?id=abu-simbel"><i></i><span>Abu Simbel</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BROWSE ALL PLACES -->
+  <section class="browse-section" id="browse" aria-labelledby="browse-title">
+    <div class="container">
+      <div class="section-kicker">📍 Explore All Places</div>
+      <h2 id="browse-title">Browse the full collection.</h2>
+
+      <div class="browse-controls">
+        <input type="text" id="browseSearch" class="browse-search" placeholder="Search locations…">
+
+        <div class="filter-group">
+          <span class="filter-label">Type</span>
+          <div class="filter-pills" id="typeFilters">
+            <button class="filter-pill active" data-type="all">All</button>
+            <button class="filter-pill" data-type="cities">Cities</button>
+            <button class="filter-pill" data-type="temples">Temples</button>
+            <button class="filter-pill" data-type="monuments">Monuments</button>
+            <button class="filter-pill" data-type="necropolises">Necropolises</button>
+            <button class="filter-pill" data-type="settlements">Settlements</button>
+            <button class="filter-pill" data-type="landscapes">Landscapes</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Period</span>
+          <select id="periodFilter" class="period-select">
+            <option value="all">All Periods</option>
+            <option value="predynastic">Predynastic</option>
+            <option value="early-dynastic">Early Dynastic</option>
+            <option value="old-kingdom">Old Kingdom</option>
+            <option value="middle-kingdom">Middle Kingdom</option>
+            <option value="new-kingdom">New Kingdom</option>
+            <option value="late-period">Late Period</option>
+            <option value="ptolemaic">Ptolemaic & Roman</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="browse-grid" id="browseGrid"></div>
+      <div class="browse-empty" id="browseEmpty" hidden>No places match your search.</div>
+    </div>
+  </section>
+
+  <!-- 8. CONNECTIONS -->
+  <section class="connection-section" aria-labelledby="connection-title">
+    <div class="container connection-layout">
+      <div>
+        <div class="section-kicker">🔗 History Lives in Connections</div>
+        <h2 id="connection-title">One place.<br><span>Many stories.</span></h2>
+        <p>A single location can connect rulers, workers, monuments, artifacts and centuries of history.</p>
+      </div>
+      <div class="connection-diagram">
+        <div class="cd-root">VALLEY OF THE KINGS</div>
+        <div class="cd-lines" aria-hidden="true"></div>
+        <div class="cd-branches">
+          <div class="cd-branch">
+            <strong>PEOPLE</strong>
+            <span>Pharaohs</span>
+            <span>Artisans</span>
+            <span>Priests</span>
+          </div>
+          <div class="cd-branch">
+            <strong>ARTIFACTS</strong>
+            <span>Funerary Objects</span>
+            <span>Inscriptions</span>
+          </div>
+          <div class="cd-branch">
+            <strong>TIMELINE</strong>
+            <span>New Kingdom</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PLACES BY HISTORICAL QUESTION -->
+  <section class="question-section" aria-labelledby="question-title">
+    <div class="container">
+      <div class="section-kicker">What happened here?</div>
+      <h2 id="question-title">Ask a question. Find a place.</h2>
+      <div class="question-grid">
+        <a class="question-card" href="place.html#browse" data-filter="necropolises">
+          <span class="q-icon">👑</span>
+          <h3>Where were kings buried?</h3>
+          <p>Explore royal necropolises and the monuments created for the afterlife.</p>
+          <span class="q-link">Discover Tombs →</span>
+        </a>
+        <a class="question-card" href="place.html#browse" data-filter="temples">
+          <span class="q-icon">🛕</span>
+          <h3>Where did people worship?</h3>
+          <p>Explore temples and sacred landscapes dedicated to Egypt's gods.</p>
+          <span class="q-link">Discover Temples →</span>
+        </a>
+        <a class="question-card" href="place.html#browse" data-filter="monuments">
+          <span class="q-icon">🏗️</span>
+          <h3>Where were monuments built?</h3>
+          <p>Discover the places where Egyptian architecture transformed the landscape.</p>
+          <span class="q-link">Discover Monuments →</span>
+        </a>
+        <a class="question-card" href="place.html#browse" data-filter="settlements">
+          <span class="q-icon">🏠</span>
+          <h3>Where did people live?</h3>
+          <p>Explore settlements and evidence of everyday Egyptian life.</p>
+          <span class="q-link">Discover Settlements →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FINAL CTA -->
+  <section class="final-cta-section" aria-labelledby="cta-title">
+    <div class="container final-cta-inner">
+      <div class="section-kicker">Keep Exploring</div>
+      <h2 id="cta-title">Every place holds a story.</h2>
+      <p>Follow a location through its people, monuments, artifacts and historical moments.</p>
+      <div class="final-cta-actions">
+        <a class="btn btn-gold" href="people.html">Explore People →</a>
+        <a class="btn btn-ghost" href="collection.html">Explore Collection →</a>
+        <a class="btn btn-ghost" href="timeline.html">Travel Through Time →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Egypt's Digital Museum</h3>
+      <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+      <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <a href="collection.html">Artifacts</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="collection.html">Collections</a>
+      <a href="virtual-museum.html">Virtual Museum</a>
+    </div>
+    <div>
+      <h3>Eras</h3>
+      <a href="predynastic.html">Predynastic</a>
+      <a href="early-dynastic.html">Early Dynastic</a>
+      <a href="old-kingdom.html">Old Kingdom</a>
+      <a href="middle-kingdom.html">Middle Kingdom</a>
+      <a href="new-kingdom.html">New Kingdom</a>
+      <a href="late-period.html">Late Period</a>
+    </div>
+    <div>
+      <h3>Project</h3>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
   </div>
 </footer>
 
