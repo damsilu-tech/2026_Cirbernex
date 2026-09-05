@@ -344,6 +344,11 @@
   color: var(--muted);
   line-height: 1.6;
 }
+.artifact-state[hidden],
+.artifact-section[hidden],
+#artifactContent[hidden] {
+  display: none !important;
+}
 
 @media (max-width: 800px) {
   .artifact-page {
