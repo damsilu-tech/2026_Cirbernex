@@ -93,7 +93,7 @@
                 <span>Historical Eras</span>
               </div>
               <div class="about-big-stat">
-                <strong id="aboutArtifacts">23+</strong>
+                <strong id="countBadge">23+</strong>
                 <span>Artifacts</span>
               </div>
               <div class="about-big-stat">
@@ -560,5 +560,29 @@
   </footer>
 
   <script src="js/about.js"></script>
+  <script>
+    async function loadArtifactCount() {
+  const countBadge = document.getElementById("countBadge");
+
+  if (!countBadge) return;
+
+  try {
+    const response = await fetch(`${API_BASE}/api/artifacts`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch artifacts");
+    }
+
+    const artifacts = await response.json();
+
+    countBadge.textContent = artifacts.length;
+  } catch (error) {
+    console.error("Error loading artifact count:", error);
+    countBadge.textContent = "0";
+  }
+}
+
+loadArtifactCount();
+  </script>
 </body>
 </html>
