@@ -57,7 +57,7 @@
           and immersive experiences built for the modern world.
         </p>
         <div class="hero-meta" aria-label="Museum highlights">
-          <span>23+ Artifacts</span>
+          <span class="count-badge" id="countBadge">0</span>
           <span class="hero-meta-divider" aria-hidden="true">·</span>
           <span>6 Historical Eras</span>
           <span class="hero-meta-divider" aria-hidden="true">·</span>
@@ -512,5 +512,29 @@
   </footer>
 
   <script src="js/home.js"></script>
+  <script>
+    async function loadArtifactCount() {
+  const countBadge = document.getElementById("countBadge");
+
+  if (!countBadge) return;
+
+  try {
+    const response = await fetch(`${API_BASE}/api/artifacts`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch artifacts");
+    }
+
+    const artifacts = await response.json();
+
+    countBadge.textContent = artifacts.length;
+  } catch (error) {
+    console.error("Error loading artifact count:", error);
+    countBadge.textContent = "0";
+  }
+}
+
+loadArtifactCount();
+  </script>
 </body>
 </html>
