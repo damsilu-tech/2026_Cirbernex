@@ -63,12 +63,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "18th Dynasty",
         "text": "Explore his wider royal family and political world.",
-        "url": "timeline.html"
+        "url": "stories.html#power"
       },
       {
         "name": "Royal burial",
         "text": "Discover Egyptian funerary traditions.",
-        "url": "collection.html"
+        "url": "stories.html#afterlife"
       }
     ]
   },
@@ -141,12 +141,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Women & power",
         "text": "Explore women who held authority.",
-        "url": "stories.html"
+        "url": "stories.html#power"
       },
       {
         "name": "Punt expedition",
         "text": "Follow the famous trade journey.",
-        "url": "stories.html"
+        "url": "stories.html#world"
       }
     ]
   },
@@ -214,12 +214,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Battle of Kadesh",
         "text": "Explore warfare and diplomacy.",
-        "url": "stories.html"
+        "url": "stories.html#power"
       },
       {
         "name": "Royal monuments",
         "text": "See how pharaohs shaped memory.",
-        "url": "collection.html"
+        "url": "stories.html#building"
       }
     ]
   },
@@ -287,12 +287,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Egypt and Rome",
         "text": "Explore the late Ptolemaic kingdom.",
-        "url": "stories.html"
+        "url": "stories.html#world"
       },
       {
         "name": "Ptolemaic Egypt",
         "text": "Travel through the final centuries of Egyptian kingship.",
-        "url": "timeline.html"
+        "url": "stories.html#power"
       }
     ]
   },
@@ -360,12 +360,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Rise of the New Kingdom",
         "text": "Explore the period in which Ahmose served.",
-        "url": "timeline.html"
+        "url": "stories.html#power"
       },
       {
         "name": "Lives beyond the palace",
         "text": "Meet officials and workers who left records.",
-        "url": "people.html"
+        "url": "stories.html#daily-life"
       }
     ]
   },
@@ -433,12 +433,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Life at Deir el-Medina",
         "text": "Explore the community behind the royal tombs.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       },
       {
         "name": "Making a royal tomb",
         "text": "Follow the craftspeople behind elite burials.",
-        "url": "stories.html"
+        "url": "stories.html#building"
       }
     ]
   },
@@ -506,12 +506,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Religion in the New Kingdom",
         "text": "Explore temples and religious institutions.",
-        "url": "stories.html"
+        "url": "stories.html#faith"
       },
       {
         "name": "Amun at Karnak",
         "text": "Discover the temple complex at the centre of Theban religion.",
-        "url": "places.html"
+        "url": "stories.html#faith"
       }
     ]
   },
@@ -579,12 +579,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Building the first pyramids",
         "text": "Explore monumental stone architecture.",
-        "url": "stories.html"
+        "url": "stories.html#building"
       },
       {
         "name": "Egyptian medicine",
         "text": "Discover later traditions of healing and Imhotep.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       }
     ]
   },
@@ -652,12 +652,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Hatshepsut's court",
         "text": "Meet officials who helped administer her reign.",
-        "url": "stories.html"
+        "url": "stories.html#power"
       },
       {
         "name": "Royal building projects",
         "text": "Explore the people behind monumental architecture.",
-        "url": "stories.html"
+        "url": "stories.html#building"
       }
     ]
   },
@@ -725,12 +725,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Medicine in ancient Egypt",
         "text": "Explore evidence for healing and specialists.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       },
       {
         "name": "Old Kingdom officials",
         "text": "Meet administrators behind Egypt's early state.",
-        "url": "people.html"
+        "url": "stories.html#power"
       }
     ]
   },
@@ -798,12 +798,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Art of the New Kingdom",
         "text": "Explore the visual language of tomb painting.",
-        "url": "stories.html"
+        "url": "stories.html#building"
       },
       {
         "name": "Life in Thebes",
         "text": "Discover work, family and leisure in the New Kingdom.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       }
     ]
   },
@@ -871,12 +871,12 @@ window.EGYPT_PEOPLE = {
       {
         "name": "Daily life",
         "text": "Explore work, food, family and leisure.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       },
       {
         "name": "Scribes & knowledge",
         "text": "Discover the professional world of Egyptian writing.",
-        "url": "stories.html"
+        "url": "stories.html#daily-life"
       }
     ]
   }

@@ -27,7 +27,8 @@
     $('personTimeline').innerHTML=person.timeline.map(x=>`<article class="timeline-item"><div class="timeline-year">${esc(x[0])}</div><div class="timeline-content"><h3>${esc(x[1])}</h3><p>${esc(x[2])}</p></div></article>`).join('');
     $('achievementGrid').innerHTML=person.achievements.map(x=>`<article class="achievement-card"><span class="achievement-number">${esc(x[0])}</span><h3>${esc(x[1])}</h3><p>${esc(x[2])}</p></article>`).join('');
     $('placeGrid').innerHTML=person.places.map(x=>`<article class="place-card"><span class="place-label">${esc(x[1])}</span><h3>${esc(x[0])}</h3><p>${esc(x[2])}</p></article>`).join('');
-    $('storyGrid').innerHTML=person.stories.map(x=>`<a class="story-card" href="explore.html"><span>${esc(x[0])}</span><h3>${esc(x[1])}</h3><p>Continue exploring →</p></a>`).join('');
+    const storySlug=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+    $('storyGrid').innerHTML=person.stories.map(x=>`<a class="story-card" href="stories.html#story-${storySlug(x[0])}"><span>${esc(x[0])}</span><h3>${esc(x[1])}</h3><p>Read this story →</p></a>`).join('');
   }
   async function artifacts(){
     $('artifactLoading').hidden=false; $('artifactEmpty').hidden=true; $('artifactGrid').innerHTML='';

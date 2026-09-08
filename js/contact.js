@@ -23,7 +23,7 @@ navLinks.querySelectorAll("a").forEach(link => {
 });
 
 // Contact form
-const form = document.getElementById("contactForm");
+const form = document.getElementById("contact-form");
 const successMsg = document.getElementById("formSuccess");
 
 form.addEventListener("submit", (e) => {

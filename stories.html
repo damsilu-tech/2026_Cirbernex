@@ -1,34 +1,526 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Stories of Egypt | Egypt's Digital Museum</title>
-        <link rel="stylesheet" href="css/common.css">
-    </head>
-    <body>
-        <header id="header">
-            <nav class="nav">
-                <a class="brand" href="index.html">
-                    <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="">
-                    <span class="brand-name">Egypt's Digital Museum</span>
-                </a>
-                <div class="nav-links">
-                    <a  href="explore.html">Explore</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Stories of ancient Egypt, connecting artifacts, monuments and historical figures to the people and events behind them.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/image-removebg-preview.png">
+  <title>Stories of Egypt | Egypt's Digital Museum</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/stories.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Egypt's Digital Museum home">
+        <img class="brand-mark" src="assets/images/image-removebg-preview.png" alt="Egypt's Digital Museum logo">
+        <span class="brand-name">Egypt's Digital Museum</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
         <a href="people.html">People</a>
         <a href="collection.html">Collections</a>
-        <a href="place.html" class="active">Places</a>
+        <a href="place.html">Places</a>
         <a href="timeline.html">Timeline</a>
         <a href="virtual-museum.html">Virtual Museum</a>
         <a href="learn.html">Learn</a>
-                </div>
-            </nav>
-        </header>
-        <main id="main" style="min-height:80vh;padding:10rem 1rem;text-align:center">
-            <div class="section-kicker">Coming next</div>
-            <h1 style="font-family:Cinzel,serif;font-size:clamp(3rem,8vw,7rem)">Stories of Egypt</h1>
-            <p style="max-width:650px;margin:1rem auto;color:var(--muted)">This page is reserved for the immersive stories that turn artifacts and historical figures into journeys.</p>
-            <a class="btn btn-gold" href="explore.html">Back to Explore →</a>
-        </main>
-    </body>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="stories-hero" aria-label="Stories hero">
+      <div class="stories-hero-inner">
+        <div class="section-kicker">Stories of Egypt</div>
+        <h1>Every artifact<br>has a story.</h1>
+        <p>Twenty-five short stories connect the people in this museum to the events, places and everyday
+           lives that surrounded them — from royal courts to workers' villages.</p>
+      </div>
+    </section>
+
+    <nav class="stories-jump" aria-label="Jump to a category">
+          <a href="#power">Power &amp; Rule</a>
+          <a href="#afterlife">Death &amp; the Afterlife</a>
+          <a href="#world">Egypt &amp; the Wider World</a>
+          <a href="#building">Art &amp; Building</a>
+          <a href="#faith">Faith &amp; Belief</a>
+          <a href="#daily-life">Daily Life &amp; Work</a>
+    </nav>
+
+    <section class="story-category" id="power">
+      <div class="story-category-head">
+        <div class="section-kicker">Power &amp; Rule</div>
+        <h2>Power &amp; Rule</h2>
+        <p>How pharaohs and the officials around them held, justified, and used authority.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-royal-power">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Royal Power</h3>
+                <p class="story-teaser">How Hatshepsut presented royal authority and shaped her public image.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Hatshepsut ruled as pharaoh in her own right, adopting the traditional regalia, titles and imagery of kingship rather than remaining in a secondary role as queen. Statues and reliefs show her with the full trappings of a male pharaoh, including the false beard and crown, a deliberate visual choice meant to assert legitimate royal authority. Her reign shows how flexible — and how carefully justified — the Egyptian concept of kingship could be when circumstances required it. Later monuments to her were sometimes altered or defaced, a reminder that how a ruler was remembered could change long after their death.</p>
+              <a href="person.html?id=hatshepsut">Meet Hatshepsut →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-ptolemaic-egypt">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Ptolemaic Egypt</h3>
+                <p class="story-teaser">Explore the final period of ancient Egypt&#x27;s royal history.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>The Ptolemaic period began after Alexander the Great's conquest of Egypt, when his general Ptolemy founded a new royal line that ruled in the pharaonic tradition while remaining culturally Greek. Cleopatra VII was the last active ruler of this dynasty, navigating a kingdom caught between older Egyptian traditions and the growing power of Rome. Alexandria, the Ptolemaic capital, became a major center of learning, trade and cultural exchange. Her death marked the end of more than three thousand years of pharaonic rule.</p>
+              <a href="person.html?id=cleopatra-vii">Meet Cleopatra VII →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-hatshepsut-s-court">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Hatshepsut&#x27;s Court</h3>
+                <p class="story-teaser">Meet the officials who helped a ruler shape her reign.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Senenmut was one of Hatshepsut's most trusted officials, holding numerous titles connected to major building projects and royal administration. His prominence illustrates how much a ruler like Hatshepsut depended on capable officials to translate royal ambition into completed monuments and functioning government. He is closely associated with the design and construction of her mortuary temple at Deir el-Bahari. His close association with Hatshepsut has made him one of the more discussed officials of her reign.</p>
+              <a href="person.html?id=senenmut">Meet Senenmut →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-administration">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Administration</h3>
+                <p class="story-teaser">Explore the people behind the operation of the Egyptian state.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Running a kingdom the size of New Kingdom Egypt required a large administrative apparatus of scribes, overseers and officials working beneath the pharaoh. Senenmut's many titles reflect just how much authority a senior administrative role could carry, extending into building projects, royal households and religious institutions. Officials of his rank often left their own tombs and statues, giving later generations more evidence of how the state actually functioned day to day. Government on this scale depended as much on trusted officials as on the ruler at the top.</p>
+              <a href="person.html?id=senenmut">Meet Senenmut →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="story-category" id="afterlife">
+      <div class="story-category-head">
+        <div class="section-kicker">Death &amp; the Afterlife</div>
+        <h2>Death &amp; the Afterlife</h2>
+        <p>What Egyptians believed happened after death, and how they prepared for it.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-royal-tombs">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓁢</span>
+              <span class="story-summary-text">
+                <h3>Royal Tombs</h3>
+                <p class="story-teaser">Why the preservation of a royal tomb can transform our understanding of ancient Egypt.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Tutankhamun's tomb, though modest in size for a king, was found largely intact and packed with furniture, jewelry and ritual objects meant to serve him in the afterlife. Because so many royal tombs were robbed in antiquity, his burial remains an unusually complete window into how Egyptians prepared a pharaoh for the journey beyond death. Mummification, funerary texts and nested coffins and shrines were all part of that preparation. A single well-preserved tomb can teach historians more than dozens of looted ones.</p>
+              <a href="person.html?id=tutankhamun">Meet Tutankhamun →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-discovery">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓁢</span>
+              <span class="story-summary-text">
+                <h3>Discovery</h3>
+                <p class="story-teaser">How archaeology can bring an ancient person&#x27;s story back into public view.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>For centuries after his death, Tutankhamun was a minor, largely forgotten king — his name absent from many later Egyptian king lists. The discovery of his nearly untouched tomb in the Valley of the Kings changed that almost overnight, turning a little-known boy pharaoh into one of the most recognizable figures from the ancient world. The find showed archaeologists, and the public, just how much could survive from a single royal burial when it escaped looting. It remains one of the clearest examples of how a single discovery can rewrite a person's place in history.</p>
+              <a href="person.html?id=tutankhamun">Meet Tutankhamun →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-tombs-as-records">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓁢</span>
+              <span class="story-summary-text">
+                <h3>Tombs as Records</h3>
+                <p class="story-teaser">Learn how tombs can preserve names, titles and careers.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Hesy-Ra's finely carved tomb panels at Saqqara are among the notable artistic survivals of the Old Kingdom, preserving both his image and his lengthy list of titles. Tombs like his functioned as permanent records, meant to keep an official's name, rank and achievements known to the living and useful to the deceased in the afterlife. Because so much writing on papyrus has been lost to time, inscribed tomb walls are often the most durable evidence historians have for who held which roles. A well-preserved tomb can tell us more about a person's career than almost any other surviving source.</p>
+              <a href="person.html?id=hesyre">Meet Hesy-Ra →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="story-category" id="world">
+      <div class="story-category-head">
+        <div class="section-kicker">Egypt &amp; the Wider World</div>
+        <h2>Egypt &amp; the Wider World</h2>
+        <p>Trade, diplomacy, and contact between Egypt and its neighbors.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-trade-connections">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓊪</span>
+              <span class="story-summary-text">
+                <h3>Trade &amp; Connections</h3>
+                <p class="story-teaser">How long-distance exchange connected Egypt with wider regions.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Hatshepsut sponsored a major trading expedition to the land of Punt, a distant region generally placed along the Red Sea coast of Africa. Temple reliefs at Deir el-Bahari record the expedition in detail, showing ships, exotic goods and the Puntite rulers who received the Egyptian party. The expedition returned with incense trees, myrrh, ebony and ivory — luxury goods prized in temple ritual and royal display. It stands as one of the best-documented examples of long-distance trade and diplomacy in Egyptian history.</p>
+              <a href="person.html?id=hatshepsut">Meet Hatshepsut →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-diplomacy">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓊪</span>
+              <span class="story-summary-text">
+                <h3>Diplomacy</h3>
+                <p class="story-teaser">How international relationships shaped New Kingdom history.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>The Battle of Kadesh, fought against the Hittite Empire, is one of the best-documented military campaigns of the ancient world, recorded in detail on Egyptian temple walls. Ramesses II presented the battle as a personal triumph, even though its actual outcome was closer to a standoff. Years later, Egypt and the Hittites concluded a peace treaty — one of the earliest surviving examples of international diplomacy. Together, the battle and the treaty show how ancient rulers combined force and negotiation to secure their borders.</p>
+              <a href="person.html?id=ramesses-ii">Meet Ramesses II →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-a-changing-world">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓊪</span>
+              <span class="story-summary-text">
+                <h3>A Changing World</h3>
+                <p class="story-teaser">See Egypt within the wider Mediterranean world of the first century BCE.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>By Cleopatra's lifetime, Rome had become the dominant power in the Mediterranean, and Egypt's independence depended on careful alliances with Roman leaders. Her political relationships with Julius Caesar and later Mark Antony were as much about Egypt's survival as a kingdom as they were personal. After her death, Egypt was absorbed as a Roman province, ending centuries of pharaonic rule but beginning a new chapter as one of Rome's most valuable territories. Alexandria remained an important Mediterranean city long after this transition.</p>
+              <a href="person.html?id=cleopatra-vii">Meet Cleopatra VII →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="story-category" id="building">
+      <div class="story-category-head">
+        <div class="section-kicker">Art &amp; Building</div>
+        <h2>Art &amp; Building</h2>
+        <p>The people and projects behind Egypt&#x27;s temples, tombs, and monuments.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-building-memory">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>Building &amp; Memory</h3>
+                <p class="story-teaser">How monuments can preserve the memory of a ruler long after their lifetime.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Hatshepsut's mortuary temple at Deir el-Bahari is one of the most architecturally distinctive monuments of the New Kingdom, its terraces cut directly into the cliffs of the Theban necropolis. Building on this scale was never just practical — it was a deliberate act of memory-making, designed to keep a ruler's name and achievements visible for generations. Temple walls recorded her birth, her reign and her expeditions in relief and inscription, effectively writing her own version of history in stone. Even after later attempts to remove her image from some monuments, enough survived to reconstruct her story.</p>
+              <a href="person.html?id=hatshepsut">Meet Hatshepsut →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-monumental-power">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>Monumental Power</h3>
+                <p class="story-teaser">How rulers used architecture to shape memory.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Ramesses II undertook one of the most extensive building programs of any Egyptian king, adding to or constructing temples across the country. Abu Simbel, with its colossal seated statues, is among the most famous results of this ambition. Building on this scale served practical religious functions but also reinforced the king's image for subjects and visitors alike, many monuments carrying his name and titles long after his reign ended. It is a major reason his reign remains one of the most visible in the archaeological record.</p>
+              <a href="person.html?id=ramesses-ii">Meet Ramesses II →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-the-people-who-built-the-tombs">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>The People Who Built the Tombs</h3>
+                <p class="story-teaser">Meet the skilled workers behind royal monuments.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Royal tombs in the Valley of the Kings required specialist teams of quarrymen, plasterers, painters and scribes working together over years. Sennedjem belonged to the community of artisans at Deir el-Medina who were responsible for cutting and decorating these tombs, living in a purpose-built village close to their work. Their own tombs, decorated with the same skill they brought to royal commissions, are some of the most vividly painted tombs to survive from the New Kingdom. Their work required both technical skill and detailed religious knowledge of the texts and scenes required.</p>
+              <a href="person.html?id=sennedjem">Meet Sennedjem →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-the-step-pyramid">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>The Step Pyramid</h3>
+                <p class="story-teaser">Explore one of Egypt&#x27;s most important early monumental developments.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Imhotep is traditionally associated with the Step Pyramid of Djoser at Saqqara, generally regarded as Egypt's first major stone monument and an early experiment in large-scale architecture. Earlier royal tombs had been built primarily of mudbrick, so a stone stepped structure represented a significant technical and symbolic leap. As a high official under King Djoser, Imhotep would have overseen the labor, materials and design decisions such a project demanded. The Step Pyramid set a precedent that later pyramid-builders would refine for centuries.</p>
+              <a href="person.html?id=imhotep">Meet Imhotep →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-life-in-paint">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>Life in Paint</h3>
+                <p class="story-teaser">What tomb paintings can reveal about everyday experiences.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Nebamun's tomb paintings are known for their lively scenes of hunting, feasting and daily life alongside more formal religious imagery, executed with unusual liveliness even by New Kingdom standards. These paintings followed established artistic conventions while still capturing vivid, individual detail, from a hunting scene in the marshes to a garden of estate. They were created not simply as decoration but as functional images meant to provide for the tomb owner in the afterlife. Today, they remain some of the richest visual sources for understanding New Kingdom life.</p>
+              <a href="person.html?id=nebamun">Meet Nebamun →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-art-as-evidence">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓉐</span>
+              <span class="story-summary-text">
+                <h3>Art as Evidence</h3>
+                <p class="story-teaser">How images can become historical sources.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Because so few written accounts of ordinary elite life survive, images like Nebamun's tomb paintings have become primary historical evidence in their own right. Details of clothing, food, animals and household objects painted on tomb walls let historians reconstruct aspects of daily life that texts rarely describe. Art historians and archaeologists study the style, pigments and composition of such scenes to date them and compare them with other tombs. A single well-preserved painted wall can answer questions that no surviving document addresses.</p>
+              <a href="person.html?id=nebamun">Meet Nebamun →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="story-category" id="faith">
+      <div class="story-category-head">
+        <div class="section-kicker">Faith &amp; Belief</div>
+        <h2>Faith &amp; Belief</h2>
+        <p>Temples, priesthoods, and the gods at the center of Egyptian religious life.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-temple-life">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Temple Life</h3>
+                <p class="story-teaser">Explore the people who maintained Egypt&#x27;s major religious institutions.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Religious life in the New Kingdom centered on an enormous network of temples, priesthoods and festivals dedicated to gods such as Amun, Ra and Osiris. High-ranking priests like Bakenkhonsu managed not only ritual duties but also the substantial land and wealth attached to major temples. Religious institutions were deeply woven into political power, and a senior priesthood could rival royal officials in influence. Understanding this period's religion means understanding both belief and the practical business of running major temple estates.</p>
+              <a href="person.html?id=bakenkhonsu">Meet Bakenkhonsu →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-amun">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Amun</h3>
+                <p class="story-teaser">Understand the role of Amun and his priesthood in New Kingdom society.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>The temple complex at Karnak, dedicated primarily to the god Amun, grew over centuries into one of the largest religious complexes in the ancient world. Generations of pharaohs added halls, pylons and obelisks, each contributing to a building that reflected both piety and political legitimacy. Bakenkhonsu, as a high priest of Amun, oversaw enormous resources and played an important role in Theban religious life. Karnak's scale still gives visitors today a sense of just how central Amun's cult was to New Kingdom Egypt.</p>
+              <a href="person.html?id=bakenkhonsu">Meet Bakenkhonsu →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-knowledge-memory">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Knowledge &amp; Memory</h3>
+                <p class="story-teaser">See how an historical figure&#x27;s reputation can change across centuries.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>In his own lifetime, Imhotep was remembered as a talented architect and high official. Centuries later, his reputation grew far beyond that role: he came to be venerated as a god associated with wisdom, writing and healing, worshipped long after the historical details of his career had faded. This transformation shows how an ancient Egyptian's legacy could keep evolving long after death, shaped as much by later generations' needs as by the facts of their original life. Few figures illustrate that shift as clearly as Imhotep.</p>
+              <a href="person.html?id=imhotep">Meet Imhotep →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-scribe-priest">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓋹</span>
+              <span class="story-summary-text">
+                <h3>Scribe &amp; Priest</h3>
+                <p class="story-teaser">Explore how professional and religious roles could overlap.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Nakht worked as both a scribe and a priest, a combination that was common among educated officials in the New Kingdom. Literacy was rare in ancient Egypt, and scribes held a respected, specialized role in administration, religion and record-keeping, often training for years to master both practical accounting and religious literature. Because scribes recorded so much of what survives from ancient Egypt, their profession shaped which parts of history were preserved in the first place. A scribe's education could also open doors to further administrative or priestly advancement, as it likely did for Nakht.</p>
+              <a href="person.html?id=nakht">Meet Nakht →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="story-category" id="daily-life">
+      <div class="story-category-head">
+        <div class="section-kicker">Daily Life &amp; Work</div>
+        <h2>Daily Life &amp; Work</h2>
+        <p>Ordinary work, family, medicine, and knowledge beyond the royal court.</p>
+      </div>
+      <div class="story-list">
+          <details class="story-card" id="story-voices-from-inscriptions">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓇼</span>
+              <span class="story-summary-text">
+                <h3>Voices from Inscriptions</h3>
+                <p class="story-teaser">How written records can preserve individual lives.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Most evidence of ancient Egypt highlights kings and elite officials, but Ahmose, son of Ibana, left something rarer: an autobiographical inscription carved in his own tomb. It records his military service during the wars that expelled the Hyksos rulers and reunified Egypt, along with the rewards he received for it. Records like his let historians see major historical events through the eyes of a participant rather than only through royal monuments. Every additional voice like his adds nuance to a history that can otherwise seem dominated by kings alone.</p>
+              <a href="person.html?id=ahmose-son-of-ibana">Meet Ahmose, Son of Ibana →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-life-beyond-the-palace">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓇼</span>
+              <span class="story-summary-text">
+                <h3>Life Beyond the Palace</h3>
+                <p class="story-teaser">Why Egyptian history is more than the stories of kings.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Ahmose's career was built around loyal military service rather than royal birth, and his own account describes campaigns, promotions and the land and rewards he earned along the way. Soldiers, officials and craftspeople like him made up the vast majority of ancient Egyptian society, even though they appear far less often in the historical record than pharaohs do. His inscription is one of the clearer windows into that wider world of service and ambition. Reading it alongside royal monuments gives a fuller picture of how the New Kingdom actually functioned.</p>
+              <a href="person.html?id=ahmose-son-of-ibana">Meet Ahmose, Son of Ibana →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-craft">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓇼</span>
+              <span class="story-summary-text">
+                <h3>Craft</h3>
+                <p class="story-teaser">Discover how expertise and labour shaped Egyptian heritage.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Deir el-Medina's artisans passed specialized skills down through families, building a community identity around their craft that set them apart from other workers. Because the settlement left behind unusually rich written records — letters, court documents and personal notes — it remains one of the best-understood communities from ancient Egypt. Sennedjem's own richly painted tomb shows the same expertise its occupants brought to royal commissions, this time in service of their own memory. Their work is a reminder that Egypt's monuments were built by named, skilled individuals, not anonymous labor.</p>
+              <a href="person.html?id=sennedjem">Meet Sennedjem →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-work-in-ancient-egypt">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓇼</span>
+              <span class="story-summary-text">
+                <h3>Work in Ancient Egypt</h3>
+                <p class="story-teaser">Discover the specialized professions that supported Egyptian society.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Hesy-Ra held titles connecting him to both administration and healing, including one of the earliest known references to a specialized role in dentistry. Egyptian officialdom included a wide range of specialized professions, from scribes and priests to physicians and craftsmen, each with recognized titles and status. His combination of roles shows that a single career could span both bureaucratic and medical expertise. Officials like him were essential to running the centralized state that made large royal projects possible.</p>
+              <a href="person.html?id=hesyre">Meet Hesy-Ra →</a>
+            </div>
+          </details>
+          <details class="story-card" id="story-everyday-egypt">
+            <summary>
+              <span class="story-icon" aria-hidden="true">𓇼</span>
+              <span class="story-summary-text">
+                <h3>Everyday Egypt</h3>
+                <p class="story-teaser">Look beyond royal monuments to ordinary experiences.</p>
+              </span>
+              <span class="story-chevron" aria-hidden="true">›</span>
+            </summary>
+            <div class="story-body">
+              <p>Nakht's tomb preserves scenes of agriculture, hunting and family life that offer a different view of ancient Egypt than royal monuments usually provide. Everyday Egyptian life revolved around the agricultural calendar set by the Nile's annual flood, alongside family, craft and religious observance. Tomb scenes like his depicting farming, hunting and gatherings preserve details that formal inscriptions rarely mention. These glimpses of ordinary experience help balance the historical record's usual focus on kings and monuments.</p>
+              <a href="person.html?id=nakht">Meet Nakht →</a>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <section class="stories-cta">
+      <div class="section-kicker">Keep exploring</div>
+      <h2>Meet the people<br>behind these stories.</h2>
+      <p>Every story here connects back to a real historical figure in the People directory.</p>
+      <a class="btn btn-gold" href="people.html">Browse People →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Egypt's Digital Museum</h3>
+        <p>An interactive digital platform designed to make Egyptian heritage engaging, accessible and memorable.</p>
+        <p class="footer-credit">Developed for KCC ICT Day 2026 · Omith Damsilu</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="collection.html">Artifacts</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="collection.html">Collections</a>
+        <a href="virtual-museum.html">Virtual Museum</a>
+      </div>
+      <div>
+        <h3>Eras</h3>
+        <a href="predynastic.html">Predynastic</a>
+        <a href="early-dynastic.html">Early Dynastic</a>
+        <a href="old-kingdom.html">Old Kingdom</a>
+        <a href="middle-kingdom.html">Middle Kingdom</a>
+        <a href="new-kingdom.html">New Kingdom</a>
+        <a href="late-period.html">Late Period</a>
+        <a href="ptolemaic-roman.html">Ptolemaic &amp; Roman</a>
+      </div>
+      <div>
+        <h3>Project</h3>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Egypt's Digital Museum · KCC ICT Day · Educational Project
+    </div>
+  </footer>
+
+  <script>
+    // Auto-open and scroll to a specific story if linked via #story-<slug>
+    (() => {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#story-')) {
+        const el = document.querySelector(hash);
+        if (el && el.tagName === 'DETAILS') {
+          el.open = true;
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    })();
+  </script>
+</body>
 </html>
