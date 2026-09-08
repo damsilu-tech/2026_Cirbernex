@@ -1,135 +1,468 @@
-const menuBtn=document.getElementById('menuBtn'), navLinks=document.getElementById('navLinks');
-  if(menuBtn&&navLinks){menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));}
+/* =============================================
+   LEARN PAGE — learn.js
+   ============================================= */
 
-(() => {
-  const stepData = [
-    {kicker:'THE NILE',heading:'A river that made civilization possible.',text:'The Nile provided water, fertile soil and a reliable route through the landscape. Its rhythms shaped farming, settlement and trade—and helped connect communities into one civilization.',symbol:'𓈗'},
-    {kicker:'THE PHARAOH',heading:'A ruler at the centre of order.',text:'The pharaoh was both a political ruler and a powerful religious symbol. Royal authority helped organize the state, while monuments made that authority visible.',symbol:'♕'},
-    {kicker:'RELIGION',heading:'Gods were part of everyday life.',text:'Egyptian religion included many gods and local traditions. Rituals, temples and offerings connected people with divine powers and ideas about order, protection and renewal.',symbol:'𓂀'},
-    {kicker:'WRITING',heading:'Ideas could be made visible.',text:'Egyptian writing used signs in different ways: some represented sounds, while others conveyed words or ideas. Scribes used writing to record administration, stories, rituals and more.',symbol:'𓂋'},
-    {kicker:'MONUMENTS',heading:'Architecture made memory last.',text:'Temples and tombs were more than impressive buildings. Their spaces, images and inscriptions supported ritual and helped preserve the memory and status of kings and gods.',symbol:'𓉢'},
-    {kicker:'AFTERLIFE',heading:'Life was imagined as a journey beyond death.',text:'Ancient Egyptians developed rich ideas about the afterlife. Burial practices, texts and objects were connected to hopes for protection, renewal and continued existence.',symbol:'𓋹'}
-  ];
-  const steps = [...document.querySelectorAll('.five-step')];
-  const number = document.getElementById('fiveNumber');
-  const symbol = document.getElementById('fiveSymbol');
-  const kicker = document.getElementById('fiveKicker');
-  const heading = document.getElementById('fiveHeading');
-  const text = document.getElementById('fiveText');
-  const progress = document.getElementById('fiveProgress');
-  function showStep(i){
-    const d=stepData[i];
-    steps.forEach((el,n)=>{el.classList.toggle('active',n===i);el.setAttribute('aria-selected',String(n===i));});
-    number.textContent=String(i+1).padStart(2,'0'); symbol.textContent=d.symbol; kicker.textContent=d.kicker; heading.textContent=d.heading; text.textContent=d.text; progress.style.width=`${((i+1)/stepData.length)*100}%`;
+'use strict';
+
+/* --------------------------------------------------
+   API CONFIGURATION (same detection pattern as home.js)
+   -------------------------------------------------- */
+const API_BASE = (() => {
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:3000';
   }
-  steps.forEach((step,i)=>step.addEventListener('click',()=>showStep(i)));
-
-  document.querySelectorAll('.lesson-card').forEach(card=>card.addEventListener('click',()=>{
-    const open=card.classList.toggle('open'); card.setAttribute('aria-expanded',String(open));
-    const cta=card.querySelector('.lesson-cta'); if(cta) cta.textContent=open?'Tap to close −':'Tap to reveal +';
-  }));
-
-  const quizData=[
-    {q:'Why was the Nile important to ancient Egypt?',a:['Only for transportation','Only for religion','For farming, transport and life','Mainly for building pyramids'],correct:2},
-    {q:'What could hieroglyphic signs represent?',a:['Only pictures','Sounds, words and ideas','Only numbers','Only names of kings'],correct:1},
-    {q:'What is one reason monumental tombs mattered?',a:['They were marketplaces','They supported burial and royal memory','They were only houses','They were used as ships'],correct:1},
-    {q:'What did the concept of maat represent?',a:['A royal crown','Order, balance and justice','A type of pyramid','A writing system'],correct:1},
-    {q:'Which of these was a major purpose of royal pyramids?',a:['Markets','Royal funerary complexes','Military barracks','Libraries'],correct:1}
-  ];
-  let qi=0,score=0,answered=false;
-  const qEl=document.getElementById('quizQuestion'), options=[...document.querySelectorAll('.quiz-options button')], feedback=document.getElementById('quizFeedback'), next=document.getElementById('quizNext'), scoreEl=document.getElementById('quizScore');
-  function loadQuiz(){
-    const q=quizData[qi]; qEl.textContent=q.q; options.forEach((b,i)=>{b.textContent=q.a[i];b.dataset.correct=String(i===q.correct);b.disabled=false;b.classList.remove('correct','wrong')});feedback.textContent='';next.hidden=true;answered=false;scoreEl.textContent=`${score} correct`;
-    const label=document.querySelector('.quiz-top span'); if(label) label.textContent=`QUESTION ${String(qi+1).padStart(2,'0')} / ${quizData.length}`;
-  }
-  options.forEach(btn=>btn.addEventListener('click',()=>{
-    if(answered)return; answered=true; options.forEach(b=>b.disabled=true); const ok=btn.dataset.correct==='true'; btn.classList.add(ok?'correct':'wrong'); if(ok){score++;feedback.textContent='Correct. You connected the idea to the wider story.'}else{feedback.textContent='Not quite. The museum is about connections—try the next one.'} scoreEl.textContent=`${score} correct`; next.hidden=false;
-  }));
-  next.addEventListener('click',()=>{qi=(qi+1)%quizData.length;loadQuiz()});
-
-  /* ---- Decode a Hieroglyph ---- */
-  const HIERO_DECODE = {
-    A:{sign:'𓄿',name:'Egyptian vulture',sound:'a'},
-    B:{sign:'𓃀',name:'Leg',sound:'b'},
-    C:{sign:'𓎡',name:'Basket (approximate)',sound:'k / s'},
-    D:{sign:'𓂧',name:'Hand',sound:'d'},
-    F:{sign:'𓆑',name:'Horned viper',sound:'f'},
-    H:{sign:'𓉔',name:'Reed shelter',sound:'h'},
-    I:{sign:'𓇋',name:'Reed leaf',sound:'i'},
-    K:{sign:'𓎡',name:'Basket',sound:'k'},
-    M:{sign:'𓅓',name:'Owl',sound:'m'},
-    N:{sign:'𓈖',name:'Water ripple',sound:'n'},
-    R:{sign:'𓂋',name:'Mouth',sound:'r'},
-    S:{sign:'𓋴',name:'Folded cloth',sound:'s'},
-    T:{sign:'𓏏',name:'Bread loaf',sound:'t'}
-  };
-  const decodeLetters=document.getElementById('decodeLetters');
-  const decodeSign=document.querySelector('.decode-sign');
-  const decodeLetterEl=document.getElementById('decodeLetter');
-  const decodeNameEl=document.getElementById('decodeName');
-  const decodeSoundEl=document.getElementById('decodeSound');
-  if(decodeLetters){
-    decodeLetters.addEventListener('click',(e)=>{
-      const btn=e.target.closest('button');
-      if(!btn)return;
-      const letter=btn.dataset.letter;
-      const d=HIERO_DECODE[letter];
-      if(!d)return;
-      decodeLetters.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===btn));
-      decodeSign.textContent=d.sign;
-      decodeLetterEl.textContent=letter;
-      decodeNameEl.textContent=d.name;
-      decodeSoundEl.textContent=`Sound represented: "${d.sound}"`;
-    });
-  }
-
-  /* ---- Write Your Name ---- */
-  const NAME_SIGNS = Object.fromEntries(Object.entries(HIERO_DECODE).map(([k,v])=>[k,v.sign]));
-  NAME_SIGNS.E='𓇌'; NAME_SIGNS.G='𓎼'; NAME_SIGNS.J='𓆓'; NAME_SIGNS.L='𓃭';
-  NAME_SIGNS.O='𓅱'; NAME_SIGNS.P='𓊪'; NAME_SIGNS.Q='𓎡'; NAME_SIGNS.U='𓅱';
-  NAME_SIGNS.V='𓆑'; NAME_SIGNS.W='𓅱'; NAME_SIGNS.X='𓎡𓋴'; NAME_SIGNS.Y='𓇌'; NAME_SIGNS.Z='𓊃';
-  const nameInput=document.getElementById('nameInput');
-  const nameWriteBtn=document.getElementById('nameWriteBtn');
-  const nameOutput=document.getElementById('nameOutput');
-  if(nameWriteBtn){
-    const writeName=()=>{
-      const raw=(nameInput.value||'').toUpperCase().replace(/[^A-Z]/g,'');
-      if(!raw){nameOutput.textContent='';return;}
-      nameOutput.textContent=[...raw].map(ch=>NAME_SIGNS[ch]||'').join(' ');
-    };
-    nameWriteBtn.addEventListener('click',writeName);
-    nameInput.addEventListener('keydown',(e)=>{if(e.key==='Enter')writeName();});
-  }
-
-  /* ---- A Day in Ancient Egypt: role picker ---- */
-  const ROLE_DAYS = {
-    farmer:{early:'The Nile begins another day. Fields wait beyond the riverbank.',morning:'A farmer heads out to work the flood-fed soil — sowing, tending or harvesting depending on the season.',midday:'Bread, beer and simple food break the day, often shared with fellow workers.',afternoon:'Work continues in the fields, tending animals or maintaining irrigation channels.',evening:'Families gather to share a meal as the working day gives way to rest.'},
-    scribe:{early:'Ink, reed pens and papyrus are prepared before the day\'s work begins.',morning:'A scribe records administrative details, letters or religious texts for officials or temples.',midday:'A short break for food, often near the workplace rather than at home.',afternoon:'More writing and copying — training, record-keeping, or preparing documents.',evening:'The scribe returns home, a respected and literate member of the community.'},
-    artisan:{early:'Tools and materials are laid out at the workshop.',morning:'Craftsmanship begins — shaping stone, wood, metal or faience into objects and decoration.',midday:'A meal shared with fellow artisans working on the same commission.',afternoon:'Detailed work continues, often on pieces destined for tombs, temples or officials.',evening:'The day\'s work is set aside, to continue again tomorrow.'},
-    fisher:{early:'Boats are prepared before sunrise, when the water is calm.',morning:'Nets and lines are cast along the Nile, a vital source of food and income.',midday:'The catch is sorted; some kept for the household, some for trade.',afternoon:'Boats return, and fish may be dried or salted for storage.',evening:'A meal from the day\'s catch is shared with family.'},
-    priest:{early:'Ritual purification begins the day within the temple precinct.',morning:'Offerings and rituals are performed before the image of the god, maintaining the temple\'s daily rhythm.',midday:'Temple administration continues — the temple was also an economic institution.',afternoon:'Further rituals, festival preparations, or teaching may fill the afternoon.',evening:'The sanctuary is sealed for the night, its rites complete until dawn.'},
-    builder:{early:'Work gangs gather at the site as the sun rises.',morning:'Stone is moved, shaped and set in place under the direction of overseers.',midday:'A meal and rest, essential on demanding construction projects.',afternoon:'Work continues on temples, tombs or monuments, coordinated across many workers.',evening:'Tools are set down as the organised workday comes to a close.'}
-  };
-  const rolePicker=document.getElementById('rolePicker');
-  const roleFields={early:'roleMorningEarly',morning:'roleMorning',midday:'roleMidday',afternoon:'roleAfternoon',evening:'roleEvening'};
-  function showRole(role){
-    const d=ROLE_DAYS[role]; if(!d)return;
-    Object.entries(roleFields).forEach(([key,id])=>{
-      const el=document.getElementById(id); if(el) el.textContent=d[key];
-    });
-    if(rolePicker) rolePicker.querySelectorAll('.role-btn').forEach(b=>b.classList.toggle('active', b.dataset.role===role));
-  }
-  if(rolePicker){
-    rolePicker.addEventListener('click',(e)=>{
-      const btn=e.target.closest('.role-btn');
-      if(!btn)return;
-      showRole(btn.dataset.role);
-    });
-  }
-
-  const progressBar=document.getElementById('progressBar'), progressPercent=document.getElementById('progressPercent'), continueBtn=document.getElementById('continueBtn');
-  const stored=Number(localStorage.getItem('egyptLearnProgress')||0); let current=Math.max(0,Math.min(100,stored));
-  function renderProgress(){progressBar.style.width=`${current}%`;progressPercent.textContent=`${current}%`;document.querySelectorAll('.progress-items i').forEach(el=>{el.style.setProperty('--p',el.dataset.progress)})}
-  continueBtn.addEventListener('click',()=>{current=Math.min(100,current+20);localStorage.setItem('egyptLearnProgress',String(current));renderProgress();continueBtn.textContent=current>=100?'Journey complete ✓':'Progress saved ✓';setTimeout(()=>continueBtn.textContent=current>=100?'Journey complete ✓':'Continue Learning',1300)});
-  renderProgress();loadQuiz();
+  return 'https://cibernex-api.onrender.com';
 })();
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* --------------------------------------------------
+   STICKY HEADER
+   -------------------------------------------------- */
+const header = document.getElementById('header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+}
+
+/* --------------------------------------------------
+   MOBILE NAVIGATION
+   -------------------------------------------------- */
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? '✕' : '☰';
+    menuBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-label', 'Open navigation menu');
+    });
+  });
+}
+
+/* --------------------------------------------------
+   SECTION NAV — SCROLL SPY
+   -------------------------------------------------- */
+function initSectionNav() {
+  const snavButtons = Array.from(document.querySelectorAll('.lrn-snav-btn'));
+  if (!snavButtons.length) return;
+
+  const targets = snavButtons
+    .map(btn => document.getElementById(btn.getAttribute('href').slice(1)))
+    .filter(Boolean);
+
+  if (!targets.length) return;
+
+  const setActive = (id) => {
+    snavButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    targets.forEach(t => observer.observe(t));
+  }
+}
+
+/* --------------------------------------------------
+   SCROLL REVEAL (lightweight, respects reduced motion)
+   -------------------------------------------------- */
+function initScrollReveal() {
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
+  const revealEls = document.querySelectorAll('.lrn-reveal');
+  if (!revealEls.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('lrn-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+}
+
+/* --------------------------------------------------
+   HIEROGLYPH DECODER (mirrors homepage exhibit)
+   -------------------------------------------------- */
+const LRN_HIEROGLYPHS = {
+  A: { glyph: '𓄿', meaning: 'Egyptian vulture — represents the "ah" sound.' },
+  B: { glyph: '𓃀', meaning: 'Foot — represents the "b" sound.' },
+  D: { glyph: '𓂧', meaning: 'Hand — represents the "d" sound.' },
+  F: { glyph: '𓆑', meaning: 'Horned viper — represents the "f" sound.' },
+  H: { glyph: '𓉔', meaning: 'Shelter — represents the "h" sound.' },
+  I: { glyph: '𓇋', meaning: 'Flowering reed — represents the "ee" or "i" sound.' },
+  K: { glyph: '𓎡', meaning: 'Basket with handle — represents the "k" sound.' },
+  L: { glyph: '𓃭', meaning: 'Lion — represents the "l" sound.' },
+  M: { glyph: '𓅓', meaning: 'Owl — represents the "m" sound.' },
+  N: { glyph: '𓈖', meaning: 'Water — represents the "n" sound.' },
+  P: { glyph: '𓊪', meaning: 'Stool — represents the "p" sound.' },
+  R: { glyph: '𓂋', meaning: 'Mouth — represents the "r" sound.' },
+  S: { glyph: '𓋴', meaning: 'Folded cloth — represents the "s" sound.' },
+  T: { glyph: '𓏏', meaning: 'Bread loaf — represents the "t" sound.' },
+  W: { glyph: '𓌀', meaning: 'Quail chick — represents the "w" sound.' },
+  Y: { glyph: '𓇌', meaning: 'Two reeds — represents the "y" sound.' }
+};
+
+function initDecoder() {
+  const alphabet = document.getElementById('lrnDecodeAlphabet');
+  const display = document.getElementById('lrnDecodeDisplay');
+  if (!alphabet || !display) return;
+
+  Object.keys(LRN_HIEROGLYPHS).forEach(letter => {
+    const btn = document.createElement('button');
+    btn.className = 'lrn-decode-btn';
+    btn.type = 'button';
+    btn.textContent = letter;
+    btn.setAttribute('aria-label', `Show hieroglyph for letter ${letter}`);
+    btn.addEventListener('click', () => {
+      alphabet.querySelectorAll('.lrn-decode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const data = LRN_HIEROGLYPHS[letter];
+      display.innerHTML = `
+        <div>
+          <span class="lrn-decode-glyph" aria-hidden="true">${data.glyph}</span>
+          <span class="lrn-decode-letter">Letter: ${letter}</span>
+          <p class="lrn-decode-meaning">${data.meaning}</p>
+        </div>
+      `;
+    });
+    alphabet.appendChild(btn);
+  });
+}
+
+/* --------------------------------------------------
+   WRITE YOUR NAME
+   -------------------------------------------------- */
+function initNameTool() {
+  const input = document.getElementById('lrnNameInput');
+  const button = document.getElementById('lrnNameBtn');
+  const output = document.getElementById('lrnNameOutput');
+  if (!input || !button || !output) return;
+
+  function render() {
+    const raw = input.value.toUpperCase().replace(/[^A-Z]/g, '');
+    if (!raw) {
+      output.textContent = '';
+      return;
+    }
+    const glyphs = raw
+      .split('')
+      .map(ch => (LRN_HIEROGLYPHS[ch] ? LRN_HIEROGLYPHS[ch].glyph : ''))
+      .filter(Boolean)
+      .join(' ');
+    output.textContent = glyphs || '—';
+  }
+
+  button.addEventListener('click', render);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') render();
+  });
+}
+
+/* --------------------------------------------------
+   REAL ARTIFACTS — SINGLE API REQUEST, CLIENT FILTER
+   -------------------------------------------------- */
+const LRN_CATEGORY_LABELS = {
+  royal: 'Royalty & Elite',
+  funerary: 'Funerary & Afterlife',
+  religious: 'Religion & Ritual',
+  everyday: 'Daily Life',
+  writing: 'Writing & Documents',
+  art: 'Art & Sculpture',
+  monuments: 'Architecture & Monuments'
+};
+
+let lrnArtifacts = [];
+let lrnActiveCategory = 'all';
+
+function lrnBuildArtifactCard(a) {
+  const card = document.createElement('a');
+  card.className = 'lrn-artifact-card';
+  card.href = `artifact/artifact.html?id=${encodeURIComponent(a._id || '')}`;
+  card.setAttribute('aria-label', a.title || 'Artifact');
+
+  card.innerHTML = `
+    <div class="lrn-artifact-thumb" style="background-image:url('${a.imageUrl || ''}')">
+      <span class="lrn-artifact-badge">${LRN_CATEGORY_LABELS[a.category] || a.category || 'Artifact'}</span>
+    </div>
+    <div class="lrn-artifact-body">
+      ${a.date ? `<span>${a.date}</span>` : ''}
+      <h3>${a.title || 'Untitled Artifact'}</h3>
+      <p>${(a.description || '').slice(0, 90)}${a.description && a.description.length > 90 ? '…' : ''}</p>
+    </div>
+  `;
+  return card;
+}
+
+function lrnRenderArtifacts() {
+  const grid = document.getElementById('lrnArtifactGrid');
+  if (!grid) return;
+
+  const filtered = lrnActiveCategory === 'all'
+    ? lrnArtifacts
+    : lrnArtifacts.filter(a => a.category === lrnActiveCategory);
+
+  grid.innerHTML = '';
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="lrn-artifact-empty">No artifacts found in this category yet.</div>';
+    return;
+  }
+
+  filtered.slice(0, 8).forEach(a => grid.appendChild(lrnBuildArtifactCard(a)));
+}
+
+async function initArtifacts() {
+  const grid = document.getElementById('lrnArtifactGrid');
+  const filters = document.getElementById('lrnArtifactFilters');
+  if (!grid) return;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/artifacts`);
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    if (!Array.isArray(data)) throw new Error('Invalid data');
+
+    lrnArtifacts = data;
+    lrnRenderArtifacts();
+
+    if (filters) {
+      filters.addEventListener('click', (e) => {
+        const btn = e.target.closest('.lrn-filter-btn');
+        if (!btn) return;
+        filters.querySelectorAll('.lrn-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        lrnActiveCategory = btn.dataset.category;
+        lrnRenderArtifacts();
+      });
+    }
+  } catch (err) {
+    console.error('Error loading artifacts for Learn page:', err);
+    grid.innerHTML = '<div class="lrn-artifact-error">We couldn\'t load live artifacts right now — please check back soon, or browse the full collection instead.</div>';
+    if (filters) filters.style.display = 'none';
+  }
+}
+
+/* --------------------------------------------------
+   A DAY IN ANCIENT EGYPT
+   -------------------------------------------------- */
+const LRN_DAY_PROFILES = {
+  farmer: {
+    label: 'Farmer',
+    morning: 'Rises early to tend fields, irrigate crops and check on livestock along the Nile floodplain.',
+    midday: 'Shares a simple meal of bread, beer and vegetables with family or fellow workers in the shade.',
+    afternoon: 'Continues fieldwork — sowing, harvesting or repairing irrigation channels depending on the season.',
+    evening: 'Returns home for a family meal and rest as the sun sets over the fields.'
+  },
+  scribe: {
+    label: 'Scribe',
+    morning: 'Reports to a temple, palace or official\'s office to prepare papyrus, ink and writing tools.',
+    midday: 'Breaks for food while reviewing texts, records or letters already copied that day.',
+    afternoon: 'Records taxes, transactions or official correspondence using hieratic script.',
+    evening: 'May study literary or religious texts to continue training in the scribal tradition.'
+  },
+  artisan: {
+    label: 'Artisan',
+    morning: 'Begins work in a workshop, shaping stone, wood, metal or faience under a master craftsperson.',
+    midday: 'Rests briefly and eats before returning to detailed, often collaborative work.',
+    afternoon: 'Continues carving, painting or assembling objects destined for tombs, temples or homes.',
+    evening: 'Finishes the day\'s work and returns to a household within the artisans\' community.'
+  },
+  fisher: {
+    label: 'Fisher',
+    morning: 'Sets out on the Nile at dawn with nets and traps to catch fish for food and trade.',
+    midday: 'Sorts and prepares the morning\'s catch, some to be dried or salted for storage.',
+    afternoon: 'May repair boats and nets, or make a second trip depending on the season and river conditions.',
+    evening: 'Brings the day\'s catch home or to market before the evening meal.'
+  },
+  priest: {
+    label: 'Priest',
+    morning: 'Performs purification rituals and the first of several daily offerings to the temple\'s god.',
+    midday: 'Attends to temple administration, land records or teaching alongside religious duties.',
+    afternoon: 'Continues rituals and may oversee offerings brought by visitors to the temple.',
+    evening: 'Performs closing rites for the day before returning home, as many priests served in rotations.'
+  },
+  builder: {
+    label: 'Builder',
+    morning: 'Joins a work crew moving stone, mixing mortar or shaping blocks at a monument or tomb site.',
+    midday: 'Receives rations of bread, beer and other food provided as part of organized labor.',
+    afternoon: 'Continues construction work, often under the direction of overseers and skilled craftsmen.',
+    evening: 'Returns to a nearby workers\' settlement to rest before the next day\'s labor.'
+  }
+};
+
+function initDayInLife() {
+  const buttons = document.querySelectorAll('.lrn-day-btn');
+  const morning = document.getElementById('lrnDayMorning');
+  const midday = document.getElementById('lrnDayMidday');
+  const afternoon = document.getElementById('lrnDayAfternoon');
+  const evening = document.getElementById('lrnDayEvening');
+  if (!buttons.length || !morning || !midday || !afternoon || !evening) return;
+
+  function render(key) {
+    const profile = LRN_DAY_PROFILES[key];
+    if (!profile) return;
+    morning.textContent = profile.morning;
+    midday.textContent = profile.midday;
+    afternoon.textContent = profile.afternoon;
+    evening.textContent = profile.evening;
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.profile);
+    });
+  });
+
+  render('farmer');
+}
+
+/* --------------------------------------------------
+   QUIZ
+   -------------------------------------------------- */
+const LRN_QUIZ = [
+  {
+    q: 'Which river was central to ancient Egyptian civilization?',
+    options: ['Tigris', 'Nile', 'Euphrates', 'Indus'],
+    correct: 1
+  },
+  {
+    q: 'What Egyptian concept represents order, balance and justice?',
+    options: ['Ka', 'Ba', 'Maat', 'Akh'],
+    correct: 2
+  },
+  {
+    q: 'What writing system combined sounds, words and ideas?',
+    options: ['Cuneiform', 'Hieroglyphs', 'Runes', 'Braille'],
+    correct: 1
+  },
+  {
+    q: 'Where are the three most famous pyramids located?',
+    options: ['Luxor', 'Abydos', 'Giza', 'Karnak'],
+    correct: 2
+  },
+  {
+    q: 'Which of these was NOT a common ancient Egyptian profession?',
+    options: ['Scribe', 'Farmer', 'Astronaut', 'Craftsperson'],
+    correct: 2
+  },
+  {
+    q: 'What did canopic jars typically store?',
+    options: ['Grain', 'Internal organs', 'Jewelry', 'Water'],
+    correct: 1
+  }
+];
+
+function initQuiz() {
+  const shell = document.getElementById('lrnQuizShell');
+  if (!shell) return;
+
+  let current = 0;
+  let score = 0;
+
+  function renderQuestion() {
+    const item = LRN_QUIZ[current];
+    shell.innerHTML = `
+      <div class="lrn-quiz-progress">Question ${current + 1} of ${LRN_QUIZ.length}</div>
+      <div class="lrn-quiz-question">${item.q}</div>
+      <div class="lrn-quiz-options" role="list"></div>
+      <div class="lrn-quiz-feedback" aria-live="polite"></div>
+      <div class="lrn-quiz-actions"></div>
+    `;
+
+    const optionsWrap = shell.querySelector('.lrn-quiz-options');
+    const feedback = shell.querySelector('.lrn-quiz-feedback');
+    const actions = shell.querySelector('.lrn-quiz-actions');
+
+    item.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'lrn-quiz-option';
+      btn.type = 'button';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        optionsWrap.querySelectorAll('.lrn-quiz-option').forEach(b => b.disabled = true);
+
+        if (idx === item.correct) {
+          btn.classList.add('correct');
+          feedback.textContent = 'Correct!';
+          score++;
+        } else {
+          btn.classList.add('incorrect');
+          optionsWrap.children[item.correct].classList.add('correct');
+          feedback.textContent = "Not quite — here's what the evidence tells us.";
+        }
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn btn-gold';
+        nextBtn.type = 'button';
+        nextBtn.textContent = current < LRN_QUIZ.length - 1 ? 'Next →' : 'See Your Score →';
+        nextBtn.addEventListener('click', () => {
+          current++;
+          if (current < LRN_QUIZ.length) {
+            renderQuestion();
+          } else {
+            renderResult();
+          }
+        });
+        actions.appendChild(nextBtn);
+      });
+      optionsWrap.appendChild(btn);
+    });
+  }
+
+  function renderResult() {
+    shell.innerHTML = `
+      <div class="lrn-quiz-result">
+        <strong>${score} / ${LRN_QUIZ.length}</strong>
+        <p>Thanks for exploring what you know about ancient Egypt.</p>
+        <div class="buttons" style="margin-top:1.5rem">
+          <button class="btn btn-gold" id="lrnQuizRestart" type="button">Try Again →</button>
+          <a class="btn btn-ghost" href="collection.html">Explore the Collection</a>
+        </div>
+      </div>
+    `;
+    document.getElementById('lrnQuizRestart').addEventListener('click', () => {
+      current = 0;
+      score = 0;
+      renderQuestion();
+    });
+  }
+
+  renderQuestion();
+}
+
+/* --------------------------------------------------
+   INITIALISE
+   -------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  initSectionNav();
+  initScrollReveal();
+  initDecoder();
+  initNameTool();
+  initArtifacts();
+  initDayInLife();
+  initQuiz();
+});
