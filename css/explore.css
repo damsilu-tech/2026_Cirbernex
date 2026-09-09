@@ -12,16 +12,11 @@
   display:flex; 
   align-items:center; 
   overflow:hidden;
-  color:#fff;
-  background:
-    radial-gradient
-    (
+  color:var(--text);
+  background:radial-gradient(
       circle at 72% 42%,
       rgba(214,168,79,.24), 
-      transparent 30%
-      ),
-    linear-gradient
-    (
+      transparent 30%),linear-gradient(
       100deg,
       rgba(10,8,5,.96) 0%, 
       rgba(10,8,5,.72) 55%, 
@@ -45,6 +40,7 @@
   padding-top:6rem;
 }
 .explore-hero h1{
+  color:#fff;
   font-family:Cinzel,serif;
   font-size:clamp(4rem,10vw,9rem);
   line-height:.9;
@@ -58,7 +54,7 @@
   max-width:610px;
   font-size:clamp(1rem,2vw,1.25rem);
   line-height:1.8;
-  color:rgba(255,255,255,.76);
+  color:#fff;
 }
 .hero-actions{
   display:flex;

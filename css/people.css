@@ -21,7 +21,8 @@
             #0d0b08 0%,
             rgba(13, 11, 8, 0.84) 48%,
             rgba(13, 11, 8, 0.28) 100%
-        );
+        ),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOmL02x_R_u-1pbu-d1Uwa2phQG9-rWIoJ5fmXugHF2g&s=10")
+    center / cover !important;
     color: #fff;
 }
 

@@ -1747,3 +1747,45 @@
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.75rem;
 }
+
+/* ── NAVIGATION LAYER FIX ── */
+
+.vm-shell {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vm-header {
+  position: relative;
+  z-index: 1000;
+  flex: 0 0 60px;
+  height: 60px;
+}
+
+.vm-rooms-strip,
+.vm-room-progress {
+  position: relative;
+  z-index: 900;
+  flex-shrink: 0;
+}
+
+.vm-main {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.vm-header,
+.vm-rooms-strip,
+.vm-room-progress,
+.vm-main {
+  box-sizing: border-box;
+}

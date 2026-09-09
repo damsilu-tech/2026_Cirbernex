@@ -752,14 +752,14 @@ h2 {
 
 /* ---------- TIMELINE ---------- */
 .timeline-section {
-  color: white;
+  color: var(--text);
   background:
     radial-gradient(circle at 80% 20%, rgba(214,168,79,.15), transparent 35%),
-    var(--ink);
+    var(--bg-section);
 }
 
 .timeline-section .section-kicker { color: var(--gold-light); }
-.timeline-section .section-head p { color: rgba(255,255,255,.65); }
+.timeline-section .section-head p { color: var(--text-soft); }
 
 .timeline {
   position: relative;
@@ -794,6 +794,7 @@ h2 {
 }
 
 .era > span {
+  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -826,15 +827,15 @@ h2 {
   font-size: 1rem;
 }
 
-.era small { color: rgba(255,255,255,.55); }
+.era small { color: var(--text-soft); }
 
 .era-detail {
   margin-top: 2rem;
   min-height: 75px;
   border-left: 2px solid var(--gold);
   padding: 1rem 1.2rem;
-  background: rgba(255,255,255,.045);
-  color: rgba(255,255,255,.8);
+  background: var(--cream);
+  color: var(--text-soft);
 }
 
 /* ---------- FEATURED ARTIFACT ---------- */
@@ -1418,7 +1419,7 @@ footer a:hover { color: var(--gold-light); }
 
 /* ---------- ENTER THE MUSEUM ---------- */
 .enter-section {
-  background: var(--ink);
+  background: var(--bg-section);
   padding: 5rem 1rem;
 }
 
@@ -1427,8 +1428,8 @@ footer a:hover { color: var(--gold-light); }
   margin-bottom: 3rem;
 }
 
-.enter-head h2 { color: white; }
-.enter-head p  { color: rgba(255,255,255,.6); margin-top: .6rem; }
+.enter-head h2 { color:var(--text); }
+.enter-head p  { color: var(--text-soft); margin-top: .6rem; }
 .enter-section .section-kicker { color: var(--gold-light); }
 
 .enter-cards {
@@ -1439,15 +1440,15 @@ footer a:hover { color: var(--gold-light); }
 
 .enter-card {
   position: relative;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(214,168,79,.2);
+  background:var(--sand);
+  border: 1px solid var(--ink);
   padding: 2.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: border-color .3s ease, background .3s ease, transform .3s ease;
   text-decoration: none;
-  color: white;
+  color: var(--text);
 }
 
 .enter-card::before {
@@ -1487,20 +1488,20 @@ footer a:hover { color: var(--gold-light); }
   right: 1.5rem;
   font-family: Cinzel, serif;
   font-size: .8rem;
-  color: rgba(214,168,79,.4);
+  color: var(--muted);
   font-weight: 800;
 }
 
 .enter-card h3 {
   font-family: Cinzel, serif;
   font-size: 1.2rem;
-  color: white;
+  color: var(--text);
   margin-bottom: .6rem;
 }
 
 .enter-card p {
   font-size: .87rem;
-  color: rgba(255,255,255,.6);
+  color: var(--text-soft);
   line-height: 1.65;
   flex: 1;
 }
@@ -1510,7 +1511,7 @@ footer a:hover { color: var(--gold-light); }
   margin-top: 1.4rem;
   font-size: .8rem;
   font-weight: 700;
-  color: var(--gold-light);
+  color: var(--gold);
   letter-spacing: .04em;
 }
 
@@ -1540,7 +1541,7 @@ footer a:hover { color: var(--gold-light); }
 .era-title {
   font-family: Cinzel, serif;
   font-size: 1rem;
-  color: white;
+  color: var(--text);
 }
 
 /* ---------- ARTIFACT OF THE DAY ---------- */
@@ -1636,14 +1637,14 @@ footer a:hover { color: var(--gold-light); }
 
 /* ---------- HIEROGLYPH EXHIBIT ---------- */
 .hieroglyph-section {
-  background: var(--ink);
-  color: white;
+  background: var(--sand);
+  color: var(--text);
   padding: 5rem 1rem;
 }
 
 .hieroglyph-section .section-kicker { color: var(--gold-light); }
-.hieroglyph-section h2 { color: white; }
-.hieroglyph-section .section-head p { color: rgba(255,255,255,.65); }
+.hieroglyph-section h2 { color:var(--text); }
+.hieroglyph-section .section-head p { color:var(--text-soft); }
 
 .hieroglyph-exhibit {
   display: grid;
@@ -1664,7 +1665,7 @@ footer a:hover { color: var(--gold-light); }
   height: 44px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.7);
+  color:var(--text);
   font-family: Cinzel, serif;
   font-size: .85rem;
   font-weight: 700;
@@ -1701,7 +1702,7 @@ footer a:hover { color: var(--gold-light); }
 }
 
 .hiero-placeholder-glyph { font-size: 3rem; display: block; margin-bottom: .8rem; }
-.hiero-placeholder p { font-size: .85rem; color: rgba(255,255,255,.6); }
+.hiero-placeholder p { font-size: .85rem; color: var(--text-soft); }
 
 .hiero-result { text-align: center; width: 100%; }
 
@@ -1731,9 +1732,9 @@ footer a:hover { color: var(--gold-light); }
   margin-top: 2rem;
   padding: 1rem 1.2rem;
   background: rgba(214,168,79,.08);
-  border: 1px solid rgba(214,168,79,.2);
+  border: 1px solid rgba(44, 38, 27, 0.418);
   font-size: .82rem;
-  color: rgba(255,255,255,.5);
+  color: var(--text);
 }
 
 /* ---------- DID YOU KNOW ---------- */
