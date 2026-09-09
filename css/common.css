@@ -2004,3 +2004,50 @@ footer a:hover { color: var(--gold-light); }
   .era-detail-meta    { gap: .6rem; }
   .era-title          { font-size: .92rem; }
 }
+/* ---------- SHARED: ERA PAGE SOURCES SECTION ---------- */
+.era-sources {
+  padding: 3.5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.era-sources h2 {
+  font-family: Cinzel, serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin: .3rem 0 1.4rem;
+}
+
+.era-sources-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.era-source-item {
+  background: var(--bg-card);
+  border: 1px solid var(--sand);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+}
+
+.era-source-item strong {
+  display: block;
+  font-size: .92rem;
+  margin-bottom: .3rem;
+  color: var(--ink);
+}
+
+.era-source-item span {
+  display: block;
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.era-sources-note {
+  margin-top: 1.2rem;
+  font-size: .82rem;
+  color: var(--muted);
+  max-width: 640px;
+}
